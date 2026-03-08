@@ -14,7 +14,7 @@ const posts = [
     title: "5 errores que frenan tu posicionamiento profesional",
     excerpt: "Los errores más comunes que cometen los profesionales al intentar posicionarse como referentes.",
     readTime: "4 min",
-    color: "bg-coral/10 text-coral",
+    color: "bg-mint/10 text-mint",
   },
   {
     category: "Marketing",
@@ -30,10 +30,10 @@ const BlogSection = () => {
     <section id="blog" className="py-20 lg:py-28 bg-card">
       <div className="container mx-auto px-6 lg:px-8">
         <div className="text-center max-w-2xl mx-auto mb-16">
-          <p className="text-accent font-semibold text-sm uppercase tracking-widest mb-3">
+          <p className="text-accent font-semibold text-xs uppercase tracking-[0.3em] mb-3">
             Blog
           </p>
-          <h2 className="font-serif text-3xl md:text-4xl font-bold text-primary mb-4">
+          <h2 className="font-serif text-3xl md:text-4xl lg:text-5xl font-bold text-primary mb-4">
             Artículos sobre IA, estrategia y posicionamiento
           </h2>
           <p className="text-muted-foreground text-lg">
@@ -45,9 +45,9 @@ const BlogSection = () => {
           {posts.map((post, index) => (
             <article
               key={index}
-              className="group bg-background rounded-2xl overflow-hidden border border-border/50 hover:shadow-lg transition-all duration-300"
+              className="group bg-background rounded-2xl overflow-hidden border border-border/50 hover:shadow-lg hover:border-accent/20 transition-all duration-300"
             >
-              <div className="aspect-video bg-gradient-to-br from-lavender to-turquoise/10" />
+              <div className="aspect-video bg-gradient-to-br from-secondary to-mint/10" />
               <div className="p-6">
                 <div className="flex items-center justify-between mb-3">
                   <span className={`text-xs font-semibold px-3 py-1 rounded-full ${post.color}`}>
@@ -58,7 +58,7 @@ const BlogSection = () => {
                     {post.readTime}
                   </span>
                 </div>
-                <h3 className="font-serif text-lg font-bold text-primary mb-2 group-hover:text-coral transition-colors">
+                <h3 className="font-serif text-lg font-bold text-primary mb-2 group-hover:text-accent transition-colors">
                   {post.title}
                 </h3>
                 <p className="text-sm text-muted-foreground leading-relaxed">
@@ -70,7 +70,7 @@ const BlogSection = () => {
         </div>
 
         <div className="text-center">
-          <Button variant="outline" className="rounded-full px-8 border-primary/30 text-primary hover:bg-primary/5">
+          <Button variant="outline" className="rounded-full px-8 border-primary/30 text-primary hover:bg-primary/5 uppercase tracking-wider text-xs font-semibold">
             Ver todos los artículos
             <ArrowRight className="ml-2 h-4 w-4" />
           </Button>

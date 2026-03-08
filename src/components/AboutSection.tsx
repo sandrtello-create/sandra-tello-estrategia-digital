@@ -8,7 +8,7 @@ const AboutSection = () => {
         <div className="grid lg:grid-cols-2 gap-12 lg:gap-20 items-center">
           {/* Image placeholder */}
           <div className="relative">
-            <div className="aspect-[3/4] rounded-3xl bg-gradient-to-tr from-lavender to-turquoise/20 shadow-xl overflow-hidden">
+            <div className="aspect-[3/4] rounded-3xl bg-gradient-to-tr from-secondary to-mint/10 shadow-xl overflow-hidden">
               <div className="flex items-center justify-center h-full">
                 <div className="text-center p-8">
                   <div className="w-28 h-28 rounded-full bg-primary/10 mx-auto mb-4" />
@@ -20,11 +20,11 @@ const AboutSection = () => {
           </div>
 
           <div>
-            <p className="text-accent font-semibold text-sm uppercase tracking-widest mb-3">
+            <p className="text-accent font-semibold text-xs uppercase tracking-[0.3em] mb-3">
               Sobre Sandra Tello
             </p>
-            <h2 className="font-serif text-3xl md:text-4xl font-bold text-primary mb-6 leading-tight">
-              Estrategia, marketing y criterio humano en la era de la inteligencia artificial
+            <h2 className="font-serif text-3xl md:text-4xl lg:text-5xl font-bold text-primary mb-6 leading-tight">
+              Estrategia, marketing y criterio humano en la era de la IA
             </h2>
             <p className="text-muted-foreground text-lg leading-relaxed mb-5">
               Con más de 15 años de experiencia en estrategia empresarial, marketing y 
@@ -36,9 +36,9 @@ const AboutSection = () => {
               con el criterio humano como centro de cada decisión. Así nació mi framework:
             </p>
 
-            <div className="bg-gradient-to-r from-lavender to-soft-pink rounded-2xl p-6 mb-8">
+            <div className="bg-gradient-to-r from-secondary to-cream rounded-2xl p-6 mb-8 border border-border/50">
               <div className="flex items-start gap-3">
-                <Sparkles className="h-6 w-6 text-coral mt-1 flex-shrink-0" />
+                <Sparkles className="h-6 w-6 text-accent mt-1 flex-shrink-0" />
                 <div>
                   <h3 className="font-serif text-xl font-bold text-primary mb-2">
                     Inteligencia Humana Estratégica™
@@ -51,7 +51,7 @@ const AboutSection = () => {
               </div>
             </div>
 
-            <Button variant="outline" className="rounded-full px-8 border-primary/30 text-primary hover:bg-primary/5">
+            <Button variant="outline" className="rounded-full px-8 border-primary/30 text-primary hover:bg-primary/5 uppercase tracking-wider text-xs font-semibold">
               Conoce más sobre Sandra
             </Button>
           </div>

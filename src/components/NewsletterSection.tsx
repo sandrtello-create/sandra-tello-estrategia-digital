@@ -7,13 +7,13 @@ const NewsletterSection = () => {
   const [email, setEmail] = useState("");
 
   return (
-    <section className="py-20 lg:py-28 bg-gradient-to-r from-coral/5 via-lavender/40 to-soft-pink/30">
+    <section className="py-20 lg:py-28 bg-gradient-to-r from-accent/5 via-secondary/60 to-mint/5">
       <div className="container mx-auto px-6 lg:px-8">
         <div className="max-w-2xl mx-auto text-center">
-          <div className="w-16 h-16 rounded-2xl bg-coral/10 flex items-center justify-center mx-auto mb-6">
-            <Gift className="h-8 w-8 text-coral" />
+          <div className="w-16 h-16 rounded-2xl bg-accent/10 flex items-center justify-center mx-auto mb-6">
+            <Gift className="h-8 w-8 text-accent" />
           </div>
-          <h2 className="font-serif text-3xl md:text-4xl font-bold text-primary mb-4">
+          <h2 className="font-serif text-3xl md:text-4xl lg:text-5xl font-bold text-primary mb-4">
             Recursos gratuitos de IA y estrategia
           </h2>
           <p className="text-muted-foreground text-lg mb-8">
@@ -33,7 +33,7 @@ const NewsletterSection = () => {
             />
             <Button
               type="submit"
-              className="bg-coral text-coral-foreground hover:bg-coral/90 rounded-full px-8 py-6 text-base font-semibold whitespace-nowrap"
+              className="bg-accent text-accent-foreground hover:bg-gold-light rounded-full px-8 py-6 text-sm font-semibold uppercase tracking-wider whitespace-nowrap"
             >
               <Send className="h-4 w-4 mr-2" />
               Suscribirme
