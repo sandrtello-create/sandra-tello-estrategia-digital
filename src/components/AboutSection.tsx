@@ -68,54 +68,56 @@ const AboutSection = () => {
             <p className="text-muted-foreground text-[17px] leading-relaxed mb-2">
               También soy docente en inteligencia artificial aplicada a negocio y marketing, porque creo profundamente en algo que forma parte de mi forma de trabajar:
             </p>
-            <p className="text-foreground text-lg leading-relaxed mb-8 italic">
+            <p className="text-foreground text-lg leading-relaxed italic">
               seguir aprendiendo siempre.
             </p>
-
-            {/* Rest of text continues after the "eterna aprendiz" band below */}
-            <p className="text-foreground text-lg leading-relaxed mb-5 font-semibold">
-              Desde ahí trabajo.
-            </p>
-
-            <p className="font-serif text-xl md:text-[22px] text-muted-foreground leading-relaxed mb-10">
-              Porque el marketing sin estrategia es ruido.
-              <br />
-              Y la tecnología sin criterio no transforma nada.
-            </p>
-
-            {/* Highlighted quote — editorial style */}
-            <div className="border-l-2 border-accent pl-6 mb-10">
-              <p className="font-serif text-2xl md:text-3xl font-medium text-foreground leading-snug">
-                Tu valor no se improvisa.
-                <br />
-                Se decide.
-              </p>
-            </div>
-
-            {/* CTA */}
-            <a
-              href="/sobre-mi"
-              className="bg-primary text-primary-foreground p-6 flex items-center justify-between cursor-pointer hover:bg-primary/90 transition-colors duration-300 group"
-            >
-              <div>
-                <p className="font-sans text-[11px] uppercase tracking-[0.2em] text-primary-foreground/70 mb-1">
-                  Conoce más
-                </p>
-                <p className="font-serif text-xl font-medium">
-                  Descubre cómo puedo ayudarte
-                </p>
-              </div>
-              <ArrowUpRight className="h-6 w-6 group-hover:translate-x-1 group-hover:-translate-y-1 transition-transform duration-300" />
-            </a>
           </div>
         </div>
 
-        {/* "Eterna aprendiz" band — spans full width below the photo */}
+        {/* "Eterna aprendiz" band — full width after both columns */}
         <div className="mt-12 bg-primary/5 border-t border-border py-8 px-6 lg:px-10">
           <p className="font-serif text-xl md:text-2xl lg:text-3xl text-foreground leading-snug font-medium max-w-4xl">
             Me considero una <span className="italic">eterna aprendiz</span>. La tecnología cambia, los negocios evolucionan y la estrategia exige algo fundamental:{" "}
             <span className="text-accent">curiosidad, criterio y humanidad</span>.
           </p>
+        </div>
+
+        {/* Continuation — full width */}
+        <div className="mt-12 max-w-3xl mx-auto">
+          <p className="text-foreground text-lg leading-relaxed mb-5 font-semibold">
+            Desde ahí trabajo.
+          </p>
+
+          <p className="font-serif text-xl md:text-[22px] text-muted-foreground leading-relaxed mb-10">
+            Porque el marketing sin estrategia es ruido.
+            <br />
+            Y la tecnología sin criterio no transforma nada.
+          </p>
+
+          {/* Highlighted quote */}
+          <div className="border-l-2 border-accent pl-6 mb-10">
+            <p className="font-serif text-2xl md:text-3xl font-medium text-foreground leading-snug">
+              Tu valor no se improvisa.
+              <br />
+              Se decide.
+            </p>
+          </div>
+
+          {/* CTA */}
+          <a
+            href="/sobre-mi"
+            className="bg-primary text-primary-foreground p-6 flex items-center justify-between cursor-pointer hover:bg-primary/90 transition-colors duration-300 group"
+          >
+            <div>
+              <p className="font-sans text-[11px] uppercase tracking-[0.2em] text-primary-foreground/70 mb-1">
+                Conoce más
+              </p>
+              <p className="font-serif text-xl font-medium">
+                Descubre cómo puedo ayudarte
+              </p>
+            </div>
+            <ArrowUpRight className="h-6 w-6 group-hover:translate-x-1 group-hover:-translate-y-1 transition-transform duration-300" />
+          </a>
         </div>
       </div>
     </section>
