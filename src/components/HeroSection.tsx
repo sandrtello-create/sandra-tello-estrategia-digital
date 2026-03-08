@@ -42,7 +42,7 @@ const HeroSection = () => {
             </div>
 
             {/* Text side */}
-            <div className="max-w-xl order-2 pt-32 pb-24 lg:pt-0 lg:pb-0 lg:pl-8">
+            <div className="max-w-xl order-2 pt-16 pb-20 lg:py-0 lg:pl-8">
               <div className="flex items-center gap-3 mb-8">
                 <div className="h-px w-10" style={{ background: 'linear-gradient(90deg, #a47633, #cbaa60)' }} />
                 <p className="font-sans text-[11px] font-semibold uppercase tracking-[0.25em] gold-gradient-text">
