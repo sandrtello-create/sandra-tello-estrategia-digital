@@ -1,5 +1,6 @@
 import { Button } from "@/components/ui/button";
 import { ArrowRight, Youtube, Instagram, Linkedin } from "lucide-react";
+import sandraPhoto from "@/assets/sandra-tello-hero.jpg";
 
 const socialStats = [
   { icon: Youtube, count: "50,000+", label: "YouTube" },
@@ -17,10 +18,11 @@ const HeroSection = () => {
             {/* Photo side */}
             <div className="relative hidden lg:flex items-end justify-center order-1">
               <div className="w-full max-w-[480px] h-[600px] bg-gradient-to-t from-hero-bg via-transparent to-transparent flex items-end justify-center">
-                <div className="text-center pb-8">
-                  <div className="w-48 h-48 rounded-full bg-primary/10 mx-auto mb-4" />
-                  <p className="text-muted-foreground text-sm">Foto de Sandra Tello</p>
-                </div>
+                <img 
+                  src={sandraPhoto} 
+                  alt="Sandra Tello" 
+                  className="w-full h-full object-cover"
+                />
               </div>
             </div>
 
