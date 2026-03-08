@@ -24,9 +24,17 @@ const Navbar = () => {
   return (
     <nav className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${scrolled ? "bg-background/95 backdrop-blur-md shadow-sm" : "bg-transparent"}`}>
       <div className="container mx-auto px-6 lg:px-8">
-        <div className="flex items-center justify-between h-20">
-          <a href="#inicio" className="flex items-center gap-3">
-            <img src={logo} alt="Sandra Tello" className="h-16 w-auto" />
+        <div className="flex items-center justify-between h-24">
+          <a href="#inicio" className="flex items-center gap-4">
+            <img src={logo} alt="Sandra Tello" className="h-14 w-auto" />
+            <div className="flex flex-col">
+              <span className="font-serif text-[22px] font-bold tracking-tight leading-none" style={{ color: scrolled ? undefined : 'white' }}>
+                Sandra Tello
+              </span>
+              <span className="text-[10px] font-medium tracking-[0.18em] uppercase mt-1 gold-gradient-text">
+                Estrategia · IA · Marca personal
+              </span>
+            </div>
           </a>
 
           {/* Desktop nav */}
