@@ -154,12 +154,16 @@ const HeroSection = () => {
                 </p>
               </div>
 
-              <h1 className="font-serif text-[32px] md:text-[40px] lg:text-[46px] font-semibold text-white leading-[1.15] mb-4">
+              <h1 className="font-serif text-[32px] md:text-[40px] lg:text-[46px] font-semibold text-white leading-[1.15] mb-2">
                 Consultora estratégica en inteligencia artificial y marca personal
               </h1>
 
+              <p className="font-serif text-[22px] md:text-[26px] lg:text-[30px] italic gold-gradient-text mb-6 leading-snug">
+                Crea la vida que amas.
+              </p>
+
               {/* Rotating phrases */}
-              <div className="mb-4 overflow-hidden">
+              <div className="mb-8 overflow-hidden">
                 <div
                   className="inline-block"
                   style={{
@@ -180,18 +184,6 @@ const HeroSection = () => {
                   </span>
                 </div>
               </div>
-
-               {/* Crea la vida que amas - Purpose statement */}
-              <p
-                className="font-serif text-[28px] md:text-[32px] italic text-center mb-10 leading-snug font-semibold text-transparent bg-clip-text"
-                style={{
-                  backgroundImage: 'linear-gradient(90deg, #F472B6, #ffffff, #cbaa60, #20E3B2, #5C7CFA, #F472B6, #ffffff, #cbaa60)',
-                  backgroundSize: '400% 100%',
-                  animation: 'shimmer 8s linear infinite',
-                }}
-              >
-                Crea la vida que amas.
-              </p>
 
               <div className="flex flex-col sm:flex-row gap-4">
                 <button className="btn-gold-gradient rounded-full px-10 py-5 text-[13px] font-bold uppercase tracking-[0.15em] inline-flex items-center justify-center gap-2 shadow-lg shadow-[rgba(164,118,51,0.3)]">
