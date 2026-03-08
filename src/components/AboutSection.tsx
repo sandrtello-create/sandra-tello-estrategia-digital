@@ -32,11 +32,18 @@ const AboutSection = () => {
             </p>
 
             <p className="text-muted-foreground text-[17px] leading-relaxed mb-5">
-              Durante muchos años trabajé dentro del mundo corporativo siguiendo una lógica que muchas personas aceptan sin cuestionar: trabajar, cumplir, avanzar… y esperar que el valor acabe reconociéndose.
+              Durante muchos años trabajé en el mundo corporativo observando cómo funcionan realmente las empresas: la estrategia, el marketing, la toma de decisiones… y también cómo muchas veces el talento y el conocimiento de las personas quedan invisibles cuando falta dirección.
             </p>
 
-            <p className="text-foreground text-[17px] leading-relaxed mb-5 font-medium">
-              Hasta que entendí algo importante.
+            <p className="text-muted-foreground text-[17px] leading-relaxed mb-2">
+              Tendemos a seguir una lógica que pocas veces cuestionamos: trabajar, cumplir, avanzar… y esperar que el valor acabe reconociéndose.
+            </p>
+            <p className="text-muted-foreground text-[17px] leading-relaxed mb-5 italic">
+              Día tras día. Año tras año.
+            </p>
+
+            <p className="text-foreground text-[17px] leading-relaxed mb-2 font-medium">
+              Con el tiempo entendí algo importante:
             </p>
 
             <p className="text-foreground text-lg leading-relaxed mb-6 font-semibold">
@@ -44,11 +51,25 @@ const AboutSection = () => {
             </p>
 
             <p className="text-muted-foreground text-[17px] leading-relaxed mb-5">
-              Hoy trabajo con profesionales y empresas que quieren hacer justamente lo contrario:{" "}
-              <strong className="text-foreground font-semibold">
-                pensar con estrategia, integrar inteligencia artificial con criterio
-              </strong>{" "}
-              y convertir su experiencia en autoridad y negocio.
+              Hoy me siento honrada de acompañar a profesionales y empresas que quieren integrar estrategia, marketing,{" "}
+              <strong className="text-foreground font-semibold">marca personal</strong>{" "}
+              e inteligencia artificial para generar mejores oportunidades en su negocio, tomar decisiones con criterio y convertir su experiencia en proyectos con dirección.
+            </p>
+
+            <p className="text-muted-foreground text-[17px] leading-relaxed mb-2">
+              También soy docente en inteligencia artificial aplicada a negocio y marketing, porque creo profundamente en algo que forma parte de mi forma de trabajar:
+            </p>
+            <p className="text-foreground text-lg leading-relaxed mb-5 italic font-semibold">
+              seguir aprendiendo siempre.
+            </p>
+
+            <p className="text-muted-foreground text-[17px] leading-relaxed mb-5">
+              Me considero una <strong className="text-foreground font-semibold">eterna aprendiz</strong>. La tecnología cambia, los negocios evolucionan y la estrategia exige algo fundamental:{" "}
+              <strong className="text-foreground font-semibold">curiosidad, criterio y humanidad</strong>.
+            </p>
+
+            <p className="text-foreground text-[17px] leading-relaxed mb-5 font-medium">
+              Desde ahí trabajo.
             </p>
 
             <p className="text-muted-foreground text-[17px] leading-relaxed mb-8">
