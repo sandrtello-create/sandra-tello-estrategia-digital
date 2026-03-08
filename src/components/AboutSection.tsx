@@ -5,9 +5,9 @@ const AboutSection = () => {
   return (
     <section id="sobre" className="py-20 lg:py-28 bg-background">
       <div className="container mx-auto px-6 lg:px-8">
-        <div className="grid lg:grid-cols-2 gap-0 lg:gap-0 items-start">
-          {/* Photo with overlapping text */}
-          <div className="relative">
+        <div className="grid lg:grid-cols-[45%_55%] items-start">
+          {/* Photo */}
+          <div className="relative z-0">
             <div className="aspect-[3/4] overflow-hidden">
               <img
                 src={sandraAbout}
@@ -15,32 +15,21 @@ const AboutSection = () => {
                 className="w-full h-full object-cover object-top"
               />
             </div>
-            {/* Overlapping headline */}
-            <div className="absolute top-6 right-0 translate-x-[30%] z-10 hidden lg:block">
-              <p className="font-sans text-[13px] font-semibold uppercase tracking-[0.2em] text-muted-foreground mb-1">
-                ¡Hola!
-              </p>
-              <h2 className="font-serif text-6xl xl:text-7xl font-medium text-foreground leading-[1]">
-                SOY
-                <br />
-                SANDRA.
-              </h2>
-            </div>
           </div>
 
-          {/* Content */}
-          <div className="lg:pl-20 lg:pt-40">
-            {/* Mobile only headline */}
-            <div className="lg:hidden mt-8 mb-6">
+          {/* Content - starts overlapping the photo slightly */}
+          <div className="lg:-ml-8 relative z-10">
+            {/* Headline area - aligned to top of photo */}
+            <div className="pt-8 lg:pt-6 mb-8">
               <p className="font-sans text-[13px] font-semibold uppercase tracking-[0.2em] text-muted-foreground mb-2">
                 ¡Hola!
               </p>
-              <h2 className="font-serif text-5xl font-medium text-foreground leading-[1.05]">
-                Soy Sandra.
+              <h2 className="font-serif text-5xl md:text-6xl lg:text-[80px] xl:text-[90px] font-light text-foreground leading-[1.05] tracking-tight">
+                SOY SANDRA.
               </h2>
             </div>
 
-            <p className="font-serif text-2xl md:text-[28px] text-foreground leading-snug mb-8">
+            <p className="font-serif text-2xl md:text-[26px] text-foreground leading-snug mb-8">
               Consultora estratégica de{" "}
               <strong className="font-bold">
                 inteligencia artificial, marketing y marca personal.
