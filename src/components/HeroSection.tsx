@@ -5,9 +5,9 @@ import logoWatermark from "@/assets/sandra-tello-logo.png";
 
 const rotatingPhrases = [
   { text: "IA con criterio estratégico", bg: "linear-gradient(135deg, #a47633, #cbaa60)" },
-  { text: "Marca personal que genera negocio", bg: "linear-gradient(135deg, #2a4a7f, #4a7abf)" },
-  { text: "Estrategia digital para profesionales", bg: "linear-gradient(135deg, #6b3fa0, #9b6fd0)" },
-  { text: "Inteligencia Humana Estratégica™", bg: "linear-gradient(135deg, #a47633, #d4af37)" },
+  { text: "Marca personal que genera negocio", bg: "linear-gradient(135deg, #1a5276, #2e86c1)" },
+  { text: "Estrategia digital para profesionales", bg: "linear-gradient(135deg, #0e6655, #1abc9c)" },
+  { text: "Inteligencia Humana Estratégica™", bg: "linear-gradient(135deg, #1b4f72, #2980b9)" },
 ];
 
 const HeroSection = () => {
