@@ -110,10 +110,10 @@ const AboutSection = () => {
           >
             <div>
               <p className="font-sans text-[11px] uppercase tracking-[0.2em] text-primary-foreground/70 mb-1">
-                Conoce más
+                Sobre mí
               </p>
               <p className="font-serif text-xl font-medium">
-                Descubre cómo puedo ayudarte
+                ¿Quieres saber más de mí? Te espero.
               </p>
             </div>
             <ArrowUpRight className="h-6 w-6 group-hover:translate-x-1 group-hover:-translate-y-1 transition-transform duration-300" />
