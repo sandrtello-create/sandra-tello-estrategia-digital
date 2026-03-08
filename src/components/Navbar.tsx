@@ -41,7 +41,7 @@ const Navbar = () => {
                 {link.label}
               </a>
             ))}
-            <button className="btn-gold-gradient rounded-none px-7 py-3 font-semibold uppercase tracking-[0.15em] text-[12px]">
+            <button className="btn-gold-gradient rounded-full px-7 py-3 font-semibold uppercase tracking-[0.15em] text-[12px]">
               Trabaja conmigo ›
             </button>
           </div>
