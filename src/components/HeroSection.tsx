@@ -4,10 +4,10 @@ import sandraPhoto from "@/assets/sandra-tello-hero.jpg";
 import logoWatermark from "@/assets/sandra-tello-logo.png";
 
 const rotatingPhrases = [
-  { text: "IA para negocios", border: "linear-gradient(135deg, #20E3B2, #7EE8FA)" },
-  { text: "Formación en IA", border: "linear-gradient(135deg, #3A63F3, #5C7CFA)" },
-  { text: "Consultoría estratégica digital", border: "linear-gradient(135deg, #F472B6, #FBCFE8)" },
-  { text: "Marca personal profesional", border: "linear-gradient(135deg, #7DB7E8, #dae2eb)" },
+  { text: "IA para negocios", color: "#20E3B2" },
+  { text: "Formación en IA", color: "#5C7CFA" },
+  { text: "Consultoría estratégica digital", color: "#F472B6" },
+  { text: "Marca personal profesional", color: "#7EE8FA" },
 ];
 
 const HeroSection = () => {
@@ -94,12 +94,11 @@ const HeroSection = () => {
                   }}
                 >
                   <span
-                    className="inline-block px-5 py-2 rounded-md font-sans text-[15px] md:text-[17px] font-medium text-white bg-transparent"
+                    className="inline-block px-6 py-2.5 rounded-md font-sans text-[15px] md:text-[17px] font-medium"
                     style={{
-                      border: '2px solid transparent',
-                      borderImage: rotatingPhrases[currentPhrase].border,
-                      borderImageSlice: 1,
-                      transition: 'border-image 0.5s ease',
+                      color: rotatingPhrases[currentPhrase].color,
+                      border: `2px solid ${rotatingPhrases[currentPhrase].color}`,
+                      transition: 'color 0.5s ease, border-color 0.5s ease',
                     }}
                   >
                     {rotatingPhrases[currentPhrase].text}
