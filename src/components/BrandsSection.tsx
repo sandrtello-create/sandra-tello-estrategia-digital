@@ -2,7 +2,7 @@ import bacardi from "@/assets/brands/bacardi.png";
 import bp from "@/assets/brands/bp.png";
 import disa from "@/assets/brands/disa.png";
 import douglas from "@/assets/brands/douglas.png";
-import shell from "@/assets/brands/shell.jpg";
+import shell from "@/assets/brands/shell.png";
 import sanitas from "@/assets/brands/sanitas.png";
 import hiperdino from "@/assets/brands/hiperdino.png";
 import volkswagen from "@/assets/brands/volkswagen.png";
