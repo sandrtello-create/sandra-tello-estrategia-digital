@@ -50,15 +50,15 @@ const HeroSection = () => {
                 </p>
               </div>
 
-              <h1 className="font-serif text-[30px] md:text-[36px] lg:text-[42px] font-medium text-white leading-[1.2] mb-6">
+              <h1 className="font-serif text-[34px] md:text-[42px] lg:text-[50px] font-semibold text-white leading-[1.15] mb-10">
                 Integro inteligencia artificial y estrategia para convertir experiencia en autoridad.
               </h1>
 
-              <p className="text-white/60 text-[15px] leading-relaxed mb-4 font-sans font-medium tracking-wide">
+              <p className="text-white/55 text-[16px] leading-relaxed mb-5 font-sans font-medium tracking-wide">
                 Marca personal · IA · Estrategia de negocio para profesionales y empresas.
               </p>
 
-              <p className="font-serif text-lg italic mb-12 gold-gradient-text">
+              <p className="font-serif text-[22px] italic mb-14 gold-gradient-text leading-snug">
                 Crea la vida que amas.
               </p>
 
