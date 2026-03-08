@@ -4,10 +4,10 @@ import sandraPhoto from "@/assets/sandra-tello-hero.jpg";
 import logoWatermark from "@/assets/sandra-tello-logo.png";
 
 const rotatingPhrases = [
-  { text: "IA para negocios", color: "#20E3B2" },
-  { text: "Formación en IA", color: "#5C7CFA" },
-  { text: "Consultoría estratégica digital", color: "#F472B6" },
-  { text: "Marca personal profesional", color: "#7EE8FA" },
+  { text: "Estrategia en marca personal" },
+  { text: "IA aplicada en negocio" },
+  { text: "Formación en inteligencia artificial" },
+  { text: "Consultoría estratégica digital" },
 ];
 
 const stats = [
@@ -169,11 +169,11 @@ const HeroSection = () => {
                   }}
                 >
                   <span
-                    className="inline-block px-6 py-2.5 rounded-md font-sans text-[15px] md:text-[17px] font-medium"
+                    className="inline-block px-6 py-2.5 rounded-md font-sans text-[15px] md:text-[17px] font-medium gold-gradient-text"
                     style={{
-                      color: rotatingPhrases[currentPhrase].color,
-                      border: `2px solid ${rotatingPhrases[currentPhrase].color}`,
-                      transition: 'color 0.5s ease, border-color 0.5s ease',
+                      border: '2px solid',
+                      borderImage: 'linear-gradient(135deg, #a47633, #cbaa60, #f7d57b) 1',
+                      transition: 'all 0.5s ease',
                     }}
                   >
                     {rotatingPhrases[currentPhrase].text}
