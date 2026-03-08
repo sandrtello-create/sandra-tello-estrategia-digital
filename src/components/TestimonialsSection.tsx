@@ -32,38 +32,35 @@ const TestimonialsSection = () => {
   const prev = () => setCurrent((prev) => (prev - 1 + testimonials.length) % testimonials.length);
 
   return (
-    <section className="py-20 lg:py-28 bg-secondary/50">
+    <section className="py-20 lg:py-28 bg-background">
       <div className="container mx-auto px-6 lg:px-8">
         <div className="text-center max-w-2xl mx-auto mb-16">
-          <p className="text-accent font-semibold text-xs uppercase tracking-[0.3em] mb-3">
+          <p className="text-accent font-semibold text-[11px] uppercase tracking-[0.25em] mb-4">
             Testimonios
           </p>
-          <h2 className="font-serif text-3xl md:text-4xl lg:text-5xl font-bold text-primary">
+          <h2 className="font-serif text-3xl md:text-4xl lg:text-[44px] font-medium text-primary leading-[1.2]">
             Lo que dicen quienes han trabajado conmigo
           </h2>
         </div>
 
         <div className="max-w-3xl mx-auto">
-          <div className="bg-card rounded-3xl p-8 md:p-12 shadow-lg border border-border/40 relative">
-            <Quote className="h-10 w-10 text-accent/30 mb-6" />
-            <blockquote className="font-serif text-xl md:text-2xl text-primary leading-relaxed mb-8 italic">
+          <div className="text-center px-4 md:px-12">
+            <Quote className="h-10 w-10 text-accent/30 mx-auto mb-8" />
+            <blockquote className="font-serif text-2xl md:text-3xl text-primary leading-relaxed mb-10 italic font-light">
               "{testimonials[current].quote}"
             </blockquote>
-            <div className="flex items-center gap-4">
-              <div className="w-14 h-14 rounded-full bg-gradient-to-br from-accent/20 to-mint/20" />
-              <div>
-                <p className="font-semibold text-primary">{testimonials[current].name}</p>
-                <p className="text-sm text-muted-foreground">
-                  {testimonials[current].role}, {testimonials[current].company}
-                </p>
-              </div>
+            <div>
+              <p className="font-semibold text-primary text-lg">{testimonials[current].name}</p>
+              <p className="text-sm text-muted-foreground">
+                {testimonials[current].role}, {testimonials[current].company}
+              </p>
             </div>
           </div>
 
-          <div className="flex items-center justify-center gap-4 mt-8">
+          <div className="flex items-center justify-center gap-6 mt-10">
             <button
               onClick={prev}
-              className="w-10 h-10 rounded-full border border-border flex items-center justify-center hover:bg-card hover:border-accent/30 transition-colors"
+              className="w-10 h-10 border border-border flex items-center justify-center hover:border-accent/50 transition-colors"
               aria-label="Anterior"
             >
               <ChevronLeft className="h-5 w-5 text-primary" />
@@ -73,8 +70,8 @@ const TestimonialsSection = () => {
                 <button
                   key={index}
                   onClick={() => setCurrent(index)}
-                  className={`w-2.5 h-2.5 rounded-full transition-all ${
-                    index === current ? "bg-accent w-8" : "bg-border"
+                  className={`w-2 h-2 rounded-full transition-all ${
+                    index === current ? "bg-accent w-6" : "bg-border"
                   }`}
                   aria-label={`Testimonio ${index + 1}`}
                 />
@@ -82,7 +79,7 @@ const TestimonialsSection = () => {
             </div>
             <button
               onClick={next}
-              className="w-10 h-10 rounded-full border border-border flex items-center justify-center hover:bg-card hover:border-accent/30 transition-colors"
+              className="w-10 h-10 border border-border flex items-center justify-center hover:border-accent/50 transition-colors"
               aria-label="Siguiente"
             >
               <ChevronRight className="h-5 w-5 text-primary" />
