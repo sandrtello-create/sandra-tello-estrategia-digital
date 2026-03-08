@@ -7,24 +7,24 @@
 @layer base {
   :root {
     --background: 0 0% 100%;
-    --foreground: 220 30% 20%;
+    --foreground: 230 25% 18%;
 
     --card: 0 0% 100%;
-    --card-foreground: 220 30% 20%;
+    --card-foreground: 230 25% 18%;
 
     --popover: 0 0% 100%;
-    --popover-foreground: 220 30% 20%;
+    --popover-foreground: 230 25% 18%;
 
-    --primary: 220 40% 22%;
+    --primary: 232 28% 21%;
     --primary-foreground: 0 0% 100%;
 
     --secondary: 216 20% 92%;
-    --secondary-foreground: 220 40% 22%;
+    --secondary-foreground: 232 28% 21%;
 
     --muted: 216 15% 90%;
     --muted-foreground: 220 10% 46%;
 
-    --accent: 42 70% 50%;
+    --accent: 38 55% 50%;
     --accent-foreground: 0 0% 100%;
 
     --destructive: 0 84% 60%;
@@ -32,17 +32,19 @@
 
     --border: 216 15% 88%;
     --input: 216 15% 88%;
-    --ring: 220 40% 22%;
+    --ring: 232 28% 21%;
 
     --radius: 0.5rem;
 
     /* Brand colors */
-    --gold: 42 70% 50%;
+    --gold: 38 55% 50%;
     --gold-light: 42 55% 60%;
+    --gold-dark: 33 52% 42%;
     --gold-foreground: 0 0% 100%;
-    --navy: 220 40% 22%;
-    --navy-light: 220 30% 35%;
-    --hero-bg: 216 25% 88%;
+    --navy: 232 28% 21%;
+    --navy-mid: 222 28% 33%;
+    --navy-light: 230 20% 17%;
+    --hero-bg: 218 28% 90%;
     --section-alt: 216 18% 96%;
     --mint: 165 40% 55%;
     --mint-light: 165 35% 65%;
@@ -66,7 +68,7 @@
     --card-foreground: 40 30% 95%;
     --popover: 220 30% 12%;
     --popover-foreground: 40 30% 95%;
-    --primary: 42 70% 50%;
+    --primary: 38 55% 50%;
     --primary-foreground: 220 30% 8%;
     --secondary: 220 25% 18%;
     --secondary-foreground: 40 30% 95%;
@@ -78,12 +80,14 @@
     --destructive-foreground: 0 0% 100%;
     --border: 220 20% 18%;
     --input: 220 20% 18%;
-    --ring: 42 70% 50%;
-    --gold: 42 70% 50%;
+    --ring: 38 55% 50%;
+    --gold: 38 55% 50%;
     --gold-light: 42 55% 60%;
+    --gold-dark: 33 52% 42%;
     --gold-foreground: 0 0% 100%;
-    --navy: 220 40% 22%;
-    --navy-light: 220 30% 35%;
+    --navy: 232 28% 21%;
+    --navy-mid: 222 28% 33%;
+    --navy-light: 230 20% 17%;
     --hero-bg: 220 25% 15%;
     --section-alt: 220 20% 10%;
     --mint: 165 40% 55%;
@@ -106,4 +110,27 @@
   h1, h2, h3, h4, h5, h6 {
     font-family: 'Playfair Display', Georgia, serif;
   }
+}
+
+/* Gold gradient utilities */
+.gold-gradient {
+  background: linear-gradient(135deg, #a47633, #cbaa60, #f7d57b);
+}
+
+.gold-gradient-text {
+  background: linear-gradient(135deg, #a47633, #cbaa60, #f7d57b);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.btn-gold-gradient {
+  background: linear-gradient(135deg, #a47633, #cbaa60, #dbb85e);
+  color: white;
+  transition: all 0.3s ease;
+}
+
+.btn-gold-gradient:hover {
+  background: linear-gradient(135deg, #b8862e, #d4b36a, #e5c56a);
+  box-shadow: 0 8px 24px -4px rgba(164, 118, 51, 0.35);
 }
