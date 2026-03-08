@@ -43,10 +43,10 @@ const ResultsSection = () => {
     <section className="py-20 lg:py-28">
       <div className="container mx-auto px-6 lg:px-8">
         <div className="text-center max-w-2xl mx-auto mb-16">
-          <p className="text-coral font-semibold text-sm uppercase tracking-widest mb-3">
+          <p className="text-accent font-semibold text-xs uppercase tracking-[0.3em] mb-3">
             Resultados
           </p>
-          <h2 className="font-serif text-3xl md:text-4xl font-bold text-primary mb-4">
+          <h2 className="font-serif text-3xl md:text-4xl lg:text-5xl font-bold text-primary mb-4">
             Lo que consiguen mis clientes
           </h2>
           <p className="text-muted-foreground text-lg">
@@ -64,7 +64,7 @@ const ResultsSection = () => {
               <div className="w-12 h-12 rounded-xl bg-accent/10 flex items-center justify-center mx-auto mb-4">
                 <result.icon className="h-6 w-6 text-accent" />
               </div>
-              <p className="font-serif text-3xl font-bold text-coral mb-1">{result.stat}</p>
+              <p className="font-serif text-3xl font-bold text-accent mb-1">{result.stat}</p>
               <p className="text-xs text-muted-foreground mb-3">{result.statLabel}</p>
               <h3 className="font-serif text-lg font-bold text-primary mb-2">{result.title}</h3>
               <p className="text-sm text-muted-foreground leading-relaxed">{result.description}</p>

@@ -28,12 +28,12 @@ const Navbar = () => {
               <a
                 key={link.href}
                 href={link.href}
-                className="text-sm font-medium text-muted-foreground hover:text-primary transition-colors"
+                className="text-xs font-semibold uppercase tracking-widest text-muted-foreground hover:text-primary transition-colors"
               >
                 {link.label}
               </a>
             ))}
-            <Button className="bg-coral text-coral-foreground hover:bg-coral/90 rounded-full px-6">
+            <Button className="bg-accent text-accent-foreground hover:bg-gold-light rounded-full px-6 font-semibold uppercase tracking-wider text-xs">
               Trabaja conmigo
             </Button>
           </div>
@@ -57,12 +57,12 @@ const Navbar = () => {
                   key={link.href}
                   href={link.href}
                   onClick={() => setIsOpen(false)}
-                  className="text-base font-medium text-muted-foreground hover:text-primary transition-colors"
+                  className="text-sm font-semibold uppercase tracking-wider text-muted-foreground hover:text-primary transition-colors"
                 >
                   {link.label}
                 </a>
               ))}
-              <Button className="bg-coral text-coral-foreground hover:bg-coral/90 rounded-full w-fit px-6 mt-2">
+              <Button className="bg-accent text-accent-foreground hover:bg-gold-light rounded-full w-fit px-6 mt-2 font-semibold uppercase tracking-wider text-xs">
                 Trabaja conmigo
               </Button>
             </div>
