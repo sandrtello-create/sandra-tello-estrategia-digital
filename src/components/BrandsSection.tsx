@@ -22,11 +22,6 @@ const brands = [
   { name: "MediaMarkt", logo: mediamarkt },
   { name: "EOI", logo: eoi },
   { name: "MainJobs", logo: mainjobs },
-  { name: "Fiat", logo: fiat },
-  { name: "Nespresso", logo: nespresso },
-  { name: "Diario de Avisos", logo: diarioAvisos },
-  { name: "Volkswagen", logo: volkswagen },
-  { name: "Opel", logo: opel },
   { name: "Bacardi", logo: bacardi },
   { name: "BP", logo: bp },
   { name: "DISA", logo: disa },
@@ -35,6 +30,11 @@ const brands = [
   { name: "Sanitas", logo: sanitas },
   { name: "HiperDino", logo: hiperdino },
   { name: "Carglass", logo: carglass },
+  { name: "Volkswagen", logo: volkswagen },
+  { name: "Opel", logo: opel },
+  { name: "Fiat", logo: fiat },
+  { name: "Nespresso", logo: nespresso },
+  { name: "Diario de Avisos", logo: diarioAvisos },
   { name: "Zipgenial", logo: zipgenial },
 ];
 
