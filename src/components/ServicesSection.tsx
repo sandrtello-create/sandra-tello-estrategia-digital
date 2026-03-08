@@ -134,7 +134,10 @@ const ServicesSection = () => {
             Estrategia, marketing e inteligencia artificial para que tu negocio
             crezca con dirección, no por inercia.
           </p>
-          <p className="text-muted-foreground text-[15px] leading-relaxed mt-3">
+          <div className="flex justify-center mt-5 mb-4">
+            <div className="h-px w-10 bg-accent/40" />
+          </div>
+          <p className="text-primary/70 text-[15px] leading-relaxed font-medium">
             Para profesionales y empresas que quieren ordenar su estrategia,
             posicionar su valor y utilizar la inteligencia artificial con criterio.
           </p>
