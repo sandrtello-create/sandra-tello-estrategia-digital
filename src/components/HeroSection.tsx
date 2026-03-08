@@ -84,7 +84,7 @@ const HeroSection = () => {
   useEffect(() => {
     const observer = new IntersectionObserver(
       ([entry]) => { if (entry.isIntersecting) setStatsVisible(true); },
-      { threshold: 0.3 }
+      { threshold: 0.1 }
     );
     if (statsRef.current) observer.observe(statsRef.current);
     return () => observer.disconnect();
