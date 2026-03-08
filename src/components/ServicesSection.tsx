@@ -28,8 +28,8 @@ const services = [
       intro: "Trabajamos tu identidad profesional para que comuniques con claridad quién eres y qué te diferencia.",
       points: [
         "Estrategia de contenidos",
-        "Narrativa y mensaje diferenciador",
         "Definición de propuesta de valor",
+        "Narrativa y mensaje diferenciador",
         "Plan de visibilidad y posicionamiento",
         "Presencia digital coherente en todos tus canales",
       ],
