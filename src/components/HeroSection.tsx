@@ -1,5 +1,6 @@
 import { ArrowRight, ChevronDown } from "lucide-react";
 import sandraPhoto from "@/assets/sandra-tello-hero.jpg";
+import logoWatermark from "@/assets/sandra-tello-logo.png";
 
 const HeroSection = () => {
   return (
