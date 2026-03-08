@@ -8,6 +8,13 @@ import hiperdino from "@/assets/brands/hiperdino.png";
 import volkswagen from "@/assets/brands/volkswagen.png";
 import opel from "@/assets/brands/opel.jfif";
 import carglass from "@/assets/brands/carglass.png";
+import apple from "@/assets/brands/apple.png";
+import zipgenial from "@/assets/brands/zipgenial.jfif";
+import mediamarkt from "@/assets/brands/mediamarkt.png";
+import eoi from "@/assets/brands/eoi.png";
+import mainjobs from "@/assets/brands/mainjobs.png";
+import fiat from "@/assets/brands/fiat.jfif";
+import nespresso from "@/assets/brands/nespresso.png";
 
 const brands = [
   { name: "Bacardi", logo: bacardi },
@@ -20,10 +27,16 @@ const brands = [
   { name: "Volkswagen", logo: volkswagen },
   { name: "Opel", logo: opel },
   { name: "Carglass", logo: carglass },
+  { name: "Apple", logo: apple },
+  { name: "Zipgenial", logo: zipgenial },
+  { name: "MediaMarkt", logo: mediamarkt },
+  { name: "EOI", logo: eoi },
+  { name: "MainJobs", logo: mainjobs },
+  { name: "Fiat", logo: fiat },
+  { name: "Nespresso", logo: nespresso },
 ];
 
 const BrandsSection = () => {
-  // Duplicate for seamless infinite scroll
   const duplicated = [...brands, ...brands];
 
   return (
@@ -33,32 +46,42 @@ const BrandsSection = () => {
           <div className="flex items-center justify-center gap-3 mb-4">
             <div className="h-px w-10 bg-gold" />
             <p className="font-sans text-[11px] font-semibold uppercase tracking-[0.25em] text-gold">
-              Confianza
+              Trayectoria
             </p>
             <div className="h-px w-10 bg-gold" />
           </div>
-          <h2 className="font-serif text-2xl md:text-3xl font-medium text-foreground">
-            Han confiado en mí
+          <h2 className="font-serif text-2xl md:text-3xl font-medium text-foreground leading-snug">
+            He tenido el privilegio de trabajar y colaborar <br className="hidden md:block" />
+            con marcas como
           </h2>
         </div>
       </div>
 
       {/* Infinite scroll carousel */}
       <div className="relative overflow-hidden">
-        {/* Fade edges */}
         <div className="absolute left-0 top-0 bottom-0 w-24 z-10 pointer-events-none" style={{ background: 'linear-gradient(to right, hsl(var(--section-alt)), transparent)' }} />
         <div className="absolute right-0 top-0 bottom-0 w-24 z-10 pointer-events-none" style={{ background: 'linear-gradient(to left, hsl(var(--section-alt)), transparent)' }} />
 
-        <div className="flex animate-scroll-brands">
+        <div className="flex animate-scroll-brands items-center">
           {duplicated.map((brand, i) => (
             <div
               key={`${brand.name}-${i}`}
-              className="flex-shrink-0 w-[160px] md:w-[200px] mx-6 md:mx-10 flex items-center justify-center h-20"
+              className="flex-shrink-0 w-[180px] md:w-[220px] mx-8 md:mx-12 flex items-center justify-center h-24"
             >
               <img
                 src={brand.logo}
                 alt={brand.name}
-                className="max-h-14 md:max-h-16 w-auto object-contain grayscale opacity-50 hover:grayscale-0 hover:opacity-100 transition-all duration-500"
+                className="max-h-20 md:max-h-24 w-auto object-contain opacity-50 hover:opacity-100 transition-all duration-500"
+                style={{
+                  filter: 'grayscale(1)',
+                  mixBlendMode: 'multiply',
+                }}
+                onMouseEnter={(e) => {
+                  (e.target as HTMLImageElement).style.filter = 'grayscale(0)';
+                }}
+                onMouseLeave={(e) => {
+                  (e.target as HTMLImageElement).style.filter = 'grayscale(1)';
+                }}
               />
             </div>
           ))}
