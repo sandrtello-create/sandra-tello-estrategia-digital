@@ -155,7 +155,7 @@ const HeroSection = () => {
               </div>
 
               <h1 className="font-serif text-[32px] md:text-[40px] lg:text-[46px] font-semibold text-white leading-[1.15] mb-2">
-                Estrategia digital, inteligencia artificial y negocio
+                Consultora estratégica en inteligencia artificial y marca personal
               </h1>
 
               <p className="font-serif text-[22px] md:text-[26px] lg:text-[30px] italic gold-gradient-text mb-6 leading-snug">
