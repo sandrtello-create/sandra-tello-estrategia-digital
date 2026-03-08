@@ -94,7 +94,7 @@ const HeroSection = () => {
                   }}
                 >
                   <span
-                    className="inline-block px-5 py-2 rounded-md font-sans text-[15px] md:text-[17px] font-medium text-white"
+                    className="inline-block px-5 py-2 rounded-md font-sans text-[15px] md:text-[17px] font-medium text-gray-900"
                     style={{
                       background: rotatingPhrases[currentPhrase].bg,
                       boxShadow: '0 4px 20px rgba(0,0,0,0.3)',
