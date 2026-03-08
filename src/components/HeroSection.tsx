@@ -150,7 +150,7 @@ const HeroSection = () => {
               <div className="flex items-center gap-3 mb-6">
                 <div className="h-px w-10" style={{ background: 'linear-gradient(90deg, #a47633, #cbaa60)' }} />
                 <p className="font-sans text-[11px] font-semibold uppercase tracking-[0.25em] gold-gradient-text">
-                  Consultoría estratégica · IA · Marca personal
+                  Consultoría estratégica, IA, marketing y marca personal
                 </p>
               </div>
 
@@ -159,7 +159,7 @@ const HeroSection = () => {
               </h1>
 
               <p className="font-serif text-[22px] md:text-[26px] lg:text-[30px] italic gold-gradient-text mb-6 leading-snug">
-                Crea la vida que amas.
+                Estrategia de negocio con IA
               </p>
 
               {/* Rotating phrases */}
