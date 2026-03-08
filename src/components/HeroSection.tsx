@@ -44,6 +44,37 @@ const useCountUp = (target: number, isVisible: boolean, duration = 2000) => {
   return count;
 };
 
+const StatCard = ({ stat, isVisible, delay }: { stat: typeof stats[0]; isVisible: boolean; delay: number }) => {
+  const count = useCountUp(stat.value, isVisible);
+  const [show, setShow] = useState(false);
+
+  useEffect(() => {
+    if (isVisible) {
+      const timer = setTimeout(() => setShow(true), delay);
+      return () => clearTimeout(timer);
+    }
+  }, [isVisible, delay]);
+
+  return (
+    <div
+      className="relative p-5 backdrop-blur-sm transition-all duration-700"
+      style={{
+        opacity: show ? 1 : 0,
+        transform: show ? 'translateY(0)' : 'translateY(20px)',
+        background: 'linear-gradient(135deg, rgba(203,170,96,0.08), rgba(255,255,255,0.02))',
+        border: '1px solid',
+        borderImage: 'linear-gradient(135deg, rgba(203,170,96,0.4), rgba(203,170,96,0.1)) 1',
+      }}
+    >
+      <p className="text-[10px] font-sans uppercase tracking-[0.2em] gold-gradient-text mb-3 font-semibold">{stat.label}</p>
+      <p className="font-serif text-4xl md:text-5xl font-semibold gold-gradient-text leading-none mb-2">
+        {stat.prefix}{count}{stat.suffix}
+      </p>
+      <p className="text-white/45 text-xs font-sans leading-relaxed">{stat.description}</p>
+    </div>
+  );
+};
+
 const HeroSection = () => {
   const [currentPhrase, setCurrentPhrase] = useState(0);
   const [isVisible, setIsVisible] = useState(true);
