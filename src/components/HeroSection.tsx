@@ -4,10 +4,10 @@ import sandraPhoto from "@/assets/sandra-tello-hero.jpg";
 import logoWatermark from "@/assets/sandra-tello-logo.png";
 
 const rotatingPhrases = [
-  "IA con criterio estratégico",
-  "Marca personal que genera negocio",
-  "Estrategia digital para profesionales",
-  "Inteligencia Humana Estratégica™",
+  { text: "IA con criterio estratégico", bg: "linear-gradient(135deg, #a47633, #cbaa60)" },
+  { text: "Marca personal que genera negocio", bg: "linear-gradient(135deg, #2a4a7f, #4a7abf)" },
+  { text: "Estrategia digital para profesionales", bg: "linear-gradient(135deg, #6b3fa0, #9b6fd0)" },
+  { text: "Inteligencia Humana Estratégica™", bg: "linear-gradient(135deg, #a47633, #d4af37)" },
 ];
 
 const HeroSection = () => {
