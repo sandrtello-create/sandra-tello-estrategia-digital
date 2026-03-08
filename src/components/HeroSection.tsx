@@ -150,7 +150,7 @@ const HeroSection = () => {
               <div className="flex items-center gap-3 mb-6">
                 <div className="h-px w-10" style={{ background: 'linear-gradient(90deg, #a47633, #cbaa60)' }} />
                 <p className="font-sans text-[11px] font-semibold uppercase tracking-[0.25em] gold-gradient-text">
-                  Consultoría estratégica · IA · Marca personal
+                  Consultoría estratégica, IA, marketing y marca personal
                 </p>
               </div>
 
