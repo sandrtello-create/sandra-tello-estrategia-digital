@@ -1,6 +1,6 @@
 import { useState, useEffect } from "react";
 import { Menu, X } from "lucide-react";
-import { Button } from "@/components/ui/button";
+import logo from "@/assets/sandra-tello-logo.png";
 
 const navLinks = [
   { label: "Inicio", href: "#inicio" },
@@ -25,13 +25,8 @@ const Navbar = () => {
     <nav className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${scrolled ? "bg-background/95 backdrop-blur-md shadow-sm" : "bg-transparent"}`}>
       <div className="container mx-auto px-6 lg:px-8">
         <div className="flex items-center justify-between h-20">
-          <a href="#inicio" className="flex flex-col">
-            <span className="font-serif text-2xl font-bold text-primary tracking-tight leading-none">
-              Sandra Tello
-            </span>
-            <span className="text-accent text-[10px] font-medium tracking-[0.15em] uppercase">
-              Estrategia · IA · Vida
-            </span>
+          <a href="#inicio" className="flex items-center gap-3">
+            <img src={logo} alt="Sandra Tello" className="h-12 w-auto" />
           </a>
 
           {/* Desktop nav */}
@@ -40,20 +35,20 @@ const Navbar = () => {
               <a
                 key={link.href}
                 href={link.href}
-                className="text-[13px] font-semibold uppercase tracking-[0.12em] text-foreground/70 hover:text-primary transition-colors"
+                className={`text-[13px] font-semibold uppercase tracking-[0.12em] transition-colors ${scrolled ? "text-foreground/70 hover:text-primary" : "text-white/70 hover:text-white"}`}
               >
                 {link.label}
               </a>
             ))}
-            <Button className="bg-accent text-accent-foreground hover:bg-gold-light rounded-none px-7 py-5 font-semibold uppercase tracking-[0.15em] text-[12px] shadow-none border border-accent">
+            <button className="btn-gold-gradient rounded-none px-7 py-3 font-semibold uppercase tracking-[0.15em] text-[12px]">
               Trabaja conmigo ›
-            </Button>
+            </button>
           </div>
 
           {/* Mobile toggle */}
           <button
             onClick={() => setIsOpen(!isOpen)}
-            className="lg:hidden p-2 text-foreground"
+            className={`lg:hidden p-2 ${scrolled ? "text-foreground" : "text-white"}`}
             aria-label="Toggle menu"
           >
             {isOpen ? <X size={24} /> : <Menu size={24} />}
@@ -74,9 +69,9 @@ const Navbar = () => {
                   {link.label}
                 </a>
               ))}
-              <Button className="bg-accent text-accent-foreground hover:bg-gold-light rounded-none w-fit px-7 mt-2 font-semibold uppercase tracking-[0.15em] text-[12px]">
+              <button className="btn-gold-gradient rounded-none w-fit px-7 py-3 mt-2 font-semibold uppercase tracking-[0.15em] text-[12px]">
                 Trabaja conmigo ›
-              </Button>
+              </button>
             </div>
           </div>
         )}
