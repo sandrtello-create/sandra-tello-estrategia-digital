@@ -1,8 +1,29 @@
+import { useState, useEffect } from "react";
 import { ArrowRight, ChevronDown } from "lucide-react";
 import sandraPhoto from "@/assets/sandra-tello-hero.jpg";
 import logoWatermark from "@/assets/sandra-tello-logo.png";
 
+const rotatingPhrases = [
+  "IA con criterio estratégico",
+  "Marca personal que genera negocio",
+  "Estrategia digital para profesionales",
+  "Inteligencia Humana Estratégica™",
+];
+
 const HeroSection = () => {
+  const [currentPhrase, setCurrentPhrase] = useState(0);
+  const [isVisible, setIsVisible] = useState(true);
+
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setIsVisible(false);
+      setTimeout(() => {
+        setCurrentPhrase((prev) => (prev + 1) % rotatingPhrases.length);
+        setIsVisible(true);
+      }, 400);
+    }, 3500);
+    return () => clearInterval(interval);
+  }, []);
   return (
     <section id="inicio" className="relative overflow-hidden pt-28">
       <div className="relative min-h-[calc(100vh-7rem)] flex items-center" style={{
