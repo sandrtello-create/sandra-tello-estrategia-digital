@@ -173,23 +173,11 @@ const HeroSection = () => {
               </div>
 
               {/* Credibility markers */}
-              <div className="mt-16 pt-8 border-t border-white/10">
-                <div className="grid grid-cols-2 lg:grid-cols-3 gap-4">
-                  <div className="border border-white/15 p-5">
-                    <p className="text-[11px] font-sans uppercase tracking-wider text-white/50 mb-2">Experiencia</p>
-                    <p className="font-serif text-3xl md:text-4xl font-semibold text-white mb-1">+15</p>
-                    <p className="text-white/50 text-xs font-sans">años de experiencia profesional</p>
-                  </div>
-                  <div className="border border-white/15 p-5">
-                    <p className="text-[11px] font-sans uppercase tracking-wider text-white/50 mb-2">Formación</p>
-                    <p className="font-serif text-3xl md:text-4xl font-semibold text-white mb-1">+500</p>
-                    <p className="text-white/50 text-xs font-sans">profesionales formados</p>
-                  </div>
-                  <div className="border border-white/15 p-5 col-span-2 lg:col-span-1">
-                    <p className="text-[11px] font-sans uppercase tracking-wider text-white/50 mb-2">Impacto</p>
-                    <p className="font-serif text-3xl md:text-4xl font-semibold text-white mb-1">+300</p>
-                    <p className="text-white/50 text-xs font-sans">empresas y emprendedores asesorados</p>
-                  </div>
+              <div ref={statsRef} className="mt-16 pt-8 border-t border-white/10">
+                <div className="grid grid-cols-3 gap-6">
+                  {stats.map((stat, i) => (
+                    <StatCard key={i} stat={stat} isVisible={statsVisible} delay={i * 200} />
+                  ))}
                 </div>
               </div>
             </div>
