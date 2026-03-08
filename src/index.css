@@ -134,3 +134,9 @@
   background: linear-gradient(135deg, #b8862e, #d4b36a, #e5c56a);
   box-shadow: 0 8px 24px -4px rgba(164, 118, 51, 0.35);
 }
+
+@keyframes shimmer {
+  0% { background-position: 0% center; }
+  50% { background-position: 200% center; }
+  100% { background-position: 0% center; }
+}
