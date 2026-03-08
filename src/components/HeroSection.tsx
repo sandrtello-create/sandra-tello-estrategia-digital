@@ -57,7 +57,7 @@ const StatCard = ({ stat, isVisible, delay }: { stat: typeof stats[0]; isVisible
 
   return (
     <div
-      className="relative p-5 backdrop-blur-sm transition-all duration-700"
+      className="relative p-3 md:p-5 backdrop-blur-sm transition-all duration-700"
       style={{
         opacity: show ? 1 : 0,
         transform: show ? 'translateY(0)' : 'translateY(20px)',
@@ -67,10 +67,10 @@ const StatCard = ({ stat, isVisible, delay }: { stat: typeof stats[0]; isVisible
       }}
     >
       <p className="text-[10px] font-sans uppercase tracking-[0.2em] gold-gradient-text mb-3 font-semibold">{stat.label}</p>
-      <p className="font-serif text-4xl md:text-5xl font-semibold gold-gradient-text leading-none mb-2">
+      <p className="font-serif text-2xl sm:text-3xl md:text-5xl font-semibold gold-gradient-text leading-none mb-2">
         {stat.prefix}{count}{stat.suffix}
       </p>
-      <p className="text-white/45 text-xs font-sans leading-relaxed">{stat.description}</p>
+      <p className="text-white/45 text-[10px] md:text-xs font-sans leading-relaxed">{stat.description}</p>
     </div>
   );
 };
@@ -198,7 +198,7 @@ const HeroSection = () => {
 
               {/* Credibility markers */}
               <div ref={statsRef} className="mt-16 pt-8 border-t border-white/10">
-                <div className="grid grid-cols-3 gap-6">
+                <div className="grid grid-cols-3 gap-2 sm:gap-3 md:gap-6">
                   {stats.map((stat, i) => (
                     <StatCard key={i} stat={stat} isVisible={statsVisible} delay={i * 200} />
                   ))}

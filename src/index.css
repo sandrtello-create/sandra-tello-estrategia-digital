@@ -148,8 +148,15 @@
 
 .animate-scroll-brands {
   animation: scroll-brands 18s linear infinite;
+  will-change: transform;
 }
 
 .animate-scroll-brands:hover {
   animation-play-state: paused;
+}
+
+@media (max-width: 768px) {
+  .animate-scroll-brands {
+    animation-duration: 10s;
+  }
 }
