@@ -6,15 +6,16 @@ import shell from "@/assets/brands/shell.png";
 import sanitas from "@/assets/brands/sanitas.png";
 import hiperdino from "@/assets/brands/hiperdino.png";
 import volkswagen from "@/assets/brands/volkswagen.png";
-import opel from "@/assets/brands/opel.jfif";
+import opel from "@/assets/brands/opel.png";
 import carglass from "@/assets/brands/carglass.png";
 import apple from "@/assets/brands/apple.png";
 import zipgenial from "@/assets/brands/zipgenial.jfif";
 import mediamarkt from "@/assets/brands/mediamarkt.png";
 import eoi from "@/assets/brands/eoi.png";
 import mainjobs from "@/assets/brands/mainjobs.png";
-import fiat from "@/assets/brands/fiat.jfif";
+import fiat from "@/assets/brands/fiat.png";
 import nespresso from "@/assets/brands/nespresso.png";
+import diarioAvisos from "@/assets/brands/diario-avisos.png";
 
 const brands = [
   { name: "Bacardi", logo: bacardi },
