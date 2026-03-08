@@ -110,9 +110,11 @@ const HeroSection = () => {
               <p
                 className="font-serif text-[28px] md:text-[32px] italic text-center mb-10 leading-snug font-semibold"
                 style={{
-                  background: 'linear-gradient(135deg, #F472B6, #cbaa60, #ffffff, #20E3B2, #5C7CFA, #F472B6)',
+                  background: 'linear-gradient(90deg, #F472B6, #cbaa60, #ffffff, #20E3B2, #5C7CFA, #F472B6)',
                   backgroundSize: '300% auto',
+                  backgroundClip: 'text',
                   WebkitBackgroundClip: 'text',
+                  color: 'transparent',
                   WebkitTextFillColor: 'transparent',
                   animation: 'shimmer 6s ease infinite',
                 }}
