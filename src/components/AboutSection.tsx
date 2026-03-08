@@ -5,9 +5,9 @@ const AboutSection = () => {
   return (
     <section id="sobre" className="py-20 lg:py-28 bg-background">
       <div className="container mx-auto px-6 lg:px-8">
-        <div className="grid lg:grid-cols-[45%_55%] items-start">
+        <div className="grid lg:grid-cols-2 gap-12 lg:gap-16 items-start">
           {/* Photo */}
-          <div className="relative z-0">
+          <div>
             <div className="aspect-[3/4] overflow-hidden">
               <img
                 src={sandraAbout}
@@ -17,17 +17,14 @@ const AboutSection = () => {
             </div>
           </div>
 
-          {/* Content - starts overlapping the photo slightly */}
-          <div className="lg:-ml-8 relative z-10">
-            {/* Headline area - aligned to top of photo */}
-            <div className="pt-8 lg:pt-6 mb-8">
-              <p className="font-sans text-[13px] font-semibold uppercase tracking-[0.2em] text-muted-foreground mb-2">
-                ¡Hola!
-              </p>
-              <h2 className="font-serif text-5xl md:text-6xl lg:text-[80px] xl:text-[90px] font-light text-foreground leading-[1.05] tracking-tight">
-                SOY SANDRA.
-              </h2>
-            </div>
+          {/* Content */}
+          <div>
+            <p className="font-sans text-[13px] font-semibold uppercase tracking-[0.2em] text-muted-foreground mb-2">
+              ¡Hola!
+            </p>
+            <h2 className="font-serif text-5xl md:text-6xl lg:text-7xl font-light text-foreground leading-[1.05] tracking-tight mb-8">
+              SOY SANDRA.
+            </h2>
 
             <p className="font-serif text-2xl md:text-[26px] text-foreground leading-snug mb-8">
               Consultora estratégica de{" "}
