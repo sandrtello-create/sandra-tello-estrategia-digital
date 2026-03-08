@@ -83,16 +83,17 @@ const HeroSection = () => {
                 Consultora estratégica y formadora en inteligencia artificial y marca personal
               </h1>
 
-              <div className="h-10 mb-10 flex items-center">
+              <div className="h-14 mb-10 flex items-center">
                 <p
-                  className="font-sans text-[18px] md:text-[20px] font-medium tracking-wide gold-gradient-text transition-all duration-400"
+                  className="font-sans text-[24px] md:text-[28px] lg:text-[32px] font-bold tracking-wide text-white"
                   style={{
                     opacity: isVisible ? 1 : 0,
-                    transform: isVisible ? 'translateY(0)' : 'translateY(8px)',
-                    transition: 'opacity 0.4s ease, transform 0.4s ease',
+                    transform: isVisible ? 'translateY(0) scale(1)' : 'translateY(20px) scale(0.95)',
+                    transition: 'opacity 0.5s ease, transform 0.5s ease',
+                    textShadow: '0 0 40px rgba(203,170,96,0.3)',
                   }}
                 >
-                  {rotatingPhrases[currentPhrase]}
+                  <span className="gold-gradient-text">{rotatingPhrases[currentPhrase]}</span>
                 </p>
               </div>
 
