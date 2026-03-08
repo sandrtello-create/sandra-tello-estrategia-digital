@@ -4,10 +4,10 @@ import sandraPhoto from "@/assets/sandra-tello-hero.jpg";
 import logoWatermark from "@/assets/sandra-tello-logo.png";
 
 const rotatingPhrases = [
-  "IA con criterio estratégico",
-  "Marca personal que genera negocio",
-  "Estrategia digital para profesionales",
-  "Inteligencia Humana Estratégica™",
+  { text: "IA con criterio estratégico", bg: "linear-gradient(135deg, #a47633, #cbaa60)" },
+  { text: "Marca personal que genera negocio", bg: "linear-gradient(135deg, #2a4a7f, #4a7abf)" },
+  { text: "Estrategia digital para profesionales", bg: "linear-gradient(135deg, #6b3fa0, #9b6fd0)" },
+  { text: "Inteligencia Humana Estratégica™", bg: "linear-gradient(135deg, #a47633, #d4af37)" },
 ];
 
 const HeroSection = () => {
@@ -85,16 +85,25 @@ const HeroSection = () => {
 
               {/* Rotating phrases */}
               <div className="mb-4 overflow-hidden">
-                <p
-                  className="font-sans text-[20px] md:text-[24px] font-bold"
+                <div
+                  className="inline-block"
                   style={{
                     opacity: isVisible ? 1 : 0,
-                    transform: isVisible ? 'translateY(0)' : 'translateY(16px)',
-                    transition: 'opacity 0.5s ease, transform 0.5s ease',
+                    transform: isVisible ? 'translateY(0) scale(1)' : 'translateY(20px) scale(0.95)',
+                    transition: 'all 0.5s cubic-bezier(0.16, 1, 0.3, 1)',
                   }}
                 >
-                  <span className="gold-gradient-text">{rotatingPhrases[currentPhrase]}</span>
-                </p>
+                  <span
+                    className="inline-block px-5 py-2 rounded-md font-sans text-[20px] md:text-[24px] font-bold text-white"
+                    style={{
+                      background: rotatingPhrases[currentPhrase].bg,
+                      boxShadow: '0 4px 20px rgba(0,0,0,0.3)',
+                      transition: 'background 0.5s ease',
+                    }}
+                  >
+                    {rotatingPhrases[currentPhrase].text}
+                  </span>
+                </div>
               </div>
 
                {/* Crea la vida que amas - Purpose statement */}
