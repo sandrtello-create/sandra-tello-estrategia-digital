@@ -27,66 +27,44 @@ const AboutSection = () => {
             </h2>
 
             {/* Opening hook */}
-            <p className="font-serif text-xl md:text-2xl text-foreground leading-snug mb-6 italic">
+            <p className="font-serif text-xl md:text-2xl text-foreground leading-snug mb-8 italic">
               «Cuando no paras a decidir, otros lo hacen por ti.»
             </p>
 
             <p className="text-muted-foreground text-[17px] leading-relaxed mb-5">
-              Durante mucho tiempo viví sin cuestionar esa lógica. Hasta que entendí que hay 3 preguntas que{" "}
-              <strong className="text-foreground font-semibold">NO son opcionales</strong> cuando tu valor está en juego:{" "}
-              <strong className="text-foreground font-semibold">qué, cómo y para qué.</strong>
+              Durante muchos años trabajé dentro del mundo corporativo siguiendo una lógica que muchas personas aceptan sin cuestionar: trabajar, cumplir, avanzar… y esperar que el valor acabe reconociéndose.
+            </p>
+
+            <p className="text-foreground text-[17px] leading-relaxed mb-5 font-medium">
+              Hasta que entendí algo importante.
+            </p>
+
+            <p className="text-foreground text-lg leading-relaxed mb-6 font-semibold">
+              Cuando no decides tu posicionamiento, otros acaban decidiendo tu valor.
             </p>
 
             <p className="text-muted-foreground text-[17px] leading-relaxed mb-5">
-              +15 años en el mundo corporativo terminaron con un despido tras una baja por accidente.
-              Por videoconferencia, y esta frase:{" "}
-              <em className="text-foreground">«Ya no eres un perfil para marketing digital».</em>
+              Hoy trabajo con profesionales y empresas que quieren hacer justamente lo contrario:{" "}
+              <strong className="text-foreground font-semibold">
+                pensar con estrategia, integrar inteligencia artificial con criterio
+              </strong>{" "}
+              y convertir su experiencia en autoridad y negocio.
             </p>
 
-            <p className="text-muted-foreground text-[17px] leading-relaxed mb-5">
-              ¡Inhumanos! Pensé.{" "}
-              <strong className="text-foreground font-semibold">Bendición, digo hoy.</strong> 😉
-            </p>
-
-            <p className="text-muted-foreground text-[17px] leading-relaxed mb-5">
-              Da igual que hubiera liderado campañas nacionales y digitales en +500 estaciones de servicio
-              o que fuera la única del equipo con carreras universitarias, FP Superior y máster en Marketing.{" "}
-              <strong className="text-foreground font-semibold">Mi valor dejó de contar.</strong>
+            <p className="text-muted-foreground text-[17px] leading-relaxed mb-8">
+              Porque el marketing sin estrategia es ruido.
+              <br />
+              Y la tecnología sin criterio no transforma nada.
             </p>
 
             {/* Highlighted quote */}
-            <div className="mb-6 inline-block">
-              <p className="bg-gold/15 px-5 py-3 font-sans text-[17px] font-semibold text-foreground leading-relaxed uppercase tracking-wide">
-                Cuando no decides tu posicionamiento,
+            <div className="mb-8 inline-block">
+              <p className="bg-gold/15 px-5 py-3 font-sans text-[17px] font-semibold text-foreground leading-relaxed">
+                Tu valor no se improvisa.
                 <br />
-                otros deciden tu valor.
+                Se decide.
               </p>
             </div>
-
-            <p className="text-muted-foreground text-[17px] leading-relaxed mb-5">
-              De ahí nace mi propósito: trabajo con empresas y profesionales que deciden integrar{" "}
-              <span className="text-gold font-semibold">IA, estrategia y marca personal</span>{" "}
-              para convertir su experiencia en autoridad y negocio.
-            </p>
-
-            <p className="text-muted-foreground text-[17px] leading-relaxed mb-5">
-              No para exhibirse.{" "}
-              <strong className="text-foreground font-semibold">
-                SÍ para ocupar su lugar, romper barreras, generar oportunidades rentables y VIVIR.
-              </strong>
-            </p>
-
-            <p className="text-muted-foreground text-[17px] leading-relaxed mb-5">
-              He creado mi propio marco:{" "}
-              <strong className="text-foreground font-semibold">
-                Inteligencia Humana Estratégica™
-              </strong>
-              . Un sistema que alinea mentalidad, IA, marketing, vida y negocio para que con la tecnología impulses tu valor.
-            </p>
-
-            <p className="text-foreground text-[17px] leading-relaxed mb-8 font-medium">
-              Desde la coherencia. Porque la confianza convierte antes que cualquier algoritmo.
-            </p>
 
             {/* CTA */}
             <a
