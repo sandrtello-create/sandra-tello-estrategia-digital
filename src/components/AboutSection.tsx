@@ -7,7 +7,7 @@ const AboutSection = () => {
     <section id="sobre" className="py-20 lg:py-28 bg-background relative overflow-hidden">
       {/* Watermark pattern background */}
       <div
-        className="absolute inset-0 opacity-[0.03] pointer-events-none"
+        className="absolute inset-0 opacity-[0.07] pointer-events-none"
         style={{
           backgroundImage: `url(${logoWatermark})`,
           backgroundSize: '80px 80px',
@@ -94,7 +94,7 @@ const AboutSection = () => {
 
             {/* CTA */}
             <a
-              href="#servicios"
+              href="/sobre-mi"
               className="bg-primary text-primary-foreground p-6 flex items-center justify-between cursor-pointer hover:bg-primary/90 transition-colors duration-300 group"
             >
               <div>
@@ -111,7 +111,7 @@ const AboutSection = () => {
         </div>
 
         {/* "Eterna aprendiz" band — spans full width below the photo */}
-        <div className="mt-10 lg:-mt-16 bg-primary/5 border-t border-border py-8 px-6 lg:px-10">
+        <div className="mt-12 bg-primary/5 border-t border-border py-8 px-6 lg:px-10">
           <p className="font-serif text-xl md:text-2xl lg:text-3xl text-foreground leading-snug font-medium max-w-4xl">
             Me considero una <span className="italic">eterna aprendiz</span>. La tecnología cambia, los negocios evolucionan y la estrategia exige algo fundamental:{" "}
             <span className="text-accent">curiosidad, criterio y humanidad</span>.
