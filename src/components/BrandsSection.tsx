@@ -73,17 +73,8 @@ const BrandsSection = () => {
               <img
                 src={brand.logo}
                 alt={brand.name}
-                className="max-h-20 md:max-h-24 w-auto object-contain opacity-50 hover:opacity-100 transition-all duration-500"
-                style={{
-                  filter: 'grayscale(1)',
-                  mixBlendMode: 'multiply',
-                }}
-                onMouseEnter={(e) => {
-                  (e.target as HTMLImageElement).style.filter = 'grayscale(0)';
-                }}
-                onMouseLeave={(e) => {
-                  (e.target as HTMLImageElement).style.filter = 'grayscale(1)';
-                }}
+                loading="lazy"
+                className="max-h-24 md:max-h-28 w-auto object-contain opacity-100 transition-transform duration-300 hover:scale-105"
               />
             </div>
           ))}
