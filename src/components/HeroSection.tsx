@@ -4,10 +4,10 @@ import sandraPhoto from "@/assets/sandra-tello-hero.jpg";
 import logoWatermark from "@/assets/sandra-tello-logo.png";
 
 const rotatingPhrases = [
-  { text: "IA con criterio estratégico", bg: "linear-gradient(135deg, #20E3B2, #7EE8FA)" },
-  { text: "Marca personal que genera negocio", bg: "linear-gradient(135deg, #3A63F3, #5C7CFA)" },
-  { text: "Estrategia digital para profesionales", bg: "linear-gradient(135deg, #F472B6, #FBCFE8)" },
-  { text: "Inteligencia Humana Estratégica™", bg: "linear-gradient(135deg, #7DB7E8, #dae2eb)" },
+  { text: "IA para negocios", border: "linear-gradient(135deg, #20E3B2, #7EE8FA)" },
+  { text: "Formación en IA", border: "linear-gradient(135deg, #3A63F3, #5C7CFA)" },
+  { text: "Consultoría estratégica digital", border: "linear-gradient(135deg, #F472B6, #FBCFE8)" },
+  { text: "Marca personal profesional", border: "linear-gradient(135deg, #7DB7E8, #dae2eb)" },
 ];
 
 const HeroSection = () => {
@@ -94,11 +94,12 @@ const HeroSection = () => {
                   }}
                 >
                   <span
-                    className="inline-block px-5 py-2 rounded-md font-sans text-[15px] md:text-[17px] font-medium text-gray-900"
+                    className="inline-block px-5 py-2 rounded-md font-sans text-[15px] md:text-[17px] font-medium text-white bg-transparent"
                     style={{
-                      background: rotatingPhrases[currentPhrase].bg,
-                      boxShadow: '0 4px 20px rgba(0,0,0,0.3)',
-                      transition: 'background 0.5s ease',
+                      border: '2px solid transparent',
+                      borderImage: rotatingPhrases[currentPhrase].border,
+                      borderImageSlice: 1,
+                      transition: 'border-image 0.5s ease',
                     }}
                   >
                     {rotatingPhrases[currentPhrase].text}
