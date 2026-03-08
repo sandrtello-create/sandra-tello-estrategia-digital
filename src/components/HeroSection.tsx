@@ -119,7 +119,7 @@ const HeroSection = () => {
             src={logoWatermark}
             alt=""
             aria-hidden="true"
-            className="absolute right-[-5%] top-1/2 -translate-y-1/2 w-[900px] h-auto opacity-[0.07] pointer-events-none select-none"
+            className="absolute right-[-5%] top-1/2 -translate-y-1/2 w-[900px] h-auto opacity-[0.05] pointer-events-none select-none"
           />
         </div>
 
