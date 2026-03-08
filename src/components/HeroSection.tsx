@@ -107,7 +107,16 @@ const HeroSection = () => {
               </div>
 
                {/* Crea la vida que amas - Purpose statement */}
-              <p className="font-serif text-[28px] md:text-[32px] italic text-center gold-gradient-text mb-10 leading-snug font-semibold">
+              <p
+                className="font-serif text-[28px] md:text-[32px] italic text-center mb-10 leading-snug font-semibold"
+                style={{
+                  background: 'linear-gradient(135deg, #F472B6, #ffffff, #cbaa60, #F472B6)',
+                  backgroundSize: '200% auto',
+                  WebkitBackgroundClip: 'text',
+                  WebkitTextFillColor: 'transparent',
+                  animation: 'shimmer 4s ease infinite',
+                }}
+              >
                 Crea la vida que amas.
               </p>
 
