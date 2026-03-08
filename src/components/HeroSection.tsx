@@ -67,7 +67,7 @@ const StatCard = ({ stat, isVisible, delay }: { stat: typeof stats[0]; isVisible
       }}
     >
       <p className="text-[10px] font-sans uppercase tracking-[0.2em] gold-gradient-text mb-3 font-semibold">{stat.label}</p>
-      <p className="font-serif text-4xl md:text-5xl font-semibold gold-gradient-text leading-none mb-2">
+      <p className="font-serif text-2xl sm:text-3xl md:text-5xl font-semibold gold-gradient-text leading-none mb-2">
         {stat.prefix}{count}{stat.suffix}
       </p>
       <p className="text-white/45 text-xs font-sans leading-relaxed">{stat.description}</p>
