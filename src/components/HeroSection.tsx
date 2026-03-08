@@ -97,8 +97,8 @@ const HeroSection = () => {
                 </p>
               </div>
 
-              {/* Crea la vida que amas */}
-              <p className="font-serif text-[19px] italic text-white/50 mb-10 leading-snug">
+               {/* Crea la vida que amas */}
+              <p className="font-serif text-[28px] md:text-[32px] italic text-white/70 mb-10 leading-snug font-semibold">
                 Crea la vida que amas.
               </p>
 
