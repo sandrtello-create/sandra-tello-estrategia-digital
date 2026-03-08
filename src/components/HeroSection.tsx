@@ -126,8 +126,8 @@ const HeroSection = () => {
         <div className="container mx-auto px-6 lg:px-8 relative z-10">
           <div className="grid lg:grid-cols-2 gap-0 items-center min-h-screen">
             {/* Photo side */}
-            <div className="relative hidden lg:flex items-end justify-center order-1 self-end">
-              <div className="relative w-full max-w-[520px]">
+            <div className="relative flex items-center lg:items-end justify-center order-1 lg:self-end">
+              <div className="relative w-full max-w-[280px] md:max-w-[360px] lg:max-w-[520px]">
                 <div className="relative">
                   {/* Soft glow behind photo */}
                   <div className="absolute -inset-8 blur-3xl opacity-20" style={{ background: 'radial-gradient(ellipse, rgba(203,170,96,0.3) 0%, transparent 70%)' }} />
@@ -146,7 +146,7 @@ const HeroSection = () => {
             </div>
 
             {/* Text side */}
-            <div className="max-w-2xl order-2 pt-16 pb-20 lg:py-0 lg:pl-8">
+            <div className="max-w-2xl order-2 pt-8 pb-20 lg:py-0 lg:pl-8">
               <div className="flex items-center gap-3 mb-6">
                 <div className="h-px w-10" style={{ background: 'linear-gradient(90deg, #a47633, #cbaa60)' }} />
                 <p className="font-sans text-[11px] font-semibold uppercase tracking-[0.25em] gold-gradient-text">
