@@ -94,7 +94,7 @@ const AboutSection = () => {
 
             {/* CTA */}
             <a
-              href="#servicios"
+              href="/sobre-mi"
               className="bg-primary text-primary-foreground p-6 flex items-center justify-between cursor-pointer hover:bg-primary/90 transition-colors duration-300 group"
             >
               <div>
