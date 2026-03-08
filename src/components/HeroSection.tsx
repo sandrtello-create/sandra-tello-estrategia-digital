@@ -110,9 +110,9 @@ const HeroSection = () => {
               <p
                 className="font-serif text-[28px] md:text-[32px] italic text-center mb-10 leading-snug font-semibold text-transparent bg-clip-text"
                 style={{
-                  backgroundImage: 'linear-gradient(135deg, #F472B6, #ffffff, #cbaa60, #20E3B2, #5C7CFA, #F472B6)',
-                  backgroundSize: '300% auto',
-                  animation: 'shimmer 6s ease infinite',
+                  backgroundImage: 'linear-gradient(90deg, #F472B6, #ffffff, #cbaa60, #20E3B2, #5C7CFA, #F472B6, #ffffff, #cbaa60)',
+                  backgroundSize: '400% 100%',
+                  animation: 'shimmer 8s linear infinite',
                 }}
               >
                 Crea la vida que amas.
