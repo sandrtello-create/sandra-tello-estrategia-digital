@@ -27,11 +27,11 @@ const services = [
     details: {
       intro: "Trabajamos tu identidad profesional para que comuniques con claridad quién eres y qué te diferencia.",
       points: [
-        "Definición de propuesta de valor",
-        "Narrativa y mensaje diferenciador",
         "Estrategia de contenidos",
-        "Presencia digital coherente en todos tus canales",
+        "Narrativa y mensaje diferenciador",
+        "Definición de propuesta de valor",
         "Plan de visibilidad y posicionamiento",
+        "Presencia digital coherente en todos tus canales",
       ],
       closing: "Que cuando alguien busque lo que tú haces, te encuentre a ti.",
     },
