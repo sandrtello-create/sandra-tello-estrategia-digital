@@ -18,6 +18,13 @@ const HeroSection = () => {
             backgroundImage: 'linear-gradient(rgba(255,255,255,0.5) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,0.5) 1px, transparent 1px)',
             backgroundSize: '80px 80px'
           }} />
+          {/* Watermark logo */}
+          <img
+            src={logoWatermark}
+            alt=""
+            aria-hidden="true"
+            className="absolute right-[-5%] top-1/2 -translate-y-1/2 w-[600px] h-auto opacity-[0.04] pointer-events-none select-none"
+          />
         </div>
 
         <div className="container mx-auto px-6 lg:px-8 relative z-10">
