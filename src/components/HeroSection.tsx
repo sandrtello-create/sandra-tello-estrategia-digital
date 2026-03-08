@@ -57,7 +57,7 @@ const StatCard = ({ stat, isVisible, delay }: { stat: typeof stats[0]; isVisible
 
   return (
     <div
-      className="relative p-5 backdrop-blur-sm transition-all duration-700"
+      className="relative p-3 md:p-5 backdrop-blur-sm transition-all duration-700"
       style={{
         opacity: show ? 1 : 0,
         transform: show ? 'translateY(0)' : 'translateY(20px)',
