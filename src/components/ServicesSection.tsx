@@ -128,11 +128,11 @@ const ServicesSection = () => {
             Servicios
           </p>
           <h2 className="font-serif text-3xl md:text-4xl lg:text-[44px] font-medium text-primary mb-5 leading-[1.2]">
-            Soluciones estratégicas para tu crecimiento
+            Tu negocio no necesita más ruido. Necesita estrategia.
           </h2>
           <p className="text-muted-foreground text-[17px] leading-relaxed">
-            Cada servicio está diseñado para generar resultados reales,
-            combinando estrategia, criterio humano e inteligencia artificial.
+            Integro marketing, estrategia e inteligencia artificial para que
+            crezcas con dirección, no por inercia.
           </p>
         </div>
 
