@@ -35,6 +35,7 @@ const brands = [
   { name: "MainJobs", logo: mainjobs },
   { name: "Fiat", logo: fiat },
   { name: "Nespresso", logo: nespresso },
+  { name: "Diario de Avisos", logo: diarioAvisos },
 ];
 
 const BrandsSection = () => {
