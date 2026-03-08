@@ -155,7 +155,7 @@ const HeroSection = () => {
               </div>
 
               <h1 className="font-serif text-[32px] md:text-[40px] lg:text-[46px] font-semibold text-white leading-[1.15] mb-4">
-                Consultora estratégica y formadora en inteligencia artificial y marca personal
+                Consultora estratégica en inteligencia artificial y marca personal
               </h1>
 
               {/* Rotating phrases */}
