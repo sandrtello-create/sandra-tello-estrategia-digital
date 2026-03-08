@@ -130,18 +130,21 @@ const HeroSection = () => {
 
               {/* Credibility markers */}
               <div className="mt-16 pt-8 border-t border-white/10">
-                <div className="grid grid-cols-3 gap-8">
-                  <div>
-                    <p className="font-serif text-2xl font-semibold gold-gradient-text">+15</p>
-                    <p className="text-white/45 text-xs font-sans uppercase tracking-wider mt-1">Años de experiencia</p>
+                <div className="grid grid-cols-2 lg:grid-cols-3 gap-4">
+                  <div className="border border-white/15 p-5">
+                    <p className="text-[11px] font-sans uppercase tracking-wider text-white/50 mb-2">Experiencia</p>
+                    <p className="font-serif text-3xl md:text-4xl font-semibold text-white mb-1">+15</p>
+                    <p className="text-white/50 text-xs font-sans">años de experiencia profesional</p>
                   </div>
-                  <div>
-                    <p className="font-serif text-2xl font-semibold gold-gradient-text">+100K</p>
-                    <p className="text-white/45 text-xs font-sans uppercase tracking-wider mt-1">Comunidad digital</p>
+                  <div className="border border-white/15 p-5">
+                    <p className="text-[11px] font-sans uppercase tracking-wider text-white/50 mb-2">Formación</p>
+                    <p className="font-serif text-3xl md:text-4xl font-semibold text-white mb-1">+500</p>
+                    <p className="text-white/50 text-xs font-sans">profesionales formados</p>
                   </div>
-                  <div>
-                    <p className="font-serif text-2xl font-semibold gold-gradient-text">+500</p>
-                    <p className="text-white/45 text-xs font-sans uppercase tracking-wider mt-1">Profesionales formados</p>
+                  <div className="border border-white/15 p-5 col-span-2 lg:col-span-1">
+                    <p className="text-[11px] font-sans uppercase tracking-wider text-white/50 mb-2">Impacto</p>
+                    <p className="font-serif text-3xl md:text-4xl font-semibold text-white mb-1">+300</p>
+                    <p className="text-white/50 text-xs font-sans">empresas y emprendedores asesorados</p>
                   </div>
                 </div>
               </div>
