@@ -83,16 +83,17 @@ const HeroSection = () => {
                 Consultora estratégica y formadora en inteligencia artificial y marca personal
               </h1>
 
-              <div className="h-10 mb-10 flex items-center">
+              <div className="h-14 mb-10 flex items-center">
                 <p
-                  className="font-sans text-[18px] md:text-[20px] font-medium tracking-wide gold-gradient-text transition-all duration-400"
+                  className="font-sans text-[24px] md:text-[28px] lg:text-[32px] font-bold tracking-wide text-white"
                   style={{
                     opacity: isVisible ? 1 : 0,
-                    transform: isVisible ? 'translateY(0)' : 'translateY(8px)',
-                    transition: 'opacity 0.4s ease, transform 0.4s ease',
+                    transform: isVisible ? 'translateY(0) scale(1)' : 'translateY(20px) scale(0.95)',
+                    transition: 'opacity 0.5s ease, transform 0.5s ease',
+                    textShadow: '0 0 40px rgba(203,170,96,0.3)',
                   }}
                 >
-                  {rotatingPhrases[currentPhrase]}
+                  <span className="gold-gradient-text">{rotatingPhrases[currentPhrase]}</span>
                 </p>
               </div>
 
@@ -101,11 +102,11 @@ const HeroSection = () => {
               </p>
 
               <div className="flex flex-col sm:flex-row gap-4">
-                <button className="btn-gold-gradient rounded-none px-8 py-4 text-[12px] font-semibold uppercase tracking-[0.15em] inline-flex items-center justify-center gap-2">
+                <button className="btn-gold-gradient rounded-full px-10 py-5 text-[13px] font-bold uppercase tracking-[0.15em] inline-flex items-center justify-center gap-2 shadow-lg shadow-[rgba(164,118,51,0.3)]">
                   Agenda una sesión estratégica
                   <ArrowRight className="h-4 w-4" />
                 </button>
-                <button className="rounded-none px-8 py-4 text-[12px] font-semibold uppercase tracking-[0.15em] border border-white/15 text-white/80 hover:text-white hover:border-white/30 hover:bg-white/5 transition-all duration-300 inline-flex items-center justify-center">
+                <button className="rounded-full px-10 py-5 text-[13px] font-bold uppercase tracking-[0.15em] border-2 border-white/20 text-white hover:text-white hover:border-white/50 hover:bg-white/10 transition-all duration-300 inline-flex items-center justify-center backdrop-blur-sm">
                   Descubre cómo puedo ayudarte
                 </button>
               </div>
