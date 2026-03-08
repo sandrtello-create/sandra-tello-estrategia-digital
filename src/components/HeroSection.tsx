@@ -4,10 +4,10 @@ import sandraPhoto from "@/assets/sandra-tello-hero.jpg";
 import logoWatermark from "@/assets/sandra-tello-logo.png";
 
 const rotatingPhrases = [
-  { text: "IA para negocios", color: "#20E3B2" },
-  { text: "Formación en IA", color: "#5C7CFA" },
-  { text: "Consultoría estratégica digital", color: "#F472B6" },
-  { text: "Marca personal profesional", color: "#7EE8FA" },
+  { text: "Estrategia en marca personal" },
+  { text: "IA aplicada en negocio" },
+  { text: "Formación en inteligencia artificial" },
+  { text: "Consultoría estratégica digital" },
 ];
 
 const stats = [
