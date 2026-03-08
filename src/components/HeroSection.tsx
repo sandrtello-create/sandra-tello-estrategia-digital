@@ -108,13 +108,10 @@ const HeroSection = () => {
 
                {/* Crea la vida que amas - Purpose statement */}
               <p
-                className="font-serif text-[28px] md:text-[32px] italic text-center mb-10 leading-snug font-semibold"
+                className="font-serif text-[28px] md:text-[32px] italic text-center mb-10 leading-snug font-semibold text-transparent bg-clip-text"
                 style={{
-                  background: 'linear-gradient(135deg, #F472B6, #ffffff, #cbaa60, #20E3B2, #5C7CFA, #F472B6)',
+                  backgroundImage: 'linear-gradient(135deg, #F472B6, #ffffff, #cbaa60, #20E3B2, #5C7CFA, #F472B6)',
                   backgroundSize: '300% auto',
-                  backgroundClip: 'text',
-                  WebkitBackgroundClip: 'text',
-                  WebkitTextFillColor: 'transparent',
                   animation: 'shimmer 6s ease infinite',
                 }}
               >
