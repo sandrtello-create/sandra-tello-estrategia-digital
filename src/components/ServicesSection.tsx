@@ -10,11 +10,11 @@ const services = [
     details: {
       intro: "Analizo tu negocio para entender en qué punto está y qué oportunidades tiene.",
       points: [
-        "Análisis del mercado y sector",
         "Estudio de competencia",
+        "Análisis del mercado y sector",
         "Posicionamiento del negocio",
-        "Oportunidades de crecimiento y diferenciación",
         "Integración estratégica de inteligencia artificial",
+        "Oportunidades de crecimiento y diferenciación",
       ],
       closing: "A partir de ese diagnóstico, diseño una estrategia clara para que tu negocio crezca con dirección.",
     },
