@@ -68,13 +68,13 @@ const BrandsSection = () => {
           {duplicated.map((brand, i) => (
             <div
               key={`${brand.name}-${i}`}
-              className="flex-shrink-0 w-[180px] md:w-[220px] mx-8 md:mx-12 flex items-center justify-center h-24"
+              className="flex-shrink-0 w-[140px] mx-4 md:mx-6 flex items-center justify-center h-16"
             >
               <img
                 src={brand.logo}
                 alt={brand.name}
                 loading="lazy"
-                className="max-h-24 md:max-h-28 w-auto object-contain opacity-70 hover:opacity-100 transition-all duration-500 grayscale hover:grayscale-0 mix-blend-multiply"
+                className="h-10 w-auto max-w-[120px] object-contain opacity-70 hover:opacity-100 transition-all duration-500 grayscale hover:grayscale-0 mix-blend-multiply"
               />
             </div>
           ))}
