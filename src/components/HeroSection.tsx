@@ -79,13 +79,22 @@ const HeroSection = () => {
                 </p>
               </div>
 
-              <h1 className="font-serif text-[34px] md:text-[42px] lg:text-[50px] font-semibold text-white leading-[1.15] mb-10">
-                Integro inteligencia artificial y estrategia para convertir experiencia en autoridad.
+              <h1 className="font-serif text-[34px] md:text-[42px] lg:text-[50px] font-semibold text-white leading-[1.15] mb-6">
+                Consultora estratégica y formadora en inteligencia artificial y marca personal
               </h1>
 
-              <p className="text-white/55 text-[16px] leading-relaxed mb-5 font-sans font-medium tracking-wide">
-                Marca personal · IA · Estrategia de negocio para profesionales y empresas.
-              </p>
+              <div className="h-10 mb-10 flex items-center">
+                <p
+                  className="font-sans text-[18px] md:text-[20px] font-medium tracking-wide gold-gradient-text transition-all duration-400"
+                  style={{
+                    opacity: isVisible ? 1 : 0,
+                    transform: isVisible ? 'translateY(0)' : 'translateY(8px)',
+                    transition: 'opacity 0.4s ease, transform 0.4s ease',
+                  }}
+                >
+                  {rotatingPhrases[currentPhrase]}
+                </p>
+              </div>
 
               <p className="font-serif text-[22px] italic mb-14 gold-gradient-text leading-snug">
                 Crea la vida que amas.
