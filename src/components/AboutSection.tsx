@@ -47,7 +47,7 @@ const AboutSection = () => {
             </p>
 
             <p className="text-muted-foreground text-[17px] leading-relaxed mb-2">
-              Tendemos a seguir una lógica que pocas veces cuestionamos: trabajar, cumplir, avanzar… y esperar que el valor acabe reconociéndose.
+              Tendemos a seguir una lógica que pocas veces cuestionamos: trabajar, cumplir, avanzar… esperando que el valor acabe reconociéndose.
             </p>
             <p className="text-foreground text-[17px] leading-relaxed mb-8 font-medium tracking-wide">
               Día tras día. Año tras año.
@@ -113,7 +113,7 @@ const AboutSection = () => {
                 Sobre mí
               </p>
               <p className="font-serif text-xl font-medium">
-                ¿Quieres saber más de mí? Te espero.
+                La historia que cambió mi forma de entender el valor
               </p>
             </div>
             <ArrowUpRight className="h-6 w-6 group-hover:translate-x-1 group-hover:-translate-y-1 transition-transform duration-300" />
