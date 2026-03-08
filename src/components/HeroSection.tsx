@@ -1,8 +1,29 @@
+import { useState, useEffect } from "react";
 import { ArrowRight, ChevronDown } from "lucide-react";
 import sandraPhoto from "@/assets/sandra-tello-hero.jpg";
 import logoWatermark from "@/assets/sandra-tello-logo.png";
 
+const rotatingPhrases = [
+  "IA con criterio estratégico",
+  "Marca personal que genera negocio",
+  "Estrategia digital para profesionales",
+  "Inteligencia Humana Estratégica™",
+];
+
 const HeroSection = () => {
+  const [currentPhrase, setCurrentPhrase] = useState(0);
+  const [isVisible, setIsVisible] = useState(true);
+
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setIsVisible(false);
+      setTimeout(() => {
+        setCurrentPhrase((prev) => (prev + 1) % rotatingPhrases.length);
+        setIsVisible(true);
+      }, 400);
+    }, 3500);
+    return () => clearInterval(interval);
+  }, []);
   return (
     <section id="inicio" className="relative overflow-hidden pt-28">
       <div className="relative min-h-[calc(100vh-7rem)] flex items-center" style={{
@@ -58,13 +79,22 @@ const HeroSection = () => {
                 </p>
               </div>
 
-              <h1 className="font-serif text-[34px] md:text-[42px] lg:text-[50px] font-semibold text-white leading-[1.15] mb-10">
-                Integro inteligencia artificial y estrategia para convertir experiencia en autoridad.
+              <h1 className="font-serif text-[34px] md:text-[42px] lg:text-[50px] font-semibold text-white leading-[1.15] mb-6">
+                Consultora estratégica y formadora en inteligencia artificial y marca personal
               </h1>
 
-              <p className="text-white/55 text-[16px] leading-relaxed mb-5 font-sans font-medium tracking-wide">
-                Marca personal · IA · Estrategia de negocio para profesionales y empresas.
-              </p>
+              <div className="h-10 mb-10 flex items-center">
+                <p
+                  className="font-sans text-[18px] md:text-[20px] font-medium tracking-wide gold-gradient-text transition-all duration-400"
+                  style={{
+                    opacity: isVisible ? 1 : 0,
+                    transform: isVisible ? 'translateY(0)' : 'translateY(8px)',
+                    transition: 'opacity 0.4s ease, transform 0.4s ease',
+                  }}
+                >
+                  {rotatingPhrases[currentPhrase]}
+                </p>
+              </div>
 
               <p className="font-serif text-[22px] italic mb-14 gold-gradient-text leading-snug">
                 Crea la vida que amas.
