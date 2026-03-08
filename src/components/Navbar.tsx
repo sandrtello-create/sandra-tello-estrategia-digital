@@ -36,7 +36,7 @@ const Navbar = () => {
               <a
                 key={link.href}
                 href={link.href}
-                className={`text-[13px] font-semibold uppercase tracking-[0.12em] transition-colors ${scrolled ? "text-foreground/70 hover:text-primary" : "text-white/70 hover:text-white"}`}
+                className="text-[13px] font-semibold uppercase tracking-[0.12em] transition-colors text-foreground/70 hover:text-primary"
               >
                 {link.label}
               </a>
