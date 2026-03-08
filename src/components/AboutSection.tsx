@@ -7,7 +7,7 @@ const AboutSection = () => {
     <section id="sobre" className="py-20 lg:py-28 bg-background relative overflow-hidden">
       {/* Watermark pattern background */}
       <div
-        className="absolute inset-0 opacity-[0.03] pointer-events-none"
+        className="absolute inset-0 opacity-[0.07] pointer-events-none"
         style={{
           backgroundImage: `url(${logoWatermark})`,
           backgroundSize: '80px 80px',
