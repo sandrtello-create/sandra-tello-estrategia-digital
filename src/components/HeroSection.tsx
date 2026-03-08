@@ -113,11 +113,11 @@ const HeroSection = () => {
 
               <div className="flex flex-col sm:flex-row gap-4">
                 <button className="btn-gold-gradient rounded-full px-10 py-5 text-[13px] font-bold uppercase tracking-[0.15em] inline-flex items-center justify-center gap-2 shadow-lg shadow-[rgba(164,118,51,0.3)]">
-                  Agenda una sesión estratégica
+                  Agenda y diseña tu estrategia conmigo
                   <ArrowRight className="h-4 w-4" />
                 </button>
                 <button className="rounded-full px-10 py-5 text-[13px] font-bold uppercase tracking-[0.15em] border-2 border-white/20 text-white hover:text-white hover:border-white/50 hover:bg-white/10 transition-all duration-300 inline-flex items-center justify-center backdrop-blur-sm">
-                  Descubre cómo puedo ayudarte
+                  Descubre el método IHE™
                 </button>
               </div>
 
