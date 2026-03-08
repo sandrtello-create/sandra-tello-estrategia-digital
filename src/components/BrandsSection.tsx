@@ -39,7 +39,7 @@ const brands = [
 ];
 
 const BrandsSection = () => {
-  const duplicated = [...brands, ...brands];
+  const duplicated = [...brands, ...brands, ...brands];
 
   return (
     <section className="py-16 lg:py-20 bg-section-alt">
