@@ -1,5 +1,6 @@
 import { Button } from "@/components/ui/button";
 import { ArrowRight, Youtube, Instagram, Linkedin } from "lucide-react";
+import sandraPhoto from "@/assets/sandra-tello-hero.jpg";
 
 const socialStats = [
   { icon: Youtube, count: "50,000+", label: "YouTube" },
