@@ -28,7 +28,6 @@ const Navbar = () => {
           <a href="#inicio" className="flex items-center gap-3">
             <img src={logo} alt="Sandra Tello" className="h-16 w-auto" />
           </a>
-          </a>
 
           {/* Desktop nav */}
           <div className="hidden lg:flex items-center gap-8">
