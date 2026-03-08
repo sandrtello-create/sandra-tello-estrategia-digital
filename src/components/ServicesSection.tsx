@@ -29,31 +29,29 @@ const services = [
 
 const ServicesSection = () => {
   return (
-    <section id="servicios" className="py-20 lg:py-28">
+    <section id="servicios" className="py-20 lg:py-28 bg-section-alt">
       <div className="container mx-auto px-6 lg:px-8">
         <div className="text-center max-w-2xl mx-auto mb-16">
-          <p className="text-accent font-semibold text-xs uppercase tracking-[0.3em] mb-3">
+          <p className="text-accent font-semibold text-[11px] uppercase tracking-[0.25em] mb-4">
             Servicios
           </p>
-          <h2 className="font-serif text-3xl md:text-4xl lg:text-5xl font-bold text-primary mb-4">
+          <h2 className="font-serif text-3xl md:text-4xl lg:text-[44px] font-medium text-primary mb-5 leading-[1.2]">
             Soluciones estratégicas para tu crecimiento
           </h2>
-          <p className="text-muted-foreground text-lg">
+          <p className="text-muted-foreground text-[17px] leading-relaxed">
             Cada servicio está diseñado para generar resultados reales, combinando estrategia, 
             criterio humano e inteligencia artificial.
           </p>
         </div>
 
-        <div className="grid md:grid-cols-2 gap-8">
+        <div className="grid md:grid-cols-2 gap-6">
           {services.map((service, index) => (
             <div
               key={index}
-              className="group bg-card rounded-2xl p-8 border border-border/60 hover:border-accent/40 hover:shadow-xl hover:shadow-accent/5 transition-all duration-300"
+              className="group bg-background p-8 lg:p-10 border border-border/60 hover:border-accent/40 hover:shadow-lg transition-all duration-300"
             >
-              <div className="w-14 h-14 rounded-xl bg-gradient-to-br from-accent/15 to-gold-light/15 flex items-center justify-center mb-6 group-hover:from-accent/25 group-hover:to-gold-light/25 transition-all">
-                <service.icon className="h-7 w-7 text-accent" />
-              </div>
-              <h3 className="font-serif text-xl font-bold text-primary mb-3">
+              <service.icon className="h-7 w-7 text-accent mb-6" />
+              <h3 className="font-serif text-xl lg:text-2xl font-medium text-primary mb-3">
                 {service.title}
               </h3>
               <p className="text-muted-foreground leading-relaxed mb-5">
@@ -61,7 +59,7 @@ const ServicesSection = () => {
               </p>
               <a
                 href="#contacto"
-                className="inline-flex items-center text-accent font-semibold text-sm hover:gap-3 gap-2 transition-all"
+                className="inline-flex items-center text-accent font-semibold text-sm hover:gap-3 gap-2 transition-all uppercase tracking-wider text-[12px]"
               >
                 Saber más
                 <ArrowRight className="h-4 w-4" />

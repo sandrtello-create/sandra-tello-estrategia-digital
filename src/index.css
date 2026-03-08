@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&family=Inter:wght@300;400;500;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&family=Source+Sans+3:wght@300;400;500;600;700&display=swap');
 
 @tailwind base;
 @tailwind components;
@@ -6,45 +6,48 @@
 
 @layer base {
   :root {
-    --background: 220 20% 96%;
-    --foreground: 220 30% 25%;
+    --background: 0 0% 100%;
+    --foreground: 220 30% 20%;
 
     --card: 0 0% 100%;
-    --card-foreground: 220 30% 25%;
+    --card-foreground: 220 30% 20%;
 
     --popover: 0 0% 100%;
-    --popover-foreground: 220 30% 25%;
+    --popover-foreground: 220 30% 20%;
 
-    --primary: 220 45% 20%;
+    --primary: 220 40% 22%;
     --primary-foreground: 0 0% 100%;
 
-    --secondary: 220 15% 92%;
-    --secondary-foreground: 220 45% 20%;
+    --secondary: 216 20% 92%;
+    --secondary-foreground: 220 40% 22%;
 
-    --muted: 220 15% 90%;
-    --muted-foreground: 220 10% 50%;
+    --muted: 216 15% 90%;
+    --muted-foreground: 220 10% 46%;
 
-    --accent: 42 65% 52%;
+    --accent: 42 70% 50%;
     --accent-foreground: 0 0% 100%;
 
     --destructive: 0 84% 60%;
     --destructive-foreground: 0 0% 100%;
 
-    --border: 220 15% 88%;
-    --input: 220 15% 88%;
-    --ring: 220 45% 20%;
+    --border: 216 15% 88%;
+    --input: 216 15% 88%;
+    --ring: 220 40% 22%;
 
-    --radius: 0.75rem;
+    --radius: 0.5rem;
 
-    --gold: 42 65% 52%;
-    --gold-light: 42 60% 65%;
+    /* Brand colors */
+    --gold: 42 70% 50%;
+    --gold-light: 42 55% 60%;
     --gold-foreground: 0 0% 100%;
-    --navy: 220 45% 20%;
-    --navy-light: 220 35% 30%;
-    --mint: 165 55% 48%;
-    --mint-light: 165 45% 60%;
-    --cream: 40 30% 95%;
-    --warm-grey: 220 10% 60%;
+    --navy: 220 40% 22%;
+    --navy-light: 220 30% 35%;
+    --hero-bg: 216 25% 88%;
+    --section-alt: 216 18% 96%;
+    --mint: 165 40% 55%;
+    --mint-light: 165 35% 65%;
+    --cream: 40 25% 97%;
+    --warm-grey: 220 8% 55%;
 
     --sidebar-background: 0 0% 98%;
     --sidebar-foreground: 240 5.3% 26.1%;
@@ -63,26 +66,28 @@
     --card-foreground: 40 30% 95%;
     --popover: 220 30% 12%;
     --popover-foreground: 40 30% 95%;
-    --primary: 42 65% 52%;
+    --primary: 42 70% 50%;
     --primary-foreground: 220 30% 8%;
     --secondary: 220 25% 18%;
     --secondary-foreground: 40 30% 95%;
     --muted: 220 20% 16%;
     --muted-foreground: 220 15% 60%;
-    --accent: 165 55% 48%;
+    --accent: 165 40% 55%;
     --accent-foreground: 0 0% 100%;
     --destructive: 0 62% 30%;
     --destructive-foreground: 0 0% 100%;
     --border: 220 20% 18%;
     --input: 220 20% 18%;
-    --ring: 42 65% 52%;
-    --gold: 42 65% 52%;
-    --gold-light: 42 60% 65%;
+    --ring: 42 70% 50%;
+    --gold: 42 70% 50%;
+    --gold-light: 42 55% 60%;
     --gold-foreground: 0 0% 100%;
-    --navy: 220 45% 20%;
-    --navy-light: 220 35% 30%;
-    --mint: 165 55% 55%;
-    --mint-light: 165 45% 65%;
+    --navy: 220 40% 22%;
+    --navy-light: 220 30% 35%;
+    --hero-bg: 220 25% 15%;
+    --section-alt: 220 20% 10%;
+    --mint: 165 40% 55%;
+    --mint-light: 165 35% 65%;
     --cream: 220 20% 12%;
     --warm-grey: 220 10% 55%;
   }
@@ -94,11 +99,11 @@
   }
 
   body {
-    @apply bg-background text-foreground font-sans antialiased;
-    font-family: 'Inter', system-ui, sans-serif;
+    @apply bg-background text-foreground antialiased;
+    font-family: 'Source Sans 3', system-ui, sans-serif;
   }
 
   h1, h2, h3, h4, h5, h6 {
-    font-family: 'Cormorant Garamond', Georgia, serif;
+    font-family: 'Playfair Display', Georgia, serif;
   }
 }
