@@ -111,7 +111,7 @@ const AboutSection = () => {
         </div>
 
         {/* "Eterna aprendiz" band — spans full width below the photo */}
-        <div className="mt-10 lg:-mt-16 bg-primary/5 border-t border-border py-8 px-6 lg:px-10">
+        <div className="mt-12 bg-primary/5 border-t border-border py-8 px-6 lg:px-10">
           <p className="font-serif text-xl md:text-2xl lg:text-3xl text-foreground leading-snug font-medium max-w-4xl">
             Me considero una <span className="italic">eterna aprendiz</span>. La tecnología cambia, los negocios evolucionan y la estrategia exige algo fundamental:{" "}
             <span className="text-accent">curiosidad, criterio y humanidad</span>.
