@@ -159,7 +159,7 @@ const HeroSection = () => {
               </h1>
 
               <p className="font-serif text-[22px] md:text-[26px] lg:text-[30px] italic gold-gradient-text mb-6 leading-snug">
-                Estrategia de negocio con IA
+                Crea la vida que amas.
               </p>
 
               {/* Rotating phrases */}
