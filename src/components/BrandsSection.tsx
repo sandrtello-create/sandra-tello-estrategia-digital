@@ -64,17 +64,17 @@ const BrandsSection = () => {
         <div className="absolute left-0 top-0 bottom-0 w-24 z-10 pointer-events-none" style={{ background: 'linear-gradient(to right, hsl(var(--section-alt)), transparent)' }} />
         <div className="absolute right-0 top-0 bottom-0 w-24 z-10 pointer-events-none" style={{ background: 'linear-gradient(to left, hsl(var(--section-alt)), transparent)' }} />
 
-        <div className="flex animate-scroll-brands items-center">
+        <div className="flex animate-scroll-brands items-center" style={{ gap: '48px' }}>
           {duplicated.map((brand, i) => (
             <div
               key={`${brand.name}-${i}`}
               className="flex-shrink-0 flex items-center justify-center"
-              style={{ width: '140px', height: '60px', marginRight: '40px' }}
             >
               <img
                 src={brand.logo}
                 alt={brand.name}
-                className="max-h-full max-w-full object-contain grayscale opacity-70 hover:grayscale-0 hover:opacity-100 transition-all duration-500 cursor-pointer"
+                style={{ height: '44px', width: 'auto' }}
+                className="object-contain grayscale opacity-70 hover:grayscale-0 hover:opacity-100 transition-all duration-500 cursor-pointer"
               />
             </div>
           ))}
