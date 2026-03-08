@@ -131,8 +131,12 @@ const ServicesSection = () => {
             Tu negocio no necesita más ruido. Necesita estrategia.
           </h2>
           <p className="text-muted-foreground text-[17px] leading-relaxed">
-            Integro marketing, estrategia e inteligencia artificial para que
-            crezcas con dirección, no por inercia.
+            Estrategia, marketing e inteligencia artificial para que tu negocio
+            crezca con dirección, no por inercia.
+          </p>
+          <p className="text-muted-foreground text-[15px] leading-relaxed mt-3">
+            Para profesionales y empresas que quieren ordenar su estrategia,
+            posicionar su valor y utilizar la inteligencia artificial con criterio.
           </p>
         </div>
 
