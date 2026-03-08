@@ -18,6 +18,15 @@ import nespresso from "@/assets/brands/nespresso.png";
 import diarioAvisos from "@/assets/brands/diario-avisos.png";
 
 const brands = [
+  { name: "Apple", logo: apple },
+  { name: "MediaMarkt", logo: mediamarkt },
+  { name: "EOI", logo: eoi },
+  { name: "MainJobs", logo: mainjobs },
+  { name: "Fiat", logo: fiat },
+  { name: "Nespresso", logo: nespresso },
+  { name: "Diario de Avisos", logo: diarioAvisos },
+  { name: "Volkswagen", logo: volkswagen },
+  { name: "Opel", logo: opel },
   { name: "Bacardi", logo: bacardi },
   { name: "BP", logo: bp },
   { name: "DISA", logo: disa },
@@ -25,17 +34,8 @@ const brands = [
   { name: "Shell", logo: shell },
   { name: "Sanitas", logo: sanitas },
   { name: "HiperDino", logo: hiperdino },
-  { name: "Volkswagen", logo: volkswagen },
-  { name: "Opel", logo: opel },
   { name: "Carglass", logo: carglass },
-  { name: "Apple", logo: apple },
   { name: "Zipgenial", logo: zipgenial },
-  { name: "MediaMarkt", logo: mediamarkt },
-  { name: "EOI", logo: eoi },
-  { name: "MainJobs", logo: mainjobs },
-  { name: "Fiat", logo: fiat },
-  { name: "Nespresso", logo: nespresso },
-  { name: "Diario de Avisos", logo: diarioAvisos },
 ];
 
 const BrandsSection = () => {
@@ -73,17 +73,8 @@ const BrandsSection = () => {
               <img
                 src={brand.logo}
                 alt={brand.name}
-                className="max-h-20 md:max-h-24 w-auto object-contain opacity-50 hover:opacity-100 transition-all duration-500"
-                style={{
-                  filter: 'grayscale(1)',
-                  mixBlendMode: 'multiply',
-                }}
-                onMouseEnter={(e) => {
-                  (e.target as HTMLImageElement).style.filter = 'grayscale(0)';
-                }}
-                onMouseLeave={(e) => {
-                  (e.target as HTMLImageElement).style.filter = 'grayscale(1)';
-                }}
+                loading="lazy"
+                className="max-h-24 md:max-h-28 w-auto object-contain opacity-100 transition-transform duration-300 hover:scale-105"
               />
             </div>
           ))}
