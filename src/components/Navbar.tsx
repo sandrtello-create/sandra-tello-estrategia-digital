@@ -1,4 +1,4 @@
-import { useState, useEffect } from "react";
+import { useState } from "react";
 import { Menu, X } from "lucide-react";
 import logo from "@/assets/sandra-tello-logo.png";
 
@@ -13,22 +13,15 @@ const navLinks = [
 
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
-  const [scrolled, setScrolled] = useState(false);
-
-  useEffect(() => {
-    const handleScroll = () => setScrolled(window.scrollY > 20);
-    window.addEventListener("scroll", handleScroll);
-    return () => window.removeEventListener("scroll", handleScroll);
-  }, []);
 
   return (
-    <nav className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${scrolled ? "bg-background/95 backdrop-blur-md shadow-sm" : "bg-transparent"}`}>
+    <nav className="fixed top-0 left-0 right-0 z-50 bg-background/95 backdrop-blur-md shadow-sm border-b border-border/60">
       <div className="container mx-auto px-6 lg:px-8">
         <div className="flex items-center justify-between h-28">
-          <a href="#inicio" className="flex items-center gap-5">
-            <img src={logo} alt="Sandra Tello" className="h-20 w-auto" />
+          <a href="#inicio" className="flex items-center gap-2">
+            <img src={logo} alt="Sandra Tello" className="h-24 w-auto" />
             <div className="flex flex-col">
-              <span className={`font-serif text-[32px] font-bold tracking-wide leading-none uppercase ${scrolled ? "text-primary" : "text-white"}`}>
+              <span className="font-serif text-[32px] font-bold tracking-wide leading-none uppercase text-primary">
                 Sandra Tello
               </span>
               <span className="text-[11px] font-medium tracking-[0.2em] uppercase mt-1.5 gold-gradient-text">
@@ -43,7 +36,7 @@ const Navbar = () => {
               <a
                 key={link.href}
                 href={link.href}
-                className={`text-[13px] font-semibold uppercase tracking-[0.12em] transition-colors ${scrolled ? "text-foreground/70 hover:text-primary" : "text-white/70 hover:text-white"}`}
+                className="text-[13px] font-semibold uppercase tracking-[0.12em] transition-colors text-foreground/70 hover:text-primary"
               >
                 {link.label}
               </a>
@@ -56,7 +49,7 @@ const Navbar = () => {
           {/* Mobile toggle */}
           <button
             onClick={() => setIsOpen(!isOpen)}
-            className={`lg:hidden p-2 ${scrolled ? "text-foreground" : "text-white"}`}
+            className="lg:hidden p-2 text-foreground"
             aria-label="Toggle menu"
           >
             {isOpen ? <X size={24} /> : <Menu size={24} />}

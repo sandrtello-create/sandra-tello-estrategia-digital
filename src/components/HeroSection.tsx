@@ -3,8 +3,8 @@ import sandraPhoto from "@/assets/sandra-tello-hero.jpg";
 
 const HeroSection = () => {
   return (
-    <section id="inicio" className="relative overflow-hidden">
-      <div className="relative min-h-screen flex items-center" style={{
+    <section id="inicio" className="relative overflow-hidden pt-28">
+      <div className="relative min-h-[calc(100vh-7rem)] flex items-center" style={{
         background: 'linear-gradient(135deg, #212334 0%, #252844 30%, #303f69 70%, #252844 100%)'
       }}>
         {/* Abstract depth shapes */}
@@ -42,7 +42,7 @@ const HeroSection = () => {
             </div>
 
             {/* Text side */}
-            <div className="max-w-xl order-2 pt-32 pb-24 lg:pt-0 lg:pb-0 lg:pl-8">
+            <div className="max-w-xl order-2 pt-16 pb-20 lg:py-0 lg:pl-8">
               <div className="flex items-center gap-3 mb-8">
                 <div className="h-px w-10" style={{ background: 'linear-gradient(90deg, #a47633, #cbaa60)' }} />
                 <p className="font-sans text-[11px] font-semibold uppercase tracking-[0.25em] gold-gradient-text">
