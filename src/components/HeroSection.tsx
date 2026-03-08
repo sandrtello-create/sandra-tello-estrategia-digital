@@ -198,7 +198,7 @@ const HeroSection = () => {
 
               {/* Credibility markers */}
               <div ref={statsRef} className="mt-16 pt-8 border-t border-white/10">
-                <div className="grid grid-cols-3 gap-6">
+                <div className="grid grid-cols-3 gap-2 sm:gap-3 md:gap-6">
                   {stats.map((stat, i) => (
                     <StatCard key={i} stat={stat} isVisible={statsVisible} delay={i * 200} />
                   ))}

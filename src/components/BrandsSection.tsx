@@ -64,12 +64,11 @@ const BrandsSection = () => {
         <div className="absolute left-0 top-0 bottom-0 w-24 z-10 pointer-events-none" style={{ background: 'linear-gradient(to right, hsl(var(--section-alt)), transparent)' }} />
         <div className="absolute right-0 top-0 bottom-0 w-24 z-10 pointer-events-none" style={{ background: 'linear-gradient(to left, hsl(var(--section-alt)), transparent)' }} />
 
-        <div className="flex animate-scroll-brands items-center" style={{ gap: '32px' }}>
+        <div className="flex animate-scroll-brands items-center gap-4 md:gap-8">
           {duplicated.map((brand, i) => (
             <div
               key={`${brand.name}-${i}`}
-              className="flex-shrink-0 flex items-center justify-center"
-              style={{ width: '120px', height: '60px' }}
+              className="flex-shrink-0 flex items-center justify-center w-[80px] h-[40px] md:w-[120px] md:h-[60px]"
             >
               <img
                 src={brand.logo}
