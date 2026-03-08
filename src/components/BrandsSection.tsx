@@ -74,8 +74,7 @@ const BrandsSection = () => {
               <img
                 src={brand.logo}
                 alt={brand.name}
-                className="max-h-[70px] w-auto max-w-[170px] object-contain opacity-80 hover:opacity-100 transition-all duration-500 grayscale hover:grayscale-0"
-                style={{ mixBlendMode: 'multiply' }}
+                className="max-h-[70px] w-auto max-w-[170px] object-contain opacity-90 hover:opacity-100 transition-all duration-500 grayscale hover:grayscale-0"
               />
             </div>
           ))}
