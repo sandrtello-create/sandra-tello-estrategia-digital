@@ -25,7 +25,7 @@ const Navbar = () => {
                 Sandra Tello
               </span>
               <span className="text-[11px] font-medium tracking-[0.2em] uppercase mt-1.5 gold-gradient-text">
-                Consultora estratégica en IA
+                Estrategia digital, inteligencia artificial y negocio
               </span>
             </div>
           </a>
