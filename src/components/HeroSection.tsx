@@ -4,13 +4,10 @@ import { ArrowRight } from "lucide-react";
 const HeroSection = () => {
   return (
     <section id="inicio" className="relative pt-20 lg:pt-0 overflow-hidden">
-      {/* Full-width dark hero like Vilma/Marta */}
       <div className="relative min-h-screen flex items-center bg-primary">
-        {/* Background image overlay effect */}
         <div className="absolute inset-0 bg-gradient-to-r from-primary via-primary/95 to-primary/70" />
         <div className="absolute inset-0 bg-gradient-to-t from-primary via-transparent to-primary/50" />
 
-        {/* Decorative elements */}
         <div className="absolute top-1/4 right-1/4 w-96 h-96 bg-accent/5 rounded-full blur-3xl" />
         <div className="absolute bottom-1/4 left-1/3 w-72 h-72 bg-mint/5 rounded-full blur-3xl" />
 
@@ -21,12 +18,13 @@ const HeroSection = () => {
                 Consultora Estratégica · IA & Marca Personal
               </p>
               <h1 className="font-serif text-5xl md:text-6xl lg:text-7xl font-bold text-primary-foreground leading-[1.1] mb-6">
-                Haz crecer tu negocio con{" "}
-                <span className="italic text-accent">inteligencia artificial</span>
+                Crea la vida que amas con{" "}
+                <span className="italic text-accent">estrategia e inteligencia artificial</span>
               </h1>
               <p className="text-primary-foreground/70 text-lg leading-relaxed mb-10 max-w-lg">
-                Ayudo a profesionales, emprendedores y empresas a integrar la IA con estrategia 
-                y criterio humano para convertir su conocimiento en autoridad y oportunidades.
+                Ayudo a profesionales y emprendedores a construir un negocio alineado con la vida 
+                que desean, integrando la IA con estrategia y criterio humano para convertir su 
+                conocimiento en autoridad, libertad y oportunidades.
               </p>
               <div className="flex flex-col sm:flex-row gap-4">
                 <Button className="bg-accent text-accent-foreground hover:bg-gold-light rounded-full px-8 py-6 text-sm font-semibold uppercase tracking-wider shadow-lg shadow-accent/25">
@@ -53,7 +51,6 @@ const HeroSection = () => {
           </div>
         </div>
 
-        {/* Bottom gradient fade */}
         <div className="absolute bottom-0 left-0 right-0 h-24 bg-gradient-to-t from-background to-transparent" />
       </div>
     </section>

@@ -1,5 +1,5 @@
 import { Button } from "@/components/ui/button";
-import { Sparkles } from "lucide-react";
+import { Sparkles, Heart } from "lucide-react";
 
 const AboutSection = () => {
   return (
@@ -24,7 +24,7 @@ const AboutSection = () => {
               Sobre Sandra Tello
             </p>
             <h2 className="font-serif text-3xl md:text-4xl lg:text-5xl font-bold text-primary mb-6 leading-tight">
-              Estrategia, marketing y criterio humano en la era de la IA
+              Estrategia, IA y la vida que mereces vivir
             </h2>
             <p className="text-muted-foreground text-lg leading-relaxed mb-5">
               Con más de 15 años de experiencia en estrategia empresarial, marketing y 
@@ -32,11 +32,12 @@ const AboutSection = () => {
               posicionar su expertise y transformar su conocimiento en oportunidades reales.
             </p>
             <p className="text-muted-foreground text-lg leading-relaxed mb-6">
-              Hoy integro la inteligencia artificial como herramienta estratégica, pero siempre 
-              con el criterio humano como centro de cada decisión. Así nació mi framework:
+              Creo firmemente que tu negocio debe estar al servicio de la vida que quieres crear. 
+              Por eso integro la inteligencia artificial como herramienta estratégica, para que 
+              trabajes con más inteligencia, menos esfuerzo y más libertad. Así nació mi framework:
             </p>
 
-            <div className="bg-gradient-to-r from-secondary to-cream rounded-2xl p-6 mb-8 border border-border/50">
+            <div className="bg-gradient-to-r from-secondary to-cream rounded-2xl p-6 mb-6 border border-border/50">
               <div className="flex items-start gap-3">
                 <Sparkles className="h-6 w-6 text-accent mt-1 flex-shrink-0" />
                 <div>
@@ -46,6 +47,21 @@ const AboutSection = () => {
                   <p className="text-muted-foreground">
                     Un enfoque que combina estrategia, criterio humano, marketing e inteligencia artificial 
                     para tomar mejores decisiones y generar resultados tangibles.
+                  </p>
+                </div>
+              </div>
+            </div>
+
+            <div className="bg-gradient-to-r from-mint/5 to-accent/5 rounded-2xl p-6 mb-8 border border-mint/20">
+              <div className="flex items-start gap-3">
+                <Heart className="h-6 w-6 text-mint mt-1 flex-shrink-0" />
+                <div>
+                  <h3 className="font-serif text-xl font-bold text-primary mb-2">
+                    Crea la vida que amas
+                  </h3>
+                  <p className="text-muted-foreground">
+                    Tu negocio es el vehículo para diseñar una vida con propósito, libertad y equilibrio. 
+                    La estrategia y la IA son las herramientas para lograrlo.
                   </p>
                 </div>
               </div>

@@ -14,11 +14,11 @@ const NewsletterSection = () => {
             <Gift className="h-8 w-8 text-accent" />
           </div>
           <h2 className="font-serif text-3xl md:text-4xl lg:text-5xl font-bold text-primary mb-4">
-            Recursos gratuitos de IA y estrategia
+            Recursos gratuitos para crear la vida que amas
           </h2>
           <p className="text-muted-foreground text-lg mb-8">
-            Suscríbete y recibe directamente en tu email guías prácticas, herramientas de IA 
-            y contenido exclusivo sobre estrategia y marca personal.
+            Suscríbete y recibe directamente en tu email guías prácticas de IA, estrategia 
+            y contenido exclusivo para construir un negocio alineado con tu estilo de vida.
           </p>
           <form
             onSubmit={(e) => e.preventDefault()}

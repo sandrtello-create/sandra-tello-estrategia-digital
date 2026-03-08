@@ -1,4 +1,4 @@
-import { Eye, TrendingUp, Award, Compass, Zap } from "lucide-react";
+import { Eye, TrendingUp, Award, Compass, Zap, Heart } from "lucide-react";
 
 const results = [
   {
@@ -36,6 +36,13 @@ const results = [
     stat: "+50%",
     statLabel: "productividad",
   },
+  {
+    icon: Heart,
+    title: "La vida que amas",
+    description: "Diseña un negocio que trabaje para ti y te permita vivir con libertad y propósito.",
+    stat: "∞",
+    statLabel: "libertad y equilibrio",
+  },
 ];
 
 const ResultsSection = () => {
@@ -47,15 +54,15 @@ const ResultsSection = () => {
             Resultados
           </p>
           <h2 className="font-serif text-3xl md:text-4xl lg:text-5xl font-bold text-primary mb-4">
-            Lo que consiguen mis clientes
+            Transforma tu negocio y crea la vida que amas
           </h2>
           <p className="text-muted-foreground text-lg">
-            Cada proceso está diseñado para generar transformaciones reales 
-            y resultados medibles en tu negocio y tu carrera.
+            Cada proceso está diseñado para generar transformaciones reales: 
+            más resultados, más libertad y una vida profesional alineada con lo que realmente importa.
           </p>
         </div>
 
-        <div className="grid sm:grid-cols-2 lg:grid-cols-5 gap-6">
+        <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
           {results.map((result, index) => (
             <div
               key={index}

@@ -13,11 +13,11 @@ const FinalCTA = () => {
             <Calendar className="h-8 w-8 text-accent" />
           </div>
           <h2 className="font-serif text-3xl md:text-4xl lg:text-5xl font-bold text-primary-foreground mb-6 leading-tight">
-            ¿Lista para transformar tu expertise en autoridad?
+            ¿Lista para crear la vida que amas con estrategia e IA?
           </h2>
           <p className="text-primary-foreground/65 text-lg md:text-xl mb-10 leading-relaxed">
-            Agenda una sesión estratégica con Sandra Tello y descubre cómo la inteligencia artificial 
-            y una estrategia clara pueden impulsar tu carrera y tu negocio.
+            Agenda una sesión estratégica con Sandra Tello y descubre cómo la inteligencia artificial, 
+            una estrategia clara y el enfoque correcto pueden transformar tu negocio y tu estilo de vida.
           </p>
           <Button className="bg-accent text-accent-foreground hover:bg-gold-light rounded-full px-10 py-7 text-base font-semibold uppercase tracking-wider shadow-xl shadow-accent/25">
             Agenda tu sesión estratégica
