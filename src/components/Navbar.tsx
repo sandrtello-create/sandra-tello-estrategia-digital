@@ -18,10 +18,10 @@ const Navbar = () => {
     <nav className="fixed top-0 left-0 right-0 z-50 bg-background/95 backdrop-blur-md shadow-sm border-b border-border/60">
       <div className="container mx-auto px-6 lg:px-8">
         <div className="flex items-center justify-between h-28">
-          <a href="#inicio" className="flex items-center gap-5">
-            <img src={logo} alt="Sandra Tello" className="h-20 w-auto" />
+          <a href="#inicio" className="flex items-center gap-2">
+            <img src={logo} alt="Sandra Tello" className="h-24 w-auto" />
             <div className="flex flex-col">
-              <span className={`font-serif text-[32px] font-bold tracking-wide leading-none uppercase ${scrolled ? "text-primary" : "text-white"}`}>
+              <span className="font-serif text-[32px] font-bold tracking-wide leading-none uppercase text-primary">
                 Sandra Tello
               </span>
               <span className="text-[11px] font-medium tracking-[0.2em] uppercase mt-1.5 gold-gradient-text">
