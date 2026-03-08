@@ -1,32 +1,46 @@
 import { ArrowUpRight } from "lucide-react";
-import sandraHero from "@/assets/sandra-tello-hero.jpg";
+import sandraAbout from "@/assets/sandra-tello-about.jpg";
 
 const AboutSection = () => {
   return (
     <section id="sobre" className="py-20 lg:py-28 bg-background">
       <div className="container mx-auto px-6 lg:px-8">
-        <div className="grid lg:grid-cols-2 gap-10 lg:gap-16 items-start">
-          {/* Photo */}
+        <div className="grid lg:grid-cols-2 gap-0 lg:gap-0 items-start">
+          {/* Photo with overlapping text */}
           <div className="relative">
             <div className="aspect-[3/4] overflow-hidden">
               <img
-                src={sandraHero}
+                src={sandraAbout}
                 alt="Sandra Tello"
                 className="w-full h-full object-cover object-top"
               />
             </div>
+            {/* Overlapping headline */}
+            <div className="absolute top-6 right-0 translate-x-[30%] z-10 hidden lg:block">
+              <p className="font-sans text-[13px] font-semibold uppercase tracking-[0.2em] text-muted-foreground mb-1">
+                ¡Hola!
+              </p>
+              <h2 className="font-serif text-6xl xl:text-7xl font-medium text-foreground leading-[1]">
+                SOY
+                <br />
+                SANDRA.
+              </h2>
+            </div>
           </div>
 
           {/* Content */}
-          <div className="lg:pt-4">
-            <p className="font-sans text-[13px] font-semibold uppercase tracking-[0.2em] text-muted-foreground mb-2">
-              ¡Hola!
-            </p>
-            <h2 className="font-serif text-5xl md:text-6xl lg:text-7xl font-medium text-foreground mb-6 leading-[1.05]">
-              Soy Sandra.
-            </h2>
+          <div className="lg:pl-20 lg:pt-40">
+            {/* Mobile only headline */}
+            <div className="lg:hidden mt-8 mb-6">
+              <p className="font-sans text-[13px] font-semibold uppercase tracking-[0.2em] text-muted-foreground mb-2">
+                ¡Hola!
+              </p>
+              <h2 className="font-serif text-5xl font-medium text-foreground leading-[1.05]">
+                Soy Sandra.
+              </h2>
+            </div>
 
-            <p className="font-serif text-2xl md:text-3xl text-foreground leading-snug mb-8">
+            <p className="font-serif text-2xl md:text-[28px] text-foreground leading-snug mb-8">
               Consultora estratégica de{" "}
               <strong className="font-bold">
                 inteligencia artificial, marketing y marca personal.
