@@ -1,10 +1,21 @@
 import { ArrowUpRight } from "lucide-react";
 import sandraAbout from "@/assets/sandra-tello-about.jpg";
+import logoWatermark from "@/assets/sandra-logo-watermark.png";
 
 const AboutSection = () => {
   return (
-    <section id="sobre" className="py-20 lg:py-28 bg-background">
-      <div className="container mx-auto px-6 lg:px-8">
+    <section id="sobre" className="py-20 lg:py-28 bg-background relative overflow-hidden">
+      {/* Watermark pattern background */}
+      <div
+        className="absolute inset-0 opacity-[0.03] pointer-events-none"
+        style={{
+          backgroundImage: `url(${logoWatermark})`,
+          backgroundSize: '80px 80px',
+          backgroundRepeat: 'repeat',
+        }}
+      />
+
+      <div className="container mx-auto px-6 lg:px-8 relative z-10">
         <div className="grid lg:grid-cols-2 gap-12 lg:gap-16 items-start">
           {/* Photo */}
           <div>
@@ -61,10 +72,7 @@ const AboutSection = () => {
               seguir aprendiendo siempre.
             </p>
 
-            <p className="text-muted-foreground text-[17px] leading-relaxed mb-5">
-              Me considero una eterna aprendiz. La tecnología cambia, los negocios evolucionan y la estrategia exige algo fundamental: curiosidad, criterio y humanidad.
-            </p>
-
+            {/* Rest of text continues after the "eterna aprendiz" band below */}
             <p className="text-foreground text-lg leading-relaxed mb-5 font-semibold">
               Desde ahí trabajo.
             </p>
@@ -100,6 +108,14 @@ const AboutSection = () => {
               <ArrowUpRight className="h-6 w-6 group-hover:translate-x-1 group-hover:-translate-y-1 transition-transform duration-300" />
             </a>
           </div>
+        </div>
+
+        {/* "Eterna aprendiz" band — spans full width below the photo */}
+        <div className="mt-10 lg:-mt-16 bg-primary/5 border-t border-border py-8 px-6 lg:px-10">
+          <p className="font-serif text-xl md:text-2xl lg:text-3xl text-foreground leading-snug font-medium max-w-4xl">
+            Me considero una <span className="italic">eterna aprendiz</span>. La tecnología cambia, los negocios evolucionan y la estrategia exige algo fundamental:{" "}
+            <span className="text-accent">curiosidad, criterio y humanidad</span>.
+          </p>
         </div>
       </div>
     </section>
