@@ -94,11 +94,12 @@ const HeroSection = () => {
                   }}
                 >
                   <span
-                    className="inline-block px-5 py-2 rounded-md font-sans text-[15px] md:text-[17px] font-medium text-gray-900"
+                    className="inline-block px-5 py-2 rounded-md font-sans text-[15px] md:text-[17px] font-medium text-white bg-transparent"
                     style={{
-                      background: rotatingPhrases[currentPhrase].bg,
-                      boxShadow: '0 4px 20px rgba(0,0,0,0.3)',
-                      transition: 'background 0.5s ease',
+                      border: '2px solid transparent',
+                      borderImage: rotatingPhrases[currentPhrase].border,
+                      borderImageSlice: 1,
+                      transition: 'border-image 0.5s ease',
                     }}
                   >
                     {rotatingPhrases[currentPhrase].text}
