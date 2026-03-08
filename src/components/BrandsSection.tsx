@@ -9,7 +9,7 @@ import volkswagen from "@/assets/brands/volkswagen.png";
 import opel from "@/assets/brands/opel.png";
 import carglass from "@/assets/brands/carglass.png";
 import apple from "@/assets/brands/apple.png";
-import zipgenial from "@/assets/brands/zipgenial.jfif";
+import zipgenial from "@/assets/brands/zipgenial.png";
 import mediamarkt from "@/assets/brands/mediamarkt.png";
 import eoi from "@/assets/brands/eoi.png";
 import mainjobs from "@/assets/brands/mainjobs.png";
