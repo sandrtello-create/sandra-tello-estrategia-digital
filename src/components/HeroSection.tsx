@@ -10,6 +10,40 @@ const rotatingPhrases = [
   { text: "Marca personal profesional", color: "#7EE8FA" },
 ];
 
+const stats = [
+  { label: "Experiencia", value: 15, suffix: "", prefix: "+", description: "años de experiencia profesional" },
+  { label: "Formación", value: 500, suffix: "", prefix: "+", description: "profesionales formados" },
+  { label: "Impacto", value: 300, suffix: "", prefix: "+", description: "empresas y emprendedores asesorados" },
+];
+
+const useCountUp = (target: number, isVisible: boolean, duration = 2000) => {
+  const [count, setCount] = useState(0);
+  const hasAnimated = useRef(false);
+
+  useEffect(() => {
+    if (!isVisible || hasAnimated.current) return;
+    hasAnimated.current = true;
+    const steps = 60;
+    const increment = target / steps;
+    let current = 0;
+    const stepDuration = duration / steps;
+
+    const timer = setInterval(() => {
+      current += increment;
+      if (current >= target) {
+        setCount(target);
+        clearInterval(timer);
+      } else {
+        setCount(Math.floor(current));
+      }
+    }, stepDuration);
+
+    return () => clearInterval(timer);
+  }, [isVisible, target, duration]);
+
+  return count;
+};
+
 const HeroSection = () => {
   const [currentPhrase, setCurrentPhrase] = useState(0);
   const [isVisible, setIsVisible] = useState(true);
