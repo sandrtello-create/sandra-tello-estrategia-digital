@@ -1,5 +1,5 @@
 import { useState, useEffect, useRef } from "react";
-import { Brain, Target, Search, Users, ArrowRight } from "lucide-react";
+import { Brain, Target, Search, Users, ArrowRight, ChevronDown } from "lucide-react";
 
 const services = [
   {
@@ -7,24 +7,68 @@ const services = [
     title: "Consultoría estratégica con IA",
     description:
       "Integra la IA en tu estrategia de negocio con un enfoque práctico y personalizado. Decisiones más inteligentes, procesos más eficientes.",
+    details: {
+      intro: "Analizo tu negocio para entender en qué punto está y qué oportunidades tiene.",
+      points: [
+        "Análisis del mercado y sector",
+        "Estudio de competencia",
+        "Posicionamiento del negocio",
+        "Oportunidades de crecimiento y diferenciación",
+        "Integración estratégica de inteligencia artificial",
+      ],
+      closing: "A partir de ese diagnóstico, diseño una estrategia clara para que tu negocio crezca con dirección.",
+    },
   },
   {
     icon: Target,
     title: "Posicionamiento de marca personal",
     description:
       "Define tu propuesta de valor única, construye una narrativa diferenciadora y posiciónate como referente en tu sector.",
+    details: {
+      intro: "Trabajamos tu identidad profesional para que comuniques con claridad quién eres y qué te diferencia.",
+      points: [
+        "Definición de propuesta de valor",
+        "Narrativa y mensaje diferenciador",
+        "Estrategia de contenidos",
+        "Presencia digital coherente en todos tus canales",
+        "Plan de visibilidad y posicionamiento",
+      ],
+      closing: "Que cuando alguien busque lo que tú haces, te encuentre a ti.",
+    },
   },
   {
     icon: Search,
     title: "Auditoría de presencia digital",
     description:
       "Análisis completo de tu ecosistema digital: web, redes sociales, contenido y reputación online con recomendaciones claras de mejora.",
+    details: {
+      intro: "Reviso tu ecosistema digital al completo para detectar qué funciona, qué falta y qué sobra.",
+      points: [
+        "Análisis de web y SEO básico",
+        "Revisión de redes sociales",
+        "Coherencia de marca en canales",
+        "Reputación online",
+        "Informe con recomendaciones priorizadas",
+      ],
+      closing: "Un diagnóstico honesto con un plan de acción claro.",
+    },
   },
   {
     icon: Users,
     title: "Employee advocacy y liderazgo digital",
     description:
       "Convierte a los líderes de tu empresa en embajadores de marca. Programas de posicionamiento ejecutivo en LinkedIn y más.",
+    details: {
+      intro: "Ayudo a las empresas a convertir a sus directivos y equipos en embajadores de marca.",
+      points: [
+        "Diagnóstico de presencia digital de los líderes",
+        "Formación en marca personal",
+        "Estrategia de contenidos para ejecutivos",
+        "Programa de employee advocacy",
+        "Medición de impacto y resultados",
+      ],
+      closing: "Que la voz de tu empresa no dependa solo del logo.",
+    },
   },
 ];
 
@@ -38,6 +82,8 @@ const ServiceItem = ({
   isVisible: boolean;
 }) => {
   const [hovered, setHovered] = useState(false);
+  const [expanded, setExpanded] = useState(false);
+  const contentRef = useRef<HTMLDivElement>(null);
   const num = String(index + 1).padStart(2, "0");
 
   return (
@@ -55,8 +101,8 @@ const ServiceItem = ({
       <div
         className="absolute left-0 top-0 w-[3px] bg-accent transition-all duration-500 ease-out"
         style={{
-          height: hovered ? "100%" : "0%",
-          opacity: hovered ? 1 : 0,
+          height: hovered || expanded ? "100%" : "0%",
+          opacity: hovered || expanded ? 1 : 0,
         }}
       />
 
@@ -65,7 +111,7 @@ const ServiceItem = ({
         <span
           className="font-serif text-5xl lg:text-6xl font-semibold transition-colors duration-500"
           style={{
-            color: hovered
+            color: hovered || expanded
               ? "hsl(var(--accent) / 0.6)"
               : "hsl(var(--accent) / 0.15)",
           }}
@@ -83,7 +129,7 @@ const ServiceItem = ({
           <div className="flex items-center gap-3 mb-3">
             <service.icon
               className="h-5 w-5 text-accent transition-opacity duration-300"
-              style={{ opacity: hovered ? 1 : 0.5 }}
+              style={{ opacity: hovered || expanded ? 1 : 0.5 }}
             />
             <h3 className="font-serif text-xl lg:text-2xl font-medium text-primary">
               {service.title}
@@ -92,13 +138,44 @@ const ServiceItem = ({
           <p className="text-muted-foreground leading-relaxed max-w-xl mb-5">
             {service.description}
           </p>
-          <a
-            href="#contacto"
+
+          {/* Toggle button */}
+          <button
+            onClick={() => setExpanded(!expanded)}
             className="inline-flex items-center text-accent font-semibold text-[12px] uppercase tracking-[0.15em] gap-2 hover:gap-3 transition-all duration-300"
           >
-            Saber más
-            <ArrowRight className="h-4 w-4" />
-          </a>
+            {expanded ? "Ver menos" : "Saber más"}
+            <ChevronDown
+              className="h-4 w-4 transition-transform duration-300"
+              style={{ transform: expanded ? "rotate(180deg)" : "rotate(0deg)" }}
+            />
+          </button>
+
+          {/* Expandable details */}
+          <div
+            className="overflow-hidden transition-all duration-500 ease-out"
+            style={{
+              maxHeight: expanded ? `${contentRef.current?.scrollHeight ?? 500}px` : "0px",
+              opacity: expanded ? 1 : 0,
+            }}
+          >
+            <div ref={contentRef} className="pt-6">
+              <p className="italic text-muted-foreground leading-relaxed mb-4">
+                {service.details.intro}
+              </p>
+              <ul className="space-y-2.5 mb-5">
+                {service.details.points.map((point, i) => (
+                  <li key={i} className="flex items-start gap-3">
+                    <span className="mt-1.5 h-1.5 w-1.5 rounded-full bg-accent shrink-0" />
+                    <span className="text-primary/80 text-[15px] leading-relaxed">{point}</span>
+                  </li>
+                ))}
+              </ul>
+              <p className="italic font-medium text-primary/70 text-[15px]">
+                {service.details.closing}
+              </p>
+            </div>
+          </div>
         </div>
       </div>
     </div>
