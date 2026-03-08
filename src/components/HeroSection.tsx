@@ -168,8 +168,8 @@ const HeroSection = () => {
                   className="inline-block"
                   style={{
                     opacity: isVisible ? 1 : 0,
-                    transform: isVisible ? 'translateY(0) scale(1)' : 'translateY(20px) scale(0.95)',
-                    transition: 'all 0.5s cubic-bezier(0.16, 1, 0.3, 1)',
+                    transform: isVisible ? 'translateY(0) scale(1.05)' : 'translateY(20px) scale(0.9)',
+                    transition: 'all 0.6s cubic-bezier(0.16, 1, 0.3, 1)',
                   }}
                 >
                   <span
@@ -177,7 +177,8 @@ const HeroSection = () => {
                     style={{
                       border: '2px solid',
                       borderImage: 'linear-gradient(135deg, #a47633, #cbaa60, #f7d57b) 1',
-                      transition: 'all 0.5s ease',
+                      boxShadow: isVisible ? '0 0 20px rgba(203,170,96,0.2)' : 'none',
+                      transition: 'all 0.6s ease',
                     }}
                   >
                     {rotatingPhrases[currentPhrase].text}
