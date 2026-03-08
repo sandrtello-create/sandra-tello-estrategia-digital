@@ -71,33 +71,34 @@ const HeroSection = () => {
             </div>
 
             {/* Text side */}
-            <div className="max-w-xl order-2 pt-16 pb-20 lg:py-0 lg:pl-8">
-              <div className="flex items-center gap-3 mb-8">
+            <div className="max-w-2xl order-2 pt-16 pb-20 lg:py-0 lg:pl-8">
+              <div className="flex items-center gap-3 mb-6">
                 <div className="h-px w-10" style={{ background: 'linear-gradient(90deg, #a47633, #cbaa60)' }} />
                 <p className="font-sans text-[11px] font-semibold uppercase tracking-[0.25em] gold-gradient-text">
                   Consultoría estratégica · IA · Marca personal
                 </p>
               </div>
 
-              <h1 className="font-serif text-[34px] md:text-[42px] lg:text-[50px] font-semibold text-white leading-[1.15] mb-6">
+              <h1 className="font-serif text-[32px] md:text-[40px] lg:text-[46px] font-semibold text-white leading-[1.15] mb-4">
                 Consultora estratégica y formadora en inteligencia artificial y marca personal
               </h1>
 
-              <div className="h-14 mb-10 flex items-center">
+              {/* Rotating phrases */}
+              <div className="mb-4 overflow-hidden">
                 <p
-                  className="font-sans text-[24px] md:text-[28px] lg:text-[32px] font-bold tracking-wide text-white"
+                  className="font-sans text-[20px] md:text-[24px] font-bold"
                   style={{
                     opacity: isVisible ? 1 : 0,
-                    transform: isVisible ? 'translateY(0) scale(1)' : 'translateY(20px) scale(0.95)',
+                    transform: isVisible ? 'translateY(0)' : 'translateY(16px)',
                     transition: 'opacity 0.5s ease, transform 0.5s ease',
-                    textShadow: '0 0 40px rgba(203,170,96,0.3)',
                   }}
                 >
                   <span className="gold-gradient-text">{rotatingPhrases[currentPhrase]}</span>
                 </p>
               </div>
 
-              <p className="font-serif text-[22px] italic mb-14 gold-gradient-text leading-snug">
+              {/* Crea la vida que amas */}
+              <p className="font-serif text-[19px] italic text-white/50 mb-10 leading-snug">
                 Crea la vida que amas.
               </p>
 
