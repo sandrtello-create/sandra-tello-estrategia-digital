@@ -76,8 +76,8 @@ export const servicePortfolios: ServicePortfolio[] = [
           { label: "Coherencia de marca", value: "100%" },
         ],
         galleryImages: [
-          { src: "/placeholder.svg", alt: "Flota de transporte" },
-          { src: "/placeholder.svg", alt: "Almacén logístico" },
+          { src: "https://images.unsplash.com/photo-1586528116311-ad8dd3c8310d?w=600&h=400&fit=crop", alt: "Flota de transporte" },
+          { src: "https://images.unsplash.com/photo-1553413077-190dd305871c?w=600&h=400&fit=crop", alt: "Almacén logístico" },
         ],
       },
       {
