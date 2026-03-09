@@ -1,5 +1,5 @@
 import { Brain, Cpu, BarChart3, Heart, Briefcase } from "lucide-react";
-import sandraMetodoBg from "@/assets/sandra-tello-metodo-bg.png";
+import sandraMetodoBg from "@/assets/sandra-tello-ia.jpg";
 
 const pillars = [
   {
