@@ -159,6 +159,29 @@ const TrainingSection = () => {
               alt="Sandra Tello trabajando con inteligencia artificial"
               className="w-full h-auto object-cover max-h-[480px]"
             />
+            {/* Blur overlays on monitor screens */}
+            <div
+              className="absolute rounded-sm pointer-events-none"
+              style={{
+                top: "8%",
+                left: "5%",
+                width: "28%",
+                height: "55%",
+                backdropFilter: "blur(5px)",
+                WebkitBackdropFilter: "blur(5px)",
+              }}
+            />
+            <div
+              className="absolute rounded-sm pointer-events-none"
+              style={{
+                top: "5%",
+                left: "35%",
+                width: "30%",
+                height: "60%",
+                backdropFilter: "blur(5px)",
+                WebkitBackdropFilter: "blur(5px)",
+              }}
+            />
             <div
               className="absolute inset-0 pointer-events-none"
               style={{
