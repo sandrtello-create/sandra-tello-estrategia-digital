@@ -36,7 +36,7 @@ const pillars = [
 
 const MethodSection = () => {
   return (
-    <section className="py-16 lg:py-24 relative overflow-hidden">
+    <section className="pt-10 pb-16 lg:pt-14 lg:pb-24 relative overflow-hidden">
       <img
         src={sandraMetodoBg}
         alt=""
