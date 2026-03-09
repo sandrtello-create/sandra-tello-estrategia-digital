@@ -11,7 +11,10 @@ const Perfiles = () => {
       {/* Header */}
       <section className="pt-32 pb-16 bg-primary text-primary-foreground">
         <div className="container mx-auto px-6 lg:px-8 text-center">
-          <h1 className="font-serif text-4xl md:text-5xl font-bold mb-4">
+          <p className="text-accent font-semibold text-[11px] uppercase tracking-[0.25em] mb-4">
+            Casos de éxito
+          </p>
+          <h1 className="font-serif text-4xl md:text-5xl font-medium mb-4">
             Perfiles con los que he trabajado
           </h1>
           <p className="text-primary-foreground/60 max-w-2xl mx-auto text-lg">
@@ -22,7 +25,7 @@ const Perfiles = () => {
       </section>
 
       {/* Grid */}
-      <section className="py-20">
+      <section className="py-20 bg-section-alt">
         <div className="container mx-auto px-6 lg:px-8">
           <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
             {profiles.map((p) => (
@@ -31,7 +34,7 @@ const Perfiles = () => {
                 href={p.linkedin}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="group relative rounded-xl overflow-hidden bg-card border border-border hover:shadow-lg transition-all duration-300"
+                className="group relative overflow-hidden bg-card border-l-2 border-l-accent/30 border-t border-r border-b border-border hover:border-l-accent hover:shadow-lg transition-all duration-300"
               >
                 <div className="aspect-square overflow-hidden">
                   <img
@@ -41,11 +44,16 @@ const Perfiles = () => {
                     loading="lazy"
                   />
                 </div>
-                <div className="p-4 flex items-center justify-between gap-2">
-                  <span className="font-semibold text-sm text-foreground truncate">
-                    {p.name}
+                <div className="p-4 bg-gradient-to-t from-card to-card/80">
+                  <div className="flex items-start justify-between gap-2 mb-1">
+                    <span className="font-semibold text-sm text-foreground">
+                      {p.name}
+                    </span>
+                    <Linkedin className="h-4 w-4 shrink-0 text-accent opacity-70 group-hover:opacity-100 transition-opacity mt-0.5" />
+                  </div>
+                  <span className="text-xs text-muted-foreground leading-tight line-clamp-2">
+                    {p.role}
                   </span>
-                  <Linkedin className="h-4 w-4 shrink-0 text-accent opacity-70 group-hover:opacity-100 transition-opacity" />
                 </div>
               </a>
             ))}

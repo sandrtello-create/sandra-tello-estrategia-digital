@@ -6,28 +6,31 @@ const doubled = [...profiles, ...profiles];
 
 const ProfilesTeaser = () => {
   return (
-    <section className="py-16 bg-section-alt overflow-hidden">
+    <section className="py-16 bg-primary overflow-hidden">
       <div className="container mx-auto px-6 lg:px-8 mb-10 text-center">
-        <h2 className="font-serif text-3xl md:text-4xl font-bold text-foreground mb-3">
+        <p className="text-accent font-semibold text-[11px] uppercase tracking-[0.25em] mb-4">
+          Casos de éxito
+        </p>
+        <h2 className="font-serif text-3xl md:text-4xl font-medium text-primary-foreground mb-3">
           Marcas personales con las que he trabajado
         </h2>
-        <p className="text-muted-foreground max-w-xl mx-auto">
+        <p className="text-primary-foreground/60 max-w-xl mx-auto">
           He ayudado a estos profesionales a posicionar su marca personal y destacar en su sector.
         </p>
       </div>
 
       {/* Infinite scroll carousel */}
       <div className="relative">
-        <div className="flex animate-scroll-photos gap-5 w-max">
+        <div className="flex animate-scroll-photos gap-6 w-max">
           {doubled.map((p, i) => (
             <a
               key={`${p.name}-${i}`}
               href={p.linkedin}
               target="_blank"
               rel="noopener noreferrer"
-              className="group shrink-0 w-40 rounded-xl overflow-hidden bg-card border border-border hover:shadow-md transition-shadow"
+              className="group shrink-0 w-48 overflow-hidden bg-gradient-to-b from-primary-foreground/5 to-transparent border border-accent/20 hover:border-accent/50 transition-all duration-300"
             >
-              <div className="aspect-square overflow-hidden">
+              <div className="aspect-square overflow-hidden border-b border-accent/20">
                 <img
                   src={p.photo}
                   alt={p.name}
@@ -35,11 +38,16 @@ const ProfilesTeaser = () => {
                   loading="lazy"
                 />
               </div>
-              <div className="p-2.5 flex items-center justify-between gap-1">
-                <span className="text-xs font-semibold text-foreground truncate">
-                  {p.name}
+              <div className="p-4">
+                <div className="flex items-start justify-between gap-2 mb-1">
+                  <span className="text-sm font-semibold text-primary-foreground">
+                    {p.name}
+                  </span>
+                  <Linkedin className="h-4 w-4 shrink-0 text-accent opacity-70 group-hover:opacity-100 transition-opacity mt-0.5" />
+                </div>
+                <span className="text-xs text-primary-foreground/50 leading-tight line-clamp-2">
+                  {p.role}
                 </span>
-                <Linkedin className="h-3.5 w-3.5 shrink-0 text-accent opacity-60 group-hover:opacity-100 transition-opacity" />
               </div>
             </a>
           ))}
@@ -49,7 +57,7 @@ const ProfilesTeaser = () => {
       <div className="text-center mt-10">
         <Link
           to="/perfiles"
-          className="inline-flex items-center gap-2 btn-gold-gradient px-6 py-3 rounded-lg font-semibold text-sm hover-scale"
+          className="inline-flex items-center gap-2 bg-accent text-accent-foreground px-8 py-3.5 font-semibold text-[13px] uppercase tracking-[0.15em] hover:bg-gold-light transition-colors"
         >
           Ver todos los perfiles
           <ArrowRight className="h-4 w-4" />
