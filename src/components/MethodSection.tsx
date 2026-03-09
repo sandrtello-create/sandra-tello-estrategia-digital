@@ -40,7 +40,7 @@ const MethodSection = () => {
       <img
         src={sandraMetodoBg}
         alt=""
-        className="absolute inset-0 w-full h-full object-cover object-[100%_center]"
+        className="absolute top-0 right-0 h-full w-[140%] object-cover object-center"
       />
       <div className="absolute inset-0 bg-[#1a1f3d]/75" />
 
