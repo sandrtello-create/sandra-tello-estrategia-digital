@@ -38,9 +38,9 @@ export const servicePortfolios: ServicePortfolio[] = [
           { label: "Tiempo de ejecución", value: "3 meses" },
         ],
         galleryImages: [
-          { src: "/placeholder.svg", alt: "Hotel auditado 1" },
-          { src: "/placeholder.svg", alt: "Hotel auditado 2" },
-          { src: "/placeholder.svg", alt: "Hotel auditado 3" },
+          { src: "https://images.unsplash.com/photo-1566073771259-6a8506099945?w=600&h=400&fit=crop", alt: "Hotel de turismo rural" },
+          { src: "https://images.unsplash.com/photo-1469474968028-56623f02e42e?w=600&h=400&fit=crop", alt: "Paisaje turístico Castilla-La Mancha" },
+          { src: "https://images.unsplash.com/photo-1551882547-ff40c63fe5fa?w=600&h=400&fit=crop", alt: "Recepción de hotel" },
         ],
       },
       {
