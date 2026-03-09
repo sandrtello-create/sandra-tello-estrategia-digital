@@ -88,7 +88,7 @@ const BannerBeforeAfterGrid = ({
 
 const sectorIcons: Record<string, React.ReactNode> = {
   "Turismo institucional": <Landmark className="h-5 w-5" />,
-  "Marca personal / LinkedIn": <Linkedin className="h-5 w-5" />,
+  "Marca personal / LinkedIn": <img src={linkedinLogo} alt="LinkedIn" className="h-6 w-6 rounded object-cover" />,
   "Transporte / Logística": <Truck className="h-5 w-5" />,
   "Retail / Mystery Shopping": <ShoppingBag className="h-5 w-5" />,
 };
