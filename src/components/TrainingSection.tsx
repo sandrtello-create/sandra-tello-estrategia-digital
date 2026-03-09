@@ -224,7 +224,7 @@ const TrainingSection = () => {
           {/* Case study */}
           <div className="w-full border border-accent/20 bg-accent/[0.03] p-8 md:p-10">
             <p className="text-accent font-semibold text-[11px] uppercase tracking-[0.25em] mb-4">
-              Caso de ejemplo
+              Cómo trabajo con mis clientes
             </p>
             <h3 className="font-serif text-xl md:text-2xl font-medium text-primary-foreground mb-4">
               Desarrollo digital completo para el sector turístico
