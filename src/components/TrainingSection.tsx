@@ -3,6 +3,7 @@ import { Button } from "@/components/ui/button";
 import { GraduationCap, Building2, Briefcase, ArrowRight, Bot, MessageSquare, Mic, Globe, Palette, Zap, Phone, Share2, Video, UserRound, Pencil, Cog, TrendingUp, Brain, BookOpen, Image, Sparkles, FileText } from "lucide-react";
 import sandraIA from "@/assets/sandra-tello-ia.jpg";
 import mentorshipPixar from "@/assets/training-mentorship-pixar.png";
+import sandraFormacionIA from "@/assets/sandra-tello-formacion-ia.png";
 
 const programs = [
   {
@@ -342,19 +343,35 @@ const TrainingSection = () => {
             </div>
           </div>
 
-          {/* Free Resources Block */}
-          <div className="w-full border border-accent/15 bg-primary-foreground/[0.02] p-8 md:p-10">
+          {/* Visual separator photo */}
+          <div className="w-full relative overflow-hidden">
+            <img
+              src={sandraFormacionIA}
+              alt="Sandra Tello impartiendo formación en inteligencia artificial"
+              className="w-full h-auto object-cover max-h-[420px]"
+            />
+            <div
+              className="absolute inset-0 pointer-events-none"
+              style={{
+                background:
+                  "linear-gradient(to top, hsl(var(--navy-light)) 0%, transparent 25%), linear-gradient(to bottom, hsl(var(--navy-light)) 0%, transparent 20%)",
+              }}
+            />
+          </div>
+
+          {/* Free Resources Block — cream/warm tone */}
+          <div className="w-full bg-[hsl(40,18%,91%)] p-8 md:p-10 -mx-0">
             <div className="text-center max-w-2xl mx-auto mb-8">
               <div className="flex items-center justify-center gap-2 mb-4">
-                <BookOpen className="h-4 w-4 text-accent" />
-                <p className="text-accent font-semibold text-[11px] uppercase tracking-[0.25em]">
+                <BookOpen className="h-4 w-4 text-[hsl(232,28%,25%)]" />
+                <p className="text-[hsl(232,28%,25%)] font-semibold text-[11px] uppercase tracking-[0.25em]">
                   Recursos gratuitos
                 </p>
               </div>
-              <h3 className="font-serif text-xl md:text-2xl font-medium text-primary-foreground mb-4">
+              <h3 className="font-serif text-xl md:text-2xl font-medium text-[hsl(232,28%,18%)] mb-4">
                 La educación en IA no debería ser un privilegio
               </h3>
-              <p className="text-primary-foreground/55 text-[14px] leading-relaxed">
+              <p className="text-[hsl(232,20%,35%)] text-[14px] leading-relaxed">
                 Por eso comparto de forma gratuita manuales, guías y recursos prácticos sobre herramientas 
                 de inteligencia artificial. Porque cuando las personas aprenden, el mundo mejora.
               </p>
@@ -362,22 +379,22 @@ const TrainingSection = () => {
 
             <div className="grid sm:grid-cols-2 md:grid-cols-4 gap-4 mb-8">
               {[
-                { icon: MessageSquare, title: "ChatGPT", desc: "Guía de prompts efectivos" },
-                { icon: Image, title: "Midjourney", desc: "Creación de imágenes con IA" },
+                { icon: MessageSquare, title: "LLMs", desc: "ChatGPT, Claude, Gemini, Perplexity..." },
+                { icon: Image, title: "Creación visual", desc: "Imágenes y vídeo con IA" },
                 { icon: Zap, title: "Automatización", desc: "Make, Zapier y n8n" },
                 { icon: Sparkles, title: "Más herramientas", desc: "Canva IA, Notion IA..." },
               ].map((resource, i) => (
                 <div
                   key={i}
-                  className="group flex flex-col items-center text-center p-5 border border-primary-foreground/10 bg-primary-foreground/[0.02] transition-all duration-300 hover:border-accent/30 hover:bg-accent/[0.04]"
+                  className="group flex flex-col items-center text-center p-5 border border-[hsl(232,15%,78%)] bg-[hsl(40,15%,96%)] transition-all duration-300 hover:border-[hsl(var(--accent))] hover:bg-[hsl(40,20%,88%)]"
                 >
-                  <div className="w-10 h-10 rounded-full bg-accent/10 flex items-center justify-center mb-3 group-hover:bg-accent/20 transition-colors duration-300">
-                    <resource.icon className="h-5 w-5 text-accent" />
+                  <div className="w-10 h-10 rounded-full bg-[hsl(232,28%,22%)]/10 flex items-center justify-center mb-3 group-hover:bg-[hsl(232,28%,22%)]/20 transition-colors duration-300">
+                    <resource.icon className="h-5 w-5 text-[hsl(232,28%,25%)]" />
                   </div>
-                  <h4 className="font-serif text-[15px] font-medium text-primary-foreground mb-1">
+                  <h4 className="font-serif text-[15px] font-medium text-[hsl(232,28%,18%)] mb-1">
                     {resource.title}
                   </h4>
-                  <p className="text-primary-foreground/50 text-[12px]">
+                  <p className="text-[hsl(232,20%,40%)] text-[12px]">
                     {resource.desc}
                   </p>
                 </div>
@@ -387,10 +404,10 @@ const TrainingSection = () => {
             <div className="text-center">
               <Button
                 variant="ghost"
-                className="text-accent hover:text-accent hover:bg-accent/10 rounded-none px-6 py-5 text-[12px] font-semibold uppercase tracking-[0.15em]"
+                className="text-[hsl(232,28%,22%)] hover:text-[hsl(232,28%,15%)] hover:bg-[hsl(40,15%,85%)] rounded-none px-6 py-5 text-[12px] font-semibold uppercase tracking-[0.15em]"
               >
                 <FileText className="mr-2 h-4 w-4" />
-                Accede a todos los recursos
+                Explora tu biblioteca de IA gratuita
                 <ArrowRight className="ml-2 h-4 w-4" />
               </Button>
             </div>
@@ -399,7 +416,7 @@ const TrainingSection = () => {
           {/* CTA */}
           <div>
             <Button className="bg-accent text-accent-foreground hover:bg-gold-light rounded-none px-10 py-6 text-[13px] font-semibold uppercase tracking-[0.18em] shadow-none border border-accent">
-              Empieza tu formación
+              Da el salto y domina la IA
               <ArrowRight className="ml-2 h-4 w-4" />
             </Button>
           </div>
