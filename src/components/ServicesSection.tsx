@@ -183,10 +183,10 @@ const ServiceItem = ({
                   <div className="h-px w-full bg-border/60 mb-6" />
                   <Link
                     to={`/servicios/${service.portfolioSlug}`}
-                    className="inline-flex items-center gap-2 bg-primary text-accent px-5 py-2.5 rounded-lg font-semibold text-sm hover:shadow-lg hover:scale-[1.02] transition-all duration-300"
+                    className="inline-flex items-center gap-3 bg-primary text-accent px-7 py-3.5 rounded-xl font-semibold text-base tracking-wide hover:shadow-xl hover:scale-[1.03] transition-all duration-300"
                   >
                     Proyectos con empresas
-                    <ArrowRight className="h-4 w-4" />
+                    <ArrowRight className="h-5 w-5" />
                   </Link>
                 </div>
               )}
