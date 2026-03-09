@@ -4,6 +4,7 @@ import { GraduationCap, Building2, Briefcase, ArrowRight, Bot, MessageSquare, Mi
 import sandraIA from "@/assets/sandra-tello-ia.jpg";
 import mentorshipPixar from "@/assets/training-mentorship-pixar.png";
 import sandraFormacionIA from "@/assets/sandra-tello-formacion-ia.png";
+import LeadCaptureModal from "@/components/LeadCaptureModal";
 
 const programs = [
   {
