@@ -140,7 +140,7 @@ const TrainingSection = () => {
   return (
     <section
       id="formacion"
-      className="py-20 lg:py-28 bg-navy-light border-t border-accent/20 relative overflow-hidden"
+      className="pt-16 pb-8 lg:pt-20 lg:pb-10 bg-navy-light border-t border-accent/20 relative overflow-hidden"
     >
       <div className="text-primary-foreground">
         <NeuralNetworkSVG />
