@@ -2,6 +2,7 @@ import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import { profiles } from "@/data/profiles";
 import { Linkedin } from "lucide-react";
+import { Link } from "react-router-dom";
 
 const Perfiles = () => {
   return (
@@ -29,11 +30,9 @@ const Perfiles = () => {
         <div className="container mx-auto px-6 lg:px-8">
           <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
             {profiles.map((p) => (
-              <a
+              <Link
                 key={p.name}
-                href={p.linkedin}
-                target="_blank"
-                rel="noopener noreferrer"
+                to={`/perfiles/${p.slug}`}
                 className="group relative overflow-hidden bg-card border-l-2 border-l-accent/30 border-t border-r border-b border-border hover:border-l-accent hover:shadow-lg transition-all duration-300"
               >
                 <div className="aspect-square overflow-hidden">
@@ -55,7 +54,7 @@ const Perfiles = () => {
                     {p.role}
                   </span>
                 </div>
-              </a>
+              </Link>
             ))}
           </div>
         </div>
