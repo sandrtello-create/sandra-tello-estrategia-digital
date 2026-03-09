@@ -37,26 +37,22 @@ export const servicePortfolios: ServicePortfolio[] = [
           { label: "Recomendaciones implementadas", value: "87%" },
           { label: "Tiempo de ejecución", value: "3 meses" },
         ],
-        bannerImages: [
-          "/placeholder.svg",
-          "/placeholder.svg",
-          "/placeholder.svg",
-        ],
       },
       {
-        title: "Directivo sector tecnológico",
-        sector: "Tecnología / SaaS",
+        title: "Optimización de perfiles LinkedIn",
+        sector: "Marca personal / LinkedIn",
         challenge:
-          "Un CEO de una startup tecnológica quería posicionarse como referente en LinkedIn pero su perfil no transmitía su experiencia ni su visión. La imagen de marca personal era inexistente.",
+          "Profesionales y directivos con perfiles de LinkedIn que no reflejaban su valor real: headlines genéricos, banners sin diseño, secciones 'acerca de' sin estrategia ni diferenciación.",
         solution:
-          "Auditoría de su perfil de LinkedIn, rediseño de banner y headline, estrategia de contenidos y plan de publicación semanal. Acompañamiento durante 3 meses para consolidar el posicionamiento.",
+          "Auditoría visual y de contenido del perfil completo. Rediseño de banner, headline y sección 'acerca de'. Optimización orientada a posicionamiento y atracción de oportunidades.",
         results: [
-          { label: "Visitas al perfil", value: "+320%" },
-          { label: "Conexiones relevantes", value: "+180" },
-          { label: "Publicaciones/mes", value: "8" },
-          { label: "Leads generados", value: "12" },
+          { label: "Visitas al perfil", value: "+210%" },
+          { label: "Impresiones contenido", value: "+175%" },
+          { label: "Perfiles optimizados", value: "15+" },
+          { label: "Mejora de conversión", value: "+60%" },
         ],
         bannerImages: [
+          "/placeholder.svg",
           "/placeholder.svg",
           "/placeholder.svg",
         ],
@@ -64,6 +60,20 @@ export const servicePortfolios: ServicePortfolio[] = [
           before: "/placeholder.svg",
           after: "/placeholder.svg",
         },
+      },
+      {
+        title: "Directivo sector tecnológico",
+        sector: "Tecnología / SaaS",
+        challenge:
+          "Un CEO de una startup tecnológica quería posicionarse como referente en LinkedIn pero su perfil no transmitía su experiencia ni su visión. La imagen de marca personal era inexistente.",
+        solution:
+          "Auditoría de su perfil de LinkedIn, estrategia de contenidos y plan de publicación semanal. Acompañamiento durante 3 meses para consolidar el posicionamiento.",
+        results: [
+          { label: "Visitas al perfil", value: "+320%" },
+          { label: "Conexiones relevantes", value: "+180" },
+          { label: "Publicaciones/mes", value: "8" },
+          { label: "Leads generados", value: "12" },
+        ],
       },
     ],
   },
