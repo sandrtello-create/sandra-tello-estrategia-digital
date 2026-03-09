@@ -400,7 +400,7 @@ const TrainingSection = () => {
                   className="text-[hsl(232,28%,22%)] hover:text-[hsl(232,28%,15%)] hover:bg-[hsl(40,15%,85%)] rounded-none px-6 py-5 text-[12px] font-semibold uppercase tracking-[0.15em]"
                 >
                   <FileText className="mr-2 h-4 w-4" />
-                  Explora tu biblioteca de IA gratuita
+                  Desbloquea tu kit de herramientas IA
                   <ArrowRight className="ml-2 h-4 w-4" />
                 </Button>
               </div>
