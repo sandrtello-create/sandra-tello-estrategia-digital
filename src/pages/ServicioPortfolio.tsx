@@ -4,32 +4,38 @@ import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import { ArrowLeft, ArrowRight, TrendingUp, Landmark, Linkedin, Truck, ShoppingBag } from "lucide-react";
 
-const GalleryGrid = ({ images }: { images: { src: string; alt: string; caption?: string }[] }) => (
-  <div>
-    <p className="text-accent font-semibold text-[11px] uppercase tracking-[0.15em] mb-3">
-      Galería del proyecto
-    </p>
-    <div className="grid grid-cols-2 md:grid-cols-3 gap-3">
-      {images.map((img, i) => (
-        <div key={i} className="space-y-2">
-          <div className="aspect-video bg-muted rounded overflow-hidden border border-border">
-            <img
-              src={img.src}
-              alt={img.alt}
-              className="w-full h-full object-cover"
-              loading="lazy"
-            />
+const GalleryGrid = ({ images }: { images: { src: string; alt: string; caption?: string }[] }) => {
+  const gridCols = images.length <= 2
+    ? "grid-cols-1 md:grid-cols-2 max-w-2xl mx-auto"
+    : "grid-cols-1 md:grid-cols-3";
+
+  return (
+    <div>
+      <p className="text-accent font-semibold text-[11px] uppercase tracking-[0.15em] mb-3">
+        Galería del proyecto
+      </p>
+      <div className={`grid ${gridCols} gap-4`}>
+        {images.map((img, i) => (
+          <div key={i} className="space-y-2">
+            <div className={`${images.length <= 2 ? "aspect-[4/3]" : "aspect-video"} bg-muted rounded overflow-hidden border border-border`}>
+              <img
+                src={img.src}
+                alt={img.alt}
+                className="w-full h-full object-cover"
+                loading="lazy"
+              />
+            </div>
+            {img.caption && (
+              <p className="text-xs text-muted-foreground font-medium text-center">
+                {img.caption}
+              </p>
+            )}
           </div>
-          {img.caption && (
-            <p className="text-xs text-muted-foreground font-medium text-center">
-              {img.caption}
-            </p>
-          )}
-        </div>
-      ))}
+        ))}
+      </div>
     </div>
-  </div>
-);
+  );
+};
 
 const BannerBeforeAfterGrid = ({
   pairs,
