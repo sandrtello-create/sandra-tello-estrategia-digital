@@ -52,9 +52,13 @@ const Navbar = () => {
             >
               Perfiles
             </Link>
-            <button className="btn-gold-gradient rounded-full px-7 py-3 font-semibold uppercase tracking-[0.15em] text-[12px]">
-              Trabaja conmigo ›
-            </button>
+            <a
+              href={getHref("#contacto")}
+              className="btn-gold-gradient rounded-full w-10 h-10 flex items-center justify-center"
+              aria-label="Trabaja conmigo"
+            >
+              <Mail size={18} />
+            </a>
           </div>
 
           {/* Mobile toggle */}
