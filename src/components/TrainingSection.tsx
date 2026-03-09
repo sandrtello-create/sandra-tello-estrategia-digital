@@ -20,7 +20,7 @@ const programs = [
     icon: GraduationCap,
     title: "Programas para profesionales",
     description:
-      "Formación práctica —incluyendo clases individuales 1 a 1— para profesionales que quieren multiplicar su productividad e impacto con IA.",
+      "Formación práctica, incluyendo clases individuales 1 a 1, para profesionales que quieren multiplicar su productividad e impacto con IA.",
   },
 ];
 
