@@ -380,15 +380,15 @@ const TrainingSection = () => {
                   ].map((resource, i) => (
                     <div
                       key={i}
-                      className="group flex flex-col p-4 border border-[hsl(232,15%,78%)] bg-[hsl(40,15%,96%)] transition-all duration-300 hover:border-[hsl(var(--accent))] hover:bg-[hsl(40,20%,88%)]"
+                      className="group flex flex-col p-4 border border-[hsl(232,25%,32%)] bg-[hsl(232,28%,22%)] transition-all duration-300 hover:border-accent hover:shadow-[0_8px_24px_-8px_hsl(var(--accent)/0.25)]"
                     >
-                      <div className="w-8 h-8 rounded-full bg-[hsl(232,28%,22%)]/10 flex items-center justify-center mb-2 group-hover:bg-[hsl(232,28%,22%)]/20 transition-colors duration-300">
-                        <resource.icon className="h-4 w-4 text-[hsl(232,28%,25%)]" />
+                      <div className="w-8 h-8 rounded-full bg-accent/20 flex items-center justify-center mb-2 group-hover:bg-accent/30 transition-colors duration-300">
+                        <resource.icon className="h-4 w-4 text-accent" />
                       </div>
-                      <h4 className="font-serif text-[14px] font-medium text-[hsl(232,28%,18%)] mb-0.5">
+                      <h4 className="font-serif text-[14px] font-medium text-primary-foreground mb-0.5">
                         {resource.title}
                       </h4>
-                      <p className="text-[hsl(232,20%,40%)] text-[11px]">
+                      <p className="text-primary-foreground/60 text-[11px]">
                         {resource.desc}
                       </p>
                     </div>
