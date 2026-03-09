@@ -101,6 +101,7 @@ export const servicePortfolios: ServicePortfolio[] = [
         galleryImages: [
           { src: mysteryTienda, alt: "Mystery shopper evaluando tienda retail", caption: "Punto de venta" },
           { src: mysteryEvaluacion, alt: "Checklist de evaluación de experiencia del cliente en español", caption: "Evaluación de experiencia" },
+          { src: mysteryInforme, alt: "Informe de resultados de mystery shopping en español", caption: "Informe de resultados" },
         ],
       },
     ],
