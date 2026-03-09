@@ -161,28 +161,6 @@ const TrainingSection = () => {
             />
             {/* Blur overlays on monitor screens */}
             <div
-              className="absolute rounded-sm pointer-events-none"
-              style={{
-                top: "5%",
-                left: "35%",
-                width: "22%",
-                height: "62%",
-                backdropFilter: "blur(6px)",
-                WebkitBackdropFilter: "blur(6px)",
-              }}
-            />
-            <div
-              className="absolute rounded-sm pointer-events-none"
-              style={{
-                top: "3%",
-                left: "60%",
-                width: "28%",
-                height: "68%",
-                backdropFilter: "blur(6px)",
-                WebkitBackdropFilter: "blur(6px)",
-              }}
-            />
-            <div
               className="absolute inset-0 pointer-events-none"
               style={{
                 background:
