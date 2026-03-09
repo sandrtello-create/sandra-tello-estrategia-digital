@@ -6,7 +6,7 @@ const pillars = [
     icon: Brain,
     title: "Mentalidad",
     description:
-      "Supera el autosabotaje y el síndrome del impostor. La confianza es tu mayor ventaja competitiva.",
+      "Supera el autosabotaje y el síndrome del impostor.",
   },
   {
     icon: Cpu,
@@ -36,11 +36,11 @@ const pillars = [
 
 const MethodSection = () => {
   return (
-    <section className="py-28 lg:py-36 relative overflow-hidden">
+    <section className="py-16 lg:py-24 relative overflow-hidden">
       <img
         src={sandraMetodoBg}
         alt=""
-        className="absolute inset-0 w-full h-full object-cover object-[100%_center]"
+        className="absolute top-0 right-0 h-full w-[140%] object-cover object-center"
       />
       <div className="absolute inset-0 bg-[#1a1f3d]/75" />
 
@@ -81,9 +81,6 @@ const MethodSection = () => {
           ))}
         </div>
 
-        <p className="text-center mt-16 font-serif text-xl md:text-2xl text-white/80 italic max-w-2xl mx-auto">
-          "Porque la confianza convierte antes que cualquier algoritmo."
-        </p>
       </div>
     </section>
   );
