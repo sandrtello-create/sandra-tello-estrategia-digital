@@ -24,7 +24,7 @@ const programs = [
 
 const TrainingSection = () => {
   return (
-    <section id="formacion" className="py-20 lg:py-28 bg-primary relative overflow-hidden">
+    <section id="formacion" className="py-20 lg:py-28 bg-navy-light border-t border-accent/20 relative overflow-hidden">
       <div className="container mx-auto px-6 lg:px-8 relative z-10">
         <div className="text-center max-w-2xl mx-auto mb-16">
           <p className="text-accent font-semibold text-[11px] uppercase tracking-[0.25em] mb-4">
