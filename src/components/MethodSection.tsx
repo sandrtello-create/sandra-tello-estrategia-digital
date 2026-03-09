@@ -1,4 +1,5 @@
 import { Brain, Cpu, BarChart3, Heart, Briefcase } from "lucide-react";
+import sandraMetodoBg from "@/assets/sandra-tello-metodo-bg.png";
 
 const pillars = [
   {
@@ -35,45 +36,52 @@ const pillars = [
 
 const MethodSection = () => {
   return (
-    <section className="py-28 lg:py-36 bg-section-alt">
-      <div className="container mx-auto px-6 lg:px-8">
+    <section className="py-28 lg:py-36 relative overflow-hidden">
+      <img
+        src={sandraMetodoBg}
+        alt=""
+        className="absolute inset-0 w-full h-full object-cover"
+      />
+      <div className="absolute inset-0 bg-[#1a1f3d]/75" />
+
+      <div className="container mx-auto px-6 lg:px-8 relative z-10">
         <div className="text-center max-w-3xl mx-auto mb-20">
           <p className="gold-gradient-text font-semibold text-sm uppercase tracking-[0.25em] mb-4">
             El Método
           </p>
-          <h2 className="font-serif text-4xl md:text-5xl lg:text-[52px] font-medium text-primary mb-6 leading-[1.15]">
+          <h2 className="font-serif text-4xl md:text-5xl lg:text-[52px] font-medium text-white mb-6 leading-[1.15]">
             Inteligencia Humana Estratégica™
           </h2>
-          <p className="text-muted-foreground text-lg leading-relaxed">
+          <p className="text-white/70 text-lg leading-relaxed">
             Un sistema que alinea mentalidad, IA, marketing, VIDA y negocio
             para que con la tecnología impulses tu valor.{" "}
-            <span className="text-foreground font-medium">Desde la coherencia.</span>
+            <span className="text-white font-medium">Desde la coherencia.</span>
           </p>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-5 gap-px bg-border max-w-6xl mx-auto">
+        <div className="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-5 gap-4 max-w-6xl mx-auto">
           {pillars.map((pillar, index) => (
             <div
               key={index}
-              className="bg-background p-10 text-center hover:bg-card transition-colors duration-300"
+              className="bg-white/10 backdrop-blur-md border border-white/10 rounded-lg p-10 text-center hover:bg-white/15 transition-colors duration-300"
             >
               <div className="w-16 h-16 flex items-center justify-center mx-auto mb-6">
-                <pillar.icon className="h-9 w-9 text-accent" />
+                <pillar.icon className="h-9 w-9 text-[hsl(38,55%,50%)]" />
               </div>
-              <div className="text-accent font-serif text-sm font-semibold mb-2">
+              <div className="text-[hsl(38,55%,50%)] font-serif text-sm font-semibold mb-2">
                 0{index + 1}
               </div>
-              <h3 className="font-serif text-[22px] font-medium text-primary mb-4">
+              <h3 className="font-serif text-[22px] font-medium text-white mb-4">
                 {pillar.title}
               </h3>
-              <p className="text-muted-foreground text-[15px] leading-relaxed">
+              <p className="text-white/60 text-[15px] leading-relaxed">
                 {pillar.description}
               </p>
             </div>
           ))}
         </div>
 
-        <p className="text-center mt-16 font-serif text-xl md:text-2xl text-primary/80 italic max-w-2xl mx-auto">
+        <p className="text-center mt-16 font-serif text-xl md:text-2xl text-white/80 italic max-w-2xl mx-auto">
           "Porque la confianza convierte antes que cualquier algoritmo."
         </p>
       </div>
