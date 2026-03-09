@@ -1,7 +1,8 @@
 import { useState } from "react";
 import { Button } from "@/components/ui/button";
-import { GraduationCap, Building2, Briefcase, ArrowRight, Bot, MessageSquare, Mic, Globe, Palette, Zap, Phone, Share2, Video, UserRound, Pencil, Cog, TrendingUp } from "lucide-react";
+import { GraduationCap, Building2, Briefcase, ArrowRight, Bot, MessageSquare, Mic, Globe, Palette, Zap, Phone, Share2, Video, UserRound, Pencil, Cog, TrendingUp, Brain } from "lucide-react";
 import sandraIA from "@/assets/sandra-tello-ia.jpg";
+import mentorshipPixar from "@/assets/training-mentorship-pixar.png";
 
 const programs = [
   {
@@ -39,7 +40,7 @@ const tools = [
 
 const NeuralNetworkSVG = () => (
   <svg
-    className="absolute inset-0 w-full h-full opacity-[0.04]"
+    className="absolute inset-0 w-full h-full opacity-[0.02]"
     viewBox="0 0 800 600"
     fill="none"
     xmlns="http://www.w3.org/2000/svg"
@@ -153,9 +154,12 @@ const TrainingSection = () => {
         <div className="flex flex-col items-center gap-10">
           {/* Header */}
           <div className="text-center max-w-3xl">
-            <p className="text-accent font-semibold text-[11px] uppercase tracking-[0.25em] mb-4">
-              Formación en Inteligencia Artificial
-            </p>
+            <div className="flex items-center justify-center gap-2 mb-4">
+              <Brain className="h-4 w-4 text-accent" />
+              <p className="text-accent font-semibold text-[11px] uppercase tracking-[0.25em]">
+                Formación en Inteligencia Artificial
+              </p>
+            </div>
             <h2 className="font-serif text-3xl md:text-4xl lg:text-[40px] font-medium text-primary-foreground mb-5 leading-[1.2]">
               Aprende a aplicar la IA con estrategia y criterio
             </h2>
@@ -219,7 +223,7 @@ const TrainingSection = () => {
           {/* Case study */}
           <div className="w-full border border-accent/20 bg-accent/[0.03] p-8 md:p-10">
             <p className="text-accent font-semibold text-[11px] uppercase tracking-[0.25em] mb-4">
-              Caso de ejemplo
+              Cómo trabajo con mis clientes
             </p>
             <h3 className="font-serif text-xl md:text-2xl font-medium text-primary-foreground mb-4">
               Desarrollo digital completo para el sector turístico
@@ -242,11 +246,27 @@ const TrainingSection = () => {
             </div>
           </div>
 
-          {/* Roadmap */}
+          {/* Pixar illustration + Roadmap */}
           <div className="w-full">
-            <p className="text-accent font-semibold text-[11px] uppercase tracking-[0.25em] mb-8 text-center">
-              De la idea al impacto
-            </p>
+            <div className="flex flex-col md:flex-row items-center gap-8 mb-10">
+              <div className="w-full md:w-1/3 flex-shrink-0">
+                <img
+                  src={mentorshipPixar}
+                  alt="Ilustración de mentoría en inteligencia artificial"
+                  className="w-full h-auto rounded-lg"
+                />
+              </div>
+              <div className="flex-1">
+                <p className="text-accent font-semibold text-[11px] uppercase tracking-[0.25em] mb-4">
+                  Así es el proceso de formación y mentoría
+                </p>
+                <p className="text-primary-foreground/60 text-[15px] leading-relaxed">
+                  Te acompaño desde la estrategia hasta los resultados. Yo diseño, formo y mentorizo;
+                  tú implementas con mi guía constante. Un proceso pensado para que seas autónomo con la IA
+                  aplicada a tu negocio.
+                </p>
+              </div>
+            </div>
 
             <div className="grid md:grid-cols-3 gap-0 relative">
               {/* Horizontal connector line (desktop) */}
@@ -257,23 +277,23 @@ const TrainingSection = () => {
                   num: "01",
                   icon: Pencil,
                   title: "Diseño y estrategia",
-                  period: "Mes 1",
+                  period: "Meses 1–2",
                   items: [
-                    "Definición del proyecto y objetivos",
-                    "Arquitectura del ecosistema IA",
-                    "Creación de textos y contenidos base",
+                    "Definición del proyecto y objetivos contigo",
+                    "Arquitectura del ecosistema IA a medida",
+                    "Creación de contenidos base y textos",
                     "Selección de herramientas y plataformas",
                   ],
                 },
                 {
                   num: "02",
                   icon: Cog,
-                  title: "Implementación",
-                  period: "Meses 2–3",
+                  title: "Implementación con mentoría",
+                  period: "Meses 3–4",
                   items: [
-                    "Desarrollo e integración de herramientas",
+                    "Tú implementas, yo te guío paso a paso",
                     "Pruebas y ajustes con usuarios reales",
-                    "Formación del equipo en el uso diario",
+                    "Formación práctica en el uso diario",
                     "Lanzamiento progresivo por canales",
                   ],
                 },
@@ -281,10 +301,10 @@ const TrainingSection = () => {
                   num: "03",
                   icon: TrendingUp,
                   title: "Resultados y optimización",
-                  period: "Meses 4–6",
+                  period: "Mes 5 en adelante",
                   items: [
                     "Medición de KPIs y análisis de rendimiento",
-                    "Optimización basada en datos reales",
+                    "Estrategia de contenido a largo plazo",
                     "Escalado a nuevos canales o funcionalidades",
                     "Informe de impacto y ROI",
                   ],
