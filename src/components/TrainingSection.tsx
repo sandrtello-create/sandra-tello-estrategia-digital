@@ -249,8 +249,8 @@ const TrainingSection = () => {
 
           {/* Roadmap */}
           <div className="w-full">
-            <p className="text-accent font-semibold text-[11px] uppercase tracking-[0.25em] mb-8 text-center">
-              De la idea al impacto
+            <p className="text-accent font-semibold text-[11px] uppercase tracking-[0.25em] mb-4 text-center">
+              Así es el proceso de formación y mentoría
             </p>
 
             <div className="grid md:grid-cols-3 gap-0 relative">
