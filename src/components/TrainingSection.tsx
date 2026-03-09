@@ -400,11 +400,11 @@ const TrainingSection = () => {
 
                 <Button
                   onClick={() => setIsLeadModalOpen(true)}
-                  className="bg-accent text-accent-foreground hover:bg-gold-light rounded-none px-10 py-7 text-[14px] font-semibold uppercase tracking-[0.15em] shadow-[0_0_20px_hsl(var(--accent)/0.4)] transition-all duration-300 hover:shadow-[0_0_30px_hsl(var(--accent)/0.6)] hover:scale-105"
+                  className="bg-accent text-accent-foreground hover:bg-gold-light rounded-none px-6 sm:px-10 py-6 sm:py-7 text-[12px] sm:text-[14px] font-semibold uppercase tracking-[0.1em] sm:tracking-[0.15em] shadow-[0_0_20px_hsl(var(--accent)/0.4)] transition-all duration-300 hover:shadow-[0_0_30px_hsl(var(--accent)/0.6)] hover:scale-105 w-full sm:w-auto text-center whitespace-normal"
                 >
-                  <FileText className="mr-2 h-4 w-4" />
-                  Desbloquea tu kit de herramientas IA
-                  <ArrowRight className="ml-2 h-4 w-4" />
+                  <FileText className="mr-2 h-4 w-4 shrink-0" />
+                  <span>Desbloquea tu kit de herramientas IA</span>
+                  <ArrowRight className="ml-2 h-4 w-4 shrink-0" />
                 </Button>
               </div>
             </div>
