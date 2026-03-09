@@ -160,7 +160,6 @@ const TrainingSection = () => {
                 Formación en Inteligencia Artificial
               </p>
             </div>
-            </p>
             <h2 className="font-serif text-3xl md:text-4xl lg:text-[40px] font-medium text-primary-foreground mb-5 leading-[1.2]">
               Aprende a aplicar la IA con estrategia y criterio
             </h2>
