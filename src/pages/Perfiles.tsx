@@ -1,7 +1,7 @@
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import { profiles } from "@/data/profiles";
-import { Linkedin } from "lucide-react";
+import { Linkedin, ArrowLeft } from "lucide-react";
 import { Link } from "react-router-dom";
 
 const Perfiles = () => {
@@ -58,6 +58,19 @@ const Perfiles = () => {
             ))}
           </div>
         </div>
+      </section>
+
+      {/* Volver */}
+      <section className="py-14 bg-primary text-primary-foreground text-center">
+        <p className="text-primary-foreground/50 text-[11px] uppercase tracking-[0.2em] mb-3">¿Quieres saber cómo lo hacemos?</p>
+        <h2 className="font-serif text-2xl md:text-3xl font-medium mb-6">Descubre mis servicios</h2>
+        <Link
+          to="/#servicios"
+          className="inline-flex items-center gap-2 btn-gold-gradient rounded-full px-8 py-3 font-semibold text-[12px] uppercase tracking-[0.15em]"
+        >
+          <ArrowLeft className="h-4 w-4" />
+          Volver a servicios
+        </Link>
       </section>
 
       <Footer />

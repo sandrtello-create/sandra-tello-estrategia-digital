@@ -2,6 +2,8 @@ import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import logoWatermark from "@/assets/sandra-logo-watermark.png";
 import sandraAbout from "@/assets/sandra-tello-about.jpg";
+import { ArrowLeft } from "lucide-react";
+import { Link } from "react-router-dom";
 
 const SobreMi = () => {
   return (
@@ -72,6 +74,19 @@ const SobreMi = () => {
           </div>
         </div>
       </main>
+
+      {/* Volver */}
+      <section className="relative z-10 py-14 bg-primary text-primary-foreground text-center">
+        <p className="text-primary-foreground/50 text-[11px] uppercase tracking-[0.2em] mb-3">¿Lista para dar el siguiente paso?</p>
+        <h2 className="font-serif text-2xl md:text-3xl font-medium mb-6">Volver al inicio</h2>
+        <Link
+          to="/"
+          className="inline-flex items-center gap-2 btn-gold-gradient rounded-full px-8 py-3 font-semibold text-[12px] uppercase tracking-[0.15em]"
+        >
+          <ArrowLeft className="h-4 w-4" />
+          Ir a inicio
+        </Link>
+      </section>
 
       <Footer />
     </div>
