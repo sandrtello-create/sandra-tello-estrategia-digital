@@ -31,7 +31,7 @@ export const servicePortfolios: ServicePortfolio[] = [
     serviceTitle: "Auditoría de negocio",
     headline: "Así audito negocios: presencia digital y experiencia real",
     intro:
-      "Cada proyecto empieza con un diagnóstico honesto, ya sea online o presencial. A partir de ahí, diseño un plan de acción claro y medible. Aquí tienes algunos ejemplos reales.",
+      "Cada proyecto empieza con un diagnóstico honesto —online o presencial— apoyado en herramientas de inteligencia artificial para extraer insights más profundos y actuar con mayor precisión. A partir de ahí, diseño un plan de acción claro y medible. Aquí tienes algunos ejemplos reales.",
     cases: [
       {
         title: "Turismo de Castilla-La Mancha",
@@ -39,12 +39,12 @@ export const servicePortfolios: ServicePortfolio[] = [
         challenge:
           "La presencia digital del organismo estaba fragmentada: perfiles desactualizados, contenido sin estrategia y poca coherencia entre canales. Necesitaban un diagnóstico claro para reorientar su comunicación online.",
         solution:
-          "Realicé una auditoría completa de su ecosistema digital: web, redes sociales, reputación online y coherencia de marca. Entregué un informe con recomendaciones priorizadas y un plan de acción a 6 meses.",
+          "Realicé una auditoría completa de su ecosistema digital: web, redes sociales, reputación online y coherencia de marca. Integré herramientas de IA para analizar sentimiento en reseñas y redes, y diseñé un chatbot de atención al visitante. Entregué un informe con recomendaciones priorizadas y un plan de acción a 6 meses.",
         results: [
           { label: "Canales auditados", value: "8" },
           { label: "Mejora engagement", value: "+45%" },
+          { label: "Reducción gestión llamadas (chatbot IA)", value: "-40%" },
           { label: "Recomendaciones implementadas", value: "87%" },
-          { label: "Tiempo de ejecución", value: "3 meses" },
         ],
         galleryImages: [
           { src: turismoMolinos, alt: "Molinos de viento de La Mancha", caption: "Molinos de La Mancha" },
@@ -57,7 +57,7 @@ export const servicePortfolios: ServicePortfolio[] = [
         challenge:
           "Profesionales y directivos con perfiles de LinkedIn que no reflejaban su valor real: headlines genéricos, banners sin diseño, secciones 'acerca de' sin estrategia ni diferenciación.",
         solution:
-          "Auditoría visual y de contenido del perfil completo. Rediseño de banner, headline y sección 'acerca de'. Optimización orientada a posicionamiento y atracción de oportunidades.",
+          "Auditoría visual y de contenido del perfil completo. Rediseño de banner, headline y sección 'acerca de' con apoyo de IA generativa para copywriting estratégico. Optimización orientada a posicionamiento y atracción de oportunidades.",
         results: [
           { label: "Visitas al perfil", value: "+210%" },
           { label: "Impresiones contenido", value: "+175%" },
@@ -72,7 +72,7 @@ export const servicePortfolios: ServicePortfolio[] = [
         challenge:
           "Una empresa de transporte y logística con más de 15 años en el sector tenía una presencia digital completamente descoordinada: web desactualizada, Instagram sin estrategia, LinkedIn corporativo abandonado y ficha de Google Business sin optimizar. No existía una narrativa de marca clara ni coherencia entre canales.",
         solution:
-          "Realicé una auditoría 360° de todos los canales digitales: web, Instagram, LinkedIn y Google Business. Redefiní la narrativa de marca, diseñé un plan estratégico de contenidos multicanal y creé una guía de identidad digital para unificar la comunicación.",
+          "Realicé una auditoría 360° de todos los canales digitales: web, Instagram, LinkedIn y Google Business. Utilicé IA para automatizar la monitorización de reseñas y generar respuestas personalizadas. Redefiní la narrativa de marca, diseñé un plan estratégico de contenidos multicanal y creé una guía de identidad digital para unificar la comunicación.",
         results: [
           { label: "Canales auditados", value: "6" },
           { label: "Mejora tráfico web", value: "+85%" },
@@ -91,7 +91,7 @@ export const servicePortfolios: ServicePortfolio[] = [
         challenge:
           "Una cadena de tiendas con presencia en varias ciudades sospechaba que la experiencia real del cliente no coincidía con lo que comunicaban en sus canales digitales. Había quejas recurrentes sobre atención al cliente, pero no tenían datos objetivos para identificar los puntos de fricción.",
         solution:
-          "Diseñé y ejecuté un programa de Mystery Shopper con visitas presenciales y llamadas telefónicas a 20 puntos de venta. Evalué la atención al cliente, coherencia con la imagen de marca digital y cumplimiento de protocolos internos. Entregué un informe comparativo online vs offline con recomendaciones priorizadas.",
+          "Diseñé y ejecuté un programa de Mystery Shopper con visitas presenciales y llamadas telefónicas a 20 puntos de venta. Integré IA para el análisis automatizado de los datos recogidos y la detección de patrones de insatisfacción. Evalué la atención al cliente, coherencia con la imagen de marca digital y cumplimiento de protocolos internos. Entregué un informe comparativo online vs offline con recomendaciones priorizadas.",
         results: [
           { label: "Puntos auditados", value: "20" },
           { label: "Incidencias detectadas", value: "34" },
