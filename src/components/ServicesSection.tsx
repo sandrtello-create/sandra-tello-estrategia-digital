@@ -44,10 +44,10 @@ const services = [
     details: {
       intro: "Reviso tu ecosistema digital al completo para detectar qué funciona, qué falta y qué sobra.",
       points: [
-        "Análisis de web y SEO básico",
-        "Revisión de redes sociales",
-        "Coherencia de marca en canales",
         "Reputación online",
+        "Revisión de redes sociales",
+        "Análisis de web y SEO básico",
+        "Coherencia de marca en canales",
         "Informe con recomendaciones priorizadas",
       ],
       closing: "Un diagnóstico honesto con un plan de acción claro.",
