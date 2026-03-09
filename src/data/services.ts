@@ -82,6 +82,7 @@ export const servicePortfolios: ServicePortfolio[] = [
         galleryImages: [
           { src: logisticaGoogle, alt: "Perfil de Google Business de empresa de transporte", caption: "Google Business" },
           { src: logisticaInstagram, alt: "Perfil de Instagram de empresa logística", caption: "Instagram" },
+          { src: logisticaWeb, alt: "Página web corporativa de empresa de transporte", caption: "Página web" },
         ],
       },
       {
