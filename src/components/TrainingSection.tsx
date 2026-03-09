@@ -209,16 +209,16 @@ const TrainingSection = () => {
           {/* Tools grid */}
           <div className="w-full">
             <p className="text-accent font-semibold text-[11px] uppercase tracking-[0.25em] mb-6 text-center">
-              Qué aprenden a utilizar
+              Herramientas que aprenderás a dominar
             </p>
-            <div className="flex flex-wrap justify-center gap-3">
+            <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-5 gap-3">
               {tools.map((tool, i) => (
                 <div
                   key={i}
-                  className="group flex items-center gap-2.5 px-4 py-2.5 border border-[hsl(230,15%,88%)] bg-[hsl(230,15%,92%)] text-[hsl(232,28%,21%)] text-[13px] transition-all duration-300 hover:bg-accent hover:border-accent/40 hover:text-primary cursor-default"
+                  className="group flex items-center gap-2.5 px-4 py-3 border border-[hsl(230,15%,88%)] bg-[hsl(230,15%,92%)] text-[hsl(232,28%,21%)] text-[13px] transition-all duration-300 hover:bg-accent hover:border-accent/40 hover:text-primary cursor-default"
                 >
-                  <tool.icon className="h-4 w-4 transition-colors duration-300 group-hover:text-primary" />
-                  {tool.label}
+                  <tool.icon className="h-4 w-4 shrink-0 transition-colors duration-300 group-hover:text-primary" />
+                  <span className="leading-tight">{tool.label}</span>
                 </div>
               ))}
             </div>
@@ -400,11 +400,11 @@ const TrainingSection = () => {
 
                 <Button
                   onClick={() => setIsLeadModalOpen(true)}
-                  className="bg-accent text-accent-foreground hover:bg-gold-light rounded-none px-10 py-7 text-[14px] font-semibold uppercase tracking-[0.15em] shadow-[0_0_20px_hsl(var(--accent)/0.4)] transition-all duration-300 hover:shadow-[0_0_30px_hsl(var(--accent)/0.6)] hover:scale-105"
+                  className="bg-accent text-accent-foreground hover:bg-gold-light rounded-none px-6 sm:px-10 py-6 sm:py-7 text-[12px] sm:text-[14px] font-semibold uppercase tracking-[0.1em] sm:tracking-[0.15em] shadow-[0_0_20px_hsl(var(--accent)/0.4)] transition-all duration-300 hover:shadow-[0_0_30px_hsl(var(--accent)/0.6)] hover:scale-105 w-full sm:w-auto text-center whitespace-normal"
                 >
-                  <FileText className="mr-2 h-4 w-4" />
-                  Desbloquea tu kit de herramientas IA
-                  <ArrowRight className="ml-2 h-4 w-4" />
+                  <FileText className="mr-2 h-4 w-4 shrink-0" />
+                  <span>Desbloquea tu kit de herramientas IA</span>
+                  <ArrowRight className="ml-2 h-4 w-4 shrink-0" />
                 </Button>
               </div>
             </div>
