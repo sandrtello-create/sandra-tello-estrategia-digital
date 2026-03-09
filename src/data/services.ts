@@ -64,9 +64,6 @@ export const servicePortfolios: ServicePortfolio[] = [
           { label: "Perfiles optimizados", value: "15+" },
           { label: "Mejora de conversión", value: "+60%" },
         ],
-        galleryImages: [
-          { src: linkedinLogo, alt: "Logo de LinkedIn", caption: "LinkedIn" },
-        ],
         bannerBeforeAfter: [],
       },
       {
