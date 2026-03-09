@@ -24,17 +24,23 @@ const programs = [
   },
 ];
 
+const toolColors = [
+  { bg: "bg-accent/15", text: "text-accent", border: "border-accent/25" },
+  { bg: "bg-[hsl(var(--mint))/0.12]", text: "text-[hsl(var(--mint))]", border: "border-[hsl(var(--mint))/0.25]" },
+  { bg: "bg-[hsl(200,60%,55%)/0.12]", text: "text-[hsl(200,60%,55%)]", border: "border-[hsl(200,60%,55%)/0.25]" },
+];
+
 const tools = [
-  { icon: MessageSquare, label: "Chatbots WhatsApp" },
-  { icon: Bot, label: "Agentes IA" },
-  { icon: Video, label: "Avatares IA" },
-  { icon: Mic, label: "Voz IA" },
-  { icon: Phone, label: "Atención telefónica IA" },
-  { icon: Zap, label: "Automatización" },
-  { icon: Share2, label: "Contenido RRSS" },
-  { icon: Globe, label: "Creación de webs" },
-  { icon: Palette, label: "Diseño con IA" },
-  { icon: UserRound, label: "Clases 1 a 1" },
+  { icon: MessageSquare, label: "Chatbots WhatsApp", colorIdx: 0 },
+  { icon: Bot, label: "Agentes IA", colorIdx: 1 },
+  { icon: Video, label: "Avatares IA", colorIdx: 2 },
+  { icon: Mic, label: "Voz IA", colorIdx: 0 },
+  { icon: Phone, label: "Atención telefónica IA", colorIdx: 1 },
+  { icon: Zap, label: "Automatización", colorIdx: 2 },
+  { icon: Share2, label: "Contenido RRSS", colorIdx: 0 },
+  { icon: Globe, label: "Creación de webs", colorIdx: 1 },
+  { icon: Palette, label: "Diseño con IA", colorIdx: 2 },
+  { icon: UserRound, label: "Clases 1 a 1", colorIdx: 0 },
 ];
 
 const NeuralNetworkSVG = () => (
@@ -159,9 +165,17 @@ const TrainingSection = () => {
             <h2 className="font-serif text-3xl md:text-4xl lg:text-[40px] font-medium text-primary-foreground mb-5 leading-[1.2]">
               Aprende a aplicar la IA con estrategia y criterio
             </h2>
-            <p className="text-primary-foreground/60 text-[16px] leading-relaxed">
-              Programas de formación y workshops diseñados para empresas, ejecutivos y profesionales
-              que quieren aplicar la inteligencia artificial de forma práctica y estratégica.
+            <p className="text-primary-foreground/60 text-[16px] leading-relaxed mb-4">
+              No necesitas saber de tecnología. Mis programas están pensados para profesionales y equipos
+              que parten de cero en IA y quieren aplicarla de forma práctica en su sector.
+              Formación 100% aplicada a tu negocio, no genérica.
+            </p>
+            <p className="text-primary-foreground/50 text-[14px] leading-relaxed">
+              He formado a equipos en sectores como el <span className="text-accent/80 font-medium">industrial</span>,{" "}
+              <span className="text-accent/80 font-medium">transporte</span>,{" "}
+              <span className="text-accent/80 font-medium">turismo</span> y{" "}
+              <span className="text-accent/80 font-medium">educativo</span>,
+              con especial foco en comunicación y redes sociales.
             </p>
           </div>
 
@@ -196,15 +210,20 @@ const TrainingSection = () => {
               Qué aprenden a utilizar
             </p>
             <div className="flex flex-wrap justify-center gap-3">
-              {tools.map((tool, i) => (
-                <div
-                  key={i}
-                  className="flex items-center gap-2 px-4 py-2.5 border border-primary-foreground/10 bg-primary-foreground/[0.03] text-primary-foreground/70 text-[13px] transition-colors duration-300 hover:border-accent/30 hover:text-primary-foreground"
-                >
-                  <tool.icon className="h-4 w-4 text-accent/60" />
-                  {tool.label}
-                </div>
-              ))}
+              {tools.map((tool, i) => {
+                const color = toolColors[tool.colorIdx];
+                return (
+                  <div
+                    key={i}
+                    className={`flex items-center gap-2.5 px-4 py-2.5 border ${color.border} bg-primary-foreground/[0.03] text-primary-foreground/70 text-[13px] transition-all duration-300 hover:text-primary-foreground hover:bg-primary-foreground/[0.06]`}
+                  >
+                    <span className={`w-7 h-7 rounded-full ${color.bg} flex items-center justify-center shrink-0`}>
+                      <tool.icon className={`h-3.5 w-3.5 ${color.text}`} />
+                    </span>
+                    {tool.label}
+                  </div>
+                );
+              })}
             </div>
           </div>
 
