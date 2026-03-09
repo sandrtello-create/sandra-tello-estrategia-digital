@@ -40,6 +40,7 @@ const services = [
   {
     icon: Search,
     title: "Auditoría de presencia digital",
+    portfolioSlug: "auditoria-presencia-digital",
     description:
       "Análisis completo de tu ecosistema digital: web, redes sociales, contenido y reputación online con recomendaciones claras de mejora.",
     details: {
