@@ -193,6 +193,18 @@ const ServiceItem = ({
                   </Link>
                 </div>
               )}
+
+              {/* Enneagram + Leadership Cards */}
+              {service.hasEnneagram && (
+                <div className="mt-10">
+                  <div className="h-px w-full bg-border/60 mb-8" />
+                  <p className="text-[11px] font-semibold uppercase tracking-[0.2em] text-accent mb-6 text-center">
+                    Conozco a fondo cada perfil para potenciar su liderazgo
+                  </p>
+                  <EnneagramWheel />
+                  <LeadershipCards />
+                </div>
+              )}
             </div>
           </div>
         </div>
