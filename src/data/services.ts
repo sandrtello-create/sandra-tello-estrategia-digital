@@ -94,9 +94,9 @@ export const servicePortfolios: ServicePortfolio[] = [
           { label: "Recomendaciones aplicadas", value: "91%" },
         ],
         galleryImages: [
-          { src: "/placeholder.svg", alt: "Tienda auditada" },
-          { src: "/placeholder.svg", alt: "Punto de venta" },
-          { src: "/placeholder.svg", alt: "Experiencia de cliente" },
+          { src: "https://images.unsplash.com/photo-1441986300917-64674bd600d8?w=600&h=400&fit=crop", alt: "Tienda retail auditada" },
+          { src: "https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?w=600&h=400&fit=crop", alt: "Punto de venta" },
+          { src: "https://images.unsplash.com/photo-1556742111-a301076d9d18?w=600&h=400&fit=crop", alt: "Experiencia de cliente en tienda" },
         ],
       },
     ],
