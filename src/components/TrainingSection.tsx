@@ -190,6 +190,50 @@ const TrainingSection = () => {
             ))}
           </div>
 
+          {/* Tools grid */}
+          <div className="w-full">
+            <p className="text-accent font-semibold text-[11px] uppercase tracking-[0.25em] mb-6 text-center">
+              Qué aprenden a utilizar
+            </p>
+            <div className="flex flex-wrap justify-center gap-3">
+              {tools.map((tool, i) => (
+                <div
+                  key={i}
+                  className="flex items-center gap-2 px-4 py-2.5 border border-primary-foreground/10 bg-primary-foreground/[0.03] text-primary-foreground/70 text-[13px] transition-colors duration-300 hover:border-accent/30 hover:text-primary-foreground"
+                >
+                  <tool.icon className="h-4 w-4 text-accent/60" />
+                  {tool.label}
+                </div>
+              ))}
+            </div>
+          </div>
+
+          {/* Case study */}
+          <div className="w-full border border-accent/20 bg-accent/[0.03] p-8 md:p-10">
+            <p className="text-accent font-semibold text-[11px] uppercase tracking-[0.25em] mb-4">
+              Caso de ejemplo
+            </p>
+            <h3 className="font-serif text-xl md:text-2xl font-medium text-primary-foreground mb-4">
+              Desarrollo digital completo para el sector turístico
+            </h3>
+            <p className="text-primary-foreground/55 text-[14px] leading-relaxed mb-6">
+              Proyecto integral donde se aplicaron todas las herramientas de IA en un ecosistema turístico real:
+              desde un chatbot de WhatsApp para atención al visitante, agentes IA para gestión de reservas,
+              avatar con IA como guía virtual, asistente de voz telefónico, creación de página web,
+              automatización de procesos internos y estrategia de contenido para redes sociales.
+            </p>
+            <div className="flex flex-wrap gap-2">
+              {["WhatsApp Chatbot", "Agentes IA", "Avatar virtual", "Voz IA", "Web", "Automatización", "RRSS", "Atención telefónica"].map((tag) => (
+                <span
+                  key={tag}
+                  className="px-3 py-1 text-[11px] uppercase tracking-wider font-semibold text-accent border border-accent/25 bg-accent/[0.06]"
+                >
+                  {tag}
+                </span>
+              ))}
+            </div>
+          </div>
+
           {/* CTA */}
           <div>
             <Button className="bg-accent text-accent-foreground hover:bg-gold-light rounded-none px-10 py-6 text-[13px] font-semibold uppercase tracking-[0.18em] shadow-none border border-accent">
