@@ -8,6 +8,7 @@ const testimonials = [
     name: "María López",
     role: "Directora de Marketing",
     company: "Empresa Tech",
+    photo: "https://i.pravatar.cc/150?u=maria-lopez",
   },
   {
     quote:
@@ -15,6 +16,7 @@ const testimonials = [
     name: "Carlos Martínez",
     role: "CEO & Fundador",
     company: "Startup Digital",
+    photo: "https://i.pravatar.cc/150?u=carlos-martinez",
   },
   {
     quote:
@@ -22,6 +24,7 @@ const testimonials = [
     name: "Ana García",
     role: "Consultora Senior",
     company: "Consultoría Internacional",
+    photo: "https://i.pravatar.cc/150?u=ana-garcia",
   },
 ];
 
@@ -32,24 +35,40 @@ const TestimonialsSection = () => {
   const prev = () => setCurrent((prev) => (prev - 1 + testimonials.length) % testimonials.length);
 
   return (
-    <section className="py-20 lg:py-28 bg-background">
+    <section className="py-20 lg:py-28 bg-[#1B2A4A]">
       <div className="container mx-auto px-6 lg:px-8">
         <div className="text-center max-w-2xl mx-auto mb-16">
           <p className="text-accent font-semibold text-[11px] uppercase tracking-[0.25em] mb-4">
             Testimonios
           </p>
-          <h2 className="font-serif text-3xl md:text-4xl lg:text-[44px] font-medium text-primary leading-[1.2]">
+          <h2 className="font-serif text-3xl md:text-4xl lg:text-[44px] font-medium text-white leading-[1.2]">
             Lo que dicen quienes han trabajado conmigo
           </h2>
         </div>
 
         <div className="max-w-3xl mx-auto">
-          <div className="text-center px-4 md:px-12">
-            <Quote className="h-10 w-10 text-accent/30 mx-auto mb-8" />
-            <blockquote className="font-serif text-2xl md:text-3xl text-primary leading-relaxed mb-10 italic font-light">
+          <div className="bg-white rounded-sm shadow-lg px-8 md:px-14 pt-14 pb-10 relative">
+            {/* Avatar */}
+            <div className="absolute -top-8 left-1/2 -translate-x-1/2">
+              <div className="w-16 h-16 rounded-full overflow-hidden border-[3px] border-accent shadow-md">
+                <img
+                  src={testimonials[current].photo}
+                  alt={testimonials[current].name}
+                  className="w-full h-full object-cover"
+                />
+              </div>
+            </div>
+
+            {/* Quote icon */}
+            <Quote className="h-8 w-8 text-accent/25 mx-auto mb-6" />
+
+            {/* Quote text */}
+            <blockquote className="font-serif text-xl md:text-2xl text-primary leading-relaxed mb-8 italic font-light text-center">
               "{testimonials[current].quote}"
             </blockquote>
-            <div>
+
+            {/* Author */}
+            <div className="text-center">
               <p className="font-semibold text-primary text-lg">{testimonials[current].name}</p>
               <p className="text-sm text-muted-foreground">
                 {testimonials[current].role}, {testimonials[current].company}
@@ -57,13 +76,14 @@ const TestimonialsSection = () => {
             </div>
           </div>
 
+          {/* Navigation */}
           <div className="flex items-center justify-center gap-6 mt-10">
             <button
               onClick={prev}
-              className="w-10 h-10 border border-border flex items-center justify-center hover:border-accent/50 transition-colors"
+              className="w-10 h-10 border border-white/30 flex items-center justify-center hover:border-accent/50 transition-colors"
               aria-label="Anterior"
             >
-              <ChevronLeft className="h-5 w-5 text-primary" />
+              <ChevronLeft className="h-5 w-5 text-white" />
             </button>
             <div className="flex gap-2">
               {testimonials.map((_, index) => (
@@ -71,7 +91,7 @@ const TestimonialsSection = () => {
                   key={index}
                   onClick={() => setCurrent(index)}
                   className={`w-2 h-2 rounded-full transition-all ${
-                    index === current ? "bg-accent w-6" : "bg-border"
+                    index === current ? "bg-accent w-6" : "bg-white/30"
                   }`}
                   aria-label={`Testimonio ${index + 1}`}
                 />
@@ -79,10 +99,10 @@ const TestimonialsSection = () => {
             </div>
             <button
               onClick={next}
-              className="w-10 h-10 border border-border flex items-center justify-center hover:border-accent/50 transition-colors"
+              className="w-10 h-10 border border-white/30 flex items-center justify-center hover:border-accent/50 transition-colors"
               aria-label="Siguiente"
             >
-              <ChevronRight className="h-5 w-5 text-primary" />
+              <ChevronRight className="h-5 w-5 text-white" />
             </button>
           </div>
         </div>
