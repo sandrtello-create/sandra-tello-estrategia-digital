@@ -135,6 +135,8 @@ const ProgramCard = ({
 };
 
 const TrainingSection = () => {
+  const [isLeadModalOpen, setIsLeadModalOpen] = useState(false);
+
   return (
     <section
       id="formacion"
