@@ -20,9 +20,9 @@ export const servicePortfolios: ServicePortfolio[] = [
   {
     slug: "auditoria-de-negocio",
     serviceTitle: "Auditoría de negocio",
-    headline: "Así auditamos negocios: presencia digital y experiencia real",
+    headline: "Así audito negocios: presencia digital y experiencia real",
     intro:
-      "Cada proyecto empieza con un diagnóstico honesto, ya sea online o presencial. A partir de ahí, diseñamos un plan de acción claro y medible. Aquí tienes algunos ejemplos reales.",
+      "Cada proyecto empieza con un diagnóstico honesto, ya sea online o presencial. A partir de ahí, diseño un plan de acción claro y medible. Aquí tienes algunos ejemplos reales.",
     cases: [
       {
         title: "Turismo de Castilla-La Mancha",
@@ -30,7 +30,7 @@ export const servicePortfolios: ServicePortfolio[] = [
         challenge:
           "La presencia digital del organismo estaba fragmentada: perfiles desactualizados, contenido sin estrategia y poca coherencia entre canales. Necesitaban un diagnóstico claro para reorientar su comunicación online.",
         solution:
-          "Realizamos una auditoría completa de su ecosistema digital: web, redes sociales, reputación online y coherencia de marca. Entregamos un informe con recomendaciones priorizadas y un plan de acción a 6 meses.",
+          "Realicé una auditoría completa de su ecosistema digital: web, redes sociales, reputación online y coherencia de marca. Entregué un informe con recomendaciones priorizadas y un plan de acción a 6 meses.",
         results: [
           { label: "Canales auditados", value: "8" },
           { label: "Mejora engagement", value: "+45%" },
