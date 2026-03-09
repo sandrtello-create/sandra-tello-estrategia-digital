@@ -155,8 +155,25 @@
   animation-play-state: paused;
 }
 
+@keyframes scroll-photos {
+  0% { transform: translateX(0); }
+  100% { transform: translateX(-50%); }
+}
+
+.animate-scroll-photos {
+  animation: scroll-photos 35s linear infinite;
+  will-change: transform;
+}
+
+.animate-scroll-photos:hover {
+  animation-play-state: paused;
+}
+
 @media (max-width: 768px) {
   .animate-scroll-brands {
     animation-duration: 10s;
+  }
+  .animate-scroll-photos {
+    animation-duration: 20s;
   }
 }
