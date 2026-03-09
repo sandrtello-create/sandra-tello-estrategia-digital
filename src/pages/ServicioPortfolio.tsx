@@ -2,7 +2,8 @@ import { useParams, Link } from "react-router-dom";
 import { servicePortfolios, ServiceCase } from "@/data/services";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
-import { ArrowLeft, ArrowRight, TrendingUp, Landmark, Linkedin, Truck, ShoppingBag } from "lucide-react";
+import { ArrowLeft, ArrowRight, TrendingUp, Landmark, Truck, ShoppingBag } from "lucide-react";
+import linkedinLogo from "@/assets/portfolio/linkedin-logo.jpg";
 
 const GalleryGrid = ({ images }: { images: { src: string; alt: string; caption?: string }[] }) => {
   const gridCols = images.length <= 2
