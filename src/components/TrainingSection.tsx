@@ -8,7 +8,7 @@ const programs = [
     icon: Building2,
     title: "Formación para empresas",
     description:
-      "Programas in-company —en remoto o presencial— para equipos que necesitan integrar la IA de forma estratégica en su día a día.",
+      "Programas in-company (en remoto o presencial) para equipos que necesitan integrar la IA de forma estratégica en su día a día.",
   },
   {
     icon: Briefcase,
@@ -20,7 +20,7 @@ const programs = [
     icon: GraduationCap,
     title: "Programas para profesionales",
     description:
-      "Formación práctica —incluyendo clases individuales 1 a 1— para profesionales que quieren multiplicar su productividad e impacto con IA.",
+      "Formación práctica, incluyendo clases individuales 1 a 1, para profesionales que quieren multiplicar su productividad e impacto con IA.",
   },
 ];
 
