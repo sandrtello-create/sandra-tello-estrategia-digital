@@ -62,17 +62,31 @@ export const servicePortfolios: ServicePortfolio[] = [
         },
       },
       {
-        title: "Directivo sector tecnológico",
-        sector: "Tecnología / SaaS",
+        title: "Empresa de logística y transporte",
+        sector: "Transporte / Logística",
         challenge:
-          "Un CEO de una startup tecnológica quería posicionarse como referente en LinkedIn pero su perfil no transmitía su experiencia ni su visión. La imagen de marca personal era inexistente.",
+          "Una empresa de transporte y logística con más de 15 años en el sector tenía una presencia digital completamente descoordinada: web desactualizada, Instagram sin estrategia, LinkedIn corporativo abandonado y ficha de Google Business sin optimizar. No existía una narrativa de marca clara ni coherencia entre canales.",
         solution:
-          "Auditoría de su perfil de LinkedIn, estrategia de contenidos y plan de publicación semanal. Acompañamiento durante 3 meses para consolidar el posicionamiento.",
+          "Auditoría 360° de todos los canales digitales: web, Instagram, LinkedIn y Google Business. Redefinición de la narrativa de marca, diseño de un plan estratégico de contenidos multicanal y creación de una guía de identidad digital para unificar la comunicación.",
         results: [
-          { label: "Visitas al perfil", value: "+320%" },
-          { label: "Conexiones relevantes", value: "+180" },
-          { label: "Publicaciones/mes", value: "8" },
-          { label: "Leads generados", value: "12" },
+          { label: "Canales auditados", value: "6" },
+          { label: "Mejora tráfico web", value: "+85%" },
+          { label: "Crecimiento seguidores", value: "+130%" },
+          { label: "Coherencia de marca", value: "100%" },
+        ],
+      },
+      {
+        title: "Auditoría Mystery Shopper para cadena retail",
+        sector: "Retail / Mystery Shopping",
+        challenge:
+          "Una cadena de tiendas con presencia en varias ciudades sospechaba que la experiencia real del cliente no coincidía con lo que comunicaban en sus canales digitales. Había quejas recurrentes sobre atención al cliente, pero no tenían datos objetivos para identificar los puntos de fricción.",
+        solution:
+          "Diseño y ejecución de un programa de Mystery Shopper con visitas presenciales y llamadas telefónicas a 20 puntos de venta. Evaluación de atención al cliente, coherencia con la imagen de marca digital y cumplimiento de protocolos internos. Entrega de informe comparativo online vs offline con recomendaciones priorizadas.",
+        results: [
+          { label: "Puntos auditados", value: "20" },
+          { label: "Incidencias detectadas", value: "34" },
+          { label: "Mejora satisfacción", value: "+40%" },
+          { label: "Recomendaciones aplicadas", value: "91%" },
         ],
       },
     ],
