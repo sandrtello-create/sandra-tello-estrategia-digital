@@ -380,7 +380,7 @@ const TrainingSection = () => {
                   ].map((resource, i) => (
                     <div
                       key={i}
-                      className="group flex flex-col p-4 border border-[hsl(232,25%,32%)] bg-[hsl(232,28%,22%)] transition-all duration-300 hover:border-accent hover:shadow-[0_8px_24px_-8px_hsl(var(--accent)/0.25)]"
+                      className="group flex flex-col p-4 border border-[hsl(232,25%,32%)] bg-[hsl(232,28%,22%)] transition-all duration-300 hover:bg-accent hover:border-accent/40 hover:shadow-[0_8px_24px_-8px_hsl(var(--accent)/0.25)]"
                     >
                       <div className="w-8 h-8 rounded-full bg-accent/20 flex items-center justify-center mb-2 group-hover:bg-accent/30 transition-colors duration-300">
                         <resource.icon className="h-4 w-4 text-accent" />
