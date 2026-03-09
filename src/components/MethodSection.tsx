@@ -40,12 +40,12 @@ const MethodSection = () => {
       <img
         src={sandraMetodoBg}
         alt=""
-        className="absolute -top-[15%] left-0 h-[130%] w-auto max-w-none object-contain object-left"
+        className="absolute -top-[22%] left-0 h-[140%] w-auto max-w-none object-contain object-left"
       />
       <div className="absolute inset-0 bg-[#1a1f3d]/75" />
 
       <div className="container mx-auto px-6 lg:px-8 relative z-10">
-        <div className="text-center max-w-3xl mx-auto mb-20">
+        <div className="text-right max-w-2xl ml-auto mb-20">
           <p className="gold-gradient-text font-semibold text-sm uppercase tracking-[0.25em] mb-4">
             El Método
           </p>
