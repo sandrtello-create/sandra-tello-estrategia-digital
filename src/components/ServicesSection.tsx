@@ -1,5 +1,6 @@
 import { useState, useEffect, useRef } from "react";
-import { Brain, Target, Search, Users, ArrowRight, ChevronDown } from "lucide-react";
+import { Brain, Target, Search, Users, ArrowRight, ChevronDown, FolderOpen } from "lucide-react";
+import { Link } from "react-router-dom";
 
 const services = [
   {
