@@ -183,13 +183,10 @@ const ServiceItem = ({
                   <div className="h-px w-full bg-border/60 mb-6" />
                   <Link
                     to={`/servicios/${service.portfolioSlug}`}
-                    className="group/cta inline-flex items-center gap-3 hover:gap-4 transition-all duration-300"
+                    className="inline-flex items-center gap-2 bg-primary text-accent px-5 py-2.5 rounded-lg font-semibold text-sm hover:shadow-lg hover:scale-[1.02] transition-all duration-300"
                   >
-                    <span className="h-2.5 w-2.5 rounded-full bg-primary shrink-0 group-hover/cta:scale-110 transition-transform duration-300" />
-                    <span className="text-primary font-semibold text-[12px] uppercase tracking-[0.2em] border-b border-primary/0 group-hover/cta:border-primary/40 transition-all duration-300 pb-px">
-                      Proyectos con empresas
-                    </span>
-                    <ArrowRight className="h-3.5 w-3.5 text-primary transition-transform duration-300 group-hover/cta:translate-x-0.5" />
+                    Proyectos con empresas
+                    <ArrowRight className="h-4 w-4" />
                   </Link>
                 </div>
               )}
