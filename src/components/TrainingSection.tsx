@@ -400,7 +400,7 @@ const TrainingSection = () => {
 
                 <Button
                   onClick={() => setIsLeadModalOpen(true)}
-                  className="bg-accent text-accent-foreground hover:bg-gold-light rounded-none px-10 py-7 text-[14px] font-semibold uppercase tracking-[0.15em] shadow-[0_0_20px_hsl(var(--accent)/0.4)] animate-[pulse_4s_cubic-bezier(0.4,0,0.6,1)_infinite] transition-all duration-300 hover:shadow-[0_0_30px_hsl(var(--accent)/0.6)]"
+                  className="bg-accent text-accent-foreground hover:bg-gold-light rounded-none px-10 py-7 text-[14px] font-semibold uppercase tracking-[0.15em] shadow-[0_0_20px_hsl(var(--accent)/0.4)] motion-reduce:animate-none animate-[pulse_12s_ease-in-out_infinite] transition-all duration-300 hover:shadow-[0_0_30px_hsl(var(--accent)/0.6)]"
                 >
                   <FileText className="mr-2 h-4 w-4" />
                   Desbloquea tu kit de herramientas IA
