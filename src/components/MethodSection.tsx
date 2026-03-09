@@ -63,7 +63,7 @@ const MethodSection = () => {
           {pillars.map((pillar, index) => (
             <div
               key={index}
-              className="group bg-white/10 backdrop-blur-md border border-white/10 rounded-lg p-10 text-center hover:bg-[#1B2A4A] hover:border-[#1B2A4A] transition-all duration-300 hover:scale-[1.03] hover:shadow-[0_10px_30px_-10px_rgba(27,42,74,0.5)]"
+              className="group bg-white/10 backdrop-blur-md border border-white/10 rounded-lg p-10 text-center hover:bg-[#1B2A4A] hover:border-[#C5A55A] transition-all duration-300 hover:scale-[1.03] hover:shadow-[0_0_20px_rgba(197,165,90,0.3)]"
             >
               <div className="w-16 h-16 flex items-center justify-center mx-auto mb-6">
                 <pillar.icon className="h-9 w-9 text-[hsl(38,55%,50%)] group-hover:text-white transition-colors duration-300" />
