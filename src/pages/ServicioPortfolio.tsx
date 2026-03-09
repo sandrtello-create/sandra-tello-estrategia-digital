@@ -2,7 +2,7 @@ import { useParams, Link } from "react-router-dom";
 import { servicePortfolios, ServiceCase } from "@/data/services";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
-import { ArrowLeft, ArrowRight, TrendingUp } from "lucide-react";
+import { ArrowLeft, ArrowRight, TrendingUp, Landmark, Linkedin, Truck, ShoppingBag } from "lucide-react";
 
 const GalleryGrid = ({ images }: { images: { src: string; alt: string }[] }) => (
   <div>
