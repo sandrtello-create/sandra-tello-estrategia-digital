@@ -6,7 +6,7 @@ const pillars = [
     icon: Brain,
     title: "Mentalidad",
     description:
-      "Supera el autosabotaje y el síndrome del impostor. La confianza es tu mayor ventaja competitiva.",
+      "Supera el autosabotaje y el síndrome del impostor.",
   },
   {
     icon: Cpu,
