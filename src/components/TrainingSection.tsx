@@ -416,7 +416,7 @@ const TrainingSection = () => {
           {/* CTA */}
           <div>
             <Button className="bg-accent text-accent-foreground hover:bg-gold-light rounded-none px-10 py-6 text-[13px] font-semibold uppercase tracking-[0.18em] shadow-none border border-accent">
-              Empieza tu formación
+              Da el salto y domina la IA
               <ArrowRight className="ml-2 h-4 w-4" />
             </Button>
           </div>
