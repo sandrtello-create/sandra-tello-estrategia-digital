@@ -319,6 +319,7 @@ const TrainingSection = () => {
                 </div>
               ))}
             </div>
+          </div>
 
           {/* CTA */}
           <div>
