@@ -86,7 +86,7 @@ export const servicePortfolios: ServicePortfolio[] = [
         challenge:
           "Una cadena de tiendas con presencia en varias ciudades sospechaba que la experiencia real del cliente no coincidía con lo que comunicaban en sus canales digitales. Había quejas recurrentes sobre atención al cliente, pero no tenían datos objetivos para identificar los puntos de fricción.",
         solution:
-          "Diseño y ejecución de un programa de Mystery Shopper con visitas presenciales y llamadas telefónicas a 20 puntos de venta. Evaluación de atención al cliente, coherencia con la imagen de marca digital y cumplimiento de protocolos internos. Entrega de informe comparativo online vs offline con recomendaciones priorizadas.",
+          "Diseñé y ejecuté un programa de Mystery Shopper con visitas presenciales y llamadas telefónicas a 20 puntos de venta. Evalué la atención al cliente, coherencia con la imagen de marca digital y cumplimiento de protocolos internos. Entregué un informe comparativo online vs offline con recomendaciones priorizadas.",
         results: [
           { label: "Puntos auditados", value: "20" },
           { label: "Incidencias detectadas", value: "34" },
