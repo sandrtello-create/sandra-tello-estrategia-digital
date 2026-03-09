@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { Button } from "@/components/ui/button";
-import { GraduationCap, Building2, Briefcase, ArrowRight, Brain } from "lucide-react";
+import { GraduationCap, Building2, Briefcase, ArrowRight } from "lucide-react";
+import sandraIA from "@/assets/sandra-tello-ia.jpg";
 
 const programs = [
   {
@@ -31,7 +32,6 @@ const NeuralNetworkSVG = () => (
     xmlns="http://www.w3.org/2000/svg"
     preserveAspectRatio="xMidYMid slice"
   >
-    {/* Connections */}
     <line x1="100" y1="100" x2="300" y2="200" stroke="currentColor" strokeWidth="1" />
     <line x1="300" y1="200" x2="500" y2="120" stroke="currentColor" strokeWidth="1" />
     <line x1="500" y1="120" x2="700" y2="250" stroke="currentColor" strokeWidth="1" />
@@ -46,7 +46,6 @@ const NeuralNetworkSVG = () => (
     <line x1="150" y1="500" x2="400" y2="400" stroke="currentColor" strokeWidth="1" />
     <line x1="650" y1="480" x2="600" y2="350" stroke="currentColor" strokeWidth="1" />
     <line x1="650" y1="480" x2="700" y2="250" stroke="currentColor" strokeWidth="1" />
-    {/* Nodes */}
     {[
       [100, 100], [300, 200], [500, 120], [700, 250],
       [200, 350], [400, 400], [600, 350],
@@ -69,7 +68,7 @@ const ProgramCard = ({
 
   return (
     <div
-      className="relative pl-5 py-8 px-8 bg-primary-foreground/[0.03] border border-primary-foreground/10 transition-all duration-500 group"
+      className="relative pl-5 py-6 px-6 bg-primary-foreground/[0.03] border border-primary-foreground/10 transition-all duration-500"
       style={{
         transform: hovered ? "translateY(-4px)" : "translateY(0)",
         boxShadow: hovered
@@ -91,29 +90,33 @@ const ProgramCard = ({
         }}
       />
 
-      {/* Number */}
-      <span
-        className="font-serif text-5xl font-semibold block mb-5 transition-colors duration-500"
-        style={{
-          color: hovered
-            ? "hsl(var(--accent) / 0.5)"
-            : "hsl(var(--accent) / 0.12)",
-        }}
-      >
-        {num}
-      </span>
+      <div className="flex items-start gap-5">
+        {/* Number */}
+        <span
+          className="font-serif text-4xl font-semibold shrink-0 transition-colors duration-500"
+          style={{
+            color: hovered
+              ? "hsl(var(--accent) / 0.5)"
+              : "hsl(var(--accent) / 0.12)",
+          }}
+        >
+          {num}
+        </span>
 
-      {/* Icon with circular bg */}
-      <div className="w-12 h-12 rounded-full bg-accent/10 flex items-center justify-center mb-5">
-        <program.icon className="h-6 w-6 text-accent" />
+        <div>
+          {/* Icon with circular bg */}
+          <div className="w-10 h-10 rounded-full bg-accent/10 flex items-center justify-center mb-3">
+            <program.icon className="h-5 w-5 text-accent" />
+          </div>
+
+          <h3 className="font-serif text-lg font-medium text-primary-foreground mb-2">
+            {program.title}
+          </h3>
+          <p className="text-primary-foreground/55 leading-relaxed text-[14px]">
+            {program.description}
+          </p>
+        </div>
       </div>
-
-      <h3 className="font-serif text-xl font-medium text-primary-foreground mb-3">
-        {program.title}
-      </h3>
-      <p className="text-primary-foreground/55 leading-relaxed text-[15px]">
-        {program.description}
-      </p>
     </div>
   );
 };
@@ -138,36 +141,57 @@ const TrainingSection = () => {
         }}
       />
 
-      {/* AI brain watermark */}
-      <div className="absolute right-[-60px] top-1/2 -translate-y-1/2 opacity-[0.03] text-primary-foreground pointer-events-none">
-        <Brain className="w-[320px] h-[320px]" strokeWidth={0.8} />
-      </div>
-
       <div className="container mx-auto px-6 lg:px-8 relative z-10">
-        <div className="text-center max-w-2xl mx-auto mb-16">
-          <p className="text-accent font-semibold text-[11px] uppercase tracking-[0.25em] mb-4">
-            Formación en Inteligencia Artificial
-          </p>
-          <h2 className="font-serif text-3xl md:text-4xl lg:text-[44px] font-medium text-primary-foreground mb-5 leading-[1.2]">
-            Aprende a aplicar la IA con estrategia y criterio
-          </h2>
-          <p className="text-primary-foreground/60 text-[17px] leading-relaxed">
-            Programas de formación y workshops diseñados para empresas, ejecutivos y profesionales
-            que quieren aplicar la inteligencia artificial de forma práctica y estratégica.
-          </p>
-        </div>
+        {/* Two-column layout */}
+        <div className="grid lg:grid-cols-[1fr_1.2fr] gap-10 lg:gap-14 items-stretch">
+          {/* Left: Photo */}
+          <div className="relative group">
+            <div className="relative overflow-hidden h-full min-h-[400px] lg:min-h-0">
+              <img
+                src={sandraIA}
+                alt="Sandra Tello trabajando con inteligencia artificial"
+                className="w-full h-full object-cover"
+              />
+              {/* Subtle golden overlay */}
+              <div
+                className="absolute inset-0 pointer-events-none"
+                style={{
+                  background:
+                    "linear-gradient(to top, hsl(var(--primary) / 0.6) 0%, transparent 40%)",
+                }}
+              />
+            </div>
+            {/* Gold border accent */}
+            <div className="absolute bottom-0 left-0 w-full h-[3px] bg-accent/40" />
+            <div className="absolute top-0 left-0 h-full w-[3px] bg-accent/20" />
+          </div>
 
-        <div className="grid md:grid-cols-3 gap-6 mb-12">
-          {programs.map((program, index) => (
-            <ProgramCard key={index} program={program} index={index} />
-          ))}
-        </div>
+          {/* Right: Content + Cards */}
+          <div className="flex flex-col justify-center">
+            <p className="text-accent font-semibold text-[11px] uppercase tracking-[0.25em] mb-4">
+              Formación en Inteligencia Artificial
+            </p>
+            <h2 className="font-serif text-3xl md:text-4xl lg:text-[40px] font-medium text-primary-foreground mb-5 leading-[1.2]">
+              Aprende a aplicar la IA con estrategia y criterio
+            </h2>
+            <p className="text-primary-foreground/60 text-[16px] leading-relaxed mb-8">
+              Programas de formación y workshops diseñados para empresas, ejecutivos y profesionales
+              que quieren aplicar la inteligencia artificial de forma práctica y estratégica.
+            </p>
 
-        <div className="text-center">
-          <Button className="bg-accent text-accent-foreground hover:bg-gold-light rounded-none px-10 py-6 text-[13px] font-semibold uppercase tracking-[0.18em] shadow-none border border-accent">
-            Solicita información
-            <ArrowRight className="ml-2 h-4 w-4" />
-          </Button>
+            <div className="flex flex-col gap-4 mb-8">
+              {programs.map((program, index) => (
+                <ProgramCard key={index} program={program} index={index} />
+              ))}
+            </div>
+
+            <div>
+              <Button className="bg-accent text-accent-foreground hover:bg-gold-light rounded-none px-10 py-6 text-[13px] font-semibold uppercase tracking-[0.18em] shadow-none border border-accent">
+                Solicita información
+                <ArrowRight className="ml-2 h-4 w-4" />
+              </Button>
+            </div>
+          </div>
         </div>
       </div>
     </section>
