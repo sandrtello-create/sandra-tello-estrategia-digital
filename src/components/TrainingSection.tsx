@@ -204,20 +204,15 @@ const TrainingSection = () => {
               Qué aprenden a utilizar
             </p>
             <div className="flex flex-wrap justify-center gap-3">
-              {tools.map((tool, i) => {
-                const color = toolColors[tool.colorIdx];
-                return (
-                  <div
-                    key={i}
-                    className={`flex items-center gap-2.5 px-4 py-2.5 border ${color.border} bg-primary-foreground/[0.03] text-primary-foreground/70 text-[13px] transition-all duration-300 hover:text-primary-foreground hover:bg-primary-foreground/[0.06]`}
-                  >
-                    <span className={`w-7 h-7 rounded-full ${color.bg} flex items-center justify-center shrink-0`}>
-                      <tool.icon className={`h-3.5 w-3.5 ${color.text}`} />
-                    </span>
-                    {tool.label}
-                  </div>
-                );
-              })}
+              {tools.map((tool, i) => (
+                <div
+                  key={i}
+                  className="group flex items-center gap-2.5 px-4 py-2.5 border border-primary-foreground/10 bg-primary-foreground/[0.05] text-primary-foreground/70 text-[13px] transition-all duration-300 hover:bg-accent hover:border-accent/40 hover:text-primary cursor-default"
+                >
+                  <tool.icon className="h-4 w-4 transition-colors duration-300 group-hover:text-primary" />
+                  {tool.label}
+                </div>
+              ))}
             </div>
           </div>
 
