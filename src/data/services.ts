@@ -1,10 +1,18 @@
+import turismoMolinos from "@/assets/portfolio/turismo-molinos.jpg";
+import turismoGastronomia from "@/assets/portfolio/turismo-gastronomia.jpg";
+import turismoAzafran from "@/assets/portfolio/turismo-azafran.jpg";
+import logisticaGoogle from "@/assets/portfolio/logistica-google-business.jpg";
+import logisticaInstagram from "@/assets/portfolio/logistica-instagram.jpg";
+import mysteryTienda from "@/assets/portfolio/mystery-tienda.jpg";
+import mysteryEvaluacion from "@/assets/portfolio/mystery-evaluacion.jpg";
+
 export interface ServiceCase {
   title: string;
   sector: string;
   challenge: string;
   solution: string;
   results: { label: string; value: string }[];
-  galleryImages?: { src: string; alt: string }[];
+  galleryImages?: { src: string; alt: string; caption?: string }[];
   bannerBeforeAfter?: { before: string; after: string }[];
 }
 
@@ -38,9 +46,9 @@ export const servicePortfolios: ServicePortfolio[] = [
           { label: "Tiempo de ejecución", value: "3 meses" },
         ],
         galleryImages: [
-          { src: "https://images.unsplash.com/photo-1566073771259-6a8506099945?w=600&h=400&fit=crop", alt: "Hotel de turismo rural" },
-          { src: "https://images.unsplash.com/photo-1469474968028-56623f02e42e?w=600&h=400&fit=crop", alt: "Paisaje turístico Castilla-La Mancha" },
-          { src: "https://images.unsplash.com/photo-1551882547-ff40c63fe5fa?w=600&h=400&fit=crop", alt: "Recepción de hotel" },
+          { src: turismoMolinos, alt: "Molinos de viento de La Mancha", caption: "Molinos de La Mancha" },
+          { src: turismoGastronomia, alt: "Gastronomía manchega con queso y vino", caption: "Gastronomía manchega" },
+          { src: turismoAzafran, alt: "Campos de azafrán en Castilla-La Mancha", caption: "Campos de azafrán" },
         ],
       },
       {
@@ -56,11 +64,7 @@ export const servicePortfolios: ServicePortfolio[] = [
           { label: "Perfiles optimizados", value: "15+" },
           { label: "Mejora de conversión", value: "+60%" },
         ],
-        bannerBeforeAfter: [
-          { before: "https://images.unsplash.com/photo-1611944212129-29977ae1398c?w=800&h=200&fit=crop&q=60", after: "https://images.unsplash.com/photo-1616469829581-73993eb86b02?w=800&h=200&fit=crop" },
-          { before: "https://images.unsplash.com/photo-1504868584819-f8e8b4b6d7e3?w=800&h=200&fit=crop&q=60", after: "https://images.unsplash.com/photo-1522071820081-009f0129c71c?w=800&h=200&fit=crop" },
-          { before: "https://images.unsplash.com/photo-1560250097-0b93528c311a?w=800&h=200&fit=crop&q=60", after: "https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?w=800&h=200&fit=crop" },
-        ],
+        bannerBeforeAfter: [],
       },
       {
         title: "Empresa de logística y transporte",
@@ -76,8 +80,8 @@ export const servicePortfolios: ServicePortfolio[] = [
           { label: "Coherencia de marca", value: "100%" },
         ],
         galleryImages: [
-          { src: "https://images.unsplash.com/photo-1586528116311-ad8dd3c8310d?w=600&h=400&fit=crop", alt: "Flota de transporte" },
-          { src: "https://images.unsplash.com/photo-1553413077-190dd305871c?w=600&h=400&fit=crop", alt: "Almacén logístico" },
+          { src: logisticaGoogle, alt: "Perfil de Google Business de empresa de transporte", caption: "Google Business" },
+          { src: logisticaInstagram, alt: "Perfil de Instagram de empresa logística", caption: "Instagram" },
         ],
       },
       {
@@ -94,9 +98,8 @@ export const servicePortfolios: ServicePortfolio[] = [
           { label: "Recomendaciones aplicadas", value: "91%" },
         ],
         galleryImages: [
-          { src: "https://images.unsplash.com/photo-1441986300917-64674bd600d8?w=600&h=400&fit=crop", alt: "Tienda retail auditada" },
-          { src: "https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?w=600&h=400&fit=crop", alt: "Punto de venta" },
-          { src: "https://images.unsplash.com/photo-1556742111-a301076d9d18?w=600&h=400&fit=crop", alt: "Experiencia de cliente en tienda" },
+          { src: mysteryTienda, alt: "Mystery shopper evaluando tienda retail", caption: "Punto de venta" },
+          { src: mysteryEvaluacion, alt: "Checklist de evaluación de experiencia de cliente", caption: "Evaluación de experiencia" },
         ],
       },
     ],
