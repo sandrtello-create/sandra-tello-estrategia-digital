@@ -1,7 +1,8 @@
 import { useState } from "react";
 import { Button } from "@/components/ui/button";
-import { GraduationCap, Building2, Briefcase, ArrowRight, Bot, MessageSquare, Mic, Globe, Palette, Zap, Phone, Share2, Video, UserRound, Pencil, Cog, TrendingUp } from "lucide-react";
+import { GraduationCap, Building2, Briefcase, ArrowRight, Bot, MessageSquare, Mic, Globe, Palette, Zap, Phone, Share2, Video, UserRound, Pencil, Cog, TrendingUp, Brain } from "lucide-react";
 import sandraIA from "@/assets/sandra-tello-ia.jpg";
+import mentorshipPixar from "@/assets/training-mentorship-pixar.png";
 
 const programs = [
   {
