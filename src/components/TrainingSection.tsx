@@ -358,8 +358,8 @@ const TrainingSection = () => {
             <div className="w-full md:w-[60%] p-8 md:p-10 flex flex-col justify-center">
               <div className="max-w-xl">
                 <div className="flex items-center gap-2 mb-4">
-                  <BookOpen className="h-4 w-4 text-[hsl(232,28%,25%)]" />
-                  <p className="text-[hsl(232,28%,25%)] font-semibold text-[11px] uppercase tracking-[0.25em]">
+                  <BookOpen className="h-5 w-5 text-[hsl(232,28%,18%)]" />
+                  <p className="text-[hsl(232,28%,18%)] font-semibold text-[13px] uppercase tracking-[0.25em]">
                     Recursos gratuitos
                   </p>
                 </div>
