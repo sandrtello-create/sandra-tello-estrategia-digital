@@ -1,10 +1,11 @@
 import turismoMolinos from "@/assets/portfolio/turismo-molinos.jpg";
 import turismoGastronomia from "@/assets/portfolio/turismo-gastronomia.jpg";
-import linkedinLogo from "@/assets/portfolio/linkedin-logo.jpg";
 import logisticaGoogle from "@/assets/portfolio/logistica-google-business-v2.jpg";
 import logisticaInstagram from "@/assets/portfolio/logistica-instagram.jpg";
+import logisticaWeb from "@/assets/portfolio/logistica-web.jpg";
 import mysteryTienda from "@/assets/portfolio/mystery-tienda.jpg";
 import mysteryEvaluacion from "@/assets/portfolio/mystery-evaluacion-v2.jpg";
+import mysteryInforme from "@/assets/portfolio/mystery-informe.jpg";
 
 export interface ServiceCase {
   title: string;
