@@ -303,8 +303,9 @@ const TrainingSection = () => {
                   title: "Resultados y optimización",
                   period: "Mes 5 en adelante",
                   items: [
-                    "Medición de KPIs y análisis de rendimiento",
-                    "Estrategia de contenido a largo plazo",
+                    "Medición de KPIs: alcance, engagement y conversión",
+                    "Analítica de rendimiento en redes sociales",
+                    "Estrategia de contenido RRSS a largo plazo",
                     "Escalado a nuevos canales o funcionalidades",
                     "Informe de impacto y ROI",
                   ],
