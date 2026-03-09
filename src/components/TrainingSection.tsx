@@ -246,11 +246,27 @@ const TrainingSection = () => {
             </div>
           </div>
 
-          {/* Roadmap */}
+          {/* Pixar illustration + Roadmap */}
           <div className="w-full">
-            <p className="text-accent font-semibold text-[11px] uppercase tracking-[0.25em] mb-4 text-center">
-              Así es el proceso de formación y mentoría
-            </p>
+            <div className="flex flex-col md:flex-row items-center gap-8 mb-10">
+              <div className="w-full md:w-1/3 flex-shrink-0">
+                <img
+                  src={mentorshipPixar}
+                  alt="Ilustración de mentoría en inteligencia artificial"
+                  className="w-full h-auto rounded-lg"
+                />
+              </div>
+              <div className="flex-1">
+                <p className="text-accent font-semibold text-[11px] uppercase tracking-[0.25em] mb-4">
+                  Así es el proceso de formación y mentoría
+                </p>
+                <p className="text-primary-foreground/60 text-[15px] leading-relaxed">
+                  Te acompaño desde la estrategia hasta los resultados. Yo diseño, formo y mentorizo;
+                  tú implementas con mi guía constante. Un proceso pensado para que seas autónomo con la IA
+                  aplicada a tu negocio.
+                </p>
+              </div>
+            </div>
 
             <div className="grid md:grid-cols-3 gap-0 relative">
               {/* Horizontal connector line (desktop) */}
