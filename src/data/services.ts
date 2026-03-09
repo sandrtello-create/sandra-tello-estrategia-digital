@@ -20,9 +20,9 @@ export const servicePortfolios: ServicePortfolio[] = [
   {
     slug: "auditoria-de-negocio",
     serviceTitle: "Auditoría de negocio",
-    headline: "Así auditamos negocios: presencia digital y experiencia real",
+    headline: "Así audito negocios: presencia digital y experiencia real",
     intro:
-      "Cada proyecto empieza con un diagnóstico honesto, ya sea online o presencial. A partir de ahí, diseñamos un plan de acción claro y medible. Aquí tienes algunos ejemplos reales.",
+      "Cada proyecto empieza con un diagnóstico honesto, ya sea online o presencial. A partir de ahí, diseño un plan de acción claro y medible. Aquí tienes algunos ejemplos reales.",
     cases: [
       {
         title: "Turismo de Castilla-La Mancha",
@@ -30,7 +30,7 @@ export const servicePortfolios: ServicePortfolio[] = [
         challenge:
           "La presencia digital del organismo estaba fragmentada: perfiles desactualizados, contenido sin estrategia y poca coherencia entre canales. Necesitaban un diagnóstico claro para reorientar su comunicación online.",
         solution:
-          "Realizamos una auditoría completa de su ecosistema digital: web, redes sociales, reputación online y coherencia de marca. Entregamos un informe con recomendaciones priorizadas y un plan de acción a 6 meses.",
+          "Realicé una auditoría completa de su ecosistema digital: web, redes sociales, reputación online y coherencia de marca. Entregué un informe con recomendaciones priorizadas y un plan de acción a 6 meses.",
         results: [
           { label: "Canales auditados", value: "8" },
           { label: "Mejora engagement", value: "+45%" },
@@ -68,7 +68,7 @@ export const servicePortfolios: ServicePortfolio[] = [
         challenge:
           "Una empresa de transporte y logística con más de 15 años en el sector tenía una presencia digital completamente descoordinada: web desactualizada, Instagram sin estrategia, LinkedIn corporativo abandonado y ficha de Google Business sin optimizar. No existía una narrativa de marca clara ni coherencia entre canales.",
         solution:
-          "Auditoría 360° de todos los canales digitales: web, Instagram, LinkedIn y Google Business. Redefinición de la narrativa de marca, diseño de un plan estratégico de contenidos multicanal y creación de una guía de identidad digital para unificar la comunicación.",
+          "Realicé una auditoría 360° de todos los canales digitales: web, Instagram, LinkedIn y Google Business. Redefiní la narrativa de marca, diseñé un plan estratégico de contenidos multicanal y creé una guía de identidad digital para unificar la comunicación.",
         results: [
           { label: "Canales auditados", value: "6" },
           { label: "Mejora tráfico web", value: "+85%" },
@@ -86,7 +86,7 @@ export const servicePortfolios: ServicePortfolio[] = [
         challenge:
           "Una cadena de tiendas con presencia en varias ciudades sospechaba que la experiencia real del cliente no coincidía con lo que comunicaban en sus canales digitales. Había quejas recurrentes sobre atención al cliente, pero no tenían datos objetivos para identificar los puntos de fricción.",
         solution:
-          "Diseño y ejecución de un programa de Mystery Shopper con visitas presenciales y llamadas telefónicas a 20 puntos de venta. Evaluación de atención al cliente, coherencia con la imagen de marca digital y cumplimiento de protocolos internos. Entrega de informe comparativo online vs offline con recomendaciones priorizadas.",
+          "Diseñé y ejecuté un programa de Mystery Shopper con visitas presenciales y llamadas telefónicas a 20 puntos de venta. Evalué la atención al cliente, coherencia con la imagen de marca digital y cumplimiento de protocolos internos. Entregué un informe comparativo online vs offline con recomendaciones priorizadas.",
         results: [
           { label: "Puntos auditados", value: "20" },
           { label: "Incidencias detectadas", value: "34" },
