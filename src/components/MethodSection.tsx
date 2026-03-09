@@ -45,7 +45,7 @@ const MethodSection = () => {
       <div className="absolute inset-0 bg-[#1a1f3d]/75" />
 
       <div className="container mx-auto px-6 lg:px-8 relative z-10">
-        <div className="text-right max-w-2xl ml-auto mb-20">
+        <div className="text-right max-w-lg ml-auto mb-20">
           <p className="gold-gradient-text font-semibold text-sm uppercase tracking-[0.25em] mb-4">
             El Método
           </p>
