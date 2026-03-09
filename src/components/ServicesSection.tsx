@@ -176,6 +176,25 @@ const ServiceItem = ({
               <p className="italic font-medium text-primary/70 text-[15px]">
                 {service.details.closing}
               </p>
+
+              {/* Portfolio CTA */}
+              {service.portfolioSlug && (
+                <Link
+                  to={`/servicios/${service.portfolioSlug}`}
+                  className="mt-6 flex items-center gap-4 p-4 bg-accent/5 border-l-2 border-accent rounded-r-md hover:bg-accent/10 transition-colors group/cta"
+                >
+                  <FolderOpen className="h-5 w-5 text-accent shrink-0" />
+                  <div className="flex-1">
+                    <p className="font-semibold text-primary text-[15px]">
+                      Ver casos de trabajo
+                    </p>
+                    <p className="text-muted-foreground text-[13px]">
+                      Banners, proyectos de sector turismo y más.
+                    </p>
+                  </div>
+                  <ArrowRight className="h-4 w-4 text-accent opacity-50 group-hover/cta:opacity-100 group-hover/cta:translate-x-1 transition-all" />
+                </Link>
+              )}
             </div>
           </div>
         </div>
