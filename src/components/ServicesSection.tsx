@@ -1,7 +1,7 @@
 import { useState, useEffect, useRef } from "react";
 import { Brain, Target, Search, Users, ArrowRight, ChevronDown } from "lucide-react";
 import { Link } from "react-router-dom";
-import EnneagramWheel from "./EnneagramWheel";
+import EnneagramWheel, { type ArchetypeKey } from "./EnneagramWheel";
 import LeadershipCards from "./LeadershipCards";
 
 const services = [
