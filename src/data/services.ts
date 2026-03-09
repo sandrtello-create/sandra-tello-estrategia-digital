@@ -39,12 +39,12 @@ export const servicePortfolios: ServicePortfolio[] = [
         challenge:
           "La presencia digital del organismo estaba fragmentada: perfiles desactualizados, contenido sin estrategia y poca coherencia entre canales. Necesitaban un diagnóstico claro para reorientar su comunicación online.",
         solution:
-          "Realicé una auditoría completa de su ecosistema digital: web, redes sociales, reputación online y coherencia de marca. Entregué un informe con recomendaciones priorizadas y un plan de acción a 6 meses.",
+          "Realicé una auditoría completa de su ecosistema digital: web, redes sociales, reputación online y coherencia de marca. Integré herramientas de IA para analizar sentimiento en reseñas y redes, y diseñé un chatbot de atención al visitante. Entregué un informe con recomendaciones priorizadas y un plan de acción a 6 meses.",
         results: [
           { label: "Canales auditados", value: "8" },
           { label: "Mejora engagement", value: "+45%" },
+          { label: "Reducción gestión llamadas (chatbot IA)", value: "-40%" },
           { label: "Recomendaciones implementadas", value: "87%" },
-          { label: "Tiempo de ejecución", value: "3 meses" },
         ],
         galleryImages: [
           { src: turismoMolinos, alt: "Molinos de viento de La Mancha", caption: "Molinos de La Mancha" },
