@@ -81,7 +81,6 @@ const ProgramCard = ({
       onMouseEnter={() => setHovered(true)}
       onMouseLeave={() => setHovered(false)}
     >
-      {/* Gold left border */}
       <div
         className="absolute left-0 top-0 w-[3px] bg-accent transition-all duration-500 ease-out"
         style={{
@@ -91,7 +90,6 @@ const ProgramCard = ({
       />
 
       <div className="flex items-start gap-5">
-        {/* Number */}
         <span
           className="font-serif text-4xl font-semibold shrink-0 transition-colors duration-500"
           style={{
@@ -104,7 +102,6 @@ const ProgramCard = ({
         </span>
 
         <div>
-          {/* Icon with circular bg */}
           <div className="w-10 h-10 rounded-full bg-accent/10 flex items-center justify-center mb-3">
             <program.icon className="h-5 w-5 text-accent" />
           </div>
@@ -127,12 +124,10 @@ const TrainingSection = () => {
       id="formacion"
       className="py-20 lg:py-28 bg-navy-light border-t border-accent/20 relative overflow-hidden"
     >
-      {/* Neural network background pattern */}
       <div className="text-primary-foreground">
         <NeuralNetworkSVG />
       </div>
 
-      {/* Radial gold gradient */}
       <div
         className="absolute inset-0 pointer-events-none"
         style={{
@@ -142,55 +137,51 @@ const TrainingSection = () => {
       />
 
       <div className="container mx-auto px-6 lg:px-8 relative z-10">
-        {/* Two-column layout */}
-        <div className="grid lg:grid-cols-[1fr_1.2fr] gap-10 lg:gap-14 items-stretch">
-          {/* Left: Photo */}
-          <div className="relative group">
-            <div className="relative overflow-hidden h-full min-h-[400px] lg:min-h-0">
-              <img
-                src={sandraIA}
-                alt="Sandra Tello trabajando con inteligencia artificial"
-                className="w-full h-full object-cover"
-              />
-              {/* Subtle golden overlay */}
-              <div
-                className="absolute inset-0 pointer-events-none"
-                style={{
-                  background:
-                    "linear-gradient(to top, hsl(var(--primary) / 0.6) 0%, transparent 40%)",
-                }}
-              />
-            </div>
-            {/* Gold border accent */}
-            <div className="absolute bottom-0 left-0 w-full h-[3px] bg-accent/40" />
-            <div className="absolute top-0 left-0 h-full w-[3px] bg-accent/20" />
-          </div>
-
-          {/* Right: Content + Cards */}
-          <div className="flex flex-col justify-center">
+        <div className="flex flex-col items-center gap-10">
+          {/* Header */}
+          <div className="text-center max-w-3xl">
             <p className="text-accent font-semibold text-[11px] uppercase tracking-[0.25em] mb-4">
               Formación en Inteligencia Artificial
             </p>
             <h2 className="font-serif text-3xl md:text-4xl lg:text-[40px] font-medium text-primary-foreground mb-5 leading-[1.2]">
               Aprende a aplicar la IA con estrategia y criterio
             </h2>
-            <p className="text-primary-foreground/60 text-[16px] leading-relaxed mb-8">
+            <p className="text-primary-foreground/60 text-[16px] leading-relaxed">
               Programas de formación y workshops diseñados para empresas, ejecutivos y profesionales
               que quieren aplicar la inteligencia artificial de forma práctica y estratégica.
             </p>
+          </div>
 
-            <div className="flex flex-col gap-4 mb-8">
-              {programs.map((program, index) => (
-                <ProgramCard key={index} program={program} index={index} />
-              ))}
-            </div>
+          {/* Photo */}
+          <div className="w-full relative overflow-hidden">
+            <img
+              src={sandraIA}
+              alt="Sandra Tello trabajando con inteligencia artificial"
+              className="w-full h-auto object-cover max-h-[480px]"
+            />
+            <div
+              className="absolute inset-0 pointer-events-none"
+              style={{
+                background:
+                  "linear-gradient(to top, hsl(var(--navy-light)) 0%, transparent 20%), linear-gradient(to bottom, hsl(var(--navy-light)) 0%, transparent 15%)",
+              }}
+            />
+            <div className="absolute bottom-0 left-0 w-full h-[3px] bg-accent/30" />
+          </div>
 
-            <div>
-              <Button className="bg-accent text-accent-foreground hover:bg-gold-light rounded-none px-10 py-6 text-[13px] font-semibold uppercase tracking-[0.18em] shadow-none border border-accent">
-                Solicita información
-                <ArrowRight className="ml-2 h-4 w-4" />
-              </Button>
-            </div>
+          {/* Cards */}
+          <div className="grid md:grid-cols-3 gap-5 w-full">
+            {programs.map((program, index) => (
+              <ProgramCard key={index} program={program} index={index} />
+            ))}
+          </div>
+
+          {/* CTA */}
+          <div>
+            <Button className="bg-accent text-accent-foreground hover:bg-gold-light rounded-none px-10 py-6 text-[13px] font-semibold uppercase tracking-[0.18em] shadow-none border border-accent">
+              Solicita información
+              <ArrowRight className="ml-2 h-4 w-4" />
+            </Button>
           </div>
         </div>
       </div>
