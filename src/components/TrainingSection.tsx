@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { Button } from "@/components/ui/button";
-import { GraduationCap, Building2, Briefcase, ArrowRight, Bot, MessageSquare, Mic, Globe, Palette, Zap, Phone, Share2, Video, UserRound } from "lucide-react";
+import { GraduationCap, Building2, Briefcase, ArrowRight, Bot, MessageSquare, Mic, Globe, Palette, Zap, Phone, Share2, Video, UserRound, Pencil, Cog, TrendingUp } from "lucide-react";
 import sandraIA from "@/assets/sandra-tello-ia.jpg";
 
 const programs = [
@@ -238,6 +238,85 @@ const TrainingSection = () => {
                 >
                   {tag}
                 </span>
+              ))}
+            </div>
+          </div>
+
+          {/* Roadmap */}
+          <div className="w-full">
+            <p className="text-accent font-semibold text-[11px] uppercase tracking-[0.25em] mb-8 text-center">
+              De la idea al impacto
+            </p>
+
+            <div className="grid md:grid-cols-3 gap-0 relative">
+              {/* Horizontal connector line (desktop) */}
+              <div className="hidden md:block absolute top-[72px] left-[16.66%] right-[16.66%] h-[1px] bg-accent/20 z-0" />
+
+              {[
+                {
+                  num: "01",
+                  icon: Pencil,
+                  title: "Diseño y estrategia",
+                  period: "Mes 1",
+                  items: [
+                    "Definición del proyecto y objetivos",
+                    "Arquitectura del ecosistema IA",
+                    "Creación de textos y contenidos base",
+                    "Selección de herramientas y plataformas",
+                  ],
+                },
+                {
+                  num: "02",
+                  icon: Cog,
+                  title: "Implementación",
+                  period: "Meses 2–3",
+                  items: [
+                    "Desarrollo e integración de herramientas",
+                    "Pruebas y ajustes con usuarios reales",
+                    "Formación del equipo en el uso diario",
+                    "Lanzamiento progresivo por canales",
+                  ],
+                },
+                {
+                  num: "03",
+                  icon: TrendingUp,
+                  title: "Resultados y optimización",
+                  period: "Meses 4–6",
+                  items: [
+                    "Medición de KPIs y análisis de rendimiento",
+                    "Optimización basada en datos reales",
+                    "Escalado a nuevos canales o funcionalidades",
+                    "Informe de impacto y ROI",
+                  ],
+                },
+              ].map((phase, i) => (
+                <div key={i} className="relative group flex flex-col items-center text-center p-6 md:p-8 border border-primary-foreground/10 bg-primary-foreground/[0.03] transition-all duration-500 hover:border-accent/30 hover:shadow-[0_20px_40px_-15px_hsl(var(--accent)/0.12)]">
+                  {/* Connector dot */}
+                  <div className="hidden md:block absolute top-[68px] left-1/2 -translate-x-1/2 w-3 h-3 rounded-full border-2 border-accent/40 bg-navy-light z-10 group-hover:border-accent group-hover:bg-accent/20 transition-colors duration-500" />
+
+                  <span className="font-serif text-5xl font-semibold text-accent/15 group-hover:text-accent/35 transition-colors duration-500 mb-4">
+                    {phase.num}
+                  </span>
+
+                  <div className="w-10 h-10 rounded-full bg-accent/10 flex items-center justify-center mb-3">
+                    <phase.icon className="h-5 w-5 text-accent" />
+                  </div>
+
+                  <h4 className="font-serif text-lg font-medium text-primary-foreground mb-1">
+                    {phase.title}
+                  </h4>
+                  <p className="text-accent/70 text-[12px] uppercase tracking-[0.15em] font-semibold mb-5">
+                    {phase.period}
+                  </p>
+
+                  <ul className="space-y-2 text-left w-full">
+                    {phase.items.map((item, j) => (
+                      <li key={j} className="text-primary-foreground/55 text-[13px] leading-relaxed pl-4 relative before:content-[''] before:absolute before:left-0 before:top-[9px] before:w-1.5 before:h-[1px] before:bg-accent/40">
+                        {item}
+                      </li>
+                    ))}
+                  </ul>
+                </div>
               ))}
             </div>
           </div>
