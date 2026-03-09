@@ -37,8 +37,18 @@ const results = [
 
 const ResultsSection = () => {
   return (
-    <section className="py-20 lg:py-28 bg-section-alt">
-      <div className="container mx-auto px-6 lg:px-8">
+    <section className="py-20 lg:py-28 bg-section-alt relative overflow-hidden">
+      {/* Watermark pattern background */}
+      <div
+        className="absolute inset-0 opacity-[0.12] pointer-events-none"
+        style={{
+          backgroundImage: `url(${logoWatermark})`,
+          backgroundSize: '70px auto',
+          backgroundRepeat: 'repeat',
+        }}
+      />
+
+      <div className="container mx-auto px-6 lg:px-8 relative z-10">
         {/* Bloque narrativo con foto */}
         <div className="grid lg:grid-cols-2 gap-12 lg:gap-16 items-center mb-20">
           {/* Texto a la izquierda */}
