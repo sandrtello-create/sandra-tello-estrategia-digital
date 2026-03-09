@@ -3,7 +3,6 @@ import Footer from "@/components/Footer";
 import logoWatermark from "@/assets/sandra-logo-watermark.png";
 import sandraAbout from "@/assets/sandra-tello-about.jpg";
 import { ArrowLeft } from "lucide-react";
-import { Link } from "react-router-dom";
 
 const SobreMi = () => {
   return (
