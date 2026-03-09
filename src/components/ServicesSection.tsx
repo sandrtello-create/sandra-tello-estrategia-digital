@@ -1,6 +1,8 @@
 import { useState, useEffect, useRef } from "react";
 import { Brain, Target, Search, Users, ArrowRight, ChevronDown } from "lucide-react";
 import { Link } from "react-router-dom";
+import EnneagramWheel from "./EnneagramWheel";
+import LeadershipCards from "./LeadershipCards";
 
 const services = [
   {
@@ -58,6 +60,7 @@ const services = [
   {
     icon: Users,
     title: "Employee advocacy y liderazgo digital",
+    hasEnneagram: true,
     description:
       "Convierte a los líderes de tu empresa en embajadores de marca. Programas de posicionamiento ejecutivo en LinkedIn y más.",
     details: {
@@ -188,6 +191,18 @@ const ServiceItem = ({
                     Proyectos con empresas
                     <ArrowRight className="h-5 w-5" />
                   </Link>
+                </div>
+              )}
+
+              {/* Enneagram + Leadership Cards */}
+              {service.hasEnneagram && (
+                <div className="mt-10">
+                  <div className="h-px w-full bg-border/60 mb-8" />
+                  <p className="text-[11px] font-semibold uppercase tracking-[0.2em] text-accent mb-6 text-center">
+                    Conozco a fondo cada perfil para potenciar su liderazgo
+                  </p>
+                  <EnneagramWheel />
+                  <LeadershipCards />
                 </div>
               )}
             </div>
