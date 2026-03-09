@@ -38,7 +38,7 @@ const MethodSection = () => {
     <section className="py-28 lg:py-36 bg-section-alt">
       <div className="container mx-auto px-6 lg:px-8">
         <div className="text-center max-w-3xl mx-auto mb-20">
-          <p className="text-accent font-semibold text-[11px] uppercase tracking-[0.25em] mb-4">
+          <p className="gold-gradient-text font-semibold text-sm uppercase tracking-[0.25em] mb-4">
             El Método
           </p>
           <h2 className="font-serif text-4xl md:text-5xl lg:text-[52px] font-medium text-primary mb-6 leading-[1.15]">
