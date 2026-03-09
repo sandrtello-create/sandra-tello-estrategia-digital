@@ -40,7 +40,7 @@ const tools = [
 
 const NeuralNetworkSVG = () => (
   <svg
-    className="absolute inset-0 w-full h-full opacity-[0.04]"
+    className="absolute inset-0 w-full h-full opacity-[0.02]"
     viewBox="0 0 800 600"
     fill="none"
     xmlns="http://www.w3.org/2000/svg"
