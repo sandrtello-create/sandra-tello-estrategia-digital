@@ -180,15 +180,16 @@ const ServiceItem = ({
               {/* Portfolio CTA */}
               {service.portfolioSlug && (
                 <div className="mt-8">
-                  <div className="h-px w-full bg-accent/25 mb-6" />
+                  <div className="h-px w-full bg-border/60 mb-6" />
                   <Link
                     to={`/servicios/${service.portfolioSlug}`}
-                    className="group/cta inline-flex items-center gap-2 text-accent text-[13px] uppercase tracking-[0.18em] font-semibold hover:gap-3 transition-all duration-300"
+                    className="group/cta inline-flex items-center gap-3 hover:gap-4 transition-all duration-300"
                   >
-                    <span className="border-b border-accent/0 group-hover/cta:border-accent/60 transition-all duration-300 pb-px">
-                      Casos de estudio
+                    <span className="h-2.5 w-2.5 rounded-full bg-primary shrink-0 group-hover/cta:scale-110 transition-transform duration-300" />
+                    <span className="text-primary font-semibold text-[12px] uppercase tracking-[0.2em] border-b border-primary/0 group-hover/cta:border-primary/40 transition-all duration-300 pb-px">
+                      Proyectos con empresas
                     </span>
-                    <ArrowRight className="h-3.5 w-3.5 transition-transform duration-300 group-hover/cta:translate-x-0.5" />
+                    <ArrowRight className="h-3.5 w-3.5 text-primary transition-transform duration-300 group-hover/cta:translate-x-0.5" />
                   </Link>
                 </div>
               )}
