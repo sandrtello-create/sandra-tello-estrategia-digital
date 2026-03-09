@@ -1,3 +1,4 @@
+import { useRef, useState, useEffect } from "react";
 import estrategaImg from "@/assets/archetype-estratega.png";
 import comunicadorImg from "@/assets/archetype-comunicador.png";
 import visionarioImg from "@/assets/archetype-visionario.png";
