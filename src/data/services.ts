@@ -31,7 +31,7 @@ export const servicePortfolios: ServicePortfolio[] = [
     serviceTitle: "Auditoría de negocio",
     headline: "Así audito negocios: presencia digital y experiencia real",
     intro:
-      "Cada proyecto empieza con un diagnóstico honesto, ya sea online o presencial. A partir de ahí, diseño un plan de acción claro y medible. Aquí tienes algunos ejemplos reales.",
+      "Cada proyecto empieza con un diagnóstico honesto —online o presencial— apoyado en herramientas de inteligencia artificial para extraer insights más profundos y actuar con mayor precisión. A partir de ahí, diseño un plan de acción claro y medible. Aquí tienes algunos ejemplos reales.",
     cases: [
       {
         title: "Turismo de Castilla-La Mancha",
