@@ -168,23 +168,31 @@ const CaseCard = ({ c, index }: { c: ServiceCase; index: number }) => (
           <p className="text-accent font-semibold text-[11px] uppercase tracking-[0.15em] mb-3">
             Banners: antes y después
           </p>
-          <div className="grid grid-cols-2 gap-4">
-            <div>
-              <span className="text-xs font-semibold text-muted-foreground uppercase tracking-wider mb-2 block">
-                Antes
-              </span>
-              <div className="aspect-[4/1] rounded border-2 border-dashed border-border flex items-center justify-center">
-                <p className="text-muted-foreground/50 text-xs">Imagen del banner original</p>
+          <div className="space-y-4">
+            {[1, 2, 3].map((row) => (
+              <div key={row} className="grid grid-cols-2 gap-4">
+                <div>
+                  {row === 1 && (
+                    <span className="text-xs font-semibold text-muted-foreground uppercase tracking-wider mb-2 block">
+                      Antes
+                    </span>
+                  )}
+                  <div className="aspect-[4/1] rounded border-2 border-dashed border-border flex items-center justify-center">
+                    <p className="text-muted-foreground/50 text-xs">Banner original #{row}</p>
+                  </div>
+                </div>
+                <div>
+                  {row === 1 && (
+                    <span className="text-xs font-semibold text-accent uppercase tracking-wider mb-2 block">
+                      Después
+                    </span>
+                  )}
+                  <div className="aspect-[4/1] rounded border-2 border-dashed border-accent/30 flex items-center justify-center">
+                    <p className="text-accent/50 text-xs">Banner optimizado #{row}</p>
+                  </div>
+                </div>
               </div>
-            </div>
-            <div>
-              <span className="text-xs font-semibold text-accent uppercase tracking-wider mb-2 block">
-                Después
-              </span>
-              <div className="aspect-[4/1] rounded border-2 border-dashed border-accent/30 flex items-center justify-center">
-                <p className="text-accent/50 text-xs">Imagen del banner optimizado</p>
-              </div>
-            </div>
+            ))}
           </div>
         </div>
       )}
