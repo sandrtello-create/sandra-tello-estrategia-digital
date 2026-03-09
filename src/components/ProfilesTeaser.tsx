@@ -1,6 +1,7 @@
 import { Link } from "react-router-dom";
 import { profiles } from "@/data/profiles";
 import { Linkedin, ArrowRight } from "lucide-react";
+import zipgenialLogo from "@/assets/brands/zipgenial.png";
 
 const doubled = [...profiles, ...profiles];
 
