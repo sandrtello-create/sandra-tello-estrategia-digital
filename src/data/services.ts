@@ -57,7 +57,7 @@ export const servicePortfolios: ServicePortfolio[] = [
         challenge:
           "Profesionales y directivos con perfiles de LinkedIn que no reflejaban su valor real: headlines genéricos, banners sin diseño, secciones 'acerca de' sin estrategia ni diferenciación.",
         solution:
-          "Auditoría visual y de contenido del perfil completo. Rediseño de banner, headline y sección 'acerca de'. Optimización orientada a posicionamiento y atracción de oportunidades.",
+          "Auditoría visual y de contenido del perfil completo. Rediseño de banner, headline y sección 'acerca de' con apoyo de IA generativa para copywriting estratégico. Optimización orientada a posicionamiento y atracción de oportunidades.",
         results: [
           { label: "Visitas al perfil", value: "+210%" },
           { label: "Impresiones contenido", value: "+175%" },
