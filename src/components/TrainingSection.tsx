@@ -343,73 +343,67 @@ const TrainingSection = () => {
             </div>
           </div>
 
-          {/* Visual separator photo */}
-          <div className="w-full relative overflow-hidden">
-            <img
-              src={sandraFormacionIA}
-              alt="Sandra Tello impartiendo formación en inteligencia artificial"
-              className="w-full h-auto object-cover max-h-[420px]"
-            />
-            <div
-              className="absolute inset-0 pointer-events-none"
-              style={{
-                background:
-                  "linear-gradient(to top, hsl(var(--navy-light)) 0%, transparent 25%), linear-gradient(to bottom, hsl(var(--navy-light)) 0%, transparent 20%)",
-              }}
-            />
-          </div>
-
-          {/* Free Resources Block — cream/warm tone */}
-          <div className="w-full bg-[hsl(40,18%,91%)] p-8 md:p-10 -mx-0">
-            <div className="text-center max-w-2xl mx-auto mb-8">
-              <div className="flex items-center justify-center gap-2 mb-4">
-                <BookOpen className="h-4 w-4 text-[hsl(232,28%,25%)]" />
-                <p className="text-[hsl(232,28%,25%)] font-semibold text-[11px] uppercase tracking-[0.25em]">
-                  Recursos gratuitos
-                </p>
-              </div>
-              <h3 className="font-serif text-xl md:text-2xl font-medium text-[hsl(232,28%,18%)] mb-4">
-                La educación en IA no debería ser un privilegio
-              </h3>
-              <p className="text-[hsl(232,20%,35%)] text-[14px] leading-relaxed">
-                Por eso comparto de forma gratuita manuales, guías y recursos prácticos sobre herramientas 
-                de inteligencia artificial. Porque cuando las personas aprenden, el mundo mejora.
-              </p>
+          {/* Free Resources Block — cream/warm tone with side image */}
+          <div className="w-full bg-[hsl(40,18%,91%)] flex flex-col md:flex-row overflow-hidden">
+            {/* Image column */}
+            <div className="w-full md:w-[40%] min-h-[280px] md:min-h-0">
+              <img
+                src={sandraFormacionIA}
+                alt="Sandra Tello impartiendo formación en inteligencia artificial"
+                className="w-full h-full object-cover"
+              />
             </div>
 
-            <div className="grid sm:grid-cols-2 md:grid-cols-4 gap-4 mb-8">
-              {[
-                { icon: MessageSquare, title: "LLMs", desc: "ChatGPT, Claude, Gemini, Perplexity..." },
-                { icon: Image, title: "Creación visual", desc: "Imágenes y vídeo con IA" },
-                { icon: Zap, title: "Automatización", desc: "Make, Zapier y n8n" },
-                { icon: Sparkles, title: "Más herramientas", desc: "Canva IA, Notion IA..." },
-              ].map((resource, i) => (
-                <div
-                  key={i}
-                  className="group flex flex-col items-center text-center p-5 border border-[hsl(232,15%,78%)] bg-[hsl(40,15%,96%)] transition-all duration-300 hover:border-[hsl(var(--accent))] hover:bg-[hsl(40,20%,88%)]"
-                >
-                  <div className="w-10 h-10 rounded-full bg-[hsl(232,28%,22%)]/10 flex items-center justify-center mb-3 group-hover:bg-[hsl(232,28%,22%)]/20 transition-colors duration-300">
-                    <resource.icon className="h-5 w-5 text-[hsl(232,28%,25%)]" />
-                  </div>
-                  <h4 className="font-serif text-[15px] font-medium text-[hsl(232,28%,18%)] mb-1">
-                    {resource.title}
-                  </h4>
-                  <p className="text-[hsl(232,20%,40%)] text-[12px]">
-                    {resource.desc}
+            {/* Content column */}
+            <div className="w-full md:w-[60%] p-8 md:p-10 flex flex-col justify-center">
+              <div className="max-w-xl">
+                <div className="flex items-center gap-2 mb-4">
+                  <BookOpen className="h-4 w-4 text-[hsl(232,28%,25%)]" />
+                  <p className="text-[hsl(232,28%,25%)] font-semibold text-[11px] uppercase tracking-[0.25em]">
+                    Recursos gratuitos
                   </p>
                 </div>
-              ))}
-            </div>
+                <h3 className="font-serif text-xl md:text-2xl font-medium text-[hsl(232,28%,18%)] mb-4">
+                  La educación en IA no debería ser un privilegio
+                </h3>
+                <p className="text-[hsl(232,20%,35%)] text-[14px] leading-relaxed mb-6">
+                  Por eso comparto de forma gratuita manuales, guías y recursos prácticos sobre herramientas 
+                  de inteligencia artificial. Porque cuando las personas aprenden, el mundo mejora.
+                </p>
 
-            <div className="text-center">
-              <Button
-                variant="ghost"
-                className="text-[hsl(232,28%,22%)] hover:text-[hsl(232,28%,15%)] hover:bg-[hsl(40,15%,85%)] rounded-none px-6 py-5 text-[12px] font-semibold uppercase tracking-[0.15em]"
-              >
-                <FileText className="mr-2 h-4 w-4" />
-                Explora tu biblioteca de IA gratuita
-                <ArrowRight className="ml-2 h-4 w-4" />
-              </Button>
+                <div className="grid grid-cols-2 gap-3 mb-6">
+                  {[
+                    { icon: MessageSquare, title: "LLMs", desc: "ChatGPT, Claude, Gemini, Perplexity..." },
+                    { icon: Image, title: "Creación visual", desc: "Imágenes y vídeo con IA" },
+                    { icon: Zap, title: "Automatización", desc: "Make, Zapier y n8n" },
+                    { icon: Sparkles, title: "Más herramientas", desc: "Canva IA, Notion IA..." },
+                  ].map((resource, i) => (
+                    <div
+                      key={i}
+                      className="group flex flex-col p-4 border border-[hsl(232,15%,78%)] bg-[hsl(40,15%,96%)] transition-all duration-300 hover:border-[hsl(var(--accent))] hover:bg-[hsl(40,20%,88%)]"
+                    >
+                      <div className="w-8 h-8 rounded-full bg-[hsl(232,28%,22%)]/10 flex items-center justify-center mb-2 group-hover:bg-[hsl(232,28%,22%)]/20 transition-colors duration-300">
+                        <resource.icon className="h-4 w-4 text-[hsl(232,28%,25%)]" />
+                      </div>
+                      <h4 className="font-serif text-[14px] font-medium text-[hsl(232,28%,18%)] mb-0.5">
+                        {resource.title}
+                      </h4>
+                      <p className="text-[hsl(232,20%,40%)] text-[11px]">
+                        {resource.desc}
+                      </p>
+                    </div>
+                  ))}
+                </div>
+
+                <Button
+                  variant="ghost"
+                  className="text-[hsl(232,28%,22%)] hover:text-[hsl(232,28%,15%)] hover:bg-[hsl(40,15%,85%)] rounded-none px-6 py-5 text-[12px] font-semibold uppercase tracking-[0.15em]"
+                >
+                  <FileText className="mr-2 h-4 w-4" />
+                  Explora tu biblioteca de IA gratuita
+                  <ArrowRight className="ml-2 h-4 w-4" />
+                </Button>
+              </div>
             </div>
           </div>
 
