@@ -202,8 +202,8 @@ const ServiceItem = ({
                   <p className="text-[11px] font-semibold uppercase tracking-[0.2em] text-accent mb-6 text-center">
                     Conozco a fondo cada perfil para potenciar su liderazgo
                   </p>
-                  <EnneagramWheel />
-                  <LeadershipCards />
+                  <EnneagramWheel onHoverChange={setHoveredArchetype} />
+                  <LeadershipCards highlightedArchetype={hoveredArchetype} />
                 </div>
               )}
             </div>
