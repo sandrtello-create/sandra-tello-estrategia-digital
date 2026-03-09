@@ -1,7 +1,7 @@
 import { useState, useEffect, useRef } from "react";
 import { Brain, Target, Search, Users, ArrowRight, ChevronDown } from "lucide-react";
 import { Link } from "react-router-dom";
-import EnneagramWheel from "./EnneagramWheel";
+import EnneagramWheel, { type ArchetypeKey } from "./EnneagramWheel";
 import LeadershipCards from "./LeadershipCards";
 
 const services = [
@@ -88,6 +88,7 @@ const ServiceItem = ({
 }) => {
   const [hovered, setHovered] = useState(false);
   const [expanded, setExpanded] = useState(false);
+  const [hoveredArchetype, setHoveredArchetype] = useState<ArchetypeKey>(null);
   const contentRef = useRef<HTMLDivElement>(null);
   const num = String(index + 1).padStart(2, "0");
 
@@ -201,8 +202,8 @@ const ServiceItem = ({
                   <p className="text-[11px] font-semibold uppercase tracking-[0.2em] text-accent mb-6 text-center">
                     Conozco a fondo cada perfil para potenciar su liderazgo
                   </p>
-                  <EnneagramWheel />
-                  <LeadershipCards />
+                  <EnneagramWheel onHoverChange={setHoveredArchetype} />
+                  <LeadershipCards highlightedArchetype={hoveredArchetype} />
                 </div>
               )}
             </div>

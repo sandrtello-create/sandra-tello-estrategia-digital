@@ -1,18 +1,33 @@
 import { useState } from "react";
+import img1 from "@/assets/enneagram-1-reformador.png";
+import img2 from "@/assets/enneagram-2-ayudador.png";
+import img3 from "@/assets/enneagram-3-triunfador.png";
+import img4 from "@/assets/enneagram-4-individualista.png";
+import img5 from "@/assets/enneagram-5-investigador.png";
+import img6 from "@/assets/enneagram-6-leal.png";
+import img7 from "@/assets/enneagram-7-entusiasta.png";
+import img8 from "@/assets/enneagram-8-desafiador.png";
+import img9 from "@/assets/enneagram-9-pacificador.png";
 
 const types = [
-  { num: 1, name: "Reformador", trait: "Perfeccionista, ético" },
-  { num: 2, name: "Ayudador", trait: "Generoso, posesivo" },
-  { num: 3, name: "Triunfador", trait: "Adaptable, ambicioso" },
-  { num: 4, name: "Individualista", trait: "Expresivo, temperamental" },
-  { num: 5, name: "Investigador", trait: "Perceptivo, reservado" },
-  { num: 6, name: "Leal", trait: "Comprometido, ansioso" },
-  { num: 7, name: "Entusiasta", trait: "Versátil, disperso" },
-  { num: 8, name: "Desafiador", trait: "Seguro, confrontador" },
-  { num: 9, name: "Pacificador", trait: "Receptivo, complaciente" },
+  { num: 1, name: "Reformador", trait: "Perfeccionista, ético", image: img1, archetype: "estratega" as const },
+  { num: 2, name: "Ayudador", trait: "Generoso, posesivo", image: img2, archetype: "comunicador" as const },
+  { num: 3, name: "Triunfador", trait: "Adaptable, ambicioso", image: img3, archetype: "estratega" as const },
+  { num: 4, name: "Individualista", trait: "Expresivo, temperamental", image: img4, archetype: "visionario" as const },
+  { num: 5, name: "Investigador", trait: "Perceptivo, reservado", image: img5, archetype: "estratega" as const },
+  { num: 6, name: "Leal", trait: "Comprometido, ansioso", image: img6, archetype: "comunicador" as const },
+  { num: 7, name: "Entusiasta", trait: "Versátil, disperso", image: img7, archetype: "visionario" as const },
+  { num: 8, name: "Desafiador", trait: "Seguro, confrontador", image: img8, archetype: "estratega" as const },
+  { num: 9, name: "Pacificador", trait: "Receptivo, complaciente", image: img9, archetype: "comunicador" as const },
 ];
 
-const EnneagramWheel = () => {
+export type ArchetypeKey = "estratega" | "comunicador" | "visionario" | null;
+
+interface EnneagramWheelProps {
+  onHoverChange?: (archetype: ArchetypeKey) => void;
+}
+
+const EnneagramWheel = ({ onHoverChange }: EnneagramWheelProps) => {
   const [hovered, setHovered] = useState<number | null>(null);
   const cx = 200;
   const cy = 200;
@@ -21,6 +36,11 @@ const EnneagramWheel = () => {
   const segments = 9;
   const angleStep = (2 * Math.PI) / segments;
   const startOffset = -Math.PI / 2 - angleStep / 2;
+
+  const handleHover = (index: number | null) => {
+    setHovered(index);
+    onHoverChange?.(index !== null ? types[index].archetype : null);
+  };
 
   const getSegmentPath = (index: number) => {
     const a1 = startOffset + index * angleStep;
@@ -44,15 +64,15 @@ const EnneagramWheel = () => {
 
   return (
     <div className="flex flex-col items-center gap-6">
-      <svg viewBox="0 0 400 400" className="w-full max-w-[320px] lg:max-w-[360px]">
+      <svg viewBox="0 0 400 400" className="w-full max-w-[380px] lg:max-w-[420px]">
         {types.map((t, i) => {
           const isHovered = hovered === i;
           const pos = getLabelPos(i);
           return (
             <g
               key={i}
-              onMouseEnter={() => setHovered(i)}
-              onMouseLeave={() => setHovered(null)}
+              onMouseEnter={() => handleHover(i)}
+              onMouseLeave={() => handleHover(null)}
               className="cursor-pointer"
             >
               <path
@@ -95,13 +115,22 @@ const EnneagramWheel = () => {
         </text>
       </svg>
 
-      {/* Tooltip */}
-      <div className="h-12 flex items-center justify-center">
+      {/* Tooltip with character image */}
+      <div className="h-20 flex items-center justify-center">
         {hovered !== null && (
-          <p className="text-sm text-muted-foreground animate-fade-in-up text-center">
-            <span className="font-semibold text-primary">Tipo {types[hovered].num}: {types[hovered].name}</span>
-            {" — "}{types[hovered].trait}
-          </p>
+          <div className="flex items-center gap-4 animate-fade-in-up">
+            <img
+              src={types[hovered].image}
+              alt={types[hovered].name}
+              className="h-16 w-16 object-contain rounded-full border-2 border-accent/30"
+            />
+            <div>
+              <p className="font-semibold text-primary text-sm">
+                Tipo {types[hovered].num}: {types[hovered].name}
+              </p>
+              <p className="text-xs text-muted-foreground">{types[hovered].trait}</p>
+            </div>
+          </div>
         )}
         {hovered === null && (
           <p className="text-xs text-muted-foreground/60 italic">Pasa el cursor para explorar cada tipo</p>
