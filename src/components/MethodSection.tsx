@@ -81,9 +81,6 @@ const MethodSection = () => {
           ))}
         </div>
 
-        <p className="text-center mt-16 font-serif text-xl md:text-2xl text-white/80 italic max-w-2xl mx-auto">
-          "Porque la confianza convierte antes que cualquier algoritmo."
-        </p>
       </div>
     </section>
   );
