@@ -39,10 +39,10 @@ const services = [
   },
   {
     icon: Search,
-    title: "Auditoría de presencia digital",
-    portfolioSlug: "auditoria-presencia-digital",
+    title: "Auditoría de negocio",
+    portfolioSlug: "auditoria-de-negocio",
     description:
-      "Análisis completo de tu ecosistema digital: web, redes sociales, contenido y reputación online con recomendaciones claras de mejora.",
+      "Auditoría integral de tu negocio: presencia digital, experiencia de cliente y mystery shopping con recomendaciones claras de mejora.",
     details: {
       intro: "Reviso tu ecosistema digital al completo para detectar qué funciona, qué falta y qué sobra.",
       points: [
