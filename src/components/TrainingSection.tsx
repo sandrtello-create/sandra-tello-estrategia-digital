@@ -419,6 +419,8 @@ const TrainingSection = () => {
           </div>
         </div>
       </div>
+
+      <LeadCaptureModal open={isLeadModalOpen} onOpenChange={setIsLeadModalOpen} />
     </section>
   );
 };
