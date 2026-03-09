@@ -41,7 +41,7 @@ const LeadershipCards = () => {
             <img
               src={a.image}
               alt={a.title}
-              className="h-28 w-28 object-contain group-hover:scale-105 transition-transform duration-500"
+              className={`${a.imageClass} object-contain group-hover:scale-105 transition-transform duration-500`}
             />
           </div>
           <div className="px-5 pb-5">
