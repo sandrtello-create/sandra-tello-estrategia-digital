@@ -1,10 +1,10 @@
 import turismoMolinos from "@/assets/portfolio/turismo-molinos.jpg";
 import turismoGastronomia from "@/assets/portfolio/turismo-gastronomia.jpg";
-import turismoAzafran from "@/assets/portfolio/turismo-azafran.jpg";
-import logisticaGoogle from "@/assets/portfolio/logistica-google-business.jpg";
+import linkedinLogo from "@/assets/portfolio/linkedin-logo.jpg";
+import logisticaGoogle from "@/assets/portfolio/logistica-google-business-v2.jpg";
 import logisticaInstagram from "@/assets/portfolio/logistica-instagram.jpg";
 import mysteryTienda from "@/assets/portfolio/mystery-tienda.jpg";
-import mysteryEvaluacion from "@/assets/portfolio/mystery-evaluacion.jpg";
+import mysteryEvaluacion from "@/assets/portfolio/mystery-evaluacion-v2.jpg";
 
 export interface ServiceCase {
   title: string;
@@ -48,7 +48,6 @@ export const servicePortfolios: ServicePortfolio[] = [
         galleryImages: [
           { src: turismoMolinos, alt: "Molinos de viento de La Mancha", caption: "Molinos de La Mancha" },
           { src: turismoGastronomia, alt: "Gastronomía manchega con queso y vino", caption: "Gastronomía manchega" },
-          { src: turismoAzafran, alt: "Campos de azafrán en Castilla-La Mancha", caption: "Campos de azafrán" },
         ],
       },
       {
@@ -63,6 +62,9 @@ export const servicePortfolios: ServicePortfolio[] = [
           { label: "Impresiones contenido", value: "+175%" },
           { label: "Perfiles optimizados", value: "15+" },
           { label: "Mejora de conversión", value: "+60%" },
+        ],
+        galleryImages: [
+          { src: linkedinLogo, alt: "Logo de LinkedIn", caption: "LinkedIn" },
         ],
         bannerBeforeAfter: [],
       },
@@ -99,7 +101,7 @@ export const servicePortfolios: ServicePortfolio[] = [
         ],
         galleryImages: [
           { src: mysteryTienda, alt: "Mystery shopper evaluando tienda retail", caption: "Punto de venta" },
-          { src: mysteryEvaluacion, alt: "Checklist de evaluación de experiencia de cliente", caption: "Evaluación de experiencia" },
+          { src: mysteryEvaluacion, alt: "Checklist de evaluación de experiencia del cliente en español", caption: "Evaluación de experiencia" },
         ],
       },
     ],
