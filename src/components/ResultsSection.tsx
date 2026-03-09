@@ -1,4 +1,5 @@
 import { Eye, TrendingUp, Award, Compass, Zap, Heart } from "lucide-react";
+import sandraMarcopolo from "@/assets/sandra-tello-marcopolo.jpg";
 
 const results = [
   {
@@ -37,17 +38,53 @@ const ResultsSection = () => {
   return (
     <section className="py-20 lg:py-28 bg-section-alt">
       <div className="container mx-auto px-6 lg:px-8">
+        {/* Bloque narrativo con foto */}
+        <div className="grid lg:grid-cols-2 gap-12 lg:gap-16 items-center mb-20">
+          {/* Texto a la izquierda */}
+          <div className="order-2 lg:order-1">
+            <p className="text-accent font-semibold text-[11px] uppercase tracking-[0.25em] mb-4">
+              Mi forma de trabajar
+            </p>
+            <h2 className="font-serif text-3xl md:text-4xl lg:text-[44px] font-medium text-primary mb-6 leading-[1.2]">
+              Transforma tu negocio y crea la vida que amas
+            </h2>
+            <div className="space-y-4 text-muted-foreground text-[17px] leading-relaxed">
+              <p>
+                Hubo un tiempo en el que trabajaba encerrada en una oficina sin luz natural, 
+                con horarios rígidos y la sensación de que mi vida giraba en torno al trabajo.
+              </p>
+              <p>
+                Hoy trabajo 100% online, desde donde me propongo. Elijo mi entorno, mi ritmo 
+                y mis proyectos. Puedo estar en diferentes lugares, compartir espacio con mi familia 
+                y disfrutar de la compañía de mi labrador Marcopolo.
+              </p>
+            </div>
+            <div className="mt-6 border-l-2 border-accent pl-5">
+              <p className="text-primary font-serif text-lg italic leading-relaxed">
+                "Diseñé un negocio que trabaja para mí, no al revés. Y eso mismo es lo que te ayudo a construir."
+              </p>
+            </div>
+          </div>
+
+          {/* Foto a la derecha */}
+          <div className="order-1 lg:order-2">
+            <img
+              src={sandraMarcopolo}
+              alt="Sandra Tello trabajando con su labrador Marcopolo"
+              className="w-full h-auto object-cover shadow-lg"
+              loading="lazy"
+            />
+          </div>
+        </div>
+
+        {/* Grid de resultados */}
         <div className="text-center max-w-2xl mx-auto mb-16">
           <p className="text-accent font-semibold text-[11px] uppercase tracking-[0.25em] mb-4">
             Resultados
           </p>
-          <h2 className="font-serif text-3xl md:text-4xl lg:text-[44px] font-medium text-primary mb-5 leading-[1.2]">
-            Transforma tu negocio y crea la vida que amas
-          </h2>
-          <p className="text-muted-foreground text-[17px] leading-relaxed">
-            Cada proceso está diseñado para generar transformaciones reales: 
-            más resultados, más libertad y una vida profesional alineada con lo que realmente importa.
-          </p>
+          <h3 className="font-serif text-2xl md:text-3xl font-medium text-primary mb-5 leading-[1.2]">
+            Lo que consigues trabajando conmigo
+          </h3>
         </div>
 
         <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-px bg-border">
