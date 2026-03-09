@@ -63,18 +63,18 @@ const MethodSection = () => {
           {pillars.map((pillar, index) => (
             <div
               key={index}
-              className="bg-white/10 backdrop-blur-md border border-white/10 rounded-lg p-10 text-center hover:bg-white/15 transition-colors duration-300"
+              className="group bg-white/10 backdrop-blur-md border border-white/10 rounded-lg p-10 text-center hover:bg-[hsl(220,60%,35%)] hover:border-[hsl(220,60%,45%)] transition-all duration-300 hover:scale-[1.03] hover:shadow-[0_10px_30px_-10px_hsl(220,60%,25%/0.5)]"
             >
               <div className="w-16 h-16 flex items-center justify-center mx-auto mb-6">
-                <pillar.icon className="h-9 w-9 text-[hsl(38,55%,50%)]" />
+                <pillar.icon className="h-9 w-9 text-[hsl(38,55%,50%)] group-hover:text-white transition-colors duration-300" />
               </div>
-              <div className="text-[hsl(38,55%,50%)] font-serif text-sm font-semibold mb-2">
+              <div className="text-[hsl(38,55%,50%)] group-hover:text-white/80 font-serif text-sm font-semibold mb-2 transition-colors duration-300">
                 0{index + 1}
               </div>
               <h3 className="font-serif text-[22px] font-medium text-white mb-4">
                 {pillar.title}
               </h3>
-              <p className="text-white/60 text-[15px] leading-relaxed">
+              <p className="text-white/60 group-hover:text-white/80 text-[15px] leading-relaxed transition-colors duration-300">
                 {pillar.description}
               </p>
             </div>
