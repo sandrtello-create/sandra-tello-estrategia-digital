@@ -7,6 +7,7 @@ import Index from "./pages/Index";
 import SobreMi from "./pages/SobreMi";
 import Perfiles from "./pages/Perfiles";
 import PerfilDetalle from "./pages/PerfilDetalle";
+import ServicioPortfolio from "./pages/ServicioPortfolio";
 import NotFound from "./pages/NotFound";
 import ScrollToTop from "./components/ScrollToTop";
 
