@@ -9,6 +9,7 @@ const archetypes = [
     subtitle: "Analítico · Orientado a datos",
     description:
       "Lidera con visión clara y decisiones basadas en información. Su marca personal transmite autoridad y conocimiento técnico.",
+    imageClass: "h-28 w-28",
   },
   {
     image: comunicadorImg,
@@ -16,6 +17,7 @@ const archetypes = [
     subtitle: "Relacional · Orientado a personas",
     description:
       "Conecta con su audiencia desde la autenticidad. Su liderazgo digital se construye sobre relaciones genuinas y storytelling.",
+    imageClass: "h-28 w-28",
   },
   {
     image: visionarioImg,
@@ -23,6 +25,7 @@ const archetypes = [
     subtitle: "Creativo · Orientado a innovación",
     description:
       "Inspira con ideas disruptivas y contenido que desafía el status quo. Su presencia digital genera conversación y tendencia.",
+    imageClass: "h-32 w-32 scale-110",
   },
 ];
 
