@@ -1,5 +1,6 @@
 import { Eye, TrendingUp, Award, Compass, Zap, Heart } from "lucide-react";
 import sandraMarcopolo from "@/assets/sandra-tello-marcopolo.jpg";
+import logoWatermark from "@/assets/sandra-logo-watermark.png";
 
 const results = [
   {
