@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { Button } from "@/components/ui/button";
-import { GraduationCap, Building2, Briefcase, ArrowRight } from "lucide-react";
+import { GraduationCap, Building2, Briefcase, ArrowRight, Bot, MessageSquare, Mic, Globe, Palette, Zap, Phone, Share2, Video, UserRound } from "lucide-react";
 import sandraIA from "@/assets/sandra-tello-ia.jpg";
 
 const programs = [
@@ -8,20 +8,33 @@ const programs = [
     icon: Building2,
     title: "Formación para empresas",
     description:
-      "Programas in-company para equipos que necesitan integrar la IA de forma estratégica en su día a día.",
+      "Programas in-company —en remoto o presencial— para equipos que necesitan integrar la IA de forma estratégica en su día a día.",
   },
   {
     icon: Briefcase,
     title: "Workshops para ejecutivos",
     description:
-      "Sesiones intensivas de alto nivel para directivos que quieren liderar la transformación con IA.",
+      "Sesiones intensivas de alto nivel adaptadas al negocio en cuestión, para directivos que quieren liderar la transformación con IA.",
   },
   {
     icon: GraduationCap,
     title: "Programas para profesionales",
     description:
-      "Formación práctica para profesionales que quieren multiplicar su productividad e impacto con IA.",
+      "Formación práctica —incluyendo clases individuales 1 a 1— para profesionales que quieren multiplicar su productividad e impacto con IA.",
   },
+];
+
+const tools = [
+  { icon: MessageSquare, label: "Chatbots WhatsApp" },
+  { icon: Bot, label: "Agentes IA" },
+  { icon: Video, label: "Avatares IA" },
+  { icon: Mic, label: "Voz IA" },
+  { icon: Phone, label: "Atención telefónica IA" },
+  { icon: Zap, label: "Automatización" },
+  { icon: Share2, label: "Contenido RRSS" },
+  { icon: Globe, label: "Creación de webs" },
+  { icon: Palette, label: "Diseño con IA" },
+  { icon: UserRound, label: "Clases 1 a 1" },
 ];
 
 const NeuralNetworkSVG = () => (
