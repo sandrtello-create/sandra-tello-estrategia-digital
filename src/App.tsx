@@ -7,6 +7,7 @@ import Index from "./pages/Index";
 import SobreMi from "./pages/SobreMi";
 import Perfiles from "./pages/Perfiles";
 import PerfilDetalle from "./pages/PerfilDetalle";
+import ServicioPortfolio from "./pages/ServicioPortfolio";
 import NotFound from "./pages/NotFound";
 import ScrollToTop from "./components/ScrollToTop";
 
@@ -24,6 +25,7 @@ const App = () => (
           <Route path="/sobre-mi" element={<SobreMi />} />
           <Route path="/perfiles" element={<Perfiles />} />
           <Route path="/perfiles/:slug" element={<PerfilDetalle />} />
+          <Route path="/servicios/:slug" element={<ServicioPortfolio />} />
           {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
           <Route path="*" element={<NotFound />} />
         </Routes>
