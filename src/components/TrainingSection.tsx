@@ -154,8 +154,12 @@ const TrainingSection = () => {
         <div className="flex flex-col items-center gap-10">
           {/* Header */}
           <div className="text-center max-w-3xl">
-            <p className="text-accent font-semibold text-[11px] uppercase tracking-[0.25em] mb-4">
-              Formación en Inteligencia Artificial
+            <div className="flex items-center justify-center gap-2 mb-4">
+              <Brain className="h-4 w-4 text-accent" />
+              <p className="text-accent font-semibold text-[11px] uppercase tracking-[0.25em]">
+                Formación en Inteligencia Artificial
+              </p>
+            </div>
             </p>
             <h2 className="font-serif text-3xl md:text-4xl lg:text-[40px] font-medium text-primary-foreground mb-5 leading-[1.2]">
               Aprende a aplicar la IA con estrategia y criterio
