@@ -4,6 +4,77 @@ import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import { ArrowLeft, ArrowRight, TrendingUp } from "lucide-react";
 
+const GalleryGrid = ({ images }: { images: { src: string; alt: string }[] }) => (
+  <div>
+    <p className="text-accent font-semibold text-[11px] uppercase tracking-[0.15em] mb-3">
+      Galería del proyecto
+    </p>
+    <div className="grid grid-cols-2 md:grid-cols-3 gap-3">
+      {images.map((img, i) => (
+        <div
+          key={i}
+          className="aspect-video bg-muted rounded overflow-hidden border border-border"
+        >
+          <img
+            src={img.src}
+            alt={img.alt}
+            className="w-full h-full object-cover"
+            loading="lazy"
+          />
+        </div>
+      ))}
+    </div>
+  </div>
+);
+
+const BannerBeforeAfterGrid = ({
+  pairs,
+}: {
+  pairs: { before: string; after: string }[];
+}) => (
+  <div>
+    <p className="text-accent font-semibold text-[11px] uppercase tracking-[0.15em] mb-3">
+      Banners: antes y después
+    </p>
+    <div className="space-y-4">
+      {pairs.map((pair, i) => (
+        <div key={i} className="grid grid-cols-2 gap-3">
+          <div>
+            {i === 0 && (
+              <span className="text-xs font-semibold text-muted-foreground uppercase tracking-wider mb-2 block">
+                Antes
+              </span>
+            )}
+            <div className="aspect-[4/1] bg-muted rounded overflow-hidden border border-border">
+              <img
+                src={pair.before}
+                alt={`Banner antes ${i + 1}`}
+                className="w-full h-full object-cover"
+                loading="lazy"
+              />
+            </div>
+          </div>
+          <div>
+            {i === 0 && (
+              <span className="text-xs font-semibold text-accent uppercase tracking-wider mb-2 block">
+                Después
+              </span>
+            )}
+            <div className="aspect-[4/1] bg-muted rounded overflow-hidden border border-accent/30">
+              <img
+                src={pair.after}
+                alt={`Banner después ${i + 1}`}
+                className="w-full h-full object-cover"
+                loading="lazy"
+              />
+            </div>
+          </div>
+        </div>
+      ))}
+    </div>
+  </div>
+);
+
 const CaseCard = ({ c, index }: { c: ServiceCase; index: number }) => (
   <div className="bg-card border border-border rounded-lg overflow-hidden">
     {/* Header */}
@@ -60,65 +131,14 @@ const CaseCard = ({ c, index }: { c: ServiceCase; index: number }) => (
         ))}
       </div>
 
-      {/* Banner gallery */}
-      {c.bannerImages && c.bannerImages.length > 0 && (
-        <div>
-          <p className="text-accent font-semibold text-[11px] uppercase tracking-[0.15em] mb-3">
-            Banners LinkedIn
-          </p>
-          <div className="grid grid-cols-2 md:grid-cols-3 gap-3">
-            {c.bannerImages.map((img, i) => (
-              <div
-                key={i}
-                className="aspect-[4/1] bg-muted rounded overflow-hidden border border-border"
-              >
-                <img
-                  src={img}
-                  alt={`Banner LinkedIn ${i + 1}`}
-                  className="w-full h-full object-cover"
-                  loading="lazy"
-                />
-              </div>
-            ))}
-          </div>
-        </div>
+      {/* Gallery */}
+      {c.galleryImages && c.galleryImages.length > 0 && (
+        <GalleryGrid images={c.galleryImages} />
       )}
 
-      {/* Before / After */}
-      {c.beforeAfter && (
-        <div>
-          <p className="text-accent font-semibold text-[11px] uppercase tracking-[0.15em] mb-3">
-            Antes y después
-          </p>
-          <div className="grid md:grid-cols-2 gap-4">
-            <div>
-              <span className="text-xs font-semibold text-muted-foreground uppercase tracking-wider mb-2 block">
-                Antes
-              </span>
-              <div className="aspect-video bg-muted rounded overflow-hidden border border-border">
-                <img
-                  src={c.beforeAfter.before}
-                  alt="Antes"
-                  className="w-full h-full object-cover"
-                  loading="lazy"
-                />
-              </div>
-            </div>
-            <div>
-              <span className="text-xs font-semibold text-accent uppercase tracking-wider mb-2 block">
-                Después
-              </span>
-              <div className="aspect-video bg-muted rounded overflow-hidden border border-accent/30">
-                <img
-                  src={c.beforeAfter.after}
-                  alt="Después"
-                  className="w-full h-full object-cover"
-                  loading="lazy"
-                />
-              </div>
-            </div>
-          </div>
-        </div>
+      {/* Banner Before/After */}
+      {c.bannerBeforeAfter && c.bannerBeforeAfter.length > 0 && (
+        <BannerBeforeAfterGrid pairs={c.bannerBeforeAfter} />
       )}
     </div>
   </div>

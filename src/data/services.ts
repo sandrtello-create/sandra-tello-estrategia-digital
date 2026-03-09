@@ -4,8 +4,8 @@ export interface ServiceCase {
   challenge: string;
   solution: string;
   results: { label: string; value: string }[];
-  bannerImages?: string[];
-  beforeAfter?: { before: string; after: string };
+  galleryImages?: { src: string; alt: string }[];
+  bannerBeforeAfter?: { before: string; after: string }[];
 }
 
 export interface ServicePortfolio {
@@ -18,11 +18,11 @@ export interface ServicePortfolio {
 
 export const servicePortfolios: ServicePortfolio[] = [
   {
-    slug: "auditoria-presencia-digital",
-    serviceTitle: "Auditoría de presencia digital",
-    headline: "Así trabajamos la presencia digital de nuestros clientes",
+    slug: "auditoria-de-negocio",
+    serviceTitle: "Auditoría de negocio",
+    headline: "Así auditamos negocios: presencia digital y experiencia real",
     intro:
-      "Cada proyecto empieza con un diagnóstico honesto. A partir de ahí, diseñamos un plan de acción claro y medible. Aquí tienes algunos ejemplos reales de cómo hemos ayudado a marcas y profesionales a mejorar su ecosistema digital.",
+      "Cada proyecto empieza con un diagnóstico honesto, ya sea online o presencial. A partir de ahí, diseñamos un plan de acción claro y medible. Aquí tienes algunos ejemplos reales.",
     cases: [
       {
         title: "Turismo de Castilla-La Mancha",
@@ -36,6 +36,11 @@ export const servicePortfolios: ServicePortfolio[] = [
           { label: "Mejora engagement", value: "+45%" },
           { label: "Recomendaciones implementadas", value: "87%" },
           { label: "Tiempo de ejecución", value: "3 meses" },
+        ],
+        galleryImages: [
+          { src: "/placeholder.svg", alt: "Hotel auditado 1" },
+          { src: "/placeholder.svg", alt: "Hotel auditado 2" },
+          { src: "/placeholder.svg", alt: "Hotel auditado 3" },
         ],
       },
       {
@@ -51,15 +56,11 @@ export const servicePortfolios: ServicePortfolio[] = [
           { label: "Perfiles optimizados", value: "15+" },
           { label: "Mejora de conversión", value: "+60%" },
         ],
-        bannerImages: [
-          "/placeholder.svg",
-          "/placeholder.svg",
-          "/placeholder.svg",
+        bannerBeforeAfter: [
+          { before: "/placeholder.svg", after: "/placeholder.svg" },
+          { before: "/placeholder.svg", after: "/placeholder.svg" },
+          { before: "/placeholder.svg", after: "/placeholder.svg" },
         ],
-        beforeAfter: {
-          before: "/placeholder.svg",
-          after: "/placeholder.svg",
-        },
       },
       {
         title: "Empresa de logística y transporte",
@@ -74,6 +75,10 @@ export const servicePortfolios: ServicePortfolio[] = [
           { label: "Crecimiento seguidores", value: "+130%" },
           { label: "Coherencia de marca", value: "100%" },
         ],
+        galleryImages: [
+          { src: "/placeholder.svg", alt: "Flota de transporte" },
+          { src: "/placeholder.svg", alt: "Almacén logístico" },
+        ],
       },
       {
         title: "Auditoría Mystery Shopper para cadena retail",
@@ -87,6 +92,11 @@ export const servicePortfolios: ServicePortfolio[] = [
           { label: "Incidencias detectadas", value: "34" },
           { label: "Mejora satisfacción", value: "+40%" },
           { label: "Recomendaciones aplicadas", value: "91%" },
+        ],
+        galleryImages: [
+          { src: "/placeholder.svg", alt: "Tienda auditada" },
+          { src: "/placeholder.svg", alt: "Punto de venta" },
+          { src: "/placeholder.svg", alt: "Experiencia de cliente" },
         ],
       },
     ],
