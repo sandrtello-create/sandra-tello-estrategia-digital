@@ -1,10 +1,11 @@
 import turismoMolinos from "@/assets/portfolio/turismo-molinos.jpg";
 import turismoGastronomia from "@/assets/portfolio/turismo-gastronomia.jpg";
-import linkedinLogo from "@/assets/portfolio/linkedin-logo.jpg";
 import logisticaGoogle from "@/assets/portfolio/logistica-google-business-v2.jpg";
 import logisticaInstagram from "@/assets/portfolio/logistica-instagram.jpg";
+import logisticaWeb from "@/assets/portfolio/logistica-web.jpg";
 import mysteryTienda from "@/assets/portfolio/mystery-tienda.jpg";
 import mysteryEvaluacion from "@/assets/portfolio/mystery-evaluacion-v2.jpg";
+import mysteryInforme from "@/assets/portfolio/mystery-informe.jpg";
 
 export interface ServiceCase {
   title: string;
@@ -63,9 +64,6 @@ export const servicePortfolios: ServicePortfolio[] = [
           { label: "Perfiles optimizados", value: "15+" },
           { label: "Mejora de conversión", value: "+60%" },
         ],
-        galleryImages: [
-          { src: linkedinLogo, alt: "Logo de LinkedIn", caption: "LinkedIn" },
-        ],
         bannerBeforeAfter: [],
       },
       {
@@ -84,6 +82,7 @@ export const servicePortfolios: ServicePortfolio[] = [
         galleryImages: [
           { src: logisticaGoogle, alt: "Perfil de Google Business de empresa de transporte", caption: "Google Business" },
           { src: logisticaInstagram, alt: "Perfil de Instagram de empresa logística", caption: "Instagram" },
+          { src: logisticaWeb, alt: "Página web corporativa de empresa de transporte", caption: "Página web" },
         ],
       },
       {
@@ -102,6 +101,7 @@ export const servicePortfolios: ServicePortfolio[] = [
         galleryImages: [
           { src: mysteryTienda, alt: "Mystery shopper evaluando tienda retail", caption: "Punto de venta" },
           { src: mysteryEvaluacion, alt: "Checklist de evaluación de experiencia del cliente en español", caption: "Evaluación de experiencia" },
+          { src: mysteryInforme, alt: "Informe de resultados de mystery shopping en español", caption: "Informe de resultados" },
         ],
       },
     ],

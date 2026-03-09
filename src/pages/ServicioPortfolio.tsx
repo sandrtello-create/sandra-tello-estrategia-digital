@@ -2,34 +2,41 @@ import { useParams, Link } from "react-router-dom";
 import { servicePortfolios, ServiceCase } from "@/data/services";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
-import { ArrowLeft, ArrowRight, TrendingUp, Landmark, Linkedin, Truck, ShoppingBag } from "lucide-react";
+import { ArrowLeft, ArrowRight, TrendingUp, Landmark, Truck, ShoppingBag } from "lucide-react";
+import linkedinLogo from "@/assets/portfolio/linkedin-logo.jpg";
 
-const GalleryGrid = ({ images }: { images: { src: string; alt: string; caption?: string }[] }) => (
-  <div>
-    <p className="text-accent font-semibold text-[11px] uppercase tracking-[0.15em] mb-3">
-      Galería del proyecto
-    </p>
-    <div className="grid grid-cols-2 md:grid-cols-3 gap-3">
-      {images.map((img, i) => (
-        <div key={i} className="space-y-2">
-          <div className="aspect-video bg-muted rounded overflow-hidden border border-border">
-            <img
-              src={img.src}
-              alt={img.alt}
-              className="w-full h-full object-cover"
-              loading="lazy"
-            />
+const GalleryGrid = ({ images }: { images: { src: string; alt: string; caption?: string }[] }) => {
+  const gridCols = images.length <= 2
+    ? "grid-cols-1 md:grid-cols-2 max-w-2xl mx-auto"
+    : "grid-cols-1 md:grid-cols-3";
+
+  return (
+    <div>
+      <p className="text-accent font-semibold text-[11px] uppercase tracking-[0.15em] mb-3">
+        Galería del proyecto
+      </p>
+      <div className={`grid ${gridCols} gap-4`}>
+        {images.map((img, i) => (
+          <div key={i} className="space-y-2">
+            <div className={`${images.length <= 2 ? "aspect-[4/3]" : "aspect-video"} bg-muted rounded overflow-hidden border border-border`}>
+              <img
+                src={img.src}
+                alt={img.alt}
+                className="w-full h-full object-cover"
+                loading="lazy"
+              />
+            </div>
+            {img.caption && (
+              <p className="text-xs text-muted-foreground font-medium text-center">
+                {img.caption}
+              </p>
+            )}
           </div>
-          {img.caption && (
-            <p className="text-xs text-muted-foreground font-medium text-center">
-              {img.caption}
-            </p>
-          )}
-        </div>
-      ))}
+        ))}
+      </div>
     </div>
-  </div>
-);
+  );
+};
 
 const BannerBeforeAfterGrid = ({
   pairs,
@@ -81,7 +88,7 @@ const BannerBeforeAfterGrid = ({
 
 const sectorIcons: Record<string, React.ReactNode> = {
   "Turismo institucional": <Landmark className="h-5 w-5" />,
-  "Marca personal / LinkedIn": <Linkedin className="h-5 w-5" />,
+  "Marca personal / LinkedIn": <img src={linkedinLogo} alt="LinkedIn" className="h-6 w-6 rounded object-cover" />,
   "Transporte / Logística": <Truck className="h-5 w-5" />,
   "Retail / Mystery Shopping": <ShoppingBag className="h-5 w-5" />,
 };
@@ -153,6 +160,33 @@ const CaseCard = ({ c, index }: { c: ServiceCase; index: number }) => (
       {/* Banner Before/After */}
       {c.bannerBeforeAfter && c.bannerBeforeAfter.length > 0 && (
         <BannerBeforeAfterGrid pairs={c.bannerBeforeAfter} />
+      )}
+
+      {/* Banner placeholders when array is empty */}
+      {c.bannerBeforeAfter && c.bannerBeforeAfter.length === 0 && (
+        <div>
+          <p className="text-accent font-semibold text-[11px] uppercase tracking-[0.15em] mb-3">
+            Banners: antes y después
+          </p>
+          <div className="grid grid-cols-2 gap-4">
+            <div>
+              <span className="text-xs font-semibold text-muted-foreground uppercase tracking-wider mb-2 block">
+                Antes
+              </span>
+              <div className="aspect-[4/1] rounded border-2 border-dashed border-border flex items-center justify-center">
+                <p className="text-muted-foreground/50 text-xs">Imagen del banner original</p>
+              </div>
+            </div>
+            <div>
+              <span className="text-xs font-semibold text-accent uppercase tracking-wider mb-2 block">
+                Después
+              </span>
+              <div className="aspect-[4/1] rounded border-2 border-dashed border-accent/30 flex items-center justify-center">
+                <p className="text-accent/50 text-xs">Imagen del banner optimizado</p>
+              </div>
+            </div>
+          </div>
+        </div>
       )}
     </div>
   </div>
