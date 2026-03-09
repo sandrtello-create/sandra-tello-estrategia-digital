@@ -68,7 +68,7 @@ export const servicePortfolios: ServicePortfolio[] = [
         challenge:
           "Una empresa de transporte y logística con más de 15 años en el sector tenía una presencia digital completamente descoordinada: web desactualizada, Instagram sin estrategia, LinkedIn corporativo abandonado y ficha de Google Business sin optimizar. No existía una narrativa de marca clara ni coherencia entre canales.",
         solution:
-          "Auditoría 360° de todos los canales digitales: web, Instagram, LinkedIn y Google Business. Redefinición de la narrativa de marca, diseño de un plan estratégico de contenidos multicanal y creación de una guía de identidad digital para unificar la comunicación.",
+          "Realicé una auditoría 360° de todos los canales digitales: web, Instagram, LinkedIn y Google Business. Redefiní la narrativa de marca, diseñé un plan estratégico de contenidos multicanal y creé una guía de identidad digital para unificar la comunicación.",
         results: [
           { label: "Canales auditados", value: "6" },
           { label: "Mejora tráfico web", value: "+85%" },
