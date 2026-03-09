@@ -24,23 +24,17 @@ const programs = [
   },
 ];
 
-const toolColors = [
-  { bg: "bg-accent/15", text: "text-accent", border: "border-accent/25" },
-  { bg: "bg-[hsl(var(--mint))/0.12]", text: "text-[hsl(var(--mint))]", border: "border-[hsl(var(--mint))/0.25]" },
-  { bg: "bg-[hsl(200,60%,55%)/0.12]", text: "text-[hsl(200,60%,55%)]", border: "border-[hsl(200,60%,55%)/0.25]" },
-];
-
 const tools = [
-  { icon: MessageSquare, label: "Chatbots WhatsApp", colorIdx: 0 },
-  { icon: Bot, label: "Agentes IA", colorIdx: 1 },
-  { icon: Video, label: "Avatares IA", colorIdx: 2 },
-  { icon: Mic, label: "Voz IA", colorIdx: 0 },
-  { icon: Phone, label: "Atención telefónica IA", colorIdx: 1 },
-  { icon: Zap, label: "Automatización", colorIdx: 2 },
-  { icon: Share2, label: "Contenido RRSS", colorIdx: 0 },
-  { icon: Globe, label: "Creación de webs", colorIdx: 1 },
-  { icon: Palette, label: "Diseño con IA", colorIdx: 2 },
-  { icon: UserRound, label: "Clases 1 a 1", colorIdx: 0 },
+  { icon: MessageSquare, label: "Chatbots WhatsApp" },
+  { icon: Bot, label: "Agentes IA" },
+  { icon: Video, label: "Avatares IA" },
+  { icon: Mic, label: "Voz IA" },
+  { icon: Phone, label: "Atención telefónica IA" },
+  { icon: Zap, label: "Automatización" },
+  { icon: Share2, label: "Contenido RRSS" },
+  { icon: Globe, label: "Creación de webs" },
+  { icon: Palette, label: "Diseño con IA" },
+  { icon: UserRound, label: "Clases 1 a 1" },
 ];
 
 const NeuralNetworkSVG = () => (
