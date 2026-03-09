@@ -55,16 +55,18 @@ const LeadershipCards = ({ highlightedArchetype }: LeadershipCardsProps) => {
         return (
           <div
             key={i}
-            className={`group border transition-all duration-500 bg-background/50 overflow-hidden text-center ${
-              isHighlighted
-                ? "border-accent/60 shadow-lg scale-[1.04]"
+            className={`group border transition-all duration-500 bg-background/50 overflow-hidden text-center cursor-pointer
+              ${isHighlighted
+                ? "border-accent/60 shadow-lg"
                 : "border-border/40 hover:border-accent/40 hover:shadow-md"
-            }`}
+              }`}
             style={{
               opacity: isVisible ? 1 : 0,
-              transform: `translateY(${isVisible ? 0 : 20}px) scale(${isHighlighted ? 1.04 : 1})`,
-              transitionDelay: `${i * 150}ms`,
+              transform: `translateY(${isVisible ? 0 : 20}px) scale(${isHighlighted ? 1.06 : 1})`,
+              transitionDelay: isVisible ? `${i * 150}ms` : "0ms",
             }}
+            onMouseEnter={(e) => { if (!isHighlighted) e.currentTarget.style.transform = "translateY(0) scale(1.05)"; }}
+            onMouseLeave={(e) => { e.currentTarget.style.transform = `translateY(0) scale(${isHighlighted ? 1.06 : 1})`; }}
           >
             <div className="h-36 pt-4 flex items-end justify-center">
               <img
