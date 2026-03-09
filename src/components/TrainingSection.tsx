@@ -399,8 +399,8 @@ const TrainingSection = () => {
                 </div>
 
                 <Button
-                  variant="ghost"
-                  className="text-[hsl(232,28%,22%)] hover:text-[hsl(232,28%,15%)] hover:bg-[hsl(40,15%,85%)] rounded-none px-6 py-5 text-[12px] font-semibold uppercase tracking-[0.15em]"
+                  onClick={() => setIsLeadModalOpen(true)}
+                  className="bg-[hsl(232,28%,22%)] text-primary-foreground hover:bg-accent hover:text-accent-foreground rounded-none px-8 py-6 text-[13px] font-semibold uppercase tracking-[0.15em] shadow-lg transition-all duration-300 hover:shadow-xl"
                 >
                   <FileText className="mr-2 h-4 w-4" />
                   Desbloquea tu kit de herramientas IA
