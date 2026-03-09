@@ -15,7 +15,7 @@ const ProfilesTeaser = () => {
           Marcas personales con las que he trabajado
         </h2>
         <p className="text-primary-foreground/60 max-w-xl mx-auto">
-          He ayudado a estos profesionales a la creación de su contenido para mejorar el posicionamiento de su marca personal y generar autoridad.
+          He ayudado a estos profesionales a diseñar su estrategia de marca personal y a crear el contenido que les posiciona como referentes en su sector.
         </p>
       </div>
 
