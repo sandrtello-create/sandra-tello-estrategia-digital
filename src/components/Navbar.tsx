@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { Menu, X } from "lucide-react";
+import { Menu, X, Mail } from "lucide-react";
 import { Link, useLocation } from "react-router-dom";
 import logo from "@/assets/sandra-tello-logo.png";
 
@@ -52,9 +52,13 @@ const Navbar = () => {
             >
               Perfiles
             </Link>
-            <button className="btn-gold-gradient rounded-full px-7 py-3 font-semibold uppercase tracking-[0.15em] text-[12px]">
-              Trabaja conmigo ›
-            </button>
+            <a
+              href={getHref("#contacto")}
+              className="btn-gold-gradient rounded-full w-10 h-10 flex items-center justify-center"
+              aria-label="Trabaja conmigo"
+            >
+              <Mail size={18} />
+            </a>
           </div>
 
           {/* Mobile toggle */}
@@ -88,9 +92,14 @@ const Navbar = () => {
               >
                 Perfiles
               </Link>
-              <button className="btn-gold-gradient rounded-full w-fit px-7 py-3 mt-2 font-semibold uppercase tracking-[0.15em] text-[12px]">
-                Trabaja conmigo ›
-              </button>
+              <a
+                href={getHref("#contacto")}
+                onClick={() => setIsOpen(false)}
+                className="btn-gold-gradient rounded-full w-10 h-10 flex items-center justify-center mt-2"
+                aria-label="Trabaja conmigo"
+              >
+                <Mail size={18} />
+              </a>
             </div>
           </div>
         )}
