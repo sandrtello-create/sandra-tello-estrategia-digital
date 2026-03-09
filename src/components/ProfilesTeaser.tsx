@@ -23,11 +23,9 @@ const ProfilesTeaser = () => {
       <div className="relative">
         <div className="flex animate-scroll-photos gap-6 w-max">
           {doubled.map((p, i) => (
-            <a
+            <Link
               key={`${p.name}-${i}`}
-              href={p.linkedin}
-              target="_blank"
-              rel="noopener noreferrer"
+              to={`/perfiles/${p.slug}`}
               className="group shrink-0 w-48 overflow-hidden bg-gradient-to-b from-primary-foreground/5 to-transparent border border-accent/20 hover:border-accent/50 transition-all duration-300"
             >
               <div className="aspect-square overflow-hidden border-b border-accent/20">
@@ -49,7 +47,7 @@ const ProfilesTeaser = () => {
                   {p.role}
                 </span>
               </div>
-            </a>
+            </Link>
           ))}
         </div>
       </div>
