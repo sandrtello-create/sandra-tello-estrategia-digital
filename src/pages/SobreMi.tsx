@@ -66,7 +66,7 @@ const SobreMi = () => {
 
           <div className="mt-12 text-center">
             <a
-              href="#servicios"
+              href="/#servicios"
               className="inline-block bg-primary text-primary-foreground px-10 py-4 font-serif text-lg font-medium hover:bg-primary/90 transition-colors"
             >
               Descubre cómo puedo ayudarte →
