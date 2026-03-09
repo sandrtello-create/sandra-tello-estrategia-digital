@@ -36,20 +36,36 @@ interface LeadershipCardsProps {
 }
 
 const LeadershipCards = ({ highlightedArchetype }: LeadershipCardsProps) => {
+  const containerRef = useRef<HTMLDivElement>(null);
+  const [isVisible, setIsVisible] = useState(false);
+
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      ([entry]) => { if (entry.isIntersecting) setIsVisible(true); },
+      { threshold: 0.2 }
+    );
+    if (containerRef.current) observer.observe(containerRef.current);
+    return () => observer.disconnect();
+  }, []);
+
   return (
-    <div className="grid sm:grid-cols-3 gap-5 mt-8">
+    <div ref={containerRef} className="grid sm:grid-cols-3 gap-5 mt-8">
       {archetypes.map((a, i) => {
         const isHighlighted = highlightedArchetype === a.key;
         return (
           <div
             key={i}
-            className={`group border transition-all duration-300 bg-background/50 overflow-hidden text-center ${
+            className={`group border transition-all duration-500 bg-background/50 overflow-hidden text-center ${
               isHighlighted
                 ? "border-accent/60 shadow-lg scale-[1.04]"
                 : "border-border/40 hover:border-accent/40 hover:shadow-md"
             }`}
+            style={{
+              opacity: isVisible ? 1 : 0,
+              transform: `translateY(${isVisible ? 0 : 20}px) scale(${isHighlighted ? 1.04 : 1})`,
+              transitionDelay: `${i * 150}ms`,
+            }}
           >
-            {/* Fixed-height image container with bottom alignment */}
             <div className="h-36 pt-4 flex items-end justify-center">
               <img
                 src={a.image}
