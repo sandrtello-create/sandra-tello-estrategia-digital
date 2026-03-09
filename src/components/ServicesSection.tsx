@@ -60,6 +60,7 @@ const services = [
   {
     icon: Users,
     title: "Employee advocacy y liderazgo digital",
+    hasEnneagram: true,
     description:
       "Convierte a los líderes de tu empresa en embajadores de marca. Programas de posicionamiento ejecutivo en LinkedIn y más.",
     details: {
