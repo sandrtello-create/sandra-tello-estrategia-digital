@@ -23,6 +23,10 @@ const Perfiles = () => {
             Marcas personales que han confiado en mi método para posicionarse y
             destacar en su sector.
           </p>
+          <div className="flex items-center justify-center gap-2 mt-5 text-primary-foreground/40 text-xs tracking-wide">
+            <span>Proyectos realizados a través de</span>
+            <img src={zipgenialLogo} alt="ZipGenial" className="h-5 object-contain" />
+          </div>
         </div>
       </section>
 

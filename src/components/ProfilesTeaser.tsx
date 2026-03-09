@@ -18,6 +18,10 @@ const ProfilesTeaser = () => {
         <p className="text-primary-foreground/60 max-w-xl mx-auto">
           He ayudado a estos profesionales a diseñar su estrategia de marca personal y a crear el contenido que les posiciona como referentes en su sector.
         </p>
+        <div className="flex items-center justify-center gap-2 mt-5 text-primary-foreground/40 text-xs tracking-wide">
+          <span>Proyectos realizados a través de</span>
+          <img src={zipgenialLogo} alt="ZipGenial" className="h-5 object-contain" />
+        </div>
       </div>
 
       {/* Infinite scroll carousel */}
