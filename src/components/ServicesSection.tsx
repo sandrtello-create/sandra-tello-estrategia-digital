@@ -1,5 +1,5 @@
 import { useState, useEffect, useRef } from "react";
-import { Brain, Target, Search, Users, ArrowRight, ChevronDown, FolderOpen } from "lucide-react";
+import { Brain, Target, Search, Users, ArrowRight, ChevronDown } from "lucide-react";
 import { Link } from "react-router-dom";
 
 const services = [
@@ -179,21 +179,18 @@ const ServiceItem = ({
 
               {/* Portfolio CTA */}
               {service.portfolioSlug && (
-                <Link
-                  to={`/servicios/${service.portfolioSlug}`}
-                  className="mt-6 flex items-center gap-4 p-4 bg-accent/5 border-l-2 border-accent rounded-r-md hover:bg-accent/10 transition-colors group/cta"
-                >
-                  <FolderOpen className="h-5 w-5 text-accent shrink-0" />
-                  <div className="flex-1">
-                    <p className="font-semibold text-primary text-[15px]">
-                      Ver casos de trabajo
-                    </p>
-                    <p className="text-muted-foreground text-[13px]">
-                      Banners, proyectos de sector turismo y más.
-                    </p>
-                  </div>
-                  <ArrowRight className="h-4 w-4 text-accent opacity-50 group-hover/cta:opacity-100 group-hover/cta:translate-x-1 transition-all" />
-                </Link>
+                <div className="mt-8">
+                  <div className="h-px w-full bg-accent/25 mb-6" />
+                  <Link
+                    to={`/servicios/${service.portfolioSlug}`}
+                    className="group/cta inline-flex items-center gap-2 text-accent text-[13px] uppercase tracking-[0.18em] font-semibold hover:gap-3 transition-all duration-300"
+                  >
+                    <span className="border-b border-accent/0 group-hover/cta:border-accent/60 transition-all duration-300 pb-px">
+                      Casos de estudio
+                    </span>
+                    <ArrowRight className="h-3.5 w-3.5 transition-transform duration-300 group-hover/cta:translate-x-0.5" />
+                  </Link>
+                </div>
               )}
             </div>
           </div>
