@@ -165,9 +165,17 @@ const TrainingSection = () => {
             <h2 className="font-serif text-3xl md:text-4xl lg:text-[40px] font-medium text-primary-foreground mb-5 leading-[1.2]">
               Aprende a aplicar la IA con estrategia y criterio
             </h2>
-            <p className="text-primary-foreground/60 text-[16px] leading-relaxed">
-              Programas de formación y workshops diseñados para empresas, ejecutivos y profesionales
-              que quieren aplicar la inteligencia artificial de forma práctica y estratégica.
+            <p className="text-primary-foreground/60 text-[16px] leading-relaxed mb-4">
+              No necesitas saber de tecnología. Mis programas están pensados para profesionales y equipos
+              que parten de cero en IA y quieren aplicarla de forma práctica en su sector.
+              Formación 100% aplicada a tu negocio, no genérica.
+            </p>
+            <p className="text-primary-foreground/50 text-[14px] leading-relaxed">
+              He formado a equipos en sectores como el <span className="text-accent/80 font-medium">industrial</span>,{" "}
+              <span className="text-accent/80 font-medium">transporte</span>,{" "}
+              <span className="text-accent/80 font-medium">turismo</span> y{" "}
+              <span className="text-accent/80 font-medium">educativo</span>,
+              con especial foco en comunicación y redes sociales.
             </p>
           </div>
 
