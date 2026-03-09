@@ -2,7 +2,7 @@ import { useParams, Link } from "react-router-dom";
 import { servicePortfolios, ServiceCase } from "@/data/services";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
-import { ArrowLeft, ArrowRight, TrendingUp } from "lucide-react";
+import { ArrowLeft, ArrowRight, TrendingUp, Landmark, Linkedin, Truck, ShoppingBag } from "lucide-react";
 
 const GalleryGrid = ({ images }: { images: { src: string; alt: string }[] }) => (
   <div>
@@ -75,17 +75,27 @@ const BannerBeforeAfterGrid = ({
   </div>
 );
 
+const sectorIcons: Record<string, React.ReactNode> = {
+  "Turismo institucional": <Landmark className="h-5 w-5" />,
+  "Marca personal / LinkedIn": <Linkedin className="h-5 w-5" />,
+  "Transporte / Logística": <Truck className="h-5 w-5" />,
+  "Retail / Mystery Shopping": <ShoppingBag className="h-5 w-5" />,
+};
+
 const CaseCard = ({ c, index }: { c: ServiceCase; index: number }) => (
-  <div className="bg-card border border-border rounded-lg overflow-hidden">
+  <div className="bg-card border border-border rounded-lg overflow-hidden shadow-sm">
     {/* Header */}
     <div className="bg-primary px-6 py-5 flex items-center justify-between">
-      <div>
-        <p className="text-accent font-semibold text-[11px] uppercase tracking-[0.2em] mb-1">
-          {c.sector}
-        </p>
-        <h3 className="font-serif text-xl md:text-2xl font-medium text-primary-foreground">
-          {c.title}
-        </h3>
+      <div className="flex items-center gap-3">
+        <span className="text-accent">{sectorIcons[c.sector]}</span>
+        <div>
+          <p className="text-accent font-semibold text-[11px] uppercase tracking-[0.2em] mb-1">
+            {c.sector}
+          </p>
+          <h3 className="font-serif text-xl md:text-2xl font-medium text-primary-foreground">
+            {c.title}
+          </h3>
+        </div>
       </div>
       <span className="font-serif text-5xl font-semibold text-accent/20">
         {String(index + 1).padStart(2, "0")}

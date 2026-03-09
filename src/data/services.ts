@@ -38,9 +38,9 @@ export const servicePortfolios: ServicePortfolio[] = [
           { label: "Tiempo de ejecución", value: "3 meses" },
         ],
         galleryImages: [
-          { src: "/placeholder.svg", alt: "Hotel auditado 1" },
-          { src: "/placeholder.svg", alt: "Hotel auditado 2" },
-          { src: "/placeholder.svg", alt: "Hotel auditado 3" },
+          { src: "https://images.unsplash.com/photo-1566073771259-6a8506099945?w=600&h=400&fit=crop", alt: "Hotel de turismo rural" },
+          { src: "https://images.unsplash.com/photo-1469474968028-56623f02e42e?w=600&h=400&fit=crop", alt: "Paisaje turístico Castilla-La Mancha" },
+          { src: "https://images.unsplash.com/photo-1551882547-ff40c63fe5fa?w=600&h=400&fit=crop", alt: "Recepción de hotel" },
         ],
       },
       {
@@ -57,9 +57,9 @@ export const servicePortfolios: ServicePortfolio[] = [
           { label: "Mejora de conversión", value: "+60%" },
         ],
         bannerBeforeAfter: [
-          { before: "/placeholder.svg", after: "/placeholder.svg" },
-          { before: "/placeholder.svg", after: "/placeholder.svg" },
-          { before: "/placeholder.svg", after: "/placeholder.svg" },
+          { before: "https://images.unsplash.com/photo-1611944212129-29977ae1398c?w=800&h=200&fit=crop&q=60", after: "https://images.unsplash.com/photo-1616469829581-73993eb86b02?w=800&h=200&fit=crop" },
+          { before: "https://images.unsplash.com/photo-1504868584819-f8e8b4b6d7e3?w=800&h=200&fit=crop&q=60", after: "https://images.unsplash.com/photo-1522071820081-009f0129c71c?w=800&h=200&fit=crop" },
+          { before: "https://images.unsplash.com/photo-1560250097-0b93528c311a?w=800&h=200&fit=crop&q=60", after: "https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?w=800&h=200&fit=crop" },
         ],
       },
       {
@@ -76,8 +76,8 @@ export const servicePortfolios: ServicePortfolio[] = [
           { label: "Coherencia de marca", value: "100%" },
         ],
         galleryImages: [
-          { src: "/placeholder.svg", alt: "Flota de transporte" },
-          { src: "/placeholder.svg", alt: "Almacén logístico" },
+          { src: "https://images.unsplash.com/photo-1586528116311-ad8dd3c8310d?w=600&h=400&fit=crop", alt: "Flota de transporte" },
+          { src: "https://images.unsplash.com/photo-1553413077-190dd305871c?w=600&h=400&fit=crop", alt: "Almacén logístico" },
         ],
       },
       {
@@ -94,9 +94,9 @@ export const servicePortfolios: ServicePortfolio[] = [
           { label: "Recomendaciones aplicadas", value: "91%" },
         ],
         galleryImages: [
-          { src: "/placeholder.svg", alt: "Tienda auditada" },
-          { src: "/placeholder.svg", alt: "Punto de venta" },
-          { src: "/placeholder.svg", alt: "Experiencia de cliente" },
+          { src: "https://images.unsplash.com/photo-1441986300917-64674bd600d8?w=600&h=400&fit=crop", alt: "Tienda retail auditada" },
+          { src: "https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?w=600&h=400&fit=crop", alt: "Punto de venta" },
+          { src: "https://images.unsplash.com/photo-1556742111-a301076d9d18?w=600&h=400&fit=crop", alt: "Experiencia de cliente en tienda" },
         ],
       },
     ],
