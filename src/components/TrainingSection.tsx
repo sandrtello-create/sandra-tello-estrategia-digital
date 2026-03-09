@@ -8,7 +8,7 @@ const programs = [
     icon: Building2,
     title: "Formación para empresas",
     description:
-      "Programas in-company —en remoto o presencial— para equipos que necesitan integrar la IA de forma estratégica en su día a día.",
+      "Programas in-company (en remoto o presencial) para equipos que necesitan integrar la IA de forma estratégica en su día a día.",
   },
   {
     icon: Briefcase,
