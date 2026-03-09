@@ -57,9 +57,9 @@ export const servicePortfolios: ServicePortfolio[] = [
           { label: "Mejora de conversión", value: "+60%" },
         ],
         bannerBeforeAfter: [
-          { before: "/placeholder.svg", after: "/placeholder.svg" },
-          { before: "/placeholder.svg", after: "/placeholder.svg" },
-          { before: "/placeholder.svg", after: "/placeholder.svg" },
+          { before: "https://images.unsplash.com/photo-1611944212129-29977ae1398c?w=800&h=200&fit=crop&q=60", after: "https://images.unsplash.com/photo-1616469829581-73993eb86b02?w=800&h=200&fit=crop" },
+          { before: "https://images.unsplash.com/photo-1504868584819-f8e8b4b6d7e3?w=800&h=200&fit=crop&q=60", after: "https://images.unsplash.com/photo-1522071820081-009f0129c71c?w=800&h=200&fit=crop" },
+          { before: "https://images.unsplash.com/photo-1560250097-0b93528c311a?w=800&h=200&fit=crop&q=60", after: "https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?w=800&h=200&fit=crop" },
         ],
       },
       {
