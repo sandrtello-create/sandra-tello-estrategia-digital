@@ -53,13 +53,13 @@ const ProfilesTeaser = () => {
       </div>
 
       <div className="text-center mt-10">
-        <Link
-          to="/perfiles"
+        <a
+          href="/perfiles"
           className="inline-flex items-center gap-2 bg-accent text-accent-foreground px-8 py-3.5 font-semibold text-[13px] uppercase tracking-[0.15em] hover:bg-gold-light transition-colors"
         >
           Ver todos los perfiles
           <ArrowRight className="h-4 w-4" />
-        </Link>
+        </a>
       </div>
     </section>
   );

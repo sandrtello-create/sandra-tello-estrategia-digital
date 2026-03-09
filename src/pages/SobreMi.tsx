@@ -66,7 +66,7 @@ const SobreMi = () => {
 
           <div className="mt-12 text-center">
             <a
-              href="#servicios"
+              href="/#servicios"
               className="inline-block bg-primary text-primary-foreground px-10 py-4 font-serif text-lg font-medium hover:bg-primary/90 transition-colors"
             >
               Descubre cómo puedo ayudarte →
@@ -79,13 +79,13 @@ const SobreMi = () => {
       <section className="relative z-10 py-14 bg-primary text-primary-foreground text-center">
         <p className="text-primary-foreground/50 text-[11px] uppercase tracking-[0.2em] mb-3">¿Lista para dar el siguiente paso?</p>
         <h2 className="font-serif text-2xl md:text-3xl font-medium mb-6">Volver al inicio</h2>
-        <Link
-          to="/"
+        <a
+          href="/#sobre"
           className="inline-flex items-center gap-2 btn-gold-gradient rounded-full px-8 py-3 font-semibold text-[12px] uppercase tracking-[0.15em]"
         >
           <ArrowLeft className="h-4 w-4" />
           Ir a inicio
-        </Link>
+        </a>
       </section>
 
       <Footer />
