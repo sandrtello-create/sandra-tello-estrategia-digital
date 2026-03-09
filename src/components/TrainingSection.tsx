@@ -163,23 +163,23 @@ const TrainingSection = () => {
             <div
               className="absolute rounded-sm pointer-events-none"
               style={{
-                top: "8%",
-                left: "5%",
-                width: "28%",
-                height: "55%",
-                backdropFilter: "blur(5px)",
-                WebkitBackdropFilter: "blur(5px)",
+                top: "5%",
+                left: "35%",
+                width: "22%",
+                height: "62%",
+                backdropFilter: "blur(6px)",
+                WebkitBackdropFilter: "blur(6px)",
               }}
             />
             <div
               className="absolute rounded-sm pointer-events-none"
               style={{
-                top: "5%",
-                left: "35%",
-                width: "30%",
-                height: "60%",
-                backdropFilter: "blur(5px)",
-                WebkitBackdropFilter: "blur(5px)",
+                top: "3%",
+                left: "60%",
+                width: "28%",
+                height: "68%",
+                backdropFilter: "blur(6px)",
+                WebkitBackdropFilter: "blur(6px)",
               }}
             />
             <div
