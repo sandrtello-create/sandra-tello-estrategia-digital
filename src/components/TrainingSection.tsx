@@ -207,7 +207,7 @@ const TrainingSection = () => {
               {tools.map((tool, i) => (
                 <div
                   key={i}
-                  className="group flex items-center gap-2.5 px-4 py-2.5 border border-primary-foreground/10 bg-primary-foreground/[0.05] text-primary-foreground/70 text-[13px] transition-all duration-300 hover:bg-accent hover:border-accent/40 hover:text-primary cursor-default"
+                  className="group flex items-center gap-2.5 px-4 py-2.5 border border-primary-foreground/15 bg-white/[0.12] text-primary-foreground/90 text-[13px] transition-all duration-300 hover:bg-accent hover:border-accent/40 hover:text-primary cursor-default"
                 >
                   <tool.icon className="h-4 w-4 transition-colors duration-300 group-hover:text-primary" />
                   {tool.label}
