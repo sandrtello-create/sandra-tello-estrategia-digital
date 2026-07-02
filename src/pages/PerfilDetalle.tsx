@@ -2,7 +2,9 @@ import { useParams, Link } from "react-router-dom";
 import { profiles } from "@/data/profiles";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
+import SEO from "@/components/SEO";
 import { ArrowLeft, Linkedin, Users, TrendingUp, BarChart2, Quote, Eye, Calendar } from "lucide-react";
+
 
 const PerfilDetalle = () => {
   const { slug } = useParams<{ slug: string }>();

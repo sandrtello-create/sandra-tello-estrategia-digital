@@ -1,5 +1,6 @@
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
+import SEO from "@/components/SEO";
 import { profiles } from "@/data/profiles";
 import { Linkedin, ArrowLeft } from "lucide-react";
 import { Link } from "react-router-dom";
@@ -8,6 +9,12 @@ import zipgenialLogo from "@/assets/brands/zipgenial.png";
 const Perfiles = () => {
   return (
     <div className="min-h-screen bg-background">
+      <SEO
+        title="Perfiles y casos de éxito — Sandra Tello"
+        description="Marcas personales que han confiado en el método de Sandra Tello para posicionarse y destacar en su sector."
+        path="/perfiles"
+      />
+
       <Navbar />
 
       {/* Header */}
