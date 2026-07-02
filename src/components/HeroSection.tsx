@@ -1,5 +1,5 @@
 import { useState, useEffect, useRef } from "react";
-import { ChevronDown, Volume2, VolumeX } from "lucide-react";
+import { ChevronDown, Volume2, VolumeX, ArrowRight } from "lucide-react";
 import sandraPhoto from "@/assets/sandra-tello-hero.jpg";
 
 /**
