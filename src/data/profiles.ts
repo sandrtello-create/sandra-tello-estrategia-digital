@@ -108,7 +108,7 @@ export const profiles: Profile[] = [
       { title: "Cómo cerré mi mayor venta usando LinkedIn", impressions: "44.000", date: "Feb 2025" },
       { title: "El método de ventas que nadie enseña en las escuelas", impressions: "29.000", date: "Ene 2025" },
     ],
-    testimonial: "Sandra me ayudó a posicionarme como referente en ventas. Ahora los clientes me buscan a mí.",
+    testimonial: "Sandra me ayudó a posicionarme con autoridad en ventas. Ahora los clientes me buscan a mí.",
   },
   {
     name: "Mada Leis",

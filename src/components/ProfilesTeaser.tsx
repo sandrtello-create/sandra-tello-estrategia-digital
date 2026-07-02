@@ -94,7 +94,7 @@ const ProfilesTeaser = () => {
           </h2>
           <div className="space-y-3 text-primary-foreground/75 text-[15px] leading-relaxed">
             <p>
-              He acompañado a profesionales de sectores muy distintos a diseñar su estrategia de marca personal y a crear el contenido que les posiciona como referentes.
+              He acompañado a profesionales de sectores muy distintos a diseñar su estrategia de marca personal y a crear el contenido que les posiciona con autoridad.
             </p>
             <p className="text-primary-foreground/50 italic text-[13px]">
               Por confidencialidad profesional, no se muestran nombres, iniciales, fotos, marcas ni logos. Solo el tipo de perfil trabajado.

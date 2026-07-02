@@ -18,7 +18,7 @@ const posts = [
   {
     category: "Estrategia",
     title: "5 errores que frenan tu posicionamiento profesional",
-    excerpt: "Los errores más comunes que cometen los profesionales al intentar posicionarse como referentes.",
+    excerpt: "Los errores más comunes que frenan el posicionamiento profesional.",
     readTime: "4 min",
     url: "#",
   },
