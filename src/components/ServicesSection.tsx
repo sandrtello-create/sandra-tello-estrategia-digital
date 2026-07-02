@@ -241,8 +241,7 @@ const ServicesSection = () => {
             Estrategia digital con criterio humano
           </h2>
           <p className="text-primary/80 text-[15px] leading-relaxed">
-            Para profesionales y empresas que quieren ordenar su estrategia,
-            posicionar su valor y utilizar la inteligencia artificial con criterio.
+            He visto cómo la tecnología acelera todo y, a la vez, cómo el exceso de herramientas sin dirección desorienta. Mi trabajo no es aplicar IA por aplicarla: es entender qué necesitas como persona, qué necesita tu negocio, qué te diferencia como profesional y diseñar un camino donde la inteligencia artificial sirva a tu estrategia, no al revés.
           </p>
         </div>
 
