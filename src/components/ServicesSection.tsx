@@ -232,26 +232,24 @@ const ServicesSection = () => {
   return (
     <section id="servicios" className="py-20 lg:py-28 bg-section-alt">
       <div className="container mx-auto px-6 lg:px-8">
-        <div className="text-center max-w-2xl mx-auto mb-16">
+        <div className="text-center max-w-3xl mx-auto mb-20">
           <p className="text-accent font-semibold text-[11px] uppercase tracking-[0.25em] mb-4">
             Servicios
           </p>
-          <h2 className="font-serif text-3xl md:text-4xl lg:text-[44px] font-medium text-primary mb-5 leading-[1.2]">
-            Tu negocio no necesita más ruido. Necesita estrategia.
+          <h2 className="font-serif text-3xl md:text-4xl lg:text-[44px] font-medium text-primary mb-6 leading-[1.2]">
+            Estrategia digital con criterio humano
           </h2>
-          <p className="text-muted-foreground text-[17px] leading-relaxed">
-            Estrategia, marketing e inteligencia artificial para que tu negocio
-            crezca con dirección, no por inercia.
+          <p className="text-muted-foreground text-[17px] leading-relaxed mb-6">
+            He visto cómo la tecnología acelera todo y, a la vez, cómo el exceso de herramientas sin dirección desorienta.
+            Mi trabajo no es aplicar IA por aplicarla: es entender qué necesita tu negocio, qué te diferencia como profesional y diseñar un camino donde la inteligencia artificial sirva a tu estrategia, no al revés.
           </p>
-          <div className="flex justify-center mt-5 mb-5">
+          <div className="flex justify-center mb-6">
             <div className="h-px w-10 bg-accent/40" />
           </div>
-          <div className="inline-block bg-accent/[0.08] border border-accent/20 rounded-lg px-6 py-4">
-            <p className="text-primary/80 text-[15px] leading-relaxed font-medium">
-              Para profesionales y empresas que quieren ordenar su estrategia,
-              posicionar su valor y utilizar la inteligencia artificial con criterio.
-            </p>
-          </div>
+          <p className="text-primary/80 text-[15px] leading-relaxed">
+            Para profesionales y empresas que quieren ordenar su estrategia,
+            posicionar su valor y utilizar la inteligencia artificial con criterio.
+          </p>
         </div>
 
         <div ref={sectionRef} className="max-w-3xl mx-auto">
@@ -263,6 +261,25 @@ const ServicesSection = () => {
               isVisible={isVisible}
             />
           ))}
+        </div>
+
+        {/* CTA final */}
+        <div className="max-w-3xl mx-auto mt-16 pt-10 border-t border-border/40">
+          <div className="text-center">
+            <p className="font-serif text-2xl md:text-3xl text-primary mb-3 leading-snug">
+              ¿Listo para dejar de improvisar?
+            </p>
+            <p className="text-muted-foreground text-[17px] leading-relaxed mb-8">
+              Diseñemos juntos una estrategia que combine tecnología, visión y lo que te hace único.
+            </p>
+            <a
+              href="#contacto"
+              className="inline-flex items-center gap-3 bg-primary text-accent px-8 py-4 font-serif text-lg font-medium hover:shadow-xl hover:scale-[1.02] transition-all duration-300"
+            >
+              Quiero empezar a liderar mi estrategia digital
+              <ArrowRight className="h-5 w-5" />
+            </a>
+          </div>
         </div>
       </div>
     </section>
