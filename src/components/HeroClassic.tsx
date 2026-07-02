@@ -133,16 +133,16 @@ const HeroClassic = () => {
               <div className="flex items-center gap-3 mb-6">
                 <div className="h-px w-10" style={{ background: 'linear-gradient(90deg, #a47633, #cbaa60)' }} />
                 <p className="font-sans text-[11px] font-semibold uppercase tracking-[0.25em] gold-gradient-text">
-                  Marca personal, marketing e IA
+                  Estrategia digital, marca personal e IA
                 </p>
               </div>
 
               <h2 className="font-serif text-[30px] md:text-[38px] lg:text-[44px] font-semibold text-white leading-[1.2] mb-6">
-                La tecnología avanza rápido. <span className="italic gold-gradient-text">Tu marca personal</span> merece avanzar contigo.
+                La tecnología avanza rápido. <span className="italic gold-gradient-text">Tu estrategia digital</span> merece avanzar contigo.
               </h2>
 
               <p className="text-white/80 text-[16px] md:text-[17px] leading-relaxed mb-5">
-                Vivimos rodeadas de herramientas, algoritmos y promesas de productividad. Y aun así, lo que sigue marcando la diferencia es profundamente humano: <span className="text-white font-medium">criterio, mirada estratégica y una voz que se reconoce</span>. Esa voz es tu marca personal. Y cuando la articulas con marketing consciente e inteligencia artificial, dejas de ser invisible.
+                Vivimos rodeadas de herramientas, algoritmos y promesas de productividad. Y aun así, lo que sigue marcando la diferencia es profundamente humano: <span className="text-white font-medium">criterio, mirada estratégica y una voz que se reconoce</span>. Esa voz es tu marca personal articulada con estrategia digital. Y cuando la potencias con marketing consciente e inteligencia artificial —con el <span className="text-white font-medium">factor humano</span> como centro—, dejas de ser invisible.
               </p>
 
 
