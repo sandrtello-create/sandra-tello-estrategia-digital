@@ -1,5 +1,5 @@
 import { useState, useEffect, useRef } from "react";
-import { ChevronDown, Volume2, VolumeX } from "lucide-react";
+import { ChevronDown, Volume2, VolumeX, ArrowRight } from "lucide-react";
 import sandraPhoto from "@/assets/sandra-tello-hero.jpg";
 
 /**
@@ -64,7 +64,7 @@ const HeroSection = () => {
   return (
     <section
       id="inicio"
-      className="relative overflow-hidden min-h-screen flex items-center"
+      className="relative overflow-hidden min-h-[92vh] flex items-center"
       style={{ background: "#0f1a30" }}
       aria-label="Sandra Tello — Si tú no decides tu valor, otros lo deciden por ti"
     >
@@ -113,37 +113,55 @@ const HeroSection = () => {
       </div>
 
       {/* ============ CONTENIDO — SÓLO TITULAR + FRASE ============ */}
-      <div className="container mx-auto px-6 lg:px-8 relative z-10 py-32">
-        <div className="max-w-5xl mx-auto text-center">
-          {/* Titular grande */}
-          <h1 className="font-serif font-semibold text-white leading-[1.05] tracking-tight mb-14">
-            <span className="block text-[38px] sm:text-[52px] md:text-[68px] lg:text-[82px]">
+      <div className="container mx-auto px-6 lg:px-8 relative z-10 py-24">
+        <div className="max-w-4xl mx-auto text-center">
+          {/* Titular */}
+          <h1 className="font-serif font-semibold text-white leading-[1.1] tracking-tight mb-10">
+            <span className="block text-[28px] sm:text-[38px] md:text-[48px] lg:text-[58px]">
               {HEADLINE_LEFT}
             </span>
             <span
-              className="block text-[38px] sm:text-[52px] md:text-[68px] lg:text-[82px] italic"
+              className="block text-[28px] sm:text-[38px] md:text-[48px] lg:text-[58px] italic"
               style={{ color: "#e6c67a" }}
             >
               {HEADLINE_RIGHT}
             </span>
           </h1>
 
-          {/* Frase rotativa — grande, blanco puro, alto contraste */}
-          <div className="min-h-[8rem] md:min-h-[6rem] flex items-center justify-center">
+          {/* Frase rotativa */}
+          <div className="min-h-[6rem] md:min-h-[5rem] flex items-center justify-center mb-10">
             <p
               key={currentLine}
-              className="font-serif text-white text-[22px] md:text-[30px] lg:text-[34px] leading-snug max-w-4xl transition-all duration-700"
+              className="font-serif text-white text-[18px] md:text-[22px] lg:text-[24px] leading-snug max-w-3xl transition-all duration-700"
               style={{
                 opacity: lineVisible ? 1 : 0,
                 transform: lineVisible ? "translateY(0)" : "translateY(12px)",
-                textShadow: "0 2px 20px rgba(0,0,0,0.4)",
+                textShadow: "0 2px 20px rgba(0,0,0,0.5)",
               }}
             >
               {rotatingLines[currentLine]}
             </p>
           </div>
+
+          {/* CTA */}
+          <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
+            <a
+              href="#contacto"
+              className="inline-flex items-center justify-center gap-2 px-9 py-4 text-[13px] font-bold uppercase tracking-[0.15em] text-[#0f1a30] bg-[#e6c67a] hover:bg-[#f0d78c] transition-colors shadow-lg"
+            >
+              Diseña tu estrategia conmigo
+              <ArrowRight className="h-4 w-4" />
+            </a>
+            <a
+              href="#sobre-mi"
+              className="inline-flex items-center justify-center px-9 py-4 text-[13px] font-bold uppercase tracking-[0.15em] text-white border border-white/40 hover:border-[#e6c67a] hover:text-[#e6c67a] backdrop-blur-sm transition-colors"
+            >
+              ¿Cómo puedo ayudarte?
+            </a>
+          </div>
         </div>
       </div>
+
 
       {/* Botón de sonido (solo si hay vídeo) */}
       {hasVideo && (
