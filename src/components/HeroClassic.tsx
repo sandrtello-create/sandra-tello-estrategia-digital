@@ -124,7 +124,7 @@ const HeroClassic = () => {
         </div>
 
         <div className="container mx-auto px-6 lg:px-8 relative z-10">
-          <div className="grid lg:grid-cols-2 gap-0 items-center min-h-screen">
+          <div className="grid lg:grid-cols-2 gap-0 items-center">
             {/* Photo side */}
             <div className="relative flex items-center lg:items-end justify-center order-1 lg:self-end">
               <div className="relative w-full max-w-[280px] md:max-w-[360px] lg:max-w-[520px]">
