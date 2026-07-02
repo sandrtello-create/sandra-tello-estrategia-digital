@@ -137,27 +137,28 @@ const HeroClassic = () => {
                 </p>
               </div>
 
-              <h2 className="font-serif text-[30px] md:text-[38px] lg:text-[44px] font-semibold text-white leading-[1.2] mb-5">
-                Soy Sandra Tello. Ayudo a personas y equipos a poner la tecnología <span className="italic gold-gradient-text">al servicio de su valor</span>.
+              <h2 className="font-serif text-[30px] md:text-[38px] lg:text-[44px] font-semibold text-white leading-[1.2] mb-6">
+                La tecnología avanza rápido. <span className="italic gold-gradient-text">Tu valor</span> merece avanzar contigo.
               </h2>
 
-              <p className="text-white/75 text-[16px] md:text-[17px] leading-relaxed mb-5">
-                Llevo más de veinte años en negocio, marketing y estrategia digital. Los últimos, formando a profesionales en inteligencia artificial y acompañando 1:1 a quienes quieren dejar de ser invisibles en su sector.
+              <p className="text-white/80 text-[16px] md:text-[17px] leading-relaxed mb-5">
+                Vivimos rodeadas de herramientas, algoritmos y promesas de productividad. Y aun así, lo que sigue marcando la diferencia es profundamente humano: <span className="text-white font-medium">criterio, mirada estratégica y una voz que se reconoce</span>.
               </p>
 
-              <p className="text-white/75 text-[16px] md:text-[17px] leading-relaxed mb-8">
-                No creo en la IA sin criterio humano. Creo en usarla para <span className="text-white font-medium">recuperar tiempo, ganar claridad y crear la vida que amas</span> — sin perder tu voz por el camino.
+              <p className="text-white/80 text-[16px] md:text-[17px] leading-relaxed mb-8">
+                Por eso trabajo así: la inteligencia artificial al servicio de tu valor, no al revés. Estrategia para tomar mejores decisiones. Y la felicidad —esa sí, real— de dedicar tu tiempo a <span className="italic gold-gradient-text">crear la vida que amas</span>.
               </p>
 
               <div className="flex flex-col sm:flex-row gap-4">
-                <button className="btn-gold-gradient rounded-full px-9 py-4 text-[13px] font-bold uppercase tracking-[0.15em] inline-flex items-center justify-center gap-2 shadow-lg shadow-[rgba(164,118,51,0.3)] hover:scale-105 hover:shadow-xl hover:shadow-[rgba(164,118,51,0.4)] transition-all duration-300">
-                  Diseña tu estrategia conmigo
+                <a href="#contacto" className="btn-gold-gradient rounded-full px-9 py-4 text-[13px] font-bold uppercase tracking-[0.15em] inline-flex items-center justify-center gap-2 shadow-lg shadow-[rgba(164,118,51,0.3)] hover:scale-105 hover:shadow-xl hover:shadow-[rgba(164,118,51,0.4)] transition-all duration-300">
+                  Empieza por tu estrategia
                   <ArrowRight className="h-4 w-4" />
-                </button>
-                <button className="rounded-full px-9 py-4 text-[13px] font-bold uppercase tracking-[0.15em] border-2 border-white/20 text-white hover:text-[#cbaa60] hover:border-[#cbaa60]/60 hover:bg-[#cbaa60]/10 transition-all duration-300 inline-flex items-center justify-center backdrop-blur-sm">
-                  ¿Cómo puedo ayudarte?
-                </button>
+                </a>
+                <a href="#servicios" className="rounded-full px-9 py-4 text-[13px] font-bold uppercase tracking-[0.15em] border-2 border-white/20 text-white hover:text-[#cbaa60] hover:border-[#cbaa60]/60 hover:bg-[#cbaa60]/10 transition-all duration-300 inline-flex items-center justify-center backdrop-blur-sm">
+                  Ver cómo trabajo
+                </a>
               </div>
+
 
 
               {/* Credibility markers */}
