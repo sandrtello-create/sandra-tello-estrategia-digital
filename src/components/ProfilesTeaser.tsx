@@ -118,6 +118,37 @@ const ProfilesTeaser = () => {
         </div>
       </div>
 
+      {/* Ejemplo de proyecto aplicado */}
+      <div className="container mx-auto px-6 lg:px-8 mt-16 lg:mt-20">
+        <div className="max-w-4xl mx-auto border border-accent/25 bg-accent/[0.04] p-8 md:p-10">
+          <p className="text-accent font-semibold text-[11px] uppercase tracking-[0.25em] mb-4">
+            Por ejemplo · Caso real
+          </p>
+          <h3 className="font-serif text-xl md:text-2xl font-medium text-primary-foreground mb-4">
+            Desarrollo digital completo para el sector turístico
+          </h3>
+          <p className="text-primary-foreground/70 text-[15px] leading-relaxed mb-6">
+            Proyecto integral donde se aplicaron todas las herramientas de IA en un ecosistema turístico real:
+            chatbot de WhatsApp para atención al visitante, agentes IA para gestión de reservas, avatar con IA
+            como guía virtual, asistente de voz telefónico, creación de página web, automatización de procesos
+            internos y estrategia de contenido para redes sociales.
+          </p>
+          <div className="flex flex-wrap gap-2 mb-4">
+            {["WhatsApp Chatbot", "Agentes IA", "Avatar virtual", "Voz IA", "Web", "Automatización", "RRSS", "Atención telefónica"].map((tag) => (
+              <span
+                key={tag}
+                className="px-3 py-1 text-[11px] uppercase tracking-wider font-semibold text-accent border border-accent/25 bg-accent/[0.06]"
+              >
+                {tag}
+              </span>
+            ))}
+          </div>
+          <p className="text-primary-foreground/50 italic text-[13px] leading-relaxed">
+            Este es solo un ejemplo. Cada proyecto se diseña a medida según el sector, el punto de partida y los objetivos del negocio.
+          </p>
+        </div>
+      </div>
+
     </section>
   );
 };

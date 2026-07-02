@@ -224,30 +224,18 @@ const TrainingSection = () => {
             </div>
           </div>
 
-          {/* Case study */}
-          <div className="w-full border border-accent/20 bg-accent/[0.03] p-8 md:p-10">
-            <p className="text-accent font-semibold text-[11px] uppercase tracking-[0.25em] mb-4">
-              Cómo trabajo con mis clientes
+          {/* CTA — Quiero que la IA me acompañe */}
+          <div className="w-full flex flex-col items-center text-center py-4">
+            <p className="text-primary-foreground/70 text-[15px] leading-relaxed mb-5 max-w-xl">
+              ¿Quieres integrar estas herramientas en tu día a día con criterio y sin perderte en el camino?
             </p>
-            <h3 className="font-serif text-xl md:text-2xl font-medium text-primary-foreground mb-4">
-              Desarrollo digital completo para el sector turístico
-            </h3>
-            <p className="text-primary-foreground/55 text-[14px] leading-relaxed mb-6">
-              Proyecto integral donde se aplicaron todas las herramientas de IA en un ecosistema turístico real:
-              desde un chatbot de WhatsApp para atención al visitante, agentes IA para gestión de reservas,
-              avatar con IA como guía virtual, asistente de voz telefónico, creación de página web,
-              automatización de procesos internos y estrategia de contenido para redes sociales.
-            </p>
-            <div className="flex flex-wrap gap-2">
-              {["WhatsApp Chatbot", "Agentes IA", "Avatar virtual", "Voz IA", "Web", "Automatización", "RRSS", "Atención telefónica"].map((tag) => (
-                <span
-                  key={tag}
-                  className="px-3 py-1 text-[11px] uppercase tracking-wider font-semibold text-accent border border-accent/25 bg-accent/[0.06]"
-                >
-                  {tag}
-                </span>
-              ))}
-            </div>
+            <a
+              href="#contacto"
+              className="inline-flex items-center gap-3 bg-accent text-primary px-8 py-4 font-semibold text-[15px] tracking-wide hover:bg-accent/90 hover:shadow-[0_20px_40px_-15px_hsl(var(--accent)/0.4)] transition-all duration-300"
+            >
+              Quiero que la IA me acompañe
+              <ArrowRight className="h-5 w-5" />
+            </a>
           </div>
 
           {/* Pixar illustration + Roadmap */}
