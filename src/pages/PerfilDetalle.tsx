@@ -32,7 +32,14 @@ const PerfilDetalle = () => {
 
   return (
     <div className="min-h-screen bg-background">
+      <SEO
+        title={`${profile.name} — Caso de éxito | Sandra Tello`}
+        description={`Cómo Sandra Tello ayudó a ${profile.name} a posicionar su marca personal y crecer en su sector.`}
+        path={`/perfiles/${profile.slug}`}
+        type="profile"
+      />
       <Navbar />
+
 
       {/* Hero */}
       <section className="pt-32 pb-16 bg-primary text-primary-foreground">
