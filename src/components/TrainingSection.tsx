@@ -15,15 +15,15 @@ const programs = [
   },
   {
     icon: Briefcase,
-    title: "Workshops para ejecutivos",
+    title: "Workshops intensivos",
     description:
-      "Sesiones intensivas de alto nivel adaptadas al negocio en cuestión, para directivos que quieren liderar la transformación con IA.",
+      "Sesiones intensivas para dominar un proceso en concreto, adaptadas a tu negocio y a tu nivel de partida.",
   },
   {
     icon: GraduationCap,
-    title: "Programas para profesionales",
+    title: "Programas para profesionales y emprendedores",
     description:
-      "Formación práctica, incluyendo clases individuales 1 a 1, para profesionales que quieren multiplicar su productividad e impacto con IA.",
+      "Formación práctica, incluyendo clases individuales 1 a 1, para personas que quieren aprender IA desde cero y aplicarla con criterio real.",
   },
 ];
 
