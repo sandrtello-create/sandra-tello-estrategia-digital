@@ -41,7 +41,7 @@ const Card = ({ p }: { p: Profile }) => {
   const Icon = p.icon;
   return (
     <article className="shrink-0 w-[200px] h-[280px] group">
-      <div className="h-full flex flex-col bg-[hsl(220_35%_14%)] border border-gold/40 group-hover:border-gold transition-all duration-300 p-2.5 group-hover:-translate-y-1 shadow-lg">
+      <div className="h-full flex flex-col bg-navy border border-gold/40 group-hover:border-gold transition-all duration-300 p-2.5 group-hover:-translate-y-1 shadow-lg">
         {/* Icono */}
         <div
           className="aspect-square relative overflow-hidden"
@@ -118,13 +118,6 @@ const ProfilesTeaser = () => {
         </div>
       </div>
 
-      <div className="container mx-auto px-6 lg:px-8">
-        <div className="max-w-2xl mx-auto text-center mt-16 pt-10 border-t border-primary-foreground/10">
-          <p className="font-serif text-base lg:text-lg italic text-primary-foreground/70 leading-relaxed">
-            "La confidencialidad también forma parte del valor estratégico de un proyecto. No todo puede mostrarse con nombres, pero sí puede explicarse con criterio."
-          </p>
-        </div>
-      </div>
     </section>
   );
 };
