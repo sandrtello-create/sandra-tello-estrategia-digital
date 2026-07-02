@@ -147,14 +147,6 @@ const ServiceItem = ({
             {service.description}
           </p>
 
-          <a
-            href="#contacto"
-            className="inline-flex items-center gap-2 text-accent font-semibold text-[13px] tracking-wide hover:gap-3 transition-all duration-300 mb-5"
-          >
-            {service.cta}
-            <ArrowRight className="h-4 w-4" />
-          </a>
-
           {/* Toggle button */}
           <button
             onClick={() => setExpanded(!expanded)}
@@ -190,6 +182,15 @@ const ServiceItem = ({
               <p className="italic font-medium text-primary/70 text-[15px]">
                 {service.details.closing}
               </p>
+
+              {/* Service CTA */}
+              <a
+                href="#contacto"
+                className="mt-8 inline-flex items-center gap-3 bg-primary text-accent px-8 py-4 font-serif text-base font-medium hover:shadow-xl hover:scale-[1.02] transition-all duration-300"
+              >
+                {service.cta}
+                <ArrowRight className="h-5 w-5" />
+              </a>
 
               {/* Portfolio CTA */}
               {service.portfolioSlug && (
