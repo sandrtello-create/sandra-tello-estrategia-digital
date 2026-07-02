@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { Button } from "@/components/ui/button";
-import { GraduationCap, Building2, Briefcase, ArrowRight, Bot, MessageSquare, Mic, Globe, Palette, Zap, Phone, Share2, Video, UserRound, Pencil, Cog, TrendingUp, Brain, BookOpen, Image, Sparkles, FileText } from "lucide-react";
+import { GraduationCap, Building2, Briefcase, ArrowRight, Bot, MessageSquare, Mic, Globe, Palette, Zap, Phone, Share2, Video, UserRound, Pencil, Cog, TrendingUp, Brain, BookOpen, Image, Sparkles, FileText, Linkedin, Target, PenTool, Compass, Megaphone, Users } from "lucide-react";
 import sandraIA from "@/assets/sandra-tello-ia.jpg";
 import mentorshipPixar from "@/assets/training-mentorship-pixar.png";
 import sandraFormacionIA from "@/assets/sandra-tello-formacion-ia.png";
@@ -334,13 +334,72 @@ const TrainingSection = () => {
             </div>
           </div>
 
+
+          {/* Brand + Strategy Training Block — parallel track, not AI */}
+          <div className="w-full border-t border-accent/20 pt-14 mt-4">
+            <div className="text-center max-w-3xl mx-auto mb-10">
+              <div className="flex items-center justify-center gap-2 mb-4">
+                <Compass className="h-4 w-4 text-accent" />
+                <p className="text-accent font-semibold text-[11px] uppercase tracking-[0.25em]">
+                  Formación en marca personal, estrategia y marketing
+                </p>
+              </div>
+              <h2 className="font-serif text-3xl md:text-4xl lg:text-[40px] font-medium text-primary-foreground mb-5 leading-[1.2]">
+                Lo humano es tu ventaja. La estrategia, tu método.
+              </h2>
+              <p className="text-primary-foreground/60 text-[16px] leading-relaxed">
+                Antes que herramientas, criterio. Formaciones y mentorías para construir una marca personal
+                con propósito, una estrategia de contenido coherente y una comunicación que conecte de verdad.
+                Sin fórmulas prefabricadas: te acompaño desde donde estás hasta donde quieres llegar.
+              </p>
+            </div>
+
+            <div className="grid md:grid-cols-3 gap-5 w-full mb-10">
+              {[
+                {
+                  icon: UserRound,
+                  title: "Mentoría de marca personal",
+                  description:
+                    "Acompañamiento 1 a 1 para profesionales que quieren posicionarse con criterio, autoridad y coherencia — dentro y fuera de LinkedIn.",
+                },
+                {
+                  icon: Linkedin,
+                  title: "LinkedIn con estrategia",
+                  description:
+                    "Programa práctico para convertir tu perfil en un activo de negocio: contenido, autoridad, relaciones y oportunidades reales.",
+                },
+                {
+                  icon: Target,
+                  title: "Estrategia de contenido y marketing",
+                  description:
+                    "Formación para equipos y emprendedores que necesitan un plan de contenido y marketing que hable el lenguaje de su cliente.",
+                },
+              ].map((program, index) => (
+                <ProgramCard key={index} program={program} index={index} />
+              ))}
+            </div>
+
+            <div className="w-full flex flex-col items-center text-center py-4">
+              <p className="text-primary-foreground/70 text-[15px] leading-relaxed mb-5 max-w-xl">
+                ¿Quieres construir una marca personal con criterio y una estrategia que conecte?
+              </p>
+              <a
+                href="#contacto"
+                className="inline-flex items-center gap-3 bg-accent text-primary px-8 py-4 font-semibold text-[15px] tracking-wide hover:bg-accent/90 hover:shadow-[0_20px_40px_-15px_hsl(var(--accent)/0.4)] transition-all duration-300"
+              >
+                Quiero trabajar mi marca personal
+                <ArrowRight className="h-5 w-5" />
+              </a>
+            </div>
+          </div>
+
           {/* Free Resources Block — cream/warm tone with side image */}
           <div className="w-full bg-[hsl(40,18%,91%)] flex flex-col md:flex-row overflow-hidden">
             {/* Image column */}
             <div className="w-full md:w-[40%] min-h-[280px] md:min-h-0">
               <img
                 src={sandraFormacionIA}
-                alt="Sandra Tello impartiendo formación en inteligencia artificial"
+                alt="Sandra Tello impartiendo formación"
                 className="w-full h-full object-cover"
               />
             </div>
@@ -355,19 +414,22 @@ const TrainingSection = () => {
                   </p>
                 </div>
                 <h3 className="font-serif text-xl md:text-2xl font-medium text-[hsl(232,28%,18%)] mb-4">
-                  La educación en IA no debería ser un privilegio
+                  La educación no debería ser un privilegio
                 </h3>
                 <p className="text-[hsl(232,20%,35%)] text-[14px] leading-relaxed mb-6">
-                  Por eso comparto de forma gratuita manuales, guías y recursos prácticos sobre herramientas 
-                  de inteligencia artificial. Porque cuando las personas aprenden, el mundo mejora.
+                  Por eso comparto de forma gratuita manuales, guías y recursos prácticos sobre IA,
+                  marca personal, LinkedIn, marketing y estrategia. Porque cuando las personas aprenden,
+                  el mundo mejora.
                 </p>
 
-                <div className="grid grid-cols-2 gap-3 mb-6">
+                <div className="grid grid-cols-2 md:grid-cols-3 gap-3 mb-6">
                   {[
                     { icon: MessageSquare, title: "LLMs", desc: "ChatGPT, Claude, Gemini, Perplexity..." },
                     { icon: Image, title: "Creación visual", desc: "Imágenes y vídeo con IA" },
                     { icon: Zap, title: "Automatización", desc: "Make, Zapier y n8n" },
-                    { icon: Sparkles, title: "Más herramientas", desc: "Canva IA, Notion IA..." },
+                    { icon: Linkedin, title: "LinkedIn", desc: "Perfil, contenido y autoridad" },
+                    { icon: PenTool, title: "Marca personal", desc: "Posicionamiento y narrativa" },
+                    { icon: Megaphone, title: "Marketing y estrategia", desc: "Contenido, funnels y crecimiento" },
                   ].map((resource, i) => (
                     <div
                       key={i}
@@ -391,12 +453,13 @@ const TrainingSection = () => {
                   className="bg-accent text-accent-foreground hover:bg-gold-light rounded-none px-6 sm:px-10 py-6 sm:py-7 text-[12px] sm:text-[14px] font-semibold uppercase tracking-[0.1em] sm:tracking-[0.15em] shadow-[0_0_20px_hsl(var(--accent)/0.4)] transition-all duration-300 hover:shadow-[0_0_30px_hsl(var(--accent)/0.6)] hover:scale-105 w-full sm:w-auto text-center whitespace-normal"
                 >
                   <FileText className="mr-2 h-4 w-4 shrink-0" />
-                  <span>Desbloquea tu kit de herramientas IA</span>
+                  <span>Desbloquea tu kit de recursos gratuitos</span>
                   <ArrowRight className="ml-2 h-4 w-4 shrink-0" />
                 </Button>
               </div>
             </div>
           </div>
+
 
           {/* CTA */}
           <div>
