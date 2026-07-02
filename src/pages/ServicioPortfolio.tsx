@@ -2,8 +2,10 @@ import { useParams, Link } from "react-router-dom";
 import { servicePortfolios, ServiceCase } from "@/data/services";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
+import SEO from "@/components/SEO";
 import { ArrowLeft, ArrowRight, TrendingUp, Landmark, Truck, ShoppingBag } from "lucide-react";
 import linkedinLogo from "@/assets/portfolio/linkedin-logo.jpg";
+
 
 const GalleryGrid = ({ images }: { images: { src: string; alt: string; caption?: string }[] }) => {
   const gridCols = images.length <= 2
@@ -229,7 +231,14 @@ const ServicioPortfolio = () => {
 
   return (
     <div className="min-h-screen bg-background">
+      <SEO
+        title={`${portfolio.serviceTitle} — Servicios | Sandra Tello`}
+        description={portfolio.intro.slice(0, 160)}
+        path={`/servicios/${portfolio.slug}`}
+      />
       <Navbar />
+
+
 
       {/* Hero */}
       <section className="pt-32 pb-16 bg-primary text-primary-foreground">
