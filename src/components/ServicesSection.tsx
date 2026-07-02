@@ -10,6 +10,7 @@ const services = [
     title: "Consultoría estratégica con IA",
     description:
       "Integra la IA en tu estrategia de negocio con un enfoque práctico y personalizado. Decisiones más inteligentes, procesos más eficientes.",
+    cta: "Descubramos juntas dónde está tu oportunidad.",
     details: {
       intro: "Analizo tu negocio para entender en qué punto está y qué oportunidades tiene.",
       points: [
@@ -27,6 +28,7 @@ const services = [
     title: "Posicionamiento de marca personal",
     description:
       "Define tu propuesta de valor única, construye una narrativa diferenciadora y posiciónate como referente en tu sector.",
+    cta: "Construyamos una marca que hable por ti.",
     details: {
       intro: "Trabajamos tu identidad profesional para que comuniques con claridad quién eres y qué te diferencia.",
       points: [
@@ -45,6 +47,7 @@ const services = [
     portfolioSlug: "auditoria-de-negocio",
     description:
       "Auditoría integral de tu negocio: presencia digital, experiencia de cliente y mystery shopping con recomendaciones claras de mejora.",
+    cta: "Revisemos juntas qué se puede mejorar.",
     details: {
       intro: "Reviso tu ecosistema digital al completo para detectar qué funciona, qué falta y qué sobra.",
       points: [
@@ -62,6 +65,7 @@ const services = [
     title: "Employee advocacy y liderazgo digital",
     description:
       "Convierte a los líderes de tu empresa en embajadores de marca. Programas de posicionamiento ejecutivo en LinkedIn y más.",
+    cta: "Potenciemos juntas la voz de tu equipo.",
     details: {
       intro: "Ayudo a las empresas a convertir a sus directivos y equipos en embajadores de marca.",
       points: [
@@ -142,6 +146,14 @@ const ServiceItem = ({
           <p className="text-muted-foreground leading-relaxed max-w-xl mb-5">
             {service.description}
           </p>
+
+          <a
+            href="#contacto"
+            className="inline-flex items-center gap-2 text-accent font-semibold text-[13px] tracking-wide hover:gap-3 transition-all duration-300 mb-5"
+          >
+            {service.cta}
+            <ArrowRight className="h-4 w-4" />
+          </a>
 
           {/* Toggle button */}
           <button
@@ -227,13 +239,6 @@ const ServicesSection = () => {
           <h2 className="font-serif text-3xl md:text-4xl lg:text-[44px] font-medium text-primary mb-6 leading-[1.2]">
             Estrategia digital con criterio humano
           </h2>
-          <p className="text-muted-foreground text-[17px] leading-relaxed mb-6">
-            He visto cómo la tecnología acelera todo y, a la vez, cómo el exceso de herramientas sin dirección desorienta.
-            Mi trabajo no es aplicar IA por aplicarla: es entender qué necesita tu negocio, qué te diferencia como profesional y diseñar un camino donde la inteligencia artificial sirva a tu estrategia, no al revés.
-          </p>
-          <div className="flex justify-center mb-6">
-            <div className="h-px w-10 bg-accent/40" />
-          </div>
           <p className="text-primary/80 text-[15px] leading-relaxed">
             Para profesionales y empresas que quieren ordenar su estrategia,
             posicionar su valor y utilizar la inteligencia artificial con criterio.
