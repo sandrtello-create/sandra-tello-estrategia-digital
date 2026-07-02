@@ -11,19 +11,19 @@ const programs = [
     icon: Building2,
     title: "Formación para empresas",
     description:
-      "Programas in-company (en remoto o presencial) para equipos que necesitan integrar estrategia digital, marca, marketing e IA de forma coherente en su día a día.",
+      "Programas in-company (en remoto o presencial) para equipos que necesitan integrar la IA de forma estratégica en su día a día.",
   },
   {
     icon: Briefcase,
     title: "Workshops intensivos",
     description:
-      "Sesiones intensivas para dominar un proceso concreto: estrategia de marca personal, contenido, posicionamiento o una herramienta de IA aplicada a tu negocio.",
+      "Sesiones intensivas para dominar un proceso en concreto, adaptadas a tu negocio y a tu nivel de partida.",
   },
   {
     icon: GraduationCap,
     title: "Programas para profesionales y emprendedores",
     description:
-      "Formación práctica, incluyendo clases 1 a 1, para quienes quieren aprender IA, estrategia y marca personal desde cero y aplicarlas con criterio real.",
+      "Formación práctica, incluyendo clases individuales 1 a 1, para personas que quieren aprender IA desde cero y aplicarla con criterio real.",
   },
 ];
 
@@ -161,24 +161,23 @@ const TrainingSection = () => {
             <div className="flex items-center justify-center gap-2 mb-4">
               <Brain className="h-4 w-4 text-accent" />
               <p className="text-accent font-semibold text-[11px] uppercase tracking-[0.25em]">
-                Formación y mentorías
+                Formación en Inteligencia Artificial
               </p>
             </div>
             <h2 className="font-serif text-3xl md:text-4xl lg:text-[40px] font-medium text-primary-foreground mb-5 leading-[1.2]">
-              Inteligencia humana primero. IA, estrategia y marca después.
+              Inteligencia humana primero. IA después.
             </h2>
             <p className="text-primary-foreground/60 text-[16px] leading-relaxed mb-4">
-              No formo solo en inteligencia artificial. Trabajo contigo la estrategia digital, la marca personal,
-              el marketing y la integración de la IA como un mismo sistema, porque separados no funcionan.
-              Todo parte del factor humano: sin criterio propio, ninguna herramienta te posiciona.
-              Formación 100% aplicada a tu negocio, no genérica.
+              No necesitas saber de tecnología. Mis programas están pensados para personas que parten de cero
+              y quieren aplicar la IA con criterio real en su día a día. Porque la IA ya no es valor diferencial:
+              lo es el factor humano que la pone en marcha. Formación 100% aplicada a tu negocio, no genérica.
             </p>
             <p className="text-primary-foreground/50 text-[14px] leading-relaxed">
-              He formado a equipos y a profesionales en sectores como el <span className="text-accent/80 font-medium">industrial</span>,{" "}
+              He formado a equipos en sectores como el <span className="text-accent/80 font-medium">industrial</span>,{" "}
               <span className="text-accent/80 font-medium">transporte</span>,{" "}
               <span className="text-accent/80 font-medium">turismo</span> y{" "}
               <span className="text-accent/80 font-medium">educativo</span>,
-              combinando estrategia, comunicación, marca personal e IA aplicada.
+              con especial foco en comunicación y redes sociales.
             </p>
           </div>
 
