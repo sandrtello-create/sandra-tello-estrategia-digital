@@ -16,7 +16,7 @@ const results = [
   {
     icon: Award,
     title: "Autoridad profesional",
-    description: "Conviértete en referente de tu sector con una presencia que inspira confianza.",
+    description: "Construye autoridad real en tu sector con una presencia que inspira confianza.",
   },
   {
     icon: Compass,

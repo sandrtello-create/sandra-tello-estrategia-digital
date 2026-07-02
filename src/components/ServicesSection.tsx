@@ -27,7 +27,7 @@ const services = [
     icon: Target,
     title: "Posicionamiento de marca personal",
     description:
-      "Define tu propuesta de valor única, construye una narrativa diferenciadora y posiciónate como referente en tu sector.",
+      "Define tu propuesta de valor única, construye una narrativa diferenciadora y posiciónate con autoridad en tu sector.",
     cta: "Construyamos una marca que hable por ti",
     details: {
       intro: "Trabajamos tu identidad profesional para que comuniques con claridad quién eres y qué te diferencia.",
