@@ -75,24 +75,33 @@ const NeuralNetworkSVG = () => (
 const ProgramCard = ({
   program,
   index,
+  theme = "dark",
 }: {
   program: (typeof programs)[0];
   index: number;
+  theme?: "dark" | "light";
 }) => {
   const [hovered, setHovered] = useState(false);
   const num = String(index + 1).padStart(2, "0");
+  const isDark = theme === "dark";
 
   return (
     <div
-      className="relative pl-5 py-6 px-6 bg-primary-foreground/[0.03] border border-primary-foreground/10 transition-all duration-500"
+      className={`relative pl-5 py-6 px-6 border transition-all duration-500 ${
+        isDark
+          ? "bg-primary-foreground/[0.03] border-primary-foreground/10"
+          : "bg-white border-[hsl(232,20%,85%)]"
+      }`}
       style={{
         transform: hovered ? "translateY(-4px)" : "translateY(0)",
         boxShadow: hovered
-          ? "0 20px 40px -15px hsl(var(--accent) / 0.15)"
+          ? `0 20px 40px -15px hsl(var(--accent) / ${isDark ? "0.15" : "0.2"})`
           : "none",
         borderColor: hovered
-          ? "hsl(var(--accent) / 0.3)"
-          : "hsl(var(--primary-foreground) / 0.1)",
+          ? `hsl(var(--accent) / ${isDark ? "0.3" : "0.4"})`
+          : isDark
+          ? "hsl(var(--primary-foreground) / 0.1)"
+          : "hsl(232, 20%, 85%)",
       }}
       onMouseEnter={() => setHovered(true)}
       onMouseLeave={() => setHovered(false)}
@@ -111,21 +120,35 @@ const ProgramCard = ({
           style={{
             color: hovered
               ? "hsl(var(--accent) / 0.5)"
-              : "hsl(var(--accent) / 0.12)",
+              : `hsl(var(--accent) / ${isDark ? "0.12" : "0.15"})`,
           }}
         >
           {num}
         </span>
 
         <div>
-          <div className="w-10 h-10 rounded-full bg-accent/10 flex items-center justify-center mb-3">
+          <div
+            className={`w-10 h-10 rounded-full flex items-center justify-center mb-3 ${
+              isDark ? "bg-accent/10" : "bg-accent/15"
+            }`}
+          >
             <program.icon className="h-5 w-5 text-accent" />
           </div>
 
-          <h3 className="font-serif text-lg font-medium text-primary-foreground mb-2">
+          <h3
+            className={`font-serif text-lg font-medium mb-2 ${
+              isDark ? "text-primary-foreground" : "text-[hsl(232,28%,18%)]"
+            }`}
+          >
             {program.title}
           </h3>
-          <p className="text-primary-foreground/55 leading-relaxed text-[14px]">
+          <p
+            className={`leading-relaxed text-[14px] ${
+              isDark
+                ? "text-primary-foreground/55"
+                : "text-[hsl(232,20%,40%)]"
+            }`}
+          >
             {program.description}
           </p>
         </div>
