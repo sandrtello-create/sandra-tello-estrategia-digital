@@ -288,7 +288,7 @@ const ServicesSection = () => {
             </p>
             <a
               href="#contacto"
-              className="inline-flex items-center gap-3 bg-primary text-accent px-8 py-4 font-serif text-lg font-medium hover:shadow-xl hover:scale-[1.02] transition-all duration-300"
+              className="inline-flex items-center gap-3 bg-primary text-accent px-8 py-4 rounded-full font-serif text-lg font-medium hover:shadow-xl hover:scale-[1.02] transition-all duration-300"
             >
               Quiero empezar a liderar mi estrategia digital
               <ArrowRight className="h-5 w-5" />
