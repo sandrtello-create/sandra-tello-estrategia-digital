@@ -144,19 +144,13 @@ const HeroSection = () => {
           </div>
 
           {/* CTA */}
-          <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
+          <div className="flex justify-center">
             <a
               href="#contacto"
-              className="inline-flex items-center justify-center gap-2 px-9 py-4 text-[13px] font-bold uppercase tracking-[0.15em] text-[#0f1a30] bg-[#e6c67a] hover:bg-[#f0d78c] transition-colors shadow-lg"
+              className="inline-flex items-center justify-center gap-2 rounded-full px-9 py-4 text-[13px] font-bold uppercase tracking-[0.15em] text-[#0f1a30] bg-[#e6c67a] hover:bg-[#f0d78c] hover:scale-105 transition-all duration-300 shadow-[0_0_30px_rgba(230,198,122,0.35)] hover:shadow-[0_0_45px_rgba(230,198,122,0.5)]"
             >
               Diseña tu estrategia conmigo
               <ArrowRight className="h-4 w-4" />
-            </a>
-            <a
-              href="#sobre-mi"
-              className="inline-flex items-center justify-center px-9 py-4 text-[13px] font-bold uppercase tracking-[0.15em] text-white border border-white/40 hover:border-[#e6c67a] hover:text-[#e6c67a] backdrop-blur-sm transition-colors"
-            >
-              ¿Cómo puedo ayudarte?
             </a>
           </div>
         </div>
