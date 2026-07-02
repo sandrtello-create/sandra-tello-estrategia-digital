@@ -29,10 +29,10 @@ interface EnneagramWheelProps {
 
 const EnneagramWheel = ({ onHoverChange }: EnneagramWheelProps) => {
   const [hovered, setHovered] = useState<number | null>(null);
-  const cx = 200;
-  const cy = 200;
-  const outerR = 170;
-  const innerR = 90;
+  const cx = 250;
+  const cy = 250;
+  const outerR = 220;
+  const innerR = 140;
   const segments = 9;
   const angleStep = (2 * Math.PI) / segments;
   const startOffset = -Math.PI / 2 - angleStep / 2;
@@ -64,7 +64,7 @@ const EnneagramWheel = ({ onHoverChange }: EnneagramWheelProps) => {
 
   return (
     <div className="flex flex-col items-center gap-6">
-      <svg viewBox="0 0 400 400" className="w-full max-w-[380px] lg:max-w-[420px]">
+      <svg viewBox="0 0 500 500" className="w-full max-w-[480px] lg:max-w-[560px]">
         {types.map((t, i) => {
           const isHovered = hovered === i;
           const pos = getLabelPos(i);
@@ -87,7 +87,7 @@ const EnneagramWheel = ({ onHoverChange }: EnneagramWheelProps) => {
                 y={pos.y - 6}
                 textAnchor="middle"
                 dominantBaseline="central"
-                className="text-[11px] font-bold pointer-events-none"
+                className="text-[13px] font-bold pointer-events-none"
                 fill={isHovered ? "hsl(var(--primary))" : "hsl(var(--accent))"}
               >
                 {t.num}
@@ -97,7 +97,7 @@ const EnneagramWheel = ({ onHoverChange }: EnneagramWheelProps) => {
                 y={pos.y + 8}
                 textAnchor="middle"
                 dominantBaseline="central"
-                className="text-[7px] font-medium pointer-events-none uppercase tracking-wider"
+                className="text-[9px] font-medium pointer-events-none uppercase tracking-wider"
                 fill={isHovered ? "hsl(var(--primary))" : "hsl(var(--primary-foreground) / 0.9)"}
               >
                 {t.name}
@@ -107,10 +107,10 @@ const EnneagramWheel = ({ onHoverChange }: EnneagramWheelProps) => {
         })}
         {/* Center */}
         <circle cx={cx} cy={cy} r={innerR - 4} fill="hsl(var(--background))" />
-        <text x={cx} y={cy - 8} textAnchor="middle" className="text-[11px] font-serif font-semibold" fill="hsl(var(--primary))">
+        <text x={cx} y={cy - 10} textAnchor="middle" className="text-[14px] font-serif font-semibold" fill="hsl(var(--primary))">
           Eneagrama
         </text>
-        <text x={cx} y={cy + 8} textAnchor="middle" className="text-[9px]" fill="hsl(var(--muted-foreground))">
+        <text x={cx} y={cy + 12} textAnchor="middle" className="text-[11px]" fill="hsl(var(--muted-foreground))">
           9 perfiles
         </text>
       </svg>
@@ -122,7 +122,7 @@ const EnneagramWheel = ({ onHoverChange }: EnneagramWheelProps) => {
             <img
               src={types[hovered].image}
               alt={types[hovered].name}
-              className="h-16 w-16 object-contain rounded-full border-2 border-accent/30"
+              className="h-20 w-20 object-contain rounded-full border-2 border-accent/30"
             />
             <div>
               <p className="font-semibold text-primary text-sm">

@@ -258,7 +258,7 @@ const ServicesSection = () => {
         <div className="max-w-3xl mx-auto mt-16 pt-10 border-t border-border/40">
           <div className="text-center">
             <p className="text-[11px] font-semibold uppercase tracking-[0.2em] text-accent mb-4">
-              Metodología
+              Herramienta
             </p>
             <h3 className="font-serif text-2xl md:text-3xl text-primary mb-5 leading-snug">
               Conozco a fondo cada perfil para potenciar su liderazgo
