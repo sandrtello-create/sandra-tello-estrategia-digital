@@ -203,6 +203,7 @@ const ServiceItem = ({
 
 const ServicesSection = () => {
   const [isVisible, setIsVisible] = useState(false);
+  const [hoveredArchetype, setHoveredArchetype] = useState<ArchetypeKey>(null);
   const sectionRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
@@ -263,6 +264,15 @@ const ServicesSection = () => {
               No importa si trabajamos tu marca personal, la estrategia de tu empresa o la visibilidad de tu equipo: entender cómo piensa, se comunica y toma decisiones cada profesional es parte de mi proceso. Aplico esta comprensión en cada proyecto para diseñar una estrategia que realmente encaje contigo.
             </p>
           </div>
+        </div>
+
+        {/* Eneagrama: herramienta transversal */}
+        <div className="max-w-3xl mx-auto mt-16 pt-10 border-t border-border/40">
+          <p className="text-[11px] font-semibold uppercase tracking-[0.2em] text-accent mb-6 text-center">
+            Conozco a fondo cada perfil para potenciar su liderazgo
+          </p>
+          <EnneagramWheel onHoverChange={setHoveredArchetype} />
+          <LeadershipCards highlightedArchetype={hoveredArchetype} />
         </div>
 
         {/* CTA final */}
