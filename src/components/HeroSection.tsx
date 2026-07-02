@@ -115,8 +115,13 @@ const HeroSection = () => {
       {/* ============ CONTENIDO — SÓLO TITULAR + FRASE ============ */}
       <div className="container mx-auto px-6 lg:px-8 relative z-10 py-24">
         <div className="max-w-4xl mx-auto text-center">
-          {/* Titular */}
-          <h1 className="font-serif font-semibold text-white leading-[1.1] tracking-tight mb-10">
+          {/* H1 — descriptor real (más pequeño) */}
+          <h1 className="font-sans text-white/85 text-[14px] md:text-[15px] lg:text-[16px] font-medium leading-relaxed tracking-wide max-w-3xl mx-auto mb-6">
+            Consultora estratégica en IA, marca personal y marketing para quienes no quieren que otros decidan su valor.
+          </h1>
+
+          {/* Titular visual (kicker grande) */}
+          <p className="font-serif font-semibold text-white leading-[1.1] tracking-tight mb-10" aria-hidden="true">
             <span className="block text-[28px] sm:text-[38px] md:text-[48px] lg:text-[58px]">
               {HEADLINE_LEFT}
             </span>
@@ -126,7 +131,7 @@ const HeroSection = () => {
             >
               {HEADLINE_RIGHT}
             </span>
-          </h1>
+          </p>
 
           {/* Frase rotativa */}
           <div className="min-h-[6rem] md:min-h-[5rem] flex items-center justify-center mb-10">

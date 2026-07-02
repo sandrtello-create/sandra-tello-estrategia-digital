@@ -4,7 +4,7 @@ import HeroClassic from "@/components/HeroClassic";
 import BrandsSection from "@/components/BrandsSection";
 import AboutSection from "@/components/AboutSection";
 import ServicesSection from "@/components/ServicesSection";
-import ProfilesTeaser from "@/components/ProfilesTeaser";
+
 import TrainingSection from "@/components/TrainingSection";
 import MethodSection from "@/components/MethodSection";
 import ResultsSection from "@/components/ResultsSection";
@@ -46,7 +46,7 @@ const Index = () => {
       <BrandsSection />
       <AboutSection />
       <ServicesSection />
-      <ProfilesTeaser />
+      
       <TrainingSection />
       <MethodSection />
       <ResultsSection />
