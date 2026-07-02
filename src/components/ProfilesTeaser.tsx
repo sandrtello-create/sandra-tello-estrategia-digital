@@ -1,70 +1,124 @@
-import { Link } from "react-router-dom";
-import { profiles } from "@/data/profiles";
-import { Linkedin, ArrowRight } from "lucide-react";
-import zipgenialLogo from "@/assets/brands/zipgenial.png";
+import { Compass, BrainCircuit, Map, ShieldCheck, MessagesSquare, ScanEye } from "lucide-react";
 
-const doubled = [...profiles, ...profiles];
+const areas = [
+  {
+    icon: Compass,
+    title: "Marca personal y liderazgo digital",
+    description:
+      "Posicionamiento, narrativa profesional y presencia digital para perfiles expertos, directivos, consultores y fundadores.",
+    work: "Propuesta de valor, discurso, perfil de LinkedIn, pilares de contenido y tono de comunicación.",
+  },
+  {
+    icon: BrainCircuit,
+    title: "Formación en IA aplicada",
+    description:
+      "Sesiones prácticas para profesionales, empresas y equipos que necesitan aplicar la IA con criterio en su trabajo diario.",
+    work: "Prompting, herramientas IA, casos de uso, productividad, marketing, comunicación y toma de decisiones.",
+  },
+  {
+    icon: Map,
+    title: "Estrategia digital y posicionamiento",
+    description:
+      "Diagnóstico y orden estratégico para negocios y profesionales que necesitan comunicar mejor qué hacen, para quién y por qué deberían elegirlos.",
+    work: "Auditoría, propuesta de valor, arquitectura de mensajes, servicios y prioridades de acción.",
+  },
+  {
+    icon: ShieldCheck,
+    title: "Comunicación para perfiles de alta exposición",
+    description:
+      "Trabajo estratégico de comunicación para perfiles públicos o profesionales con alta visibilidad que necesitan cuidar reputación, autoridad y coherencia.",
+    work: "Narrativa, tono, criterios de publicación, enfoque de contenidos y protección reputacional.",
+  },
+  {
+    icon: MessagesSquare,
+    title: "Contenido estratégico para LinkedIn",
+    description:
+      "Desarrollo de contenido profesional orientado a autoridad, confianza, conversación y oportunidades de negocio.",
+    work: "Pilares editoriales, calendario de contenidos, mensajes clave, enfoque de publicaciones y revisión estratégica.",
+  },
+  {
+    icon: ScanEye,
+    title: "Auditoría de percepción digital",
+    description:
+      "Análisis de cómo se percibe una marca, perfil profesional o negocio en sus activos digitales.",
+    work: "Revisión de mensaje, coherencia visual, propuesta de valor, tono, contenidos y experiencia percibida.",
+  },
+];
 
 const ProfilesTeaser = () => {
   return (
-    <section className="py-16 bg-primary overflow-hidden">
-      <div className="container mx-auto px-6 lg:px-8 mb-10 text-center">
-        <p className="text-accent font-semibold text-[11px] uppercase tracking-[0.25em] mb-4">
-          Casos de éxito
-        </p>
-        <h2 className="font-serif text-3xl md:text-4xl font-medium text-primary-foreground mb-3">
-          Marcas personales con las que he trabajado
-        </h2>
-        <p className="text-primary-foreground/60 max-w-xl mx-auto">
-          He ayudado a estos profesionales a diseñar su estrategia de marca personal y a crear el contenido que les posiciona como referentes en su sector.
-        </p>
-        <div className="flex items-center justify-center gap-2 mt-5 text-primary-foreground/40 text-xs tracking-wide">
-          <span>Proyectos realizados a través de</span>
-          <img src={zipgenialLogo} alt="ZipGenial" className="h-5 object-contain" />
+    <section className="py-20 lg:py-28 bg-primary overflow-hidden">
+      <div className="container mx-auto px-6 lg:px-8">
+        {/* Header */}
+        <div className="max-w-3xl mx-auto text-center mb-16 lg:mb-20">
+          <p className="text-accent font-semibold text-[11px] uppercase tracking-[0.28em] mb-5">
+            Experiencia aplicada
+          </p>
+          <h2 className="font-serif text-3xl md:text-4xl lg:text-[44px] font-medium text-primary-foreground mb-6 leading-[1.2]">
+            Proyectos de estrategia, formación y posicionamiento
+          </h2>
+          <div className="space-y-4 text-primary-foreground/70 text-[15px] lg:text-[16px] leading-relaxed">
+            <p>
+              He trabajado en proyectos vinculados a marca personal, estrategia digital, formación en IA, comunicación profesional, posicionamiento y desarrollo de presencia digital para perfiles técnicos, directivos, emprendedores, equipos y figuras de alta exposición pública.
+            </p>
+            <p className="text-primary-foreground/55 italic">
+              Por confidencialidad, no se muestran nombres, marcas, logos ni datos sensibles. Esta sección recoge áreas de intervención reales, explicadas desde el reto trabajado y el enfoque estratégico aplicado.
+            </p>
+          </div>
         </div>
-      </div>
 
-      {/* Infinite scroll carousel */}
-      <div className="relative">
-        <div className="flex animate-scroll-photos gap-6 w-max">
-          {doubled.map((p, i) => (
-            <Link
-              key={`${p.name}-${i}`}
-              to={`/perfiles/${p.slug}`}
-              className="group shrink-0 w-48 overflow-hidden bg-gradient-to-b from-primary-foreground/5 to-transparent border border-accent/20 hover:border-accent/50 transition-all duration-300"
+        {/* Grid 6 cards */}
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5 lg:gap-6 max-w-6xl mx-auto">
+          {areas.map((area, i) => (
+            <article
+              key={i}
+              className="group relative bg-primary-foreground/[0.03] border border-primary-foreground/10 p-8 lg:p-9 transition-all duration-500 hover:border-accent/50 hover:bg-primary-foreground/[0.05] hover:-translate-y-1 hover:shadow-[0_20px_50px_-20px_hsl(var(--accent)/0.35)]"
             >
-              <div className="aspect-square overflow-hidden border-b border-accent/20">
-                <img
-                  src={p.photo}
-                  alt={p.name}
-                  className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
-                  loading="lazy"
+              {/* Number */}
+              <span className="absolute top-6 right-7 font-serif text-sm text-accent/40 tracking-widest">
+                {String(i + 1).padStart(2, "0")}
+              </span>
+
+              {/* Icon */}
+              <div className="mb-7">
+                <area.icon
+                  className="h-8 w-8 text-accent transition-transform duration-500 group-hover:scale-110"
+                  strokeWidth={1.25}
                 />
               </div>
-              <div className="p-4">
-                <div className="flex items-start justify-between gap-2 mb-1">
-                  <span className="text-sm font-semibold text-primary-foreground">
-                    {p.name}
-                  </span>
-                  <Linkedin className="h-4 w-4 shrink-0 text-accent opacity-70 group-hover:opacity-100 transition-opacity mt-0.5" />
-                </div>
-                <span className="text-xs text-primary-foreground/50 leading-tight line-clamp-2">
-                  {p.role}
-                </span>
+
+              {/* Title */}
+              <h3 className="font-serif text-xl lg:text-[22px] font-medium text-primary-foreground mb-4 leading-snug">
+                {area.title}
+              </h3>
+
+              {/* Description */}
+              <p className="text-primary-foreground/65 text-[14.5px] leading-relaxed mb-6">
+                {area.description}
+              </p>
+
+              {/* Divider */}
+              <div className="h-px w-10 bg-accent/40 mb-5 transition-all duration-500 group-hover:w-16 group-hover:bg-accent" />
+
+              {/* Work done */}
+              <div>
+                <p className="text-[10px] font-semibold uppercase tracking-[0.22em] text-accent/80 mb-2">
+                  Trabajo realizado
+                </p>
+                <p className="text-primary-foreground/55 text-[13.5px] leading-relaxed">
+                  {area.work}
+                </p>
               </div>
-            </Link>
+            </article>
           ))}
         </div>
-      </div>
 
-      <div className="text-center mt-10">
-        <a
-          href="/perfiles"
-          className="inline-flex items-center gap-2 bg-accent text-accent-foreground px-8 py-3.5 font-semibold text-[13px] uppercase tracking-[0.15em] hover:bg-gold-light transition-colors"
-        >
-          Ver todos los perfiles
-          <ArrowRight className="h-4 w-4" />
-        </a>
+        {/* Closing */}
+        <div className="max-w-2xl mx-auto text-center mt-16 lg:mt-20 pt-10 border-t border-primary-foreground/10">
+          <p className="font-serif text-lg lg:text-xl italic text-primary-foreground/75 leading-relaxed">
+            "La confidencialidad también forma parte del valor estratégico de un proyecto. No todo puede mostrarse con nombres, pero sí puede explicarse con criterio."
+          </p>
+        </div>
       </div>
     </section>
   );
