@@ -1,14 +1,8 @@
 import { useState, useEffect, useRef } from "react";
-import { ArrowRight, ChevronDown } from "lucide-react";
+import { ArrowRight } from "lucide-react";
 import sandraPhoto from "@/assets/sandra-tello-hero.jpg";
 import logoWatermark from "@/assets/sandra-tello-logo.png";
 
-const rotatingPhrases = [
-  { text: "Estrategia en marca personal" },
-  { text: "IA aplicada en negocio" },
-  { text: "Formación en inteligencia artificial" },
-  { text: "Consultoría estratégica digital" },
-];
 
 const stats = [
   { label: "Experiencia", value: 20, suffix: "", prefix: "+", description: "años en negocio y marketing" },
