@@ -15,15 +15,15 @@ const programs = [
   },
   {
     icon: Briefcase,
-    title: "Workshops para ejecutivos",
+    title: "Workshops intensivos",
     description:
-      "Sesiones intensivas de alto nivel adaptadas al negocio en cuestión, para directivos que quieren liderar la transformación con IA.",
+      "Sesiones intensivas para dominar un proceso en concreto, adaptadas a tu negocio y a tu nivel de partida.",
   },
   {
     icon: GraduationCap,
-    title: "Programas para profesionales",
+    title: "Programas para profesionales y emprendedores",
     description:
-      "Formación práctica, incluyendo clases individuales 1 a 1, para profesionales que quieren multiplicar su productividad e impacto con IA.",
+      "Formación práctica, incluyendo clases individuales 1 a 1, para personas que quieren aprender IA desde cero y aplicarla con criterio real.",
   },
 ];
 
@@ -165,12 +165,12 @@ const TrainingSection = () => {
               </p>
             </div>
             <h2 className="font-serif text-3xl md:text-4xl lg:text-[40px] font-medium text-primary-foreground mb-5 leading-[1.2]">
-              Aprende a aplicar la IA con estrategia y criterio
+              Inteligencia humana primero. IA después.
             </h2>
             <p className="text-primary-foreground/60 text-[16px] leading-relaxed mb-4">
-              No necesitas saber de tecnología. Mis programas están pensados para profesionales y equipos
-              que parten de cero en IA y quieren aplicarla de forma práctica en su sector.
-              Formación 100% aplicada a tu negocio, no genérica.
+              No necesitas saber de tecnología. Mis programas están pensados para personas que parten de cero
+              y quieren aplicar la IA con criterio real en su día a día. Porque la IA ya no es valor diferencial:
+              lo es el factor humano que la pone en marcha. Formación 100% aplicada a tu negocio, no genérica.
             </p>
             <p className="text-primary-foreground/50 text-[14px] leading-relaxed">
               He formado a equipos en sectores como el <span className="text-accent/80 font-medium">industrial</span>,{" "}
