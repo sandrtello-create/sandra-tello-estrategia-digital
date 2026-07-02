@@ -133,20 +133,20 @@ const HeroClassic = () => {
               <div className="flex items-center gap-3 mb-6">
                 <div className="h-px w-10" style={{ background: 'linear-gradient(90deg, #a47633, #cbaa60)' }} />
                 <p className="font-sans text-[11px] font-semibold uppercase tracking-[0.25em] gold-gradient-text">
-                  El factor humano en la era de la IA
+                  Marca personal, marketing e IA
                 </p>
               </div>
 
               <h2 className="font-serif text-[30px] md:text-[38px] lg:text-[44px] font-semibold text-white leading-[1.2] mb-6">
-                La tecnología avanza rápido. <span className="italic gold-gradient-text">Tu valor</span> merece avanzar contigo.
+                La tecnología avanza rápido. <span className="italic gold-gradient-text">Tu marca personal</span> merece avanzar contigo.
               </h2>
 
               <p className="text-white/80 text-[16px] md:text-[17px] leading-relaxed mb-5">
-                Vivimos rodeadas de herramientas, algoritmos y promesas de productividad. Y aun así, lo que sigue marcando la diferencia es profundamente humano: <span className="text-white font-medium">criterio, mirada estratégica y una voz que se reconoce</span>.
+                Vivimos rodeadas de herramientas, algoritmos y promesas de productividad. Y aun así, lo que sigue marcando la diferencia es profundamente humano: <span className="text-white font-medium">criterio, mirada estratégica y una voz que se reconoce</span>. Esa voz es tu marca personal. Y cuando la articulas con marketing consciente e inteligencia artificial, dejas de ser invisible.
               </p>
 
               <p className="text-white/80 text-[16px] md:text-[17px] leading-relaxed mb-8">
-                Por eso trabajo así: la inteligencia artificial al servicio de tu valor, no al revés. Estrategia para tomar mejores decisiones. Y la felicidad —esa sí, real— de dedicar tu tiempo a <span className="italic gold-gradient-text">crear la vida que amas</span>.
+                Por eso trabajo así: IA y marketing al servicio de quién eres, no al revés. Estrategia para tomar mejores decisiones. Y la felicidad —esa sí, real— de dedicar tu tiempo a <span className="italic gold-gradient-text">crear la vida que amas</span> desde una marca que te representa.
               </p>
 
               <div className="flex flex-col sm:flex-row gap-4">
