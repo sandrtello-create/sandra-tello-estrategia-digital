@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { Button } from "@/components/ui/button";
-import { GraduationCap, Building2, Briefcase, ArrowRight, Bot, MessageSquare, Mic, Globe, Palette, Zap, Phone, Share2, Video, UserRound, Pencil, Cog, TrendingUp, Brain, BookOpen, Image, Sparkles, FileText } from "lucide-react";
+import { GraduationCap, Building2, Briefcase, ArrowRight, Bot, MessageSquare, Mic, Globe, Palette, Zap, Phone, Share2, Video, UserRound, Pencil, Cog, TrendingUp, Brain, BookOpen, Image, Sparkles, FileText, Linkedin, Target, PenTool, Compass, Megaphone, Users } from "lucide-react";
 import sandraIA from "@/assets/sandra-tello-ia.jpg";
 import mentorshipPixar from "@/assets/training-mentorship-pixar.png";
 import sandraFormacionIA from "@/assets/sandra-tello-formacion-ia.png";
