@@ -145,6 +145,10 @@ const HeroClassic = () => {
                 Vivimos rodeadas de herramientas, algoritmos y promesas de productividad. Y aun así, lo que sigue marcando la diferencia es profundamente humano: <span className="text-white font-medium">criterio, mirada estratégica y una voz que se reconoce</span>. Esa voz es tu marca personal. Y cuando la articulas con marketing consciente e inteligencia artificial, dejas de ser invisible.
               </p>
 
+              <p className="text-white/80 text-[16px] md:text-[17px] leading-relaxed mb-5">
+                Sé lo que es no sentirse vista. Tras una despedida, entré en una depresión profunda donde me sentí invisible e inválida. Pasé por procesos duros que ahora me permiten entender lo que sufren muchas personas. Por eso acompaño desde mi propia vivencia.
+              </p>
+
               <p className="text-white/80 text-[16px] md:text-[17px] leading-relaxed mb-8">
                 Por eso trabajo así: IA y marketing al servicio de quién eres, no al revés. Estrategia para tomar mejores decisiones. Y la felicidad —esa sí, real— de dedicar tu tiempo a <span className="italic gold-gradient-text">crear la vida que amas</span> desde una marca que te representa.
               </p>
