@@ -40,10 +40,10 @@ const BlogSection = () => {
             Blog
           </p>
           <h2 className="font-serif text-3xl md:text-4xl lg:text-[44px] font-medium text-primary mb-5 leading-[1.2]">
-            Artículos sobre IA, estrategia y posicionamiento
+            Artículos sobre estrategia, marca personal, marketing e IA
           </h2>
           <p className="text-muted-foreground text-[17px] leading-relaxed">
-            Contenido práctico para profesionales que quieren crecer con inteligencia.
+            Contenido práctico para profesionales y empresas que quieren crecer con criterio, no solo con herramientas.
           </p>
         </div>
 
