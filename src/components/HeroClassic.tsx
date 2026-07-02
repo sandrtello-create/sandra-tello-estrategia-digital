@@ -111,7 +111,7 @@ const HeroClassic = () => {
             {/* Photo side */}
             <div className="relative flex items-center lg:items-end justify-center order-1 lg:self-end">
               <div className="relative w-full max-w-[280px] md:max-w-[360px] lg:max-w-[520px]">
-                <div className="relative">
+              <div className="relative">
                   {/* Soft glow behind photo */}
                   <div className="absolute -inset-8 blur-3xl opacity-20" style={{ background: 'radial-gradient(ellipse, rgba(203,170,96,0.3) 0%, transparent 70%)' }} />
                   <img
@@ -125,6 +125,10 @@ const HeroClassic = () => {
                   {/* Side fades */}
                   <div className="absolute top-0 left-0 bottom-0 w-16 z-20" style={{ background: 'linear-gradient(to right, rgba(37,40,68,0.6), transparent)' }} />
                 </div>
+                {/* Credentials */}
+                <p className="text-right text-white/50 text-[11px] md:text-xs font-sans leading-relaxed mt-3 pr-2">
+                  Graduada en Derecho y ADE · Máster en Marketing · Mediadora
+                </p>
               </div>
             </div>
 
