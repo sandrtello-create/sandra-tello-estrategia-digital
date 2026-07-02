@@ -146,55 +146,36 @@ const HeroClassic = () => {
             </div>
 
             {/* Text side */}
-            <div className="max-w-2xl order-2 pt-8 pb-20 lg:py-0 lg:pl-8">
+            <div className="max-w-2xl order-2 pt-8 pb-16 lg:py-0 lg:pl-8">
               <div className="flex items-center gap-3 mb-6">
                 <div className="h-px w-10" style={{ background: 'linear-gradient(90deg, #a47633, #cbaa60)' }} />
                 <p className="font-sans text-[11px] font-semibold uppercase tracking-[0.25em] gold-gradient-text">
-                  Consultoría estratégica, IA, marketing y marca personal
+                  El factor humano en la era de la IA
                 </p>
               </div>
 
-              <h1 className="font-serif text-[32px] md:text-[40px] lg:text-[46px] font-semibold text-white leading-[1.15] mb-2">
-                Consultora estratégica en inteligencia artificial y marca personal
-              </h1>
+              <h2 className="font-serif text-[30px] md:text-[38px] lg:text-[44px] font-semibold text-white leading-[1.2] mb-5">
+                Soy Sandra Tello. Ayudo a personas y equipos a poner la tecnología <span className="italic gold-gradient-text">al servicio de su valor</span>.
+              </h2>
 
-              <p className="font-serif text-[22px] md:text-[26px] lg:text-[30px] italic gold-gradient-text mb-6 leading-snug">
-                Crea la vida que amas
+              <p className="text-white/75 text-[16px] md:text-[17px] leading-relaxed mb-5">
+                Llevo más de veinte años en negocio, marketing y estrategia digital. Los últimos, formando a profesionales en inteligencia artificial y acompañando 1:1 a quienes quieren dejar de ser invisibles en su sector.
               </p>
 
-              {/* Rotating phrases */}
-              <div className="mb-8 overflow-hidden">
-                <div
-                  className="inline-block"
-                  style={{
-                    opacity: isVisible ? 1 : 0,
-                    transform: isVisible ? 'translateY(0) scale(1.05)' : 'translateY(20px) scale(0.9)',
-                    transition: 'all 0.6s cubic-bezier(0.16, 1, 0.3, 1)',
-                  }}
-                >
-                  <span
-                    className="inline-block px-6 py-2.5 rounded-md font-sans text-[15px] md:text-[17px] font-medium gold-gradient-text"
-                    style={{
-                      border: '2px solid',
-                      borderImage: 'linear-gradient(135deg, #a47633, #cbaa60, #f7d57b) 1',
-                      boxShadow: isVisible ? '0 0 20px rgba(203,170,96,0.2)' : 'none',
-                      transition: 'all 0.6s ease',
-                    }}
-                  >
-                    {rotatingPhrases[currentPhrase].text}
-                  </span>
-                </div>
-              </div>
+              <p className="text-white/75 text-[16px] md:text-[17px] leading-relaxed mb-8">
+                No creo en la IA sin criterio humano. Creo en usarla para <span className="text-white font-medium">recuperar tiempo, ganar claridad y crear la vida que amas</span> — sin perder tu voz por el camino.
+              </p>
 
               <div className="flex flex-col sm:flex-row gap-4">
-                <button className="btn-gold-gradient rounded-full px-10 py-5 text-[13px] font-bold uppercase tracking-[0.15em] inline-flex items-center justify-center gap-2 shadow-lg shadow-[rgba(164,118,51,0.3)] hover:scale-105 hover:shadow-xl hover:shadow-[rgba(164,118,51,0.4)] transition-all duration-300">
+                <button className="btn-gold-gradient rounded-full px-9 py-4 text-[13px] font-bold uppercase tracking-[0.15em] inline-flex items-center justify-center gap-2 shadow-lg shadow-[rgba(164,118,51,0.3)] hover:scale-105 hover:shadow-xl hover:shadow-[rgba(164,118,51,0.4)] transition-all duration-300">
                   Diseña tu estrategia conmigo
                   <ArrowRight className="h-4 w-4" />
                 </button>
-                <button className="rounded-full px-10 py-5 text-[13px] font-bold uppercase tracking-[0.15em] border-2 border-white/20 text-white hover:text-[#cbaa60] hover:border-[#cbaa60]/60 hover:bg-[#cbaa60]/10 hover:shadow-lg hover:shadow-[rgba(203,170,96,0.15)] transition-all duration-300 inline-flex items-center justify-center backdrop-blur-sm">
+                <button className="rounded-full px-9 py-4 text-[13px] font-bold uppercase tracking-[0.15em] border-2 border-white/20 text-white hover:text-[#cbaa60] hover:border-[#cbaa60]/60 hover:bg-[#cbaa60]/10 transition-all duration-300 inline-flex items-center justify-center backdrop-blur-sm">
                   ¿Cómo puedo ayudarte?
                 </button>
               </div>
+
 
               {/* Credibility markers */}
               <div ref={statsRef} className="mt-16 pt-8 border-t border-white/10">
