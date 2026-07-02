@@ -147,14 +147,6 @@ const ServiceItem = ({
             {service.description}
           </p>
 
-          <a
-            href="#contacto"
-            className="inline-flex items-center gap-2 text-accent font-semibold text-[13px] tracking-wide hover:gap-3 transition-all duration-300 mb-5"
-          >
-            {service.cta}
-            <ArrowRight className="h-4 w-4" />
-          </a>
-
           {/* Toggle button */}
           <button
             onClick={() => setExpanded(!expanded)}
