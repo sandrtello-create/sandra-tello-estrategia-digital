@@ -41,7 +41,7 @@ const Card = ({ p }: { p: Profile }) => {
   const Icon = p.icon;
   return (
     <article className="shrink-0 w-[200px] h-[280px] group">
-      <div className="h-full flex flex-col bg-[hsl(220_35%_14%)] border border-gold/40 group-hover:border-gold transition-all duration-300 p-2.5 group-hover:-translate-y-1 shadow-lg">
+      <div className="h-full flex flex-col bg-navy border border-gold/40 group-hover:border-gold transition-all duration-300 p-2.5 group-hover:-translate-y-1 shadow-lg">
         {/* Icono */}
         <div
           className="aspect-square relative overflow-hidden"
