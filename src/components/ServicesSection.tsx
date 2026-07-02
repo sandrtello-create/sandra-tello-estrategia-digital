@@ -187,7 +187,7 @@ const ServiceItem = ({
               <div className="mt-8 flex flex-wrap items-center gap-3">
                 <a
                   href="#contacto"
-                  className="inline-flex items-center gap-3 bg-primary text-accent px-7 py-3.5 rounded-xl font-semibold text-base tracking-wide hover:shadow-xl hover:scale-[1.03] transition-all duration-300"
+                  className="inline-flex items-center gap-3 bg-primary text-accent px-7 py-3.5 rounded-xl font-semibold text-base tracking-wide hover:bg-primary/90 hover:shadow-lg transition-all duration-300"
                 >
                   {service.cta}
                   <ArrowRight className="h-5 w-5" />
@@ -196,7 +196,7 @@ const ServiceItem = ({
                 {service.portfolioSlug && (
                   <Link
                     to={`/servicios/${service.portfolioSlug}`}
-                    className="inline-flex items-center gap-2 bg-accent text-primary px-7 py-3.5 rounded-xl font-semibold text-base tracking-wide hover:shadow-xl hover:scale-[1.03] transition-all duration-300"
+                    className="inline-flex items-center gap-2 bg-accent text-primary px-7 py-3.5 rounded-xl font-semibold text-base tracking-wide hover:bg-accent/90 hover:shadow-lg transition-all duration-300"
                   >
                     Ver proyectos con empresas
                     <ArrowRight className="h-5 w-5" />
