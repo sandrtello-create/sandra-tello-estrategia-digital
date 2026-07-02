@@ -87,7 +87,6 @@ const ServiceItem = ({
 }) => {
   const [hovered, setHovered] = useState(false);
   const [expanded, setExpanded] = useState(false);
-  const [hoveredArchetype, setHoveredArchetype] = useState<ArchetypeKey>(null);
   const contentRef = useRef<HTMLDivElement>(null);
   const num = String(index + 1).padStart(2, "0");
 
