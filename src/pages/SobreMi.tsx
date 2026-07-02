@@ -1,5 +1,6 @@
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
+import SEO from "@/components/SEO";
 import logoWatermark from "@/assets/sandra-logo-watermark.png";
 import sandraAbout from "@/assets/sandra-tello-about.jpg";
 import { ArrowLeft } from "lucide-react";
@@ -7,6 +8,13 @@ import { ArrowLeft } from "lucide-react";
 const SobreMi = () => {
   return (
     <div className="min-h-screen bg-background relative overflow-hidden">
+      <SEO
+        title="Sobre Sandra Tello — Consultora estratégica en IA y marca personal"
+        description="Conoce a Sandra Tello: método, trayectoria y convicción para ayudarte a posicionar tu marca personal y aplicar IA a tu negocio."
+        path="/sobre-mi"
+        type="profile"
+      />
+
       {/* Watermark pattern */}
       <div
         className="fixed inset-0 opacity-[0.05] pointer-events-none z-0"

@@ -2,7 +2,9 @@ import { useParams, Link } from "react-router-dom";
 import { profiles } from "@/data/profiles";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
+import SEO from "@/components/SEO";
 import { ArrowLeft, Linkedin, Users, TrendingUp, BarChart2, Quote, Eye, Calendar } from "lucide-react";
+
 
 const PerfilDetalle = () => {
   const { slug } = useParams<{ slug: string }>();
@@ -30,7 +32,14 @@ const PerfilDetalle = () => {
 
   return (
     <div className="min-h-screen bg-background">
+      <SEO
+        title={`${profile.name} — Caso de éxito | Sandra Tello`}
+        description={`Cómo Sandra Tello ayudó a ${profile.name} a posicionar su marca personal y crecer en su sector.`}
+        path={`/perfiles/${profile.slug}`}
+        type="profile"
+      />
       <Navbar />
+
 
       {/* Hero */}
       <section className="pt-32 pb-16 bg-primary text-primary-foreground">
