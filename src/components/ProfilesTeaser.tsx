@@ -1,78 +1,80 @@
-import { Linkedin } from "lucide-react";
+import {
+  Search,
+  HeartPulse,
+  TrendingUp,
+  Briefcase,
+  Bitcoin,
+  LineChart,
+  Compass,
+  Users,
+  GraduationCap,
+  Cpu,
+  Mic,
+  Sparkles,
+  Linkedin,
+  type LucideIcon,
+} from "lucide-react";
 
 type Profile = {
-  sector: string; // shown as the "name" line
-  role: string;   // shown as the role line
-  bg: string;
-  accent: string;
+  sector: string; // "name" line
+  role: string;   // subtitle
+  icon: LucideIcon;
+  tint: string;   // hsl for icon + subtle bg tint
 };
 
 const profiles: Profile[] = [
-  { sector: "Experto en SEO", role: "Referente digital", bg: "#2a3a5e", accent: "#e8c078" },
-  { sector: "Salud integrativa", role: "Profesional del bienestar", bg: "#1e4a3a", accent: "#a8d8b8" },
-  { sector: "Director de marketing", role: "Marca personal ejecutiva", bg: "#1b2a4a", accent: "#c5a55a" },
-  { sector: "CEO y fundador", role: "Liderazgo empresarial", bg: "#3a2a1e", accent: "#e8b878" },
-  { sector: "Web3 e innovación", role: "Proyecto tecnológico cripto", bg: "#3a2a5e", accent: "#a89ee8" },
-  { sector: "Finanzas e inversión", role: "Perfil B2B de credibilidad", bg: "#1e3a4a", accent: "#7fc8d8" },
-  { sector: "Consultor estratégico", role: "Asesoría experta sénior", bg: "#3a2e2a", accent: "#d4a574" },
-  { sector: "Coach ejecutivo", role: "Acompañamiento a directivos", bg: "#2a2a4e", accent: "#c5a55a" },
-  { sector: "Formación online", role: "Educación y certificación", bg: "#4a2e3a", accent: "#e8b4c8" },
-  { sector: "IA aplicada", role: "Equipo profesional en IA", bg: "#1e2e4e", accent: "#a8d0e8" },
-  { sector: "Comunicadora y speaker", role: "Alta exposición pública", bg: "#4a2a2a", accent: "#e88a78" },
-  { sector: "Sector belleza premium", role: "Negocio local de referencia", bg: "#4a2a4a", accent: "#f0c8d8" },
-  { sector: "Consultora de imagen", role: "Marca profesional personal", bg: "#2e2a4a", accent: "#c8b8e8" },
-  { sector: "Experto en liderazgo", role: "Autoridad en su sector", bg: "#1e3e3e", accent: "#a8d8c8" },
-  { sector: "Marca personal", role: "Perfil experto de referencia", bg: "#1b2a4a", accent: "#c5a55a" },
-  { sector: "Alta visibilidad pública", role: "Perfil mediático", bg: "#3e2e1e", accent: "#e8c078" },
+  { sector: "Experto en SEO", role: "Posicionamiento y visibilidad", icon: Search, tint: "38 65% 58%" },
+  { sector: "Salud integrativa", role: "Profesional del bienestar", icon: HeartPulse, tint: "150 45% 58%" },
+  { sector: "Director de marketing", role: "Marca personal ejecutiva", icon: TrendingUp, tint: "210 60% 62%" },
+  { sector: "CEO y fundador", role: "Liderazgo empresarial", icon: Briefcase, tint: "42 60% 58%" },
+  { sector: "Web3 e innovación", role: "Proyecto tecnológico cripto", icon: Bitcoin, tint: "265 55% 68%" },
+  { sector: "Finanzas e inversión", role: "Perfil B2B de credibilidad", icon: LineChart, tint: "185 50% 55%" },
+  { sector: "Consultor estratégico", role: "Asesoría experta sénior", icon: Compass, tint: "25 55% 58%" },
+  { sector: "Coach ejecutivo", role: "Acompañamiento a directivos", icon: Users, tint: "340 50% 62%" },
+  { sector: "Formación online", role: "Educación y certificación", icon: GraduationCap, tint: "200 55% 58%" },
+  { sector: "IA aplicada", role: "Equipo profesional en IA", icon: Cpu, tint: "220 60% 62%" },
+  { sector: "Comunicadora y speaker", role: "Alta exposición pública", icon: Mic, tint: "10 60% 62%" },
+  { sector: "Marca personal premium", role: "Perfil experto de referencia", icon: Sparkles, tint: "42 60% 58%" },
 ];
 
-const Portrait = ({ bg, accent, seed }: { bg: string; accent: string; seed: number }) => {
-  const shoulderW = 130 + (seed % 3) * 6;
-  const headY = 92 + (seed % 4) * 2;
+const Card = ({ p }: { p: Profile }) => {
+  const Icon = p.icon;
   return (
-    <svg viewBox="0 0 200 200" className="absolute inset-0 w-full h-full" preserveAspectRatio="xMidYMid slice">
-      <defs>
-        <linearGradient id={`g${seed}`} x1="0" y1="0" x2="0" y2="1">
-          <stop offset="0%" stopColor={bg} stopOpacity="1" />
-          <stop offset="100%" stopColor="#0f1a30" stopOpacity="1" />
-        </linearGradient>
-        <radialGradient id={`spot${seed}`} cx="0.5" cy="0.35" r="0.6">
-          <stop offset="0%" stopColor={accent} stopOpacity="0.32" />
-          <stop offset="100%" stopColor={accent} stopOpacity="0" />
-        </radialGradient>
-      </defs>
-      <rect width="200" height="200" fill={`url(#g${seed})`} />
-      <rect width="200" height="200" fill={`url(#spot${seed})`} />
-      <path
-        d={`M ${100 - shoulderW / 2} 200 Q 100 ${145} ${100 + shoulderW / 2} 200 Z`}
-        fill={accent}
-        opacity="0.9"
-      />
-      <rect x="90" y="128" width="20" height="18" fill={accent} opacity="0.9" />
-      <ellipse cx="100" cy={headY} rx="26" ry="30" fill={accent} opacity="0.98" />
-      <ellipse cx="115" cy={headY - 6} rx="6" ry="18" fill="#fff" opacity="0.14" />
-    </svg>
+    <article className="shrink-0 w-[210px] group">
+      {/* Foto / icono */}
+      <div
+        className="aspect-square relative overflow-hidden border border-primary-foreground/10 group-hover:border-accent/50 transition-colors"
+        style={{
+          background: `linear-gradient(160deg, hsl(${p.tint} / 0.18), hsl(220 40% 10%) 78%)`,
+        }}
+      >
+        <div
+          className="absolute -top-10 -right-10 w-36 h-36 rounded-full blur-3xl opacity-50 transition-opacity duration-500 group-hover:opacity-80"
+          style={{ background: `hsl(${p.tint} / 0.55)` }}
+        />
+        <div className="absolute inset-0 flex items-center justify-center">
+          <Icon
+            className="h-16 w-16 transition-transform duration-500 group-hover:scale-110"
+            style={{ color: `hsl(${p.tint})` }}
+            strokeWidth={1.25}
+          />
+        </div>
+      </div>
+      {/* Info (idéntico al diseño de referencia) */}
+      <div className="pt-3 pb-1">
+        <div className="flex items-center justify-between gap-2">
+          <span className="font-semibold text-sm text-primary-foreground leading-snug">
+            {p.sector}
+          </span>
+          <Linkedin className="h-3.5 w-3.5 shrink-0 text-accent" />
+        </div>
+        <span className="text-xs text-primary-foreground/60 leading-tight block mt-0.5">
+          {p.role}
+        </span>
+      </div>
+    </article>
   );
 };
-
-const Card = ({ p, i }: { p: Profile; i: number }) => (
-  <article className="shrink-0 w-[200px] group">
-    <div className="aspect-square overflow-hidden relative border border-primary-foreground/10 group-hover:border-accent/50 transition-colors">
-      <Portrait bg={p.bg} accent={p.accent} seed={i + 1} />
-    </div>
-    <div className="pt-3 pb-1 px-1">
-      <div className="flex items-start justify-between gap-2">
-        <span className="font-semibold text-sm text-primary-foreground leading-snug">
-          {p.sector}
-        </span>
-        <Linkedin className="h-3.5 w-3.5 shrink-0 text-accent opacity-70 mt-0.5" />
-      </div>
-      <span className="text-xs text-primary-foreground/60 leading-tight block mt-0.5">
-        {p.role}
-      </span>
-    </div>
-  </article>
-);
 
 const ProfilesTeaser = () => {
   const loop = [...profiles, ...profiles];
@@ -89,7 +91,7 @@ const ProfilesTeaser = () => {
           </h2>
           <div className="space-y-3 text-primary-foreground/75 text-[15px] leading-relaxed">
             <p>
-              He acompañado a profesionales de sectores muy distintos a diseñar su estrategia de marca personal y a crear contenido que les posiciona como referentes.
+              He acompañado a profesionales de sectores muy distintos a diseñar su estrategia de marca personal y a crear el contenido que les posiciona como referentes.
             </p>
             <p className="text-primary-foreground/50 italic text-[13px]">
               Por confidencialidad profesional, no se muestran nombres, iniciales, fotos, marcas ni logos. Solo el tipo de perfil trabajado.
@@ -98,7 +100,7 @@ const ProfilesTeaser = () => {
         </div>
       </div>
 
-      {/* Marquee carousel */}
+      {/* Carrusel */}
       <div
         className="relative w-full overflow-hidden"
         style={{
@@ -106,9 +108,9 @@ const ProfilesTeaser = () => {
           WebkitMaskImage: "linear-gradient(to right, transparent, black 6%, black 94%, transparent)",
         }}
       >
-        <div className="flex gap-5 animate-marquee hover:[animation-play-state:paused] w-max">
+        <div className="flex gap-5 animate-marquee hover:[animation-play-state:paused] w-max px-6">
           {loop.map((p, i) => (
-            <Card key={i} p={p} i={i % profiles.length} />
+            <Card key={i} p={p} />
           ))}
         </div>
       </div>
