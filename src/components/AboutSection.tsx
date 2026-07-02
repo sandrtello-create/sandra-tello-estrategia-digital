@@ -24,8 +24,15 @@ const AboutSection = () => {
                 src={sandraAbout}
                 alt="Sandra Tello"
                 className="w-full h-full object-cover object-top"
-              />
-            </div>
+            />
+          </div>
+
+          {/* Credentials under photo */}
+          <div className="mt-6 pt-5 border-t border-border/60">
+            <p className="text-muted-foreground text-sm leading-relaxed tracking-wide">
+              Graduada en Derecho · Administración y Dirección de Empresas · Máster en Dirección Comercial y Marketing · Máster en Inteligencia Artificial · Mediadora
+            </p>
+          </div>
           </div>
 
           {/* Content */}
@@ -72,12 +79,6 @@ const AboutSection = () => {
               seguir aprendiendo siempre.
             </p>
 
-            {/* Credentials */}
-            <div className="mt-8 pt-6 border-t border-border/60">
-              <p className="text-muted-foreground text-sm leading-relaxed tracking-wide">
-                Graduada en Derecho · Administración y Dirección de Empresas · Máster en Dirección Comercial y Marketing · Máster en Inteligencia Artificial · Mediadora
-              </p>
-            </div>
           </div>
         </div>
 
