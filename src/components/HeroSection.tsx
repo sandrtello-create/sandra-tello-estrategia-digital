@@ -82,52 +82,52 @@ const HeroSection = () => {
         />
       </div>
 
-      {/* ============ CONTENIDO — SÓLO TITULAR + FRASE ============ */}
+      {/* ============ CONTENIDO ============ */}
       <div className="container mx-auto px-6 lg:px-8 relative z-10 py-24">
         <div className="max-w-4xl mx-auto text-center">
-          {/* H1 — descriptor real (más pequeño) */}
-          <h1 className="font-sans text-white/85 text-[14px] md:text-[15px] lg:text-[16px] font-medium leading-relaxed tracking-wide max-w-3xl mx-auto mb-6">
-            Consultora estratégica en IA, marca personal y marketing para quienes no quieren que otros decidan su valor.
-          </h1>
-
-          {/* Titular visual (kicker grande) */}
-          <p className="font-serif font-semibold text-white leading-[1.1] tracking-tight mb-10" aria-hidden="true">
-            <span className="block text-[28px] sm:text-[38px] md:text-[48px] lg:text-[58px]">
-              {HEADLINE_LEFT}
-            </span>
-            <span
-              className="block text-[28px] sm:text-[38px] md:text-[48px] lg:text-[58px] italic"
-              style={{ color: "#e6c67a" }}
-            >
-              {HEADLINE_RIGHT}
-            </span>
-          </p>
-
-          {/* Frase rotativa */}
-          <div className="min-h-[6rem] md:min-h-[5rem] flex items-center justify-center mb-10">
-            <p
-              key={currentLine}
-              className="font-serif text-white text-[18px] md:text-[22px] lg:text-[24px] leading-snug max-w-3xl transition-all duration-700"
-              style={{
-                opacity: lineVisible ? 1 : 0,
-                transform: lineVisible ? "translateY(0)" : "translateY(12px)",
-                textShadow: "0 2px 20px rgba(0,0,0,0.5)",
-              }}
-            >
-              {rotatingLines[currentLine]}
+          {/* Eyebrow / kicker */}
+          <div className="flex items-center justify-center gap-3 mb-8">
+            <span className="h-px w-8 bg-[#e6c67a]/60" />
+            <p className="font-sans text-[10px] md:text-[11px] font-semibold uppercase tracking-[0.32em] text-[#e6c67a]">
+              Consultora estratégica · IA · Marca personal · Marketing
             </p>
+            <span className="h-px w-8 bg-[#e6c67a]/60" />
           </div>
 
+          {/* H1 — una sola frase que fluye natural */}
+          <h1 className="font-serif font-semibold text-white leading-[1.08] tracking-tight mb-8 text-[32px] sm:text-[42px] md:text-[54px] lg:text-[64px]">
+            Si tú no decides tu valor,{" "}
+            <span className="italic" style={{ color: "#e6c67a" }}>
+              otros lo deciden por ti.
+            </span>
+          </h1>
+
+          {/* Subtítulo fijo — promesa aspiracional */}
+          <p
+            className="font-serif text-white/90 text-[17px] md:text-[20px] lg:text-[22px] leading-relaxed max-w-2xl mx-auto mb-10"
+            style={{ textShadow: "0 2px 20px rgba(0,0,0,0.5)" }}
+          >
+            Te acompaño a construir la marca, la estrategia y el criterio con IA
+            que te convierten en <span className="italic text-[#e6c67a]">referente de tu sector</span> — sin dejar de ser tú.
+          </p>
+
           {/* CTA */}
-          <div className="flex justify-center">
+          <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
             <a
               href="#contacto"
               className="inline-flex items-center justify-center gap-2 rounded-full px-9 py-4 text-[13px] font-bold uppercase tracking-[0.15em] text-[#0f1a30] bg-[#e6c67a] hover:bg-[#f0d78c] hover:scale-105 transition-all duration-300 shadow-[0_0_30px_rgba(230,198,122,0.35)] hover:shadow-[0_0_45px_rgba(230,198,122,0.5)]"
             >
-              Diseña tu estrategia conmigo
+              Quiero ser referente en mi sector
               <ArrowRight className="h-4 w-4" />
             </a>
+            <a
+              href="#servicios"
+              className="inline-flex items-center justify-center gap-2 rounded-full px-8 py-4 text-[12px] font-semibold uppercase tracking-[0.15em] text-white/85 border border-white/25 hover:text-[#e6c67a] hover:border-[#e6c67a]/60 transition-all duration-300"
+            >
+              Cómo trabajo
+            </a>
           </div>
+
         </div>
       </div>
 
