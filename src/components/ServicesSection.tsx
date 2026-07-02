@@ -147,6 +147,14 @@ const ServiceItem = ({
             {service.description}
           </p>
 
+          <a
+            href="#contacto"
+            className="inline-flex items-center gap-2 text-accent font-semibold text-[13px] tracking-wide hover:gap-3 transition-all duration-300 mb-5"
+          >
+            {service.cta}
+            <ArrowRight className="h-4 w-4" />
+          </a>
+
           {/* Toggle button */}
           <button
             onClick={() => setExpanded(!expanded)}
@@ -231,13 +239,6 @@ const ServicesSection = () => {
           <h2 className="font-serif text-3xl md:text-4xl lg:text-[44px] font-medium text-primary mb-6 leading-[1.2]">
             Estrategia digital con criterio humano
           </h2>
-          <p className="text-muted-foreground text-[17px] leading-relaxed mb-6">
-            He visto cómo la tecnología acelera todo y, a la vez, cómo el exceso de herramientas sin dirección desorienta.
-            Mi trabajo no es aplicar IA por aplicarla: es entender qué necesita tu negocio, qué te diferencia como profesional y diseñar un camino donde la inteligencia artificial sirva a tu estrategia, no al revés.
-          </p>
-          <div className="flex justify-center mb-6">
-            <div className="h-px w-10 bg-accent/40" />
-          </div>
           <p className="text-primary/80 text-[15px] leading-relaxed">
             Para profesionales y empresas que quieren ordenar su estrategia,
             posicionar su valor y utilizar la inteligencia artificial con criterio.
