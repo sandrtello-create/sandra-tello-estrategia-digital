@@ -183,28 +183,26 @@ const ServiceItem = ({
                 {service.details.closing}
               </p>
 
-              {/* Service CTA */}
-              <a
-                href="#contacto"
-                className="mt-8 inline-flex items-center gap-3 bg-primary text-accent px-7 py-3.5 rounded-xl font-semibold text-base tracking-wide hover:shadow-xl hover:scale-[1.03] transition-all duration-300"
-              >
-                {service.cta}
-                <ArrowRight className="h-5 w-5" />
-              </a>
+              {/* CTAs */}
+              <div className="mt-8 flex flex-wrap items-center gap-3">
+                <a
+                  href="#contacto"
+                  className="inline-flex items-center gap-3 bg-primary text-accent px-7 py-3.5 rounded-xl font-semibold text-base tracking-wide hover:shadow-xl hover:scale-[1.03] transition-all duration-300"
+                >
+                  {service.cta}
+                  <ArrowRight className="h-5 w-5" />
+                </a>
 
-              {/* Portfolio CTA */}
-              {service.portfolioSlug && (
-                <div className="mt-8">
-                  <div className="h-px w-full bg-border/60 mb-6" />
+                {service.portfolioSlug && (
                   <Link
                     to={`/servicios/${service.portfolioSlug}`}
-                    className="inline-flex items-center gap-3 bg-primary text-accent px-7 py-3.5 rounded-xl font-semibold text-base tracking-wide hover:shadow-xl hover:scale-[1.03] transition-all duration-300"
+                    className="inline-flex items-center gap-2 text-primary px-5 py-3.5 rounded-xl font-medium text-sm tracking-wide border border-primary/25 hover:border-primary hover:bg-primary/5 transition-all duration-300"
                   >
-                    Proyectos con empresas
-                    <ArrowRight className="h-5 w-5" />
+                    Ver proyectos con empresas
+                    <ArrowRight className="h-4 w-4" />
                   </Link>
-                </div>
-              )}
+                )}
+              </div>
 
             </div>
           </div>
