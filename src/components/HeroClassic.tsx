@@ -100,8 +100,8 @@ const HeroClassic = () => {
     return () => clearInterval(interval);
   }, []);
   return (
-    <section id="inicio" className="relative overflow-hidden pt-28">
-      <div className="relative min-h-[calc(100vh-7rem)] flex items-center" style={{
+    <section id="sobre-mi" className="relative overflow-hidden">
+      <div className="relative py-16 lg:py-20 flex items-center" style={{
         background: 'linear-gradient(135deg, #212334 0%, #252844 30%, #303f69 70%, #252844 100%)'
       }}>
         {/* Abstract depth shapes */}
