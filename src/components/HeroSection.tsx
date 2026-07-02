@@ -107,8 +107,10 @@ const HeroSection = () => {
             className="font-serif text-white/90 text-[17px] md:text-[20px] lg:text-[22px] leading-relaxed max-w-2xl mx-auto mb-10"
             style={{ textShadow: "0 2px 20px rgba(0,0,0,0.5)" }}
           >
-            Te acompaño a construir la marca, la estrategia y el criterio con IA
-            que te convierten en <span className="italic text-[#e6c67a]">referente de tu sector</span> — sin dejar de ser tú.
+            Te acompaño a construir un posicionamiento digital coherente.
+            Marca personal para visibilidad y autoridad, estrategia y marketing
+            para posicionamiento e Inteligencia Artificial porque ya no es una
+            ventaja competitiva: es tu nueva realidad.
           </p>
 
           {/* CTA */}
@@ -117,7 +119,7 @@ const HeroSection = () => {
               href="#contacto"
               className="inline-flex items-center justify-center gap-2 rounded-full px-9 py-4 text-[13px] font-bold uppercase tracking-[0.15em] text-[#0f1a30] bg-[#e6c67a] hover:bg-[#f0d78c] hover:scale-105 transition-all duration-300 shadow-[0_0_30px_rgba(230,198,122,0.35)] hover:shadow-[0_0_45px_rgba(230,198,122,0.5)]"
             >
-              Quiero ser referente en mi sector
+              Mi valor lo decido yo
               <ArrowRight className="h-4 w-4" />
             </a>
             <a
