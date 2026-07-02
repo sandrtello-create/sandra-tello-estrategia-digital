@@ -125,10 +125,6 @@ const HeroClassic = () => {
                   {/* Side fades */}
                   <div className="absolute top-0 left-0 bottom-0 w-16 z-20" style={{ background: 'linear-gradient(to right, rgba(37,40,68,0.6), transparent)' }} />
                 </div>
-                {/* Credentials */}
-                <p className="text-right text-white/50 text-[11px] md:text-xs font-sans leading-relaxed mt-3 pr-2">
-                  Graduada en Derecho y ADE · Máster en Marketing · Mediadora
-                </p>
               </div>
             </div>
 
@@ -149,9 +145,6 @@ const HeroClassic = () => {
                 Vivimos rodeadas de herramientas, algoritmos y promesas de productividad. Y aun así, lo que sigue marcando la diferencia es profundamente humano: <span className="text-white font-medium">criterio, mirada estratégica y una voz que se reconoce</span>. Esa voz es tu marca personal. Y cuando la articulas con marketing consciente e inteligencia artificial, dejas de ser invisible.
               </p>
 
-              <p className="text-white/80 text-[16px] md:text-[17px] leading-relaxed mb-5">
-                Sé lo que es no sentirse vista. Tras una despedida, entré en una depresión profunda donde me sentí invisible e inválida. Pasé por procesos duros que ahora me permiten entender lo que sufren muchas personas. Por eso acompaño desde mi propia vivencia.
-              </p>
 
               <p className="text-white/80 text-[16px] md:text-[17px] leading-relaxed mb-8">
                 Por eso trabajo así: IA y marketing al servicio de quién eres, no al revés. Estrategia para tomar mejores decisiones. Y la felicidad —esa sí, real— de dedicar tu tiempo a <span className="italic gold-gradient-text">crear la vida que amas</span> desde una marca que te representa.
