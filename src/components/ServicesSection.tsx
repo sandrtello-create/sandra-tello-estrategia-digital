@@ -263,6 +263,21 @@ const ServicesSection = () => {
           ))}
         </div>
 
+        {/* Herramienta transversal */}
+        <div className="max-w-3xl mx-auto mt-16 pt-10 border-t border-border/40">
+          <div className="text-center">
+            <p className="text-[11px] font-semibold uppercase tracking-[0.2em] text-accent mb-4">
+              Metodología
+            </p>
+            <h3 className="font-serif text-2xl md:text-3xl text-primary mb-5 leading-snug">
+              Conozco a fondo cada perfil para potenciar su liderazgo
+            </h3>
+            <p className="text-muted-foreground text-[17px] leading-relaxed max-w-2xl mx-auto">
+              No importa si trabajamos tu marca personal, la estrategia de tu empresa o la visibilidad de tu equipo: entender cómo piensa, se comunica y toma decisiones cada profesional es parte de mi proceso. Aplico esta comprensión en cada proyecto para diseñar una estrategia que realmente encaje contigo.
+            </p>
+          </div>
+        </div>
+
         {/* CTA final */}
         <div className="max-w-3xl mx-auto mt-16 pt-10 border-t border-border/40">
           <div className="text-center">
