@@ -40,41 +40,44 @@ const profiles: Profile[] = [
 const Card = ({ p }: { p: Profile }) => {
   const Icon = p.icon;
   return (
-    <article className="shrink-0 w-[210px] group">
-      {/* Foto / icono */}
-      <div
-        className="aspect-square relative overflow-hidden border border-primary-foreground/10 group-hover:border-accent/50 transition-colors"
-        style={{
-          background: `linear-gradient(160deg, hsl(${p.tint} / 0.18), hsl(220 40% 10%) 78%)`,
-        }}
-      >
+    <article className="shrink-0 w-[200px] group">
+      <div className="bg-[hsl(220_35%_14%)] border border-primary-foreground/5 group-hover:border-accent/40 transition-all duration-300 p-2.5 group-hover:-translate-y-1 shadow-lg">
+        {/* Icono */}
         <div
-          className="absolute -top-10 -right-10 w-36 h-36 rounded-full blur-3xl opacity-50 transition-opacity duration-500 group-hover:opacity-80"
-          style={{ background: `hsl(${p.tint} / 0.55)` }}
-        />
-        <div className="absolute inset-0 flex items-center justify-center">
-          <Icon
-            className="h-16 w-16 transition-transform duration-500 group-hover:scale-110"
-            style={{ color: `hsl(${p.tint})` }}
-            strokeWidth={1.25}
+          className="aspect-square relative overflow-hidden"
+          style={{
+            background: `linear-gradient(160deg, hsl(${p.tint} / 0.20), hsl(220 40% 10%) 78%)`,
+          }}
+        >
+          <div
+            className="absolute -top-10 -right-10 w-36 h-36 rounded-full blur-3xl opacity-50 transition-opacity duration-500 group-hover:opacity-80"
+            style={{ background: `hsl(${p.tint} / 0.55)` }}
           />
+          <div className="absolute inset-0 flex items-center justify-center">
+            <Icon
+              className="h-14 w-14 transition-transform duration-500 group-hover:scale-110"
+              style={{ color: `hsl(${p.tint})` }}
+              strokeWidth={1.25}
+            />
+          </div>
         </div>
-      </div>
-      {/* Info (idéntico al diseño de referencia) */}
-      <div className="pt-3 pb-1">
-        <div className="flex items-center justify-between gap-2">
-          <span className="font-semibold text-sm text-primary-foreground leading-snug">
-            {p.sector}
+        {/* Info */}
+        <div className="pt-3 pb-1 px-1">
+          <div className="flex items-center justify-between gap-2">
+            <span className="font-semibold text-sm text-primary-foreground leading-snug">
+              {p.sector}
+            </span>
+            <Linkedin className="h-3.5 w-3.5 shrink-0 text-accent" />
+          </div>
+          <span className="text-xs text-primary-foreground/55 leading-tight block mt-1">
+            {p.role}
           </span>
-          <Linkedin className="h-3.5 w-3.5 shrink-0 text-accent" />
         </div>
-        <span className="text-xs text-primary-foreground/60 leading-tight block mt-0.5">
-          {p.role}
-        </span>
       </div>
     </article>
   );
 };
+
 
 const ProfilesTeaser = () => {
   const loop = [...profiles, ...profiles];
