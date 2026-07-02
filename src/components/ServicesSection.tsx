@@ -60,7 +60,6 @@ const services = [
   {
     icon: Users,
     title: "Employee advocacy y liderazgo digital",
-    hasEnneagram: true,
     description:
       "Convierte a los líderes de tu empresa en embajadores de marca. Programas de posicionamiento ejecutivo en LinkedIn y más.",
     details: {
@@ -88,7 +87,6 @@ const ServiceItem = ({
 }) => {
   const [hovered, setHovered] = useState(false);
   const [expanded, setExpanded] = useState(false);
-  const [hoveredArchetype, setHoveredArchetype] = useState<ArchetypeKey>(null);
   const contentRef = useRef<HTMLDivElement>(null);
   const num = String(index + 1).padStart(2, "0");
 
@@ -195,17 +193,6 @@ const ServiceItem = ({
                 </div>
               )}
 
-              {/* Enneagram + Leadership Cards */}
-              {service.hasEnneagram && (
-                <div className="mt-10">
-                  <div className="h-px w-full bg-border/60 mb-8" />
-                  <p className="text-[11px] font-semibold uppercase tracking-[0.2em] text-accent mb-6 text-center">
-                    Conozco a fondo cada perfil para potenciar su liderazgo
-                  </p>
-                  <EnneagramWheel onHoverChange={setHoveredArchetype} />
-                  <LeadershipCards highlightedArchetype={hoveredArchetype} />
-                </div>
-              )}
             </div>
           </div>
         </div>
@@ -216,6 +203,7 @@ const ServiceItem = ({
 
 const ServicesSection = () => {
   const [isVisible, setIsVisible] = useState(false);
+  const [hoveredArchetype, setHoveredArchetype] = useState<ArchetypeKey>(null);
   const sectionRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
@@ -276,6 +264,12 @@ const ServicesSection = () => {
               No importa si trabajamos tu marca personal, la estrategia de tu empresa o la visibilidad de tu equipo: entender cómo piensa, se comunica y toma decisiones cada profesional es parte de mi proceso. Aplico esta comprensión en cada proyecto para diseñar una estrategia que realmente encaje contigo.
             </p>
           </div>
+        </div>
+
+        {/* Eneagrama: herramienta transversal */}
+        <div className="max-w-3xl mx-auto mt-16 pt-10 border-t border-border/40">
+          <EnneagramWheel onHoverChange={setHoveredArchetype} />
+          <LeadershipCards highlightedArchetype={hoveredArchetype} />
         </div>
 
         {/* CTA final */}
