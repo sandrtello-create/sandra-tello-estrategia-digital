@@ -1,177 +1,77 @@
-import type { ReactNode } from "react";
+import { Linkedin } from "lucide-react";
 
 type Profile = {
   sector: string;
   role: string;
-  chips: string[];
-  visual: ReactNode;
+  bg: string;
+  accent: string;
 };
 
-// On-brand abstract tiles (navy + gold, editorial) ---------------------------
-const Tile = ({ children }: { children: ReactNode }) => (
-  <div className="absolute inset-0 bg-primary">
-    <div
-      className="absolute inset-0 opacity-[0.06]"
-      style={{
-        backgroundImage: "radial-gradient(rgba(255,255,255,.5) 1px, transparent 1px)",
-        backgroundSize: "4px 4px",
-      }}
-    />
-    {children}
-  </div>
-);
-
-const TMarketing = () => (
-  <Tile>
-    <svg viewBox="0 0 200 200" className="absolute inset-0 w-full h-full">
-      <circle cx="100" cy="100" r="60" fill="none" stroke="hsl(var(--accent))" strokeWidth="0.8" opacity="0.5" />
-      <circle cx="100" cy="100" r="40" fill="none" stroke="hsl(var(--accent))" strokeWidth="0.8" opacity="0.7" />
-      <circle cx="100" cy="100" r="20" fill="none" stroke="hsl(var(--accent))" strokeWidth="1" />
-      <circle cx="100" cy="100" r="4" fill="hsl(var(--accent))" />
-      {[0, 72, 144, 216, 288].map((a) => {
-        const r = (a * Math.PI) / 180;
-        return <circle key={a} cx={100 + Math.cos(r) * 60} cy={100 + Math.sin(r) * 60} r="2.5" fill="hsl(var(--accent))" />;
-      })}
-    </svg>
-  </Tile>
-);
-
-const TCEO = () => (
-  <Tile>
-    <svg viewBox="0 0 200 200" className="absolute inset-0 w-full h-full">
-      {[40, 70, 100, 130, 160].map((y) => (
-        <line key={y} x1="30" y1={y} x2="170" y2={y} stroke="rgba(255,255,255,.08)" />
-      ))}
-      <path d="M30 145 L70 120 L110 128 L150 80 L180 55" stroke="hsl(var(--accent))" strokeWidth="1.5" fill="none" />
-      <circle cx="150" cy="80" r="3" fill="hsl(var(--accent))" />
-      <circle cx="180" cy="55" r="4" fill="hsl(var(--accent))" />
-    </svg>
-  </Tile>
-);
-
-const TWeb3 = () => (
-  <Tile>
-    <svg viewBox="0 0 200 200" className="absolute inset-0 w-full h-full">
-      {[[60, 60], [140, 55], [100, 110], [55, 140], [150, 145]].map(([x, y], i) => (
-        <g key={i}>
-          {[[60, 60], [140, 55], [100, 110], [55, 140], [150, 145]].map(([x2, y2], j) =>
-            i < j ? (
-              <line key={j} x1={x} y1={y} x2={x2} y2={y2} stroke="hsl(var(--accent))" strokeWidth="0.4" opacity="0.5" />
-            ) : null,
-          )}
-        </g>
-      ))}
-      {[[60, 60], [140, 55], [100, 110], [55, 140], [150, 145]].map(([x, y], i) => (
-        <circle key={i} cx={x} cy={y} r="3" fill="hsl(var(--accent))" />
-      ))}
-      <polygon points="100,90 115,100 115,120 100,130 85,120 85,100" fill="none" stroke="hsl(var(--accent))" strokeWidth="1" />
-    </svg>
-  </Tile>
-);
-
-const TFinance = () => (
-  <Tile>
-    <svg viewBox="0 0 200 200" className="absolute inset-0 w-full h-full">
-      {[45, 65, 85, 105, 125, 145].map((x, i) => {
-        const h = 20 + i * 12;
-        return <rect key={x} x={x} y={160 - h} width="10" height={h} fill="hsl(var(--accent))" opacity={0.3 + i * 0.12} />;
-      })}
-      <path d="M45 130 L75 110 L105 95 L135 75 L165 55" stroke="hsl(var(--accent))" strokeWidth="1" fill="none" strokeDasharray="3 3" />
-    </svg>
-  </Tile>
-);
-
-const THealth = () => (
-  <Tile>
-    <svg viewBox="0 0 200 200" className="absolute inset-0 w-full h-full">
-      {[0, 1, 2, 3].map((i) => (
-        <path
-          key={i}
-          d={`M0 ${80 + i * 15} Q 50 ${60 + i * 15} 100 ${80 + i * 15} T 200 ${80 + i * 15}`}
-          fill="none"
-          stroke="hsl(var(--accent))"
-          strokeWidth="0.7"
-          opacity={0.6 - i * 0.12}
-        />
-      ))}
-      <circle cx="100" cy="100" r="22" fill="none" stroke="hsl(var(--accent))" strokeWidth="1" />
-      <circle cx="100" cy="100" r="6" fill="hsl(var(--accent))" />
-    </svg>
-  </Tile>
-);
-
-const TConsulting = () => (
-  <Tile>
-    <svg viewBox="0 0 200 200" className="absolute inset-0 w-full h-full">
-      <circle cx="100" cy="100" r="55" fill="none" stroke="hsl(var(--accent))" strokeWidth="0.7" opacity="0.5" />
-      <line x1="100" y1="100" x2="100" y2="50" stroke="hsl(var(--accent))" strokeWidth="1.5" />
-      <line x1="100" y1="100" x2="140" y2="125" stroke="rgba(255,255,255,.5)" strokeWidth="1" />
-      <polygon points="100,42 96,55 104,55" fill="hsl(var(--accent))" />
-      <circle cx="100" cy="100" r="4" fill="hsl(var(--accent))" />
-    </svg>
-  </Tile>
-);
-
-const TEducation = () => (
-  <Tile>
-    <svg viewBox="0 0 200 200" className="absolute inset-0 w-full h-full">
-      <rect x="50" y="55" width="100" height="90" fill="none" stroke="hsl(var(--accent))" strokeWidth="0.8" opacity="0.6" />
-      <line x1="50" y1="72" x2="150" y2="72" stroke="hsl(var(--accent))" opacity="0.4" />
-      <circle cx="59" cy="63" r="1.8" fill="hsl(var(--accent))" />
-      {[85, 100, 115].map((y) => (
-        <rect key={y} x="62" y={y} width={y === 100 ? 55 : 75} height="3.5" fill="hsl(var(--accent))" opacity="0.35" />
-      ))}
-      <rect x="62" y="128" width="36" height="6" fill="hsl(var(--accent))" />
-    </svg>
-  </Tile>
-);
-
-const TBeauty = () => (
-  <Tile>
-    <svg viewBox="0 0 200 200" className="absolute inset-0 w-full h-full">
-      <ellipse cx="100" cy="100" rx="42" ry="58" fill="none" stroke="hsl(var(--accent))" strokeWidth="0.9" />
-      <ellipse cx="100" cy="100" rx="26" ry="40" fill="none" stroke="hsl(var(--accent))" strokeWidth="0.6" opacity="0.5" />
-      <path d="M78 100 Q100 78 122 100" stroke="hsl(var(--accent))" strokeWidth="1" fill="none" />
-      <circle cx="100" cy="100" r="2.5" fill="hsl(var(--accent))" />
-    </svg>
-  </Tile>
-);
-
-const TAI = () => (
-  <Tile>
-    <svg viewBox="0 0 200 200" className="absolute inset-0 w-full h-full">
-      <path
-        d="M100 55 C 70 55 58 78 58 100 C 58 122 78 145 100 145 C 122 145 142 122 142 100 C 142 78 130 55 100 55 Z"
-        fill="none"
-        stroke="hsl(var(--accent))"
-        strokeWidth="0.8"
-        opacity="0.7"
-      />
-      {[[75, 80], [100, 72], [125, 80], [75, 120], [100, 128], [125, 120], [100, 100]].map(([x, y], i) => (
-        <circle key={i} cx={x} cy={y} r={i === 6 ? 3.5 : 2} fill="hsl(var(--accent))" />
-      ))}
-      {[[75, 80], [100, 72], [125, 80], [75, 120], [100, 128], [125, 120]].map(([x, y], i) => (
-        <line key={i} x1={x} y1={y} x2="100" y2="100" stroke="hsl(var(--accent))" strokeWidth="0.4" opacity="0.6" />
-      ))}
-    </svg>
-  </Tile>
-);
-
 const profiles: Profile[] = [
-  { sector: "Marketing digital", role: "Perfil público de alta visibilidad", chips: ["Alta exposición", "Posicionamiento"], visual: <TMarketing /> },
-  { sector: "Dirección y CEOs", role: "Fundadores de proyectos digitales", chips: ["CEO", "Marca personal"], visual: <TCEO /> },
-  { sector: "Web3 e innovación", role: "Tecnología y proyectos cripto", chips: ["Web3", "Comunicación"], visual: <TWeb3 /> },
-  { sector: "Finanzas e inversión", role: "Perfiles B2B de alta credibilidad", chips: ["Finanzas", "B2B"], visual: <TFinance /> },
-  { sector: "Salud corporativa", role: "RRHH, bienestar y PRL", chips: ["RRHH", "PRL"], visual: <THealth /> },
-  { sector: "Consultoría y coaching", role: "Consultores y coaches ejecutivos", chips: ["Consultoría", "Autoridad"], visual: <TConsulting /> },
-  { sector: "Formación online", role: "Educación y certificación digital", chips: ["EdTech", "Formación"], visual: <TEducation /> },
-  { sector: "Belleza y servicios", role: "Negocio local y experiencia cliente", chips: ["Belleza", "Cliente"], visual: <TBeauty /> },
-  { sector: "IA aplicada", role: "Equipos y profesionales en IA", chips: ["IA aplicada", "Productividad"], visual: <TAI /> },
+  { sector: "Marketing digital", role: "Perfil público de alta visibilidad", bg: "#2a3a5e", accent: "#c5a55a" },
+  { sector: "Dirección y CEO", role: "Fundador de proyecto digital", bg: "#1b2a4a", accent: "#e8d9a8" },
+  { sector: "Web3 e innovación", role: "Proyecto tecnológico cripto", bg: "#3a2a5e", accent: "#a89ee8" },
+  { sector: "Finanzas e inversión", role: "Perfil B2B de alta credibilidad", bg: "#1e3a3a", accent: "#c5a55a" },
+  { sector: "Salud corporativa", role: "RRHH, bienestar y PRL", bg: "#2e4a4a", accent: "#e0d5b8" },
+  { sector: "Consultoría estratégica", role: "Consultor experto sénior", bg: "#3a2e2a", accent: "#d4a574" },
+  { sector: "Coaching ejecutivo", role: "Coach de directivos", bg: "#2a2a3e", accent: "#c5a55a" },
+  { sector: "Formación online", role: "Educación y certificación digital", bg: "#4a2e3a", accent: "#e8b4c8" },
+  { sector: "Marca personal", role: "Profesional experto en su sector", bg: "#1b2a4a", accent: "#c5a55a" },
+  { sector: "Belleza y servicios", role: "Negocio local premium", bg: "#4a2a3a", accent: "#f0c8d8" },
+  { sector: "IA aplicada", role: "Equipo profesional en IA", bg: "#1e2e4e", accent: "#a8d0e8" },
+  { sector: "Comunicación pública", role: "Perfil de alta exposición", bg: "#3e2e1e", accent: "#e8c078" },
 ];
+
+// Silhouette portrait — makes each tile read as a "profile photo"
+const Portrait = ({ bg, accent, seed }: { bg: string; accent: string; seed: number }) => {
+  // subtle variation per tile so they don't look identical
+  const shoulderW = 130 + (seed % 3) * 6;
+  const headY = 92 + (seed % 4) * 2;
+  return (
+    <svg viewBox="0 0 200 200" className="absolute inset-0 w-full h-full" preserveAspectRatio="xMidYMid slice">
+      <defs>
+        <linearGradient id={`g${seed}`} x1="0" y1="0" x2="0" y2="1">
+          <stop offset="0%" stopColor={bg} stopOpacity="1" />
+          <stop offset="100%" stopColor="#0f1a30" stopOpacity="1" />
+        </linearGradient>
+        <radialGradient id={`spot${seed}`} cx="0.5" cy="0.35" r="0.6">
+          <stop offset="0%" stopColor={accent} stopOpacity="0.28" />
+          <stop offset="100%" stopColor={accent} stopOpacity="0" />
+        </radialGradient>
+      </defs>
+      <rect width="200" height="200" fill={`url(#g${seed})`} />
+      <rect width="200" height="200" fill={`url(#spot${seed})`} />
+      {/* grain */}
+      <rect width="200" height="200" fill="url(#noise)" opacity="0.08" />
+      {/* shoulders */}
+      <path
+        d={`M ${100 - shoulderW / 2} 200 Q 100 ${145} ${100 + shoulderW / 2} 200 Z`}
+        fill={accent}
+        opacity="0.85"
+      />
+      {/* neck */}
+      <rect x="90" y="128" width="20" height="18" fill={accent} opacity="0.85" />
+      {/* head */}
+      <ellipse cx="100" cy={headY} rx="26" ry="30" fill={accent} opacity="0.95" />
+      {/* rim light */}
+      <ellipse cx="115" cy={headY - 6} rx="6" ry="18" fill="#fff" opacity="0.12" />
+    </svg>
+  );
+};
 
 const ProfilesTeaser = () => {
   return (
     <section className="py-20 lg:py-28 bg-primary overflow-hidden">
+      {/* SVG defs shared */}
+      <svg width="0" height="0" className="absolute">
+        <defs>
+          <filter id="noise">
+            <feTurbulence baseFrequency="0.9" numOctaves="2" seed="3" />
+            <feColorMatrix values="0 0 0 0 1  0 0 0 0 1  0 0 0 0 1  0 0 0 0.5 0" />
+          </filter>
+        </defs>
+      </svg>
+
       <div className="container mx-auto px-6 lg:px-8">
         {/* Header */}
         <div className="max-w-3xl mx-auto text-center mb-14 lg:mb-16">
@@ -186,46 +86,31 @@ const ProfilesTeaser = () => {
               He intervenido en proyectos de estrategia, posicionamiento, comunicación, formación e IA aplicada para perfiles profesionales de distintos sectores.
             </p>
             <p className="text-primary-foreground/50 italic text-[13px]">
-              Por confidencialidad profesional, no se muestran nombres, iniciales, marcas ni logos. Lo relevante es el tipo de perfil, el sector y el enfoque estratégico aplicado.
+              Por confidencialidad profesional, no se muestran nombres, iniciales, fotos, marcas ni logos. Se muestra únicamente el sector y el tipo de perfil trabajado.
             </p>
           </div>
         </div>
 
-        {/* Grid — compact anonymised profile tiles */}
-        <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-5 lg:gap-6 max-w-6xl mx-auto">
+        {/* Grid — mismo formato que la ficha original de perfiles */}
+        <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6 max-w-6xl mx-auto">
           {profiles.map((p, i) => (
             <article
               key={i}
-              className="group relative overflow-hidden bg-primary-foreground/[0.03] border-l-2 border-l-accent/40 border-t border-r border-b border-primary-foreground/10 transition-all duration-500 hover:border-l-accent hover:bg-primary-foreground/[0.06] hover:-translate-y-1 hover:shadow-[0_20px_40px_-20px_hsl(var(--accent)/0.35)]"
+              className="group relative overflow-hidden bg-card border-l-2 border-l-accent/30 border-t border-r border-b border-border hover:border-l-accent hover:shadow-lg transition-all duration-300"
             >
-              {/* Visual tile */}
-              <div className="relative aspect-square overflow-hidden border-b border-primary-foreground/10">
-                <div className="absolute inset-0 transition-transform duration-[900ms] group-hover:scale-[1.06]">
-                  {p.visual}
-                </div>
-                <span className="absolute top-3 right-3 font-serif text-[10px] text-accent/60 tracking-[0.25em]">
-                  {String(i + 1).padStart(2, "0")}
-                </span>
+              <div className="aspect-square overflow-hidden relative">
+                <Portrait bg={p.bg} accent={p.accent} seed={i + 1} />
               </div>
-
-              {/* Content */}
-              <div className="p-5">
-                <h3 className="font-serif text-[15px] lg:text-base font-medium text-primary-foreground leading-snug mb-1.5">
-                  {p.sector}
-                </h3>
-                <p className="text-primary-foreground/55 text-[12.5px] leading-snug mb-3 line-clamp-2">
-                  {p.role}
-                </p>
-                <div className="flex flex-wrap gap-1.5 pt-3 border-t border-primary-foreground/10">
-                  {p.chips.map((chip) => (
-                    <span
-                      key={chip}
-                      className="inline-flex items-center px-2 py-0.5 text-[10px] font-medium tracking-wide text-accent/90 border border-accent/25"
-                    >
-                      {chip}
-                    </span>
-                  ))}
+              <div className="p-4 bg-gradient-to-t from-card to-card/80">
+                <div className="flex items-start justify-between gap-2 mb-1">
+                  <span className="font-semibold text-sm text-foreground leading-snug">
+                    {p.sector}
+                  </span>
+                  <Linkedin className="h-4 w-4 shrink-0 text-accent opacity-40 mt-0.5" />
                 </div>
+                <span className="text-xs text-muted-foreground leading-tight line-clamp-2">
+                  {p.role}
+                </span>
               </div>
             </article>
           ))}
