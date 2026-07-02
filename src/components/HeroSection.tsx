@@ -64,7 +64,7 @@ const HeroSection = () => {
   return (
     <section
       id="inicio"
-      className="relative overflow-hidden min-h-screen flex items-center"
+      className="relative overflow-hidden min-h-[92vh] flex items-center"
       style={{ background: "#0f1a30" }}
       aria-label="Sandra Tello — Si tú no decides tu valor, otros lo deciden por ti"
     >
