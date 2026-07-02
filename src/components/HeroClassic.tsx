@@ -70,8 +70,6 @@ const StatCard = ({ stat, isVisible, delay }: { stat: typeof stats[0]; isVisible
 };
 
 const HeroClassic = () => {
-  const [currentPhrase, setCurrentPhrase] = useState(0);
-  const [isVisible, setIsVisible] = useState(true);
   const [statsVisible, setStatsVisible] = useState(false);
   const statsRef = useRef<HTMLDivElement>(null);
 
@@ -83,16 +81,7 @@ const HeroClassic = () => {
     if (statsRef.current) observer.observe(statsRef.current);
     return () => observer.disconnect();
   }, []);
-  useEffect(() => {
-    const interval = setInterval(() => {
-      setIsVisible(false);
-      setTimeout(() => {
-        setCurrentPhrase((prev) => (prev + 1) % rotatingPhrases.length);
-        setIsVisible(true);
-      }, 400);
-    }, 3500);
-    return () => clearInterval(interval);
-  }, []);
+
   return (
     <section id="sobre-mi" className="relative overflow-hidden">
       <div className="relative py-16 lg:py-20 flex items-center" style={{
