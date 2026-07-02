@@ -13,6 +13,7 @@ import NewsletterSection from "@/components/NewsletterSection";
 import BlogSection from "@/components/BlogSection";
 import FinalCTA from "@/components/FinalCTA";
 import Footer from "@/components/Footer";
+import PersonalQuote from "@/components/PersonalQuote";
 import SEO from "@/components/SEO";
 
 const Index = () => {
@@ -41,6 +42,7 @@ const Index = () => {
       <Navbar />
       <HeroSection />
       <HeroClassic />
+      <PersonalQuote />
       <BrandsSection />
       <AboutSection />
       <ServicesSection />
