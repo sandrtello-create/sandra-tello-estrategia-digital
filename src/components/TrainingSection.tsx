@@ -75,24 +75,33 @@ const NeuralNetworkSVG = () => (
 const ProgramCard = ({
   program,
   index,
+  theme = "dark",
 }: {
   program: (typeof programs)[0];
   index: number;
+  theme?: "dark" | "light";
 }) => {
   const [hovered, setHovered] = useState(false);
   const num = String(index + 1).padStart(2, "0");
+  const isDark = theme === "dark";
 
   return (
     <div
-      className="relative pl-5 py-6 px-6 bg-primary-foreground/[0.03] border border-primary-foreground/10 transition-all duration-500"
+      className={`relative pl-5 py-6 px-6 border transition-all duration-500 ${
+        isDark
+          ? "bg-primary-foreground/[0.03] border-primary-foreground/10"
+          : "bg-white border-[hsl(232,20%,85%)]"
+      }`}
       style={{
         transform: hovered ? "translateY(-4px)" : "translateY(0)",
         boxShadow: hovered
-          ? "0 20px 40px -15px hsl(var(--accent) / 0.15)"
+          ? `0 20px 40px -15px hsl(var(--accent) / ${isDark ? "0.15" : "0.2"})`
           : "none",
         borderColor: hovered
-          ? "hsl(var(--accent) / 0.3)"
-          : "hsl(var(--primary-foreground) / 0.1)",
+          ? `hsl(var(--accent) / ${isDark ? "0.3" : "0.4"})`
+          : isDark
+          ? "hsl(var(--primary-foreground) / 0.1)"
+          : "hsl(232, 20%, 85%)",
       }}
       onMouseEnter={() => setHovered(true)}
       onMouseLeave={() => setHovered(false)}
@@ -111,21 +120,35 @@ const ProgramCard = ({
           style={{
             color: hovered
               ? "hsl(var(--accent) / 0.5)"
-              : "hsl(var(--accent) / 0.12)",
+              : `hsl(var(--accent) / ${isDark ? "0.12" : "0.15"})`,
           }}
         >
           {num}
         </span>
 
         <div>
-          <div className="w-10 h-10 rounded-full bg-accent/10 flex items-center justify-center mb-3">
+          <div
+            className={`w-10 h-10 rounded-full flex items-center justify-center mb-3 ${
+              isDark ? "bg-accent/10" : "bg-accent/15"
+            }`}
+          >
             <program.icon className="h-5 w-5 text-accent" />
           </div>
 
-          <h3 className="font-serif text-lg font-medium text-primary-foreground mb-2">
+          <h3
+            className={`font-serif text-lg font-medium mb-2 ${
+              isDark ? "text-primary-foreground" : "text-[hsl(232,28%,18%)]"
+            }`}
+          >
             {program.title}
           </h3>
-          <p className="text-primary-foreground/55 leading-relaxed text-[14px]">
+          <p
+            className={`leading-relaxed text-[14px] ${
+              isDark
+                ? "text-primary-foreground/55"
+                : "text-[hsl(232,20%,40%)]"
+            }`}
+          >
             {program.description}
           </p>
         </div>
@@ -336,18 +359,18 @@ const TrainingSection = () => {
 
 
           {/* Brand + Strategy Training Block — parallel track, not AI */}
-          <div className="w-full border-t border-accent/20 pt-14 mt-4">
+          <div className="w-full bg-[hsl(40,18%,95%)] border-t border-accent/20 p-8 md:p-12 lg:p-14 mt-4">
             <div className="text-center max-w-3xl mx-auto mb-10">
               <div className="flex items-center justify-center gap-2 mb-4">
-                <Compass className="h-4 w-4 text-accent" />
-                <p className="text-accent font-semibold text-[11px] uppercase tracking-[0.25em]">
+                <Compass className="h-4 w-4 text-[hsl(38,55%,50%)]" />
+                <p className="text-[hsl(38,55%,50%)] font-semibold text-[11px] uppercase tracking-[0.25em]">
                   Formación en marca personal, estrategia y marketing
                 </p>
               </div>
-              <h2 className="font-serif text-3xl md:text-4xl lg:text-[40px] font-medium text-primary-foreground mb-5 leading-[1.2]">
+              <h2 className="font-serif text-3xl md:text-4xl lg:text-[40px] font-medium text-[hsl(232,28%,18%)] mb-5 leading-[1.2]">
                 Lo humano es tu ventaja. La estrategia, tu método.
               </h2>
-              <p className="text-primary-foreground/60 text-[16px] leading-relaxed">
+              <p className="text-[hsl(232,20%,35%)] text-[16px] leading-relaxed">
                 Antes que herramientas, criterio. Formaciones y mentorías para construir una marca personal
                 con propósito, una estrategia de contenido coherente y una comunicación que conecte de verdad.
                 Sin fórmulas prefabricadas: te acompaño desde donde estás hasta donde quieres llegar.
@@ -375,17 +398,17 @@ const TrainingSection = () => {
                     "Formación para equipos y emprendedores que necesitan un plan de contenido y marketing que hable el lenguaje de su cliente.",
                 },
               ].map((program, index) => (
-                <ProgramCard key={index} program={program} index={index} />
+                <ProgramCard key={index} program={program} index={index} theme="light" />
               ))}
             </div>
 
             <div className="w-full flex flex-col items-center text-center py-4">
-              <p className="text-primary-foreground/70 text-[15px] leading-relaxed mb-5 max-w-xl">
+              <p className="text-[hsl(232,20%,35%)] text-[15px] leading-relaxed mb-5 max-w-xl">
                 ¿Quieres construir una marca personal con criterio y una estrategia que conecte?
               </p>
               <a
                 href="#contacto"
-                className="inline-flex items-center gap-3 bg-accent text-primary px-8 py-4 font-semibold text-[15px] tracking-wide hover:bg-accent/90 hover:shadow-[0_20px_40px_-15px_hsl(var(--accent)/0.4)] transition-all duration-300"
+                className="inline-flex items-center gap-3 bg-[hsl(38,55%,50%)] text-white px-8 py-4 font-semibold text-[15px] tracking-wide hover:bg-[hsl(38,55%,45%)] hover:shadow-[0_20px_40px_-15px_hsla(38,55%,50%,0.4)] transition-all duration-300"
               >
                 Quiero trabajar mi marca personal
                 <ArrowRight className="h-5 w-5" />
