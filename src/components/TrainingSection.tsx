@@ -11,19 +11,19 @@ const programs = [
     icon: Building2,
     title: "Formación para empresas",
     description:
-      "Programas in-company (en remoto o presencial) para equipos que necesitan integrar la IA de forma estratégica en su día a día.",
+      "Programas in-company (en remoto o presencial) para equipos que necesitan integrar estrategia digital, marca, marketing e IA de forma coherente en su día a día.",
   },
   {
     icon: Briefcase,
     title: "Workshops intensivos",
     description:
-      "Sesiones intensivas para dominar un proceso en concreto, adaptadas a tu negocio y a tu nivel de partida.",
+      "Sesiones intensivas para dominar un proceso concreto: estrategia de marca personal, contenido, posicionamiento o una herramienta de IA aplicada a tu negocio.",
   },
   {
     icon: GraduationCap,
     title: "Programas para profesionales y emprendedores",
     description:
-      "Formación práctica, incluyendo clases individuales 1 a 1, para personas que quieren aprender IA desde cero y aplicarla con criterio real.",
+      "Formación práctica, incluyendo clases 1 a 1, para quienes quieren aprender IA, estrategia y marca personal desde cero y aplicarlas con criterio real.",
   },
 ];
 
