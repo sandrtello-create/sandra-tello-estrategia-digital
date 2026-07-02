@@ -186,7 +186,7 @@ const ServiceItem = ({
               {/* Service CTA */}
               <a
                 href="#contacto"
-                className="mt-8 inline-flex items-center gap-3 bg-primary text-accent px-8 py-4 font-serif text-base font-medium hover:shadow-xl hover:scale-[1.02] transition-all duration-300"
+                className="mt-8 inline-flex items-center gap-3 bg-primary text-accent px-8 py-4 rounded-full font-serif text-base font-medium hover:shadow-xl hover:scale-[1.02] transition-all duration-300"
               >
                 {service.cta}
                 <ArrowRight className="h-5 w-5" />
