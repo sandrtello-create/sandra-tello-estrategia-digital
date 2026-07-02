@@ -268,9 +268,6 @@ const ServicesSection = () => {
 
         {/* Eneagrama: herramienta transversal */}
         <div className="max-w-3xl mx-auto mt-16 pt-10 border-t border-border/40">
-          <p className="text-[11px] font-semibold uppercase tracking-[0.2em] text-accent mb-6 text-center">
-            Conozco a fondo cada perfil para potenciar su liderazgo
-          </p>
           <EnneagramWheel onHoverChange={setHoveredArchetype} />
           <LeadershipCards highlightedArchetype={hoveredArchetype} />
         </div>
