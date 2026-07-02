@@ -11,9 +11,9 @@ const rotatingPhrases = [
 ];
 
 const stats = [
-  { label: "Experiencia", value: 15, suffix: "", prefix: "+", description: "años de experiencia profesional" },
-  { label: "Formación", value: 500, suffix: "", prefix: "+", description: "profesionales formados" },
-  { label: "Impacto", value: 300, suffix: "", prefix: "+", description: "empresas y emprendedores asesorados" },
+  { label: "Experiencia", value: 20, suffix: "", prefix: "+", description: "años en negocio y marketing" },
+  { label: "Formación", value: 500, suffix: "", prefix: "+", description: "profesionales formados en IA y marca personal" },
+  { label: "Uno a uno", value: 30, suffix: "", prefix: "+", description: "profesionales acompañados 1:1" },
 ];
 
 const useCountUp = (target: number, isVisible: boolean, duration = 2000) => {
