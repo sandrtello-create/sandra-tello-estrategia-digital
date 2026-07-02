@@ -161,23 +161,24 @@ const TrainingSection = () => {
             <div className="flex items-center justify-center gap-2 mb-4">
               <Brain className="h-4 w-4 text-accent" />
               <p className="text-accent font-semibold text-[11px] uppercase tracking-[0.25em]">
-                Formación en Inteligencia Artificial
+                Formación y mentorías
               </p>
             </div>
             <h2 className="font-serif text-3xl md:text-4xl lg:text-[40px] font-medium text-primary-foreground mb-5 leading-[1.2]">
-              Inteligencia humana primero. IA después.
+              Inteligencia humana primero. IA, estrategia y marca después.
             </h2>
             <p className="text-primary-foreground/60 text-[16px] leading-relaxed mb-4">
-              No necesitas saber de tecnología. Mis programas están pensados para personas que parten de cero
-              y quieren aplicar la IA con criterio real en su día a día. Porque la IA ya no es valor diferencial:
-              lo es el factor humano que la pone en marcha. Formación 100% aplicada a tu negocio, no genérica.
+              No formo solo en inteligencia artificial. Trabajo contigo la estrategia digital, la marca personal,
+              el marketing y la integración de la IA como un mismo sistema, porque separados no funcionan.
+              Todo parte del factor humano: sin criterio propio, ninguna herramienta te posiciona.
+              Formación 100% aplicada a tu negocio, no genérica.
             </p>
             <p className="text-primary-foreground/50 text-[14px] leading-relaxed">
-              He formado a equipos en sectores como el <span className="text-accent/80 font-medium">industrial</span>,{" "}
+              He formado a equipos y a profesionales en sectores como el <span className="text-accent/80 font-medium">industrial</span>,{" "}
               <span className="text-accent/80 font-medium">transporte</span>,{" "}
               <span className="text-accent/80 font-medium">turismo</span> y{" "}
               <span className="text-accent/80 font-medium">educativo</span>,
-              con especial foco en comunicación y redes sociales.
+              combinando estrategia, comunicación, marca personal e IA aplicada.
             </p>
           </div>
 
