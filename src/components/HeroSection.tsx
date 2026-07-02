@@ -1,55 +1,25 @@
-import { useState, useEffect, useRef } from "react";
+import { useState, useRef } from "react";
 import { ChevronDown, Volume2, VolumeX, ArrowRight } from "lucide-react";
 import sandraPhoto from "@/assets/sandra-tello-hero.jpg";
 
 /**
  * VÍDEO DE FONDO
  * ---------------------------------------------------------------
- * Para poner tu vídeo de fondo (estilo Vilma Núñez):
+ * Para poner tu vídeo de fondo:
  *  1) Sube tu vídeo a YouTube (público u oculto) SIN música y SIN texto.
  *  2) Copia el ID (la parte después de v= en la URL).
  *  3) Sustituye YOUTUBE_VIDEO_ID por ese ID.
- *
- * Si prefieres MP4 propio, pon MP4_VIDEO_SRC con la ruta (p. ej.
- * "/videos/sandra-hero.mp4" tras subirlo a /public/videos/).
+ * Si prefieres MP4 propio, pon MP4_VIDEO_SRC con la ruta.
  * ---------------------------------------------------------------
  */
 const YOUTUBE_VIDEO_ID: string | null = null;
 const MP4_VIDEO_SRC: string | null = null;
 
-/**
- * Frases que rotan bajo el titular. Basadas en tu bio de LinkedIn:
- * dolores del cliente + tus fortalezas (mentora 1:1, formadora, estratega).
- */
-const rotatingLines: string[] = [
-  "Publicas cada semana, pero no convierte en oportunidades reales.",
-  "Tu marca existe, pero no transmite lo que realmente vales.",
-  "Tienes experiencia de sobra, y aún así nadie te ve como referente.",
-  "Sabes lo que haces, pero no sabes cómo comunicarlo para vender.",
-  "Sientes que la IA te supera y que vas tarde.",
-  "Te acompaño 1:1 para que dejes de ser invisible.",
-  "Formo a equipos y profesionales en IA con criterio humano.",
-];
-
-const HEADLINE_LEFT = "Si tú no decides tu valor,";
-const HEADLINE_RIGHT = "otros lo deciden por ti.";
-
 const HeroSection = () => {
-  const [currentLine, setCurrentLine] = useState(0);
-  const [lineVisible, setLineVisible] = useState(true);
   const [muted, setMuted] = useState(true);
   const mp4Ref = useRef<HTMLVideoElement>(null);
 
-  useEffect(() => {
-    const interval = setInterval(() => {
-      setLineVisible(false);
-      setTimeout(() => {
-        setCurrentLine((prev) => (prev + 1) % rotatingLines.length);
-        setLineVisible(true);
-      }, 700);
-    }, 6000); // frase visible ~5.3s → tiempo real para leer
-    return () => clearInterval(interval);
-  }, []);
+
 
   const toggleMute = () => {
     setMuted((m) => {
