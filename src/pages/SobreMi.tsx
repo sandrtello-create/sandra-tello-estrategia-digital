@@ -2,6 +2,7 @@ import { useEffect, useState } from "react";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import SEO from "@/components/SEO";
+import DiagonalPhotoMarquee from "@/components/DiagonalPhotoMarquee";
 import logoWatermark from "@/assets/sandra-logo-watermark.png";
 import sandraAbout from "@/assets/sandra-tello-about.jpg";
 import sandraHero from "@/assets/sandra-tello-hero.jpg";
@@ -444,20 +445,32 @@ const SobreMi = () => {
                 </p>
               </div>
               <div className="lg:col-span-5">
-                <div className="aspect-[4/5] overflow-hidden">
-                  <img
-                    src={sandraAbout}
-                    alt="Sandra Tello, retrato editorial"
-                    className="w-full h-full object-cover object-top grayscale contrast-110"
+                <div className="relative">
+                  <div
+                    className="absolute -inset-2 bg-brand-teal -z-10"
+                    style={{ transform: "rotate(-3deg)" }}
                   />
+                  <div
+                    className="aspect-[4/5] overflow-hidden shadow-[0_30px_60px_-20px_rgba(27,42,74,0.4)]"
+                    style={{ transform: "rotate(2deg)" }}
+                  >
+                    <img
+                      src={sandraAbout}
+                      alt="Sandra Tello, retrato editorial"
+                      className="w-full h-full object-cover object-top"
+                    />
+                  </div>
                 </div>
-                <p className="font-sans text-[11px] uppercase tracking-[0.22em] text-muted-foreground mt-4">
+                <p className="font-sans text-[11px] uppercase tracking-[0.22em] text-muted-foreground mt-6">
                   Sandra Tello — 45 años, chicharrera, eterna aprendiz
                 </p>
               </div>
             </div>
           </div>
         </section>
+
+        {/* Franja diagonal · carrusel visual estilo Vilma */}
+        <DiagonalPhotoMarquee />
 
         {/* MÓDULO A · Línea de vida profesional */}
         <TimelineSection />

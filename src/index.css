@@ -51,6 +51,11 @@
     --cream: 40 25% 97%;
     --warm-grey: 220 8% 55%;
 
+    /* Brand accents (brandbook 05 · úsalos con intención) */
+    --brand-pink: 328 89% 72%;
+    --brand-teal: 172 100% 45%;
+    --brand-yellow: 55 100% 73%;
+
     --sidebar-background: 0 0% 98%;
     --sidebar-foreground: 240 5.3% 26.1%;
     --sidebar-primary: 240 5.9% 10%;
@@ -165,12 +170,23 @@
   100% { transform: translateX(-50%); }
 }
 
+@keyframes scroll-photos-reverse {
+  0% { transform: translateX(-50%); }
+  100% { transform: translateX(0); }
+}
+
 .animate-scroll-photos {
-  animation: scroll-photos 35s linear infinite;
+  animation: scroll-photos 45s linear infinite;
   will-change: transform;
 }
 
-.animate-scroll-photos:hover {
+.animate-scroll-photos-reverse {
+  animation: scroll-photos-reverse 55s linear infinite;
+  will-change: transform;
+}
+
+.animate-scroll-photos:hover,
+.animate-scroll-photos-reverse:hover {
   animation-play-state: paused;
 }
 
@@ -178,7 +194,8 @@
   .animate-scroll-brands {
     animation-duration: 10s;
   }
-  .animate-scroll-photos {
-    animation-duration: 20s;
+  .animate-scroll-photos,
+  .animate-scroll-photos-reverse {
+    animation-duration: 25s;
   }
 }
