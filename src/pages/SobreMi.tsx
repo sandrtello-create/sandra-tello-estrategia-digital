@@ -1,3 +1,4 @@
+import { useEffect, useState } from "react";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import SEO from "@/components/SEO";
@@ -6,13 +7,29 @@ import sandraAbout from "@/assets/sandra-tello-about.jpg";
 import sandraHero from "@/assets/sandra-tello-hero.jpg";
 import sandraIA from "@/assets/sandra-tello-ia.jpg";
 import sandraMarcopolo from "@/assets/sandra-tello-marcopolo.jpg";
-import { ArrowRight, Camera } from "lucide-react";
+import {
+  ArrowRight,
+  Camera,
+  Music,
+  Waves,
+  Scale,
+  Sparkles,
+  Coffee,
+  BookOpen,
+  Dog,
+  Plane,
+  Palette,
+  GraduationCap,
+} from "lucide-react";
 
 /**
  * Editorial long-form "Mi Historia" page.
- * Estilo Vilma Núñez adaptado: retratos grandes, texto largo con ritmo,
- * pull-quotes, en la paleta navy + oro de Sandra.
+ * Estilo Vilma Núñez adaptado a la paleta navy + oro de Sandra,
+ * con ritmo variado: escenas foto/texto + línea de vida + cifras +
+ * carrusel de citas + bloque humano ligero.
  */
+
+/* ------------------------------ helpers ------------------------------ */
 
 const PhotoPlaceholder = ({
   label,
@@ -34,6 +51,49 @@ const PhotoPlaceholder = ({
     <div className="absolute inset-3 border border-accent/20 pointer-events-none" />
   </figure>
 );
+
+/** Bloque tipográfico para sustituir un placeholder de foto:
+ *  número de capítulo enorme en oro + cita corta. Sirve como pausa visual. */
+const TypographicPhoto = ({
+  chapter,
+  quote,
+  variant = "cream",
+}: {
+  chapter: string;
+  quote: string;
+  variant?: "cream" | "navy";
+}) => {
+  const isNavy = variant === "navy";
+  return (
+    <figure
+      className={`relative w-full aspect-[4/5] overflow-hidden border ${
+        isNavy
+          ? "bg-primary text-primary-foreground border-primary"
+          : "bg-[#ECE9E3] text-foreground border-border"
+      }`}
+    >
+      <div
+        className="absolute inset-0 opacity-[0.06] pointer-events-none"
+        style={{
+          backgroundImage: `url(${logoWatermark})`,
+          backgroundSize: "70px auto",
+          backgroundRepeat: "repeat",
+        }}
+      />
+      <div className="relative z-10 h-full flex flex-col justify-between p-8">
+        <span
+          className="font-serif italic leading-none gold-gradient-text"
+          style={{ fontSize: "clamp(6rem, 14vw, 11rem)" }}
+        >
+          {chapter}
+        </span>
+        <blockquote className="font-serif text-xl md:text-2xl leading-snug italic border-l-2 border-accent pl-4">
+          {quote}
+        </blockquote>
+      </div>
+    </figure>
+  );
+};
 
 const Scene = ({
   eyebrow,
@@ -85,14 +145,270 @@ const PullQuote = ({ children }: { children: React.ReactNode }) => (
   </section>
 );
 
+/* ---------------------- MÓDULO A · Línea de vida ---------------------- */
+
+const timeline: { year: string; title: string; note: string }[] = [
+  { year: "2005", title: "Primer paso corporate", note: "Entro en el mundo de la empresa desde la asistencia de dirección." },
+  { year: "2008", title: "Derecho y ADE", note: "Estudio en paralelo mientras trabajo. Empieza la doble vida." },
+  { year: "2012", title: "Marketing y comunicación", note: "Sin cargo oficial, asumo la voz de la marca." },
+  { year: "2015", title: "Máster en Marketing", note: "Formalizo lo que ya venía haciendo desde hacía años." },
+  { year: "2018", title: "Mediadora registrada", note: "Formación en Mediación y Arbitraje. El criterio se afila." },
+  { year: "2021", title: "La rotura", note: "Rodilla, baja, despido. Ley de Segunda Oportunidad." },
+  { year: "2022", title: "El silencio del norte", note: "Me marcho a un lugar casi vacío. Empiezo a oírme." },
+  { year: "2023", title: "Máster en Inteligencia Artificial", note: "Vuelvo con criterio y con una herramienta nueva." },
+  { year: "2024", title: "Consultora estratégica", note: "Marca personal, estrategia e IA aplicada a negocio." },
+  { year: "Hoy", title: "Inteligencia Humana Estratégica™", note: "Acompaño a otras personas a decidir su propio valor." },
+];
+
+const TimelineSection = () => (
+  <section className="py-20 lg:py-28 bg-[#ECE9E3] border-y border-border/60 relative overflow-hidden">
+    <div
+      className="absolute inset-0 opacity-[0.05] pointer-events-none"
+      style={{
+        backgroundImage: `url(${logoWatermark})`,
+        backgroundSize: "90px auto",
+        backgroundRepeat: "repeat",
+      }}
+    />
+    <div className="container mx-auto px-6 lg:px-8 max-w-6xl relative z-10">
+      <div className="text-center mb-14">
+        <p className="font-sans text-[11px] uppercase tracking-[0.28em] text-accent mb-4">
+          Línea de vida profesional
+        </p>
+        <h2 className="font-serif text-4xl md:text-5xl font-light text-foreground leading-tight max-w-3xl mx-auto">
+          Todo lo que pasó <span className="italic text-accent">antes</span> de que esta página existiera.
+        </h2>
+      </div>
+
+      <div className="relative overflow-x-auto pb-6 -mx-6 px-6 lg:mx-0 lg:px-0">
+        <div className="absolute left-0 right-0 top-[86px] h-px bg-accent/30 hidden md:block" />
+        <ol className="flex gap-6 md:gap-8 min-w-max md:min-w-0 md:grid md:grid-cols-5 lg:grid-cols-10">
+          {timeline.map((item) => (
+            <li key={item.year} className="w-[220px] md:w-auto flex flex-col items-start">
+              <span className="font-serif text-2xl md:text-[26px] font-medium text-primary leading-none mb-4">
+                {item.year}
+              </span>
+              <span className="relative flex items-center justify-center w-4 h-4 mb-4">
+                <span className="w-3 h-3 rounded-full gold-gradient" />
+                <span className="absolute inset-0 rounded-full border border-accent/40" />
+              </span>
+              <p className="font-serif text-base font-medium text-foreground leading-snug mb-2">
+                {item.title}
+              </p>
+              <p className="font-sans text-[13px] text-muted-foreground leading-relaxed">
+                {item.note}
+              </p>
+            </li>
+          ))}
+        </ol>
+      </div>
+    </div>
+  </section>
+);
+
+/* ---------------------- MÓDULO C · En cifras -------------------------- */
+
+const stats: { value: string; label: string }[] = [
+  { value: "18", label: "años en el mundo corporate" },
+  { value: "6", label: "titulaciones oficiales" },
+  { value: "2", label: "másters (Marketing e IA)" },
+  { value: "1", label: "rescate propio, sin plan B" },
+];
+
+const EnCifrasSection = () => (
+  <section className="py-24 lg:py-32 bg-primary text-primary-foreground relative overflow-hidden">
+    <div
+      className="absolute inset-0 opacity-[0.05] pointer-events-none"
+      style={{
+        backgroundImage: `url(${logoWatermark})`,
+        backgroundSize: "110px auto",
+        backgroundRepeat: "repeat",
+      }}
+    />
+    <div className="container mx-auto px-6 lg:px-8 max-w-6xl relative z-10">
+      <div className="mb-14 max-w-2xl">
+        <p className="font-sans text-[11px] uppercase tracking-[0.28em] text-accent mb-4">
+          Este recorrido en cifras
+        </p>
+        <h2 className="font-serif text-3xl md:text-4xl font-light leading-tight">
+          Los papeles no fueron trofeos.
+          <br />
+          Fueron <span className="italic text-accent">piezas de un mapa</span>.
+        </h2>
+      </div>
+
+      <dl className="grid grid-cols-2 lg:grid-cols-4 gap-y-12 gap-x-10">
+        {stats.map((s) => (
+          <div key={s.label} className="border-t border-primary-foreground/20 pt-6">
+            <dt
+              className="font-serif italic leading-none gold-gradient-text mb-4"
+              style={{ fontSize: "clamp(4.5rem, 9vw, 8rem)" }}
+            >
+              {s.value}
+            </dt>
+            <dd className="font-sans text-[13px] uppercase tracking-[0.16em] text-primary-foreground/75 leading-relaxed max-w-[22ch]">
+              {s.label}
+            </dd>
+          </div>
+        ))}
+      </dl>
+    </div>
+  </section>
+);
+
+/* ---------------------- MÓDULO D · Carrusel de citas ------------------ */
+
+const rotatingQuotes = [
+  "Cuando no decides tu valor, otros lo deciden por ti.",
+  "Pide ayuda cuando la necesites. Esa fue mi primera regla nueva.",
+  "El mérito sin oportunidad es una frase bonita que repiten quienes ya están dentro.",
+  "No existe fecha de caducidad para decidir el propio valor.",
+];
+
+const QuotesCarousel = () => {
+  const [index, setIndex] = useState(0);
+
+  useEffect(() => {
+    const id = setInterval(() => setIndex((i) => (i + 1) % rotatingQuotes.length), 5500);
+    return () => clearInterval(id);
+  }, []);
+
+  return (
+    <section className="py-24 lg:py-32 bg-[#DDE3EC] relative overflow-hidden">
+      <div className="container mx-auto px-6 lg:px-8 max-w-4xl text-center">
+        <p className="font-sans text-[11px] uppercase tracking-[0.28em] text-accent mb-8">
+          Frases que hoy dirijo también a mí misma
+        </p>
+        <div className="relative min-h-[220px] md:min-h-[180px] flex items-center justify-center">
+          {rotatingQuotes.map((q, i) => (
+            <p
+              key={q}
+              className={`absolute inset-0 flex items-center justify-center font-serif text-2xl md:text-4xl lg:text-5xl font-light text-primary leading-[1.2] italic transition-opacity duration-700 ${
+                i === index ? "opacity-100" : "opacity-0 pointer-events-none"
+              }`}
+            >
+              «{q}»
+            </p>
+          ))}
+        </div>
+        <div className="flex items-center justify-center gap-3 mt-10">
+          {rotatingQuotes.map((_, i) => (
+            <button
+              key={i}
+              onClick={() => setIndex(i)}
+              aria-label={`Cita ${i + 1}`}
+              className={`h-1.5 rounded-none transition-all duration-300 ${
+                i === index ? "w-10 bg-accent" : "w-6 bg-primary/25 hover:bg-primary/50"
+              }`}
+            />
+          ))}
+        </div>
+      </div>
+    </section>
+  );
+};
+
+/* ---------------------- MÓDULO B · 10 cosas de mí --------------------- */
+
+const funFacts: { icon: typeof Music; title: string; text: string }[] = [
+  { icon: Music, title: "Toco el piano", text: "Conservatorio. Todavía saco el teclado cuando algo no me cuadra." },
+  { icon: Waves, title: "Chicharrera", text: "Nacida en Tenerife. Hija de madre ecuatoriana y padre peninsular." },
+  { icon: Scale, title: "Soy mediadora", text: "Formación en Mediación y Arbitraje. Escuchar antes que hablar." },
+  { icon: Sparkles, title: "Alta sensibilidad", text: "Ponerle nombre a mi forma de funcionar lo cambió todo." },
+  { icon: Coffee, title: "Café solo, siempre", text: "Sin azúcar, sin leche, sin excusas. La mitad de mis ideas nacen ahí." },
+  { icon: BookOpen, title: "Eterna aprendiz", text: "Nunca dejo de estudiar. Ahora, IA aplicada a negocio." },
+  { icon: Dog, title: "Marcopolo", text: "Mi compañero de escritorio. Y de casi todo lo demás." },
+  { icon: Plane, title: "Entre dos mares", text: "Crecí repartida entre el Atlántico y el Mediterráneo." },
+  { icon: Palette, title: "Diseño lo que enseño", text: "Cada plantilla, cada carrusel, cada slide. Manía sana." },
+  { icon: GraduationCap, title: "Doy clases de IA", text: "En escuelas de negocio y para equipos que quieren criterio real." },
+];
+
+const FunFactsSection = () => (
+  <section className="py-24 lg:py-32 bg-[#ECE9E3] border-y border-border/60 relative overflow-hidden">
+    <div
+      className="absolute inset-0 opacity-[0.05] pointer-events-none"
+      style={{
+        backgroundImage: `url(${logoWatermark})`,
+        backgroundSize: "80px auto",
+        backgroundRepeat: "repeat",
+      }}
+    />
+    <div className="container mx-auto px-6 lg:px-8 max-w-6xl relative z-10">
+      <div className="text-center mb-14">
+        <p className="font-sans text-[11px] uppercase tracking-[0.28em] text-accent mb-4">
+          Lado B
+        </p>
+        <h2 className="font-serif text-4xl md:text-5xl font-light text-foreground leading-tight max-w-3xl mx-auto">
+          10 cosas que <span className="italic text-accent">quizá no sabes</span> de mí.
+        </h2>
+      </div>
+
+      <ul className="grid sm:grid-cols-2 lg:grid-cols-5 gap-x-6 gap-y-10">
+        {funFacts.map(({ icon: Icon, title, text }) => (
+          <li key={title} className="flex flex-col items-start border-t border-accent/30 pt-5">
+            <Icon className="h-6 w-6 text-accent mb-4" strokeWidth={1.4} />
+            <p className="font-serif text-lg font-medium text-foreground leading-snug mb-2">
+              {title}
+            </p>
+            <p className="font-sans text-[14px] text-muted-foreground leading-relaxed">
+              {text}
+            </p>
+          </li>
+        ))}
+      </ul>
+    </div>
+  </section>
+);
+
+/* =============================== PAGE =============================== */
+
 const SobreMi = () => {
   return (
     <div className="min-h-screen bg-background relative overflow-hidden">
       <SEO
-        title="Mi historia — Sandra Tello"
-        description="La historia real detrás de mi trabajo: del despido a reconstruir un valor propio con marca personal, estrategia e inteligencia artificial."
+        title="Mi historia — Sandra Tello · Consultora en IA, marca personal y marketing"
+        description="Del despido a reconstruir un valor propio. La historia real detrás del trabajo de Sandra Tello: marca personal, estrategia y IA aplicada a negocio."
         path="/sobre-mi"
         type="profile"
+        jsonLd={[
+          {
+            "@context": "https://schema.org",
+            "@type": "Person",
+            name: "Sandra Tello",
+            jobTitle: "Consultora estratégica en Inteligencia Artificial, marca personal y marketing",
+            description:
+              "Consultora estratégica que acompaña a profesionales y empresas a integrar marca personal, estrategia y IA aplicada a negocio para tomar mejores decisiones y decidir su propio valor.",
+            url: "/sobre-mi",
+            nationality: "ES",
+            birthPlace: {
+              "@type": "Place",
+              name: "Tenerife, España",
+            },
+            alumniOf: [
+              { "@type": "EducationalOrganization", name: "Grado en Derecho" },
+              { "@type": "EducationalOrganization", name: "Administración y Dirección de Empresas" },
+              { "@type": "EducationalOrganization", name: "Máster en Dirección Comercial y Marketing" },
+              { "@type": "EducationalOrganization", name: "Máster en Inteligencia Artificial" },
+            ],
+            knowsAbout: [
+              "Inteligencia Artificial aplicada a negocio",
+              "Estrategia digital",
+              "Marca personal",
+              "Marketing",
+              "Mediación y arbitraje",
+              "Employee advocacy",
+            ],
+            sameAs: [],
+          },
+          {
+            "@context": "https://schema.org",
+            "@type": "BreadcrumbList",
+            itemListElement: [
+              { "@type": "ListItem", position: 1, name: "Inicio", item: "/" },
+              { "@type": "ListItem", position: 2, name: "Mi historia", item: "/sobre-mi" },
+            ],
+          },
+        ]}
       />
 
       {/* Watermark de fondo global */}
@@ -143,6 +459,9 @@ const SobreMi = () => {
           </div>
         </section>
 
+        {/* MÓDULO A · Línea de vida profesional */}
+        <TimelineSection />
+
         {/* ESCENA 1 — El despido */}
         <Scene
           eyebrow="Capítulo 01 · El día en que todo se detuvo"
@@ -167,15 +486,15 @@ const SobreMi = () => {
           </p>
         </Scene>
 
-        {/* ESCENA 2 — El fondo */}
+        {/* ESCENA 2 — El fondo · bloque tipográfico en lugar de placeholder */}
         <Scene
           eyebrow="Capítulo 02 · Lo que vino después"
           reverse
           photo={
-            <PhotoPlaceholder
-              label="Paisaje de mar en invierno"
-              hint="Cielo cubierto, tonos fríos. El punto emocional más bajo del relato."
-              aspect="aspect-[4/5]"
+            <TypographicPhoto
+              chapter="02"
+              quote="El cuerpo subrayó el mensaje por si no había quedado claro."
+              variant="cream"
             />
           }
         >
@@ -257,14 +576,18 @@ const SobreMi = () => {
           </p>
         </Scene>
 
-        {/* ESCENA 6 — Reconstrucción */}
+        {/* MÓDULO C · En cifras */}
+        <EnCifrasSection />
+
+        {/* ESCENA 6 — Reconstrucción · bloque tipográfico navy */}
         <Scene
           eyebrow="Capítulo 06 · El silencio que enseña"
           reverse
           photo={
-            <PhotoPlaceholder
-              label="Silueta caminando por la orilla"
-              hint="Soledad buscada, no impuesta. Deja que el paisaje hable."
+            <TypographicPhoto
+              chapter="06"
+              quote="Nadie vino a rescatarme. Me rescaté yo, sin prisa de heroína."
+              variant="navy"
             />
           }
         >
@@ -296,7 +619,7 @@ const SobreMi = () => {
             Hubo otra pieza que tardó bastante más en encajar. Durante años conviví con una sensación difícil de nombrar: me interesaban demasiadas cosas a la vez, conectaba ideas que a nadie más se le ocurría relacionar, me aburría enseguida de cualquier rutina fija, sentía el mundo con un volumen que a los demás les resultaba excesivo.
           </p>
           <p>
-            Pasados ya los cuarenta, pude por fin ponerle nombre a esa manera distinta de funcionar, y en lugar de seguir viviéndola como un defecto que corregir, empecé a entenderla como la razón exacta por la que soy capaz de ver matices que otros pasan por alto, y de cruzar disciplinas tan dispares — leyes, negocio, marketing, tecnología, música — como si en el fondo hubieran sido siempre la misma cosa.
+            Pasados ya los cuarenta, pude por fin ponerle nombre a esa manera distinta de funcionar, y en lugar de seguir viviéndola como un defecto que corregir, empecé a entenderla como la razón exacta por la que soy capaz de ver matices que otros pasan por alto, y de cruzar disciplinas tan dispares como leyes, negocio, marketing, tecnología o música, como si en el fondo hubieran sido siempre la misma cosa.
           </p>
           <p>
             Durante un tiempo cargué también con otra creencia que ni siquiera era mía: que existe una edad correcta para reinventarse, y que yo ya la había dejado atrás. Tardé en darme cuenta de que esa idea pertenecía a un sistema que premia ir en línea recta y castiga cualquier desvío del camino esperado.
@@ -305,6 +628,9 @@ const SobreMi = () => {
             Hoy sé que no existe fecha de caducidad para decidir el propio valor. Existe, solamente, el momento en que dejas de esperar que alguien te dé permiso para hacerlo.
           </p>
         </Scene>
+
+        {/* MÓDULO D · Carrusel de citas */}
+        <QuotesCarousel />
 
         {/* ESCENA 8 — La vocación construida */}
         <Scene
@@ -330,6 +656,9 @@ const SobreMi = () => {
             La estrategia digital es lo que evita que esa marca dependa de la suerte o de publicar sin rumbo. Y la inteligencia artificial es, sencillamente, la herramienta más potente que hemos tenido nunca para ordenar todo eso con criterio propio.
           </p>
         </Scene>
+
+        {/* MÓDULO B · 10 cosas de mí */}
+        <FunFactsSection />
 
         {/* ESCENA 9 — Pelu2Go */}
         <Scene
