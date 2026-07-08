@@ -238,7 +238,6 @@ const MiHistoria = () => {
       <SEO
         title="Mi historia — Sandra Tello"
         description="Un diario abierto: cómo el Derecho, el piano, un despido y la IA se convirtieron en un método propio."
-        canonical="/mi-historia"
       />
       <Navbar />
 
