@@ -360,99 +360,68 @@ const TimelineSection = () => (
 /* ---------------------- MÓDULO C · En cifras -------------------------- */
 
 type Stat = {
-  prefix?: string;
+  label: string;
   value: number;
   suffix?: string;
-  label: string;
-  note: string;
+  prefix?: string;
+  description: string;
 };
 
 const stats: Stat[] = [
-  {
-    prefix: "+",
-    value: 20,
-    label: "años",
-    note: "En negocio, marketing y corporate. Aprendiendo el oficio antes de que nadie me lo llamara así.",
-  },
-  {
-    prefix: "+",
-    value: 500,
-    label: "profesionales formados",
-    note: "En IA aplicada y marca personal. En aulas, escuelas de negocio y equipos.",
-  },
-  {
-    prefix: "+",
-    value: 30,
-    label: "acompañados 1 a 1",
-    note: "Consultoría individual. Cada caso, un traje a medida.",
-  },
-  {
-    value: 2,
-    label: "másters",
-    note: "Marketing e Inteligencia Artificial. Los papeles como piezas de un mapa.",
-  },
+  { label: "Experiencia", value: 20, prefix: "+", suffix: "", description: "años en negocio y marketing" },
+  { label: "Formación", value: 500, prefix: "+", suffix: "", description: "profesionales formados en IA y marca personal" },
+  { label: "Uno a uno", value: 30, prefix: "+", suffix: "", description: "profesionales acompañados 1:1" },
 ];
 
-const useCountUp = (target: number, active: boolean, duration = 1600) => {
-  const [n, setN] = useState(target);
+const useCountUp = (target: number, active: boolean, duration = 2000) => {
+  const [n, setN] = useState(0);
   const done = useRef(false);
   useEffect(() => {
     if (!active || done.current) return;
     done.current = true;
-    const t0 = performance.now();
-    let raf = 0;
-    const tick = (t: number) => {
-      const p = Math.min(1, Math.max(0.35, (t - t0) / duration));
-      const eased = 1 - Math.pow(1 - p, 3);
-      setN(Math.round(target * eased));
-      if (p < 1) raf = requestAnimationFrame(tick);
-    };
-    raf = requestAnimationFrame(tick);
-    return () => cancelAnimationFrame(raf);
+    const steps = 60;
+    const increment = target / steps;
+    let current = 0;
+    const stepDuration = duration / steps;
+    const timer = setInterval(() => {
+      current += increment;
+      if (current >= target) {
+        setN(target);
+        clearInterval(timer);
+      } else {
+        setN(Math.floor(current));
+      }
+    }, stepDuration);
+    return () => clearInterval(timer);
   }, [active, target, duration]);
   return n;
 };
 
 const StatCard = ({ s, active, i }: { s: Stat; active: boolean; i: number }) => {
-  const n = useCountUp(s.value, active);
+  const count = useCountUp(s.value, active);
+  const [show, setShow] = useState(false);
+  useEffect(() => {
+    if (active) {
+      const t = setTimeout(() => setShow(true), i * 200);
+      return () => clearTimeout(t);
+    }
+  }, [active, i]);
   return (
     <div
-      className="relative p-5 md:p-6 border border-primary-foreground/14 bg-primary-foreground/[0.025] backdrop-blur-sm transition-all duration-700"
-      style={{ transitionDelay: `${i * 90}ms` }}
+      className="relative p-3 md:p-5 backdrop-blur-sm transition-all duration-700"
+      style={{
+        opacity: show ? 1 : 0,
+        transform: show ? 'translateY(0)' : 'translateY(20px)',
+        background: 'linear-gradient(135deg, rgba(203,170,96,0.08), rgba(255,255,255,0.02))',
+        border: '1px solid',
+        borderImage: 'linear-gradient(135deg, rgba(203,170,96,0.4), rgba(203,170,96,0.1)) 1',
+      }}
     >
-      <div className="flex items-center gap-3 mb-4">
-        <span className="h-px w-8 bg-accent" />
-        <span className="font-sans text-[10px] uppercase tracking-[0.32em] text-accent/80">
-          {i === 0 ? "Experiencia" : i === 1 ? "Formación" : i === 2 ? "Uno a uno" : "Especialización"}
-        </span>
-      </div>
-      <div className="flex items-baseline gap-2">
-        {s.prefix && (
-          <span
-            className="font-serif italic gold-gradient-text leading-none text-3xl md:text-4xl"
-          >
-            {s.prefix}
-          </span>
-        )}
-        <span
-          className="font-serif italic gold-gradient-text leading-none tabular-nums text-5xl md:text-6xl lg:text-7xl"
-        >
-          {n}
-        </span>
-        {s.suffix && (
-          <span
-            className="font-serif italic gold-gradient-text leading-none text-3xl md:text-4xl"
-          >
-            {s.suffix}
-          </span>
-        )}
-      </div>
-      <p className="font-serif text-xl md:text-2xl text-primary-foreground mt-3 leading-tight">
-        {s.label}
+      <p className="text-[10px] font-sans uppercase tracking-[0.2em] gold-gradient-text mb-3 font-semibold">{s.label}</p>
+      <p className="font-serif text-2xl sm:text-3xl md:text-5xl font-semibold gold-gradient-text leading-none mb-2">
+        {s.prefix}{count}{s.suffix}
       </p>
-      <p className="font-sans text-[13px] text-primary-foreground/60 leading-relaxed mt-3 max-w-[34ch]">
-        {s.note}
-      </p>
+      <p className="text-white/45 text-[10px] md:text-xs font-sans leading-relaxed">{s.description}</p>
     </div>
   );
 };
@@ -509,8 +478,7 @@ const EnCifrasSection = () => {
           </div>
         </div>
 
-        {/* Misma lógica visual que en inicio: cifras contenidas, no titulares gigantes */}
-        <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-4 md:gap-5">
+        <div className="grid sm:grid-cols-3 gap-4 md:gap-6 max-w-5xl">
           {stats.map((stat, i) => (
             <StatCard key={stat.label} s={stat} active={active} i={i} />
           ))}
