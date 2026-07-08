@@ -394,7 +394,7 @@ const stats: Stat[] = [
 ];
 
 const useCountUp = (target: number, active: boolean, duration = 1600) => {
-  const [n, setN] = useState(0);
+  const [n, setN] = useState(target);
   const done = useRef(false);
   useEffect(() => {
     if (!active || done.current) return;
@@ -402,7 +402,7 @@ const useCountUp = (target: number, active: boolean, duration = 1600) => {
     const t0 = performance.now();
     let raf = 0;
     const tick = (t: number) => {
-      const p = Math.min(1, (t - t0) / duration);
+      const p = Math.min(1, Math.max(0.35, (t - t0) / duration));
       const eased = 1 - Math.pow(1 - p, 3);
       setN(Math.round(target * eased));
       if (p < 1) raf = requestAnimationFrame(tick);
