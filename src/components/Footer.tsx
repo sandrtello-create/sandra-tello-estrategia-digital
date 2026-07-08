@@ -1,17 +1,19 @@
 import { Linkedin, Instagram, Youtube, Mail, MessageCircle } from "lucide-react";
 
 const formacionLinks = [
-  { label: "Servicios", href: "#servicios" },
-  { label: "Formación en IA", href: "#formacion" },
-  { label: "Marca personal y estrategia", href: "#formacion" },
-  { label: "Mentoría 1 a 1", href: "#contacto" },
-  { label: "Sobre Sandra", href: "#sobre" },
+  { label: "Formación en IA", href: "/formacion" },
+  { label: "Marca personal estratégica", href: "/marca-personal-estrategica" },
+  { label: "Marketing con factor humano", href: "/marketing-con-factor-humano" },
+  { label: "IA para profesionales", href: "/inteligencia-artificial-para-profesionales" },
+  { label: "Mentoría 1 a 1", href: "/#contacto" },
 ];
 
 const contenidoLinks = [
-  { label: "Blog", href: "#blog" },
-  { label: "Newsletter", href: "#newsletter" },
-  { label: "Recursos gratuitos", href: "#formacion" },
+  { label: "Sobre mí", href: "/sobre-mi" },
+  { label: "Mi historia", href: "/mi-historia" },
+  { label: "Metodología", href: "/metodologia" },
+  { label: "Resultados", href: "/resultados" },
+  { label: "Testimonios", href: "/testimonios" },
   { label: "Perfiles", href: "/perfiles" },
 ];
 
