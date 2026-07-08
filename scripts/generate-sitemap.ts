@@ -42,6 +42,14 @@ async function loadDynamicEntries(): Promise<SitemapEntry[]> {
 const staticEntries: SitemapEntry[] = [
   { path: "/", changefreq: "weekly", priority: "1.0" },
   { path: "/sobre-mi", changefreq: "monthly", priority: "0.8" },
+  { path: "/mi-historia", changefreq: "monthly", priority: "0.7" },
+  { path: "/metodologia", changefreq: "monthly", priority: "0.9" },
+  { path: "/resultados", changefreq: "monthly", priority: "0.8" },
+  { path: "/testimonios", changefreq: "monthly", priority: "0.7" },
+  { path: "/formacion", changefreq: "monthly", priority: "0.9" },
+  { path: "/marketing-con-factor-humano", changefreq: "monthly", priority: "0.9" },
+  { path: "/inteligencia-artificial-para-profesionales", changefreq: "monthly", priority: "0.9" },
+  { path: "/marca-personal-estrategica", changefreq: "monthly", priority: "0.9" },
   { path: "/perfiles", changefreq: "weekly", priority: "0.8" },
 ];
 

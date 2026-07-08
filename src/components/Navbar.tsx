@@ -12,11 +12,11 @@ const navItems: NavItem[] = [
     label: "Sobre Sandra",
     href: "/sobre-mi",
     children: [
-      { label: "Mi historia", href: "/sobre-mi" },
-      { label: "Mi historia (v2 · diario)", href: "/mi-historia" },
-      { label: "Metodología", href: "/#metodo" },
-      { label: "Resultados", href: "/#resultados" },
-      { label: "Testimonios", href: "/#testimonios" },
+      { label: "Sobre mí (bio)", href: "/sobre-mi" },
+      { label: "Mi historia", href: "/mi-historia" },
+      { label: "Metodología", href: "/metodologia" },
+      { label: "Resultados", href: "/resultados" },
+      { label: "Testimonios", href: "/testimonios" },
     ],
   },
   {
@@ -30,12 +30,21 @@ const navItems: NavItem[] = [
     ],
   },
   {
-    label: "Formación",
-    href: "#formacion",
+    label: "Áreas",
+    href: "/marketing-con-factor-humano",
     children: [
-      { label: "Formación en IA", href: "/#formacion" },
-      { label: "Mentoría de marca personal", href: "/#formacion" },
-      { label: "LinkedIn con estrategia", href: "/#formacion" },
+      { label: "Marketing con factor humano", href: "/marketing-con-factor-humano" },
+      { label: "Inteligencia artificial", href: "/inteligencia-artificial-para-profesionales" },
+      { label: "Marca personal estratégica", href: "/marca-personal-estrategica" },
+    ],
+  },
+  {
+    label: "Formación",
+    href: "/formacion",
+    children: [
+      { label: "Formación en IA", href: "/formacion" },
+      { label: "Mentoría de marca personal", href: "/formacion" },
+      { label: "LinkedIn con estrategia", href: "/formacion" },
       { label: "Recursos gratuitos", href: "/#formacion" },
     ],
   },

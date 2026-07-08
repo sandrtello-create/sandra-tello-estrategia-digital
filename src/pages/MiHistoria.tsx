@@ -2,7 +2,7 @@ import { useEffect, useRef, useState } from "react";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import SEO from "@/components/SEO";
-import CredibilityStats from "@/components/CredibilityStats";
+
 import sandraHero from "@/assets/sandra-tello-hero.jpg";
 import sandraAbout from "@/assets/sandra-tello-about.jpg";
 import sandraIA from "@/assets/sandra-tello-ia.jpg";
@@ -455,21 +455,8 @@ const MiHistoria = () => {
           </DiaryPage>
         </div>
 
-        {/* ============================ CIFRAS ============================ */}
-        <section className="bg-[hsl(var(--section-alt))] py-24 border-y border-border/60">
-          <div className="container mx-auto px-6 max-w-6xl">
-            <div className="text-center mb-14">
-              <Fleuron className="mx-auto mb-6" />
-              <p className="font-sans text-[11px] uppercase tracking-[0.32em] text-accent mb-3">
-                Anotaciones al pie
-              </p>
-              <h3 className="font-serif text-primary text-3xl md:text-4xl italic">
-                Lo que se puede contar con números.
-              </h3>
-            </div>
-            <CredibilityStats />
-          </div>
-        </section>
+        {/* Cifras eliminadas para no duplicar Sobre mí — se mantienen sólo en la bio profesional */}
+
 
         <div style={paperStyle}>
           <DiaryPage

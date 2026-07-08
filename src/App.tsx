@@ -9,6 +9,13 @@ import MiHistoria from "./pages/MiHistoria";
 import Perfiles from "./pages/Perfiles";
 import PerfilDetalle from "./pages/PerfilDetalle";
 import ServicioPortfolio from "./pages/ServicioPortfolio";
+import Metodologia from "./pages/Metodologia";
+import Resultados from "./pages/Resultados";
+import Testimonios from "./pages/Testimonios";
+import Formacion from "./pages/Formacion";
+import MarketingConFactorHumano from "./pages/MarketingConFactorHumano";
+import InteligenciaArtificial from "./pages/InteligenciaArtificial";
+import MarcaPersonal from "./pages/MarcaPersonal";
 import NotFound from "./pages/NotFound";
 import ScrollToTop from "./components/ScrollToTop";
 
@@ -28,6 +35,13 @@ const App = () => (
           <Route path="/perfiles" element={<Perfiles />} />
           <Route path="/perfiles/:slug" element={<PerfilDetalle />} />
           <Route path="/servicios/:slug" element={<ServicioPortfolio />} />
+          <Route path="/metodologia" element={<Metodologia />} />
+          <Route path="/resultados" element={<Resultados />} />
+          <Route path="/testimonios" element={<Testimonios />} />
+          <Route path="/formacion" element={<Formacion />} />
+          <Route path="/marketing-con-factor-humano" element={<MarketingConFactorHumano />} />
+          <Route path="/inteligencia-artificial-para-profesionales" element={<InteligenciaArtificial />} />
+          <Route path="/marca-personal-estrategica" element={<MarcaPersonal />} />
           {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
           <Route path="*" element={<NotFound />} />
         </Routes>
