@@ -471,32 +471,13 @@ const EnCifrasSection = () => {
         </div>
 
         <div className="container mx-auto px-6 lg:px-8 relative z-10">
-          <div className="grid lg:grid-cols-2 gap-10 lg:gap-16 items-end">
-            <div>
-              <div className="flex items-center gap-3 mb-6">
-                <div className="h-px w-10" style={{ background: "linear-gradient(90deg, #a47633, #cbaa60)" }} />
-                <p className="font-sans text-[11px] font-semibold uppercase tracking-[0.25em] gold-gradient-text">
-                  Este recorrido en cifras
-                </p>
-              </div>
-
-              <h2 className="font-serif text-[30px] md:text-[38px] lg:text-[44px] font-semibold text-white leading-[1.2]">
-                Los números también cuentan una parte de <span className="italic gold-gradient-text">mi historia</span>.
-              </h2>
-            </div>
-
-            <div className="lg:pb-1">
-              <p className="text-white/80 text-[16px] md:text-[17px] leading-relaxed">
-                No son trofeos ni adornos: son la prueba sencilla de un camino construido entre negocio, marketing, formación y acompañamiento real.
-              </p>
-            </div>
-          </div>
-
-          <div className="mt-16 pt-8 border-t border-white/10">
+          <div className="max-w-2xl mx-auto">
+            <div className="pt-8 border-t border-white/10">
             <div className="grid grid-cols-3 gap-2 sm:gap-3 md:gap-6">
               {stats.map((stat, i) => (
                 <StatCard key={stat.label} s={stat} active={active} i={i} />
               ))}
+            </div>
             </div>
           </div>
         </div>
