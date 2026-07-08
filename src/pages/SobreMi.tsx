@@ -70,7 +70,7 @@ const TypographicPhoto = ({
       className={`relative w-full aspect-[4/5] overflow-hidden border ${
         isNavy
           ? "bg-primary text-primary-foreground border-primary"
-          : "bg-[#ECE9E3] text-foreground border-border"
+          : "bg-cream text-foreground border-border"
       }`}
     >
       <div
@@ -107,23 +107,87 @@ const Scene = ({
   photo: React.ReactNode;
   reverse?: boolean;
 }) => (
-  <section className="py-16 lg:py-24 border-t border-border/60">
+  <section className="py-14 lg:py-20 border-t border-border/60 bg-background">
     <div className="container mx-auto px-6 lg:px-8 max-w-6xl">
-      <div className={`grid lg:grid-cols-12 gap-10 lg:gap-16 items-start ${reverse ? "lg:[&>*:first-child]:order-2" : ""}`}>
-        <div className="lg:col-span-5">
-          <div className="lg:sticky lg:top-32">{photo}</div>
+      <div className={`grid lg:grid-cols-12 gap-8 lg:gap-14 items-start ${reverse ? "lg:[&>*:first-child]:order-2" : ""}`}>
+        <div className="lg:col-span-4">
+          <div className="lg:sticky lg:top-32">
+            <div className="relative">
+              <div className="absolute -left-3 top-3 bottom-3 w-px bg-accent/40" aria-hidden />
+              {photo}
+            </div>
+          </div>
         </div>
-        <div className="lg:col-span-7">
+        <article className="lg:col-span-8 relative">
           {eyebrow && (
-            <p className="font-sans text-[11px] uppercase tracking-[0.28em] text-accent mb-5">
-              {eyebrow}
-            </p>
+            <div className="flex items-center gap-4 mb-6">
+              <span className="h-px w-10 bg-accent" aria-hidden />
+              <p className="font-sans text-[11px] uppercase tracking-[0.28em] text-accent">
+                {eyebrow}
+              </p>
+            </div>
           )}
-          <div className="space-y-6 font-serif text-[19px] md:text-[20px] leading-[1.75] text-foreground/85">
+          <div className="relative border-l border-accent/25 pl-6 md:pl-8">
+            <span className="absolute -left-[5px] top-2 h-2.5 w-2.5 gold-gradient" aria-hidden />
+            <div className="space-y-5 font-serif text-[18px] md:text-[19px] leading-[1.72] text-foreground/82 [&_p]:max-w-[62ch] [&_p]:mb-0 [&_span.text-accent]:text-accent">
+              {children}
+            </div>
+          </div>
+        </article>
+      </div>
+    </div>
+  </section>
+);
+
+const BookInterlude = ({ children }: { children: React.ReactNode }) => (
+  <section className="py-16 lg:py-20 bg-cream border-y border-border/60">
+    <div className="container mx-auto px-6 lg:px-8 max-w-5xl">
+      <div className="grid md:grid-cols-[1fr_auto_1fr] gap-8 md:gap-12 items-center">
+        <div className="hidden md:block h-px bg-accent/40" />
+        <p className="font-serif italic text-2xl md:text-4xl lg:text-5xl font-light leading-[1.25] text-primary text-center max-w-3xl">
+          {children}
+        </p>
+        <div className="hidden md:block h-px bg-accent/40" />
+      </div>
+    </div>
+  </section>
+);
+
+const BookChapterDivider = ({ number, title }: { number: string; title: string }) => (
+  <section className="py-10 bg-background border-y border-border/60">
+    <div className="container mx-auto px-6 lg:px-8 max-w-6xl">
+      <div className="grid grid-cols-[auto_1fr] gap-5 md:gap-8 items-center">
+        <span className="font-serif italic text-6xl md:text-8xl leading-none gold-gradient-text">
+          {number}
+        </span>
+        <div>
+          <div className="h-px bg-accent/45 mb-4" />
+          <p className="font-serif text-2xl md:text-4xl leading-tight text-foreground">
+            {title}
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+);
+
+const BookManuscript = ({ children }: { children: React.ReactNode }) => (
+  <section className="py-16 lg:py-24 bg-background border-t border-border/60">
+    <div className="container mx-auto px-6 lg:px-8 max-w-5xl">
+      <article className="relative">
+        <div className="absolute left-0 top-0 bottom-0 hidden md:block w-px bg-accent/25" aria-hidden />
+        <div className="md:pl-10">
+          <div className="flex items-center gap-4 mb-8">
+            <span className="h-px w-12 bg-accent" aria-hidden />
+            <p className="font-sans text-[11px] uppercase tracking-[0.28em] text-accent">
+              Nota al margen
+            </p>
+          </div>
+          <div className="space-y-6 font-serif text-[19px] md:text-[21px] leading-[1.78] text-foreground/84 [&_p]:max-w-[64ch]">
             {children}
           </div>
         </div>
-      </div>
+      </article>
     </div>
   </section>
 );
@@ -146,11 +210,9 @@ const PullQuote = ({ children }: { children: React.ReactNode }) => (
   </section>
 );
 
-/* ---------------------- MÓDULO A · Línea de vida ---------------------- */
-/*  Ritmo editorial coherente con el resto de la web:
- *  fondo cream, tipografía Playfair, acentos en oro. Sin neones,
- *  sin burbujas de colores. Cada capítulo es una entrada del "libro"
- *  con año grande a un lado y texto al otro, alternando ejes.            */
+/* ---------------------- MÓDULO A · Índice de capítulos ----------------- */
+/*  Más libro y menos línea temporal: un índice editorial con entradas
+ *  breves, aire, numeración de capítulo y años tratados como marginalia. */
 
 const chapters: {
   year: string;
@@ -215,7 +277,7 @@ const chapters: {
 ];
 
 const TimelineSection = () => (
-  <section className="relative py-24 lg:py-32 bg-cream border-y border-border/60 overflow-hidden">
+  <section className="relative py-20 lg:py-28 bg-cream border-y border-border/60 overflow-hidden">
     <div
       className="absolute inset-0 opacity-[0.04] pointer-events-none"
       style={{
@@ -226,80 +288,62 @@ const TimelineSection = () => (
     />
 
     {/* Header */}
-    <div className="container mx-auto px-6 lg:px-8 max-w-5xl relative z-10 mb-20 md:mb-24 text-center">
-      <div className="flex items-center justify-center gap-3 mb-6">
+    <div className="container mx-auto px-6 lg:px-8 max-w-6xl relative z-10 mb-14 md:mb-16">
+      <div className="flex items-center gap-3 mb-6">
         <div className="h-px w-10 bg-accent" />
         <p className="font-sans text-[11px] font-semibold uppercase tracking-[0.28em] text-accent">
-          Línea de vida
+          Índice de capítulos
         </p>
-        <div className="h-px w-10 bg-accent" />
       </div>
-      <h2 className="font-serif text-4xl md:text-5xl lg:text-6xl font-light leading-[1.1] text-foreground max-w-3xl mx-auto">
-        Un recorrido contado
-        <br />
-        <span className="italic text-accent">como un libro breve.</span>
-      </h2>
-      <p className="font-serif text-lg md:text-xl text-muted-foreground mt-8 max-w-2xl mx-auto leading-relaxed">
-        Nueve capítulos que explican por qué hoy acompaño a otras personas a construir su propio valor.
-      </p>
+      <div className="grid lg:grid-cols-12 gap-8 lg:gap-12 items-end">
+        <h2 className="lg:col-span-7 font-serif text-4xl md:text-5xl lg:text-6xl font-light leading-[1.08] text-foreground max-w-3xl">
+          Un recorrido para leer
+          <br />
+          <span className="italic text-accent">sin prisa.</span>
+        </h2>
+        <p className="lg:col-span-5 font-serif text-lg md:text-xl text-muted-foreground leading-relaxed max-w-xl lg:border-l lg:border-accent/35 lg:pl-8">
+          Nueve entradas breves. No una cronología perfecta: las páginas que explican por qué hoy acompaño a otras personas a construir su propio valor.
+        </p>
+      </div>
     </div>
 
-    {/* Chapters */}
-    <div className="relative">
-      {/* Línea vertical central en desktop */}
-      <div className="hidden lg:block absolute left-1/2 -translate-x-px top-0 bottom-0 w-px bg-accent/25" />
-
-      <div className="container mx-auto px-6 lg:px-8 max-w-5xl relative z-10 space-y-20 md:space-y-24">
+    <div className="container mx-auto px-6 lg:px-8 max-w-6xl relative z-10">
+      <div className="grid md:grid-cols-2 lg:grid-cols-3 border-t border-l border-accent/25">
         {chapters.map((ch, i) => {
-          const isLeft = i % 2 === 0;
           return (
-            <div key={ch.year} className="relative grid lg:grid-cols-2 gap-8 lg:gap-16 items-center">
-              {/* Nodo central en la línea */}
-              <span
-                aria-hidden
-                className="hidden lg:block absolute left-1/2 top-6 -translate-x-1/2 w-3 h-3 rounded-full gold-gradient ring-4 ring-cream"
-              />
-
-              {/* AÑO grande serif */}
-              <div
-                className={`relative ${
-                  isLeft
-                    ? "lg:text-right lg:pr-16 lg:order-1"
-                    : "lg:text-left lg:pl-16 lg:order-2"
-                }`}
-              >
-                <span
-                  className="block font-serif italic font-light gold-gradient-text leading-[0.9] tracking-tight select-none"
-                  style={{ fontSize: "clamp(4.5rem, 11vw, 9.5rem)" }}
-                >
-                  {ch.year}
-                </span>
-              </div>
-
-              {/* Contenido */}
-              <div
-                className={`relative ${
-                  isLeft ? "lg:pl-16 lg:order-2" : "lg:pr-16 lg:order-1"
-                }`}
-              >
-                <p className="font-sans text-[11px] uppercase tracking-[0.28em] text-accent mb-4">
-                  {ch.eyebrow}
-                </p>
-                <h3 className="font-serif text-2xl md:text-3xl lg:text-[34px] font-medium leading-[1.2] text-foreground mb-4">
+            <article key={ch.year} className="group min-h-[300px] border-r border-b border-accent/25 p-7 md:p-8 lg:p-9 flex flex-col justify-between bg-background/35 transition-colors duration-300 hover:bg-background/75">
+              <div>
+                <div className="flex items-start justify-between gap-4 mb-9">
+                  <span className="font-sans text-[10px] uppercase tracking-[0.28em] text-accent/85">
+                    {ch.eyebrow.replace(" · ", " / ")}
+                  </span>
+                  <span className="font-serif italic text-4xl md:text-5xl leading-none gold-gradient-text tabular-nums">
+                    {String(i + 1).padStart(2, "0")}
+                  </span>
+                </div>
+                <h3 className="font-serif text-2xl md:text-[30px] font-medium leading-[1.12] text-foreground mb-5">
                   {ch.title}
                 </h3>
-                <p className="font-serif text-lg md:text-xl text-foreground/75 leading-[1.7] max-w-xl">
+                <p className="font-serif text-[17px] text-foreground/72 leading-[1.62]">
                   {ch.body}
                 </p>
               </div>
-            </div>
+              <div className="flex items-center justify-between gap-4 pt-8 mt-8 border-t border-accent/20">
+                <span className="font-sans text-[10px] uppercase tracking-[0.24em] text-muted-foreground">
+                  Página {String(i + 12).padStart(2, "0")}
+                </span>
+                <span className="font-serif italic text-3xl text-accent leading-none">
+                  {ch.year}
+                </span>
+              </div>
+            </article>
           );
         })}
       </div>
     </div>
 
     {/* Cierre editorial */}
-    <div className="container mx-auto px-6 lg:px-8 max-w-3xl relative z-10 mt-24 md:mt-28 text-center">
+    <div className="container mx-auto px-6 lg:px-8 max-w-3xl relative z-10 mt-16 md:mt-20 text-center">
       <div className="h-px w-16 bg-accent mx-auto mb-8" />
       <p className="font-serif italic text-2xl md:text-3xl lg:text-4xl font-light leading-[1.25] text-foreground">
         «No existe fecha de caducidad
@@ -321,7 +365,6 @@ type Stat = {
   suffix?: string;
   label: string;
   note: string;
-  size: "xl" | "lg" | "md";
 };
 
 const stats: Stat[] = [
@@ -330,32 +373,28 @@ const stats: Stat[] = [
     value: 20,
     label: "años",
     note: "En negocio, marketing y corporate. Aprendiendo el oficio antes de que nadie me lo llamara así.",
-    size: "xl",
   },
   {
     prefix: "+",
     value: 500,
     label: "profesionales formados",
     note: "En IA aplicada y marca personal. En aulas, escuelas de negocio y equipos.",
-    size: "lg",
   },
   {
     prefix: "+",
     value: 30,
     label: "acompañados 1 a 1",
     note: "Consultoría individual. Cada caso, un traje a medida.",
-    size: "lg",
   },
   {
     value: 2,
     label: "másters",
     note: "Marketing e Inteligencia Artificial. Los papeles como piezas de un mapa.",
-    size: "md",
   },
 ];
 
 const useCountUp = (target: number, active: boolean, duration = 1600) => {
-  const [n, setN] = useState(0);
+  const [n, setN] = useState(target);
   const done = useRef(false);
   useEffect(() => {
     if (!active || done.current) return;
@@ -363,7 +402,7 @@ const useCountUp = (target: number, active: boolean, duration = 1600) => {
     const t0 = performance.now();
     let raf = 0;
     const tick = (t: number) => {
-      const p = Math.min(1, (t - t0) / duration);
+      const p = Math.min(1, Math.max(0.35, (t - t0) / duration));
       const eased = 1 - Math.pow(1 - p, 3);
       setN(Math.round(target * eased));
       if (p < 1) raf = requestAnimationFrame(tick);
@@ -374,54 +413,44 @@ const useCountUp = (target: number, active: boolean, duration = 1600) => {
   return n;
 };
 
-const sizeMap = {
-  xl: "clamp(7rem, 18vw, 16rem)",
-  lg: "clamp(5.5rem, 13vw, 11rem)",
-  md: "clamp(4.5rem, 10vw, 8.5rem)",
-};
-
 const StatCard = ({ s, active, i }: { s: Stat; active: boolean; i: number }) => {
   const n = useCountUp(s.value, active);
   return (
     <div
-      className="relative group"
+      className="relative p-5 md:p-6 border border-primary-foreground/14 bg-primary-foreground/[0.025] backdrop-blur-sm transition-all duration-700"
       style={{ transitionDelay: `${i * 90}ms` }}
     >
-      {/* index tick */}
-      <div className="flex items-center gap-3 mb-3">
+      <div className="flex items-center gap-3 mb-4">
         <span className="h-px w-8 bg-accent" />
         <span className="font-sans text-[10px] uppercase tracking-[0.32em] text-accent/80">
-          0{i + 1} · Cifra
+          {i === 0 ? "Experiencia" : i === 1 ? "Formación" : i === 2 ? "Uno a uno" : "Especialización"}
         </span>
       </div>
       <div className="flex items-baseline gap-2">
         {s.prefix && (
           <span
-            className="font-serif italic gold-gradient-text leading-none"
-            style={{ fontSize: `calc(${sizeMap[s.size]} * 0.45)` }}
+            className="font-serif italic gold-gradient-text leading-none text-3xl md:text-4xl"
           >
             {s.prefix}
           </span>
         )}
         <span
-          className="font-serif italic gold-gradient-text leading-[0.85] tracking-tight tabular-nums"
-          style={{ fontSize: sizeMap[s.size] }}
+          className="font-serif italic gold-gradient-text leading-none tabular-nums text-5xl md:text-6xl lg:text-7xl"
         >
           {n}
         </span>
         {s.suffix && (
           <span
-            className="font-serif italic gold-gradient-text leading-none"
-            style={{ fontSize: `calc(${sizeMap[s.size]} * 0.45)` }}
+            className="font-serif italic gold-gradient-text leading-none text-3xl md:text-4xl"
           >
             {s.suffix}
           </span>
         )}
       </div>
-      <p className="font-serif text-xl md:text-2xl text-primary-foreground mt-2 leading-tight">
+      <p className="font-serif text-xl md:text-2xl text-primary-foreground mt-3 leading-tight">
         {s.label}
       </p>
-      <p className="font-sans text-[13px] text-primary-foreground/60 leading-relaxed mt-3 max-w-[28ch]">
+      <p className="font-sans text-[13px] text-primary-foreground/60 leading-relaxed mt-3 max-w-[34ch]">
         {s.note}
       </p>
     </div>
@@ -454,23 +483,8 @@ const EnCifrasSection = () => {
           backgroundRepeat: "repeat",
         }}
       />
-      {/* Arco decorativo dorado */}
-      <div
-        aria-hidden
-        className="absolute -right-40 -top-40 w-[520px] h-[520px] rounded-full opacity-20 blur-2xl"
-        style={{
-          background:
-            "radial-gradient(circle, rgba(203,170,96,0.5) 0%, transparent 65%)",
-        }}
-      />
-      <div
-        aria-hidden
-        className="absolute -left-32 bottom-0 w-[360px] h-[360px] rounded-full opacity-15 blur-2xl"
-        style={{
-          background:
-            "radial-gradient(circle, rgba(203,170,96,0.5) 0%, transparent 65%)",
-        }}
-      />
+      <div className="absolute left-0 right-0 top-24 h-px bg-accent/25" aria-hidden />
+      <div className="absolute left-0 right-0 bottom-24 h-px bg-accent/15" aria-hidden />
 
       <div className="container mx-auto px-6 lg:px-8 max-w-6xl relative z-10">
         {/* Header en dos columnas */}
@@ -495,28 +509,18 @@ const EnCifrasSection = () => {
           </div>
         </div>
 
-        {/* Grid asimétrico: 1 gigante + 3 medianos */}
-        <div className="grid lg:grid-cols-12 gap-y-14 gap-x-10 lg:gap-x-14">
-          <div className="lg:col-span-7 lg:border-r lg:border-primary-foreground/15 lg:pr-14">
-            <StatCard s={stats[0]} active={active} i={0} />
-          </div>
-          <div className="lg:col-span-5 grid gap-14">
-            <StatCard s={stats[1]} active={active} i={1} />
-            <StatCard s={stats[2]} active={active} i={2} />
-          </div>
-          <div className="lg:col-span-12 border-t border-primary-foreground/15 pt-14">
-            <div className="grid lg:grid-cols-12 gap-8 items-center">
-              <div className="lg:col-span-5">
-                <StatCard s={stats[3]} active={active} i={3} />
-              </div>
-              <div className="lg:col-span-7 lg:pl-10">
-                <p className="font-serif text-xl md:text-2xl text-primary-foreground/85 leading-relaxed">
-                  Derecho, ADE, Marketing, Mediación, IA. Un mapa que solo se lee
-                  entero <span className="italic text-accent">cuando ya lo has recorrido</span>.
-                </p>
-              </div>
-            </div>
-          </div>
+        {/* Misma lógica visual que en inicio: cifras contenidas, no titulares gigantes */}
+        <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-4 md:gap-5">
+          {stats.map((stat, i) => (
+            <StatCard key={stat.label} s={stat} active={active} i={i} />
+          ))}
+        </div>
+
+        <div className="mt-14 pt-10 border-t border-primary-foreground/15 max-w-3xl">
+          <p className="font-serif text-xl md:text-2xl text-primary-foreground/84 leading-relaxed">
+            Derecho, ADE, Marketing, Mediación, IA. Un mapa que solo se lee
+            entero <span className="italic text-accent">cuando ya lo has recorrido</span>.
+          </p>
         </div>
       </div>
     </section>
@@ -541,7 +545,7 @@ const QuotesCarousel = () => {
   }, []);
 
   return (
-    <section className="py-24 lg:py-32 bg-[#DDE3EC] relative overflow-hidden">
+    <section className="py-24 lg:py-32 bg-secondary relative overflow-hidden">
       <div className="container mx-auto px-6 lg:px-8 max-w-4xl text-center">
         <p className="font-sans text-[11px] uppercase tracking-[0.28em] text-accent mb-8">
           Frases que hoy dirijo también a mí misma
@@ -591,7 +595,7 @@ const funFacts: { icon: typeof Music; title: string; text: string }[] = [
 ];
 
 const FunFactsSection = () => (
-  <section className="py-24 lg:py-32 bg-[#ECE9E3] border-y border-border/60 relative overflow-hidden">
+  <section className="py-24 lg:py-32 bg-cream border-y border-border/60 relative overflow-hidden">
     <div
       className="absolute inset-0 opacity-[0.05] pointer-events-none"
       style={{
@@ -738,8 +742,14 @@ const SobreMi = () => {
         {/* Franja diagonal · carrusel visual estilo Vilma */}
         <DiagonalPhotoMarquee />
 
+        <BookInterlude>
+          «Esta página no es una biografía para impresionar. Es el prólogo de una forma de trabajar.»
+        </BookInterlude>
+
         {/* MÓDULO A · Línea de vida profesional */}
         <TimelineSection />
+
+        <BookChapterDivider number="I" title="La caída: cuando el valor queda en manos de otros." />
 
         {/* ESCENA 1 — El despido */}
         <Scene
@@ -765,6 +775,12 @@ const SobreMi = () => {
           </p>
         </Scene>
 
+        <BookManuscript>
+          <p>
+            Hay capítulos que no empiezan con una decisión valiente, sino con una puerta cerrándose antes de tiempo. Este fue uno de ellos.
+          </p>
+        </BookManuscript>
+
         {/* ESCENA 2 — El fondo · bloque tipográfico en lugar de placeholder */}
         <Scene
           eyebrow="Capítulo 02 · Lo que vino después"
@@ -784,6 +800,8 @@ const SobreMi = () => {
             Y como si el cuerpo hubiera querido subrayar el mensaje por si no había quedado claro, la rodilla se me volvió a salir: un menisco que tuvieron que reconstruir otra vez, un ligamento cruzado que tuvieron que volver a «bordar», y muchos meses más de reposo forzado en el peor momento posible, justo cuando mi cabeza todavía quería seguir corriendo a la velocidad de siempre.
           </p>
         </Scene>
+
+        <BookChapterDivider number="II" title="El origen: antes de tener método, ya había mirada." />
 
         {/* ESCENA 3 — Infancia */}
         <Scene
@@ -828,6 +846,8 @@ const SobreMi = () => {
           «Cuando pones toda tu vida en manos de un tercero, llega el día en que ese tercero puede quitártelo todo menos la <span className="italic text-accent">responsabilidad de seguir adelante</span>.»
         </PullQuote>
 
+        <BookChapterDivider number="III" title="El oficio: títulos, empresa y una voz que aún no tenía cargo." />
+
         {/* ESCENA 5 — Trayectoria */}
         <Scene
           eyebrow="Capítulo 05 · Los títulos y el mérito"
@@ -857,6 +877,8 @@ const SobreMi = () => {
 
         {/* MÓDULO C · En cifras */}
         <EnCifrasSection />
+
+        <BookChapterDivider number="IV" title="La reconstrucción: volver sin pedir permiso." />
 
         {/* ESCENA 6 — Reconstrucción · bloque tipográfico navy */}
         <Scene
