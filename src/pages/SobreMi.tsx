@@ -553,7 +553,7 @@ const SobreMi = () => {
               <div className="lg:col-span-5">
                 <div className="relative">
                   <div
-                    className="absolute -inset-2 bg-brand-teal -z-10"
+                    className="absolute -inset-2 gold-gradient -z-10 opacity-90"
                     style={{ transform: "rotate(-3deg)" }}
                   />
                   <div
