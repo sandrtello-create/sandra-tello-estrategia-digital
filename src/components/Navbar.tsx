@@ -13,6 +13,7 @@ const navItems: NavItem[] = [
     href: "/sobre-mi",
     children: [
       { label: "Mi historia", href: "/sobre-mi" },
+      { label: "Mi historia (v2 · diario)", href: "/mi-historia" },
       { label: "Metodología", href: "/#metodo" },
       { label: "Resultados", href: "/#resultados" },
       { label: "Testimonios", href: "/#testimonios" },
