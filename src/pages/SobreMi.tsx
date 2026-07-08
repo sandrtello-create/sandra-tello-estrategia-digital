@@ -3,6 +3,7 @@ import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import SEO from "@/components/SEO";
 import DiagonalPhotoMarquee from "@/components/DiagonalPhotoMarquee";
+import CredibilityStats from "@/components/CredibilityStats";
 import logoWatermark from "@/assets/sandra-logo-watermark.png";
 import heroLogoWatermark from "@/assets/sandra-tello-logo.png";
 import sandraAbout from "@/assets/sandra-tello-about.jpg";
@@ -360,89 +361,9 @@ const TimelineSection = () => (
 
 /* ---------------------- MÓDULO C · En cifras -------------------------- */
 
-type Stat = {
-  label: string;
-  value: number;
-  suffix?: string;
-  prefix?: string;
-  description: string;
-};
-
-const stats: Stat[] = [
-  { label: "Experiencia", value: 20, prefix: "+", suffix: "", description: "años en negocio y marketing" },
-  { label: "Formación", value: 500, prefix: "+", suffix: "", description: "profesionales formados en IA y marca personal" },
-  { label: "Uno a uno", value: 30, prefix: "+", suffix: "", description: "profesionales acompañados 1:1" },
-];
-
-const useCountUp = (target: number, active: boolean, duration = 2000) => {
-  const [n, setN] = useState(0);
-  const done = useRef(false);
-  useEffect(() => {
-    if (!active || done.current) return;
-    done.current = true;
-    const steps = 60;
-    const increment = target / steps;
-    let current = 0;
-    const stepDuration = duration / steps;
-    const timer = setInterval(() => {
-      current += increment;
-      if (current >= target) {
-        setN(target);
-        clearInterval(timer);
-      } else {
-        setN(Math.floor(current));
-      }
-    }, stepDuration);
-    return () => clearInterval(timer);
-  }, [active, target, duration]);
-  return n;
-};
-
-const StatCard = ({ s, active, i }: { s: Stat; active: boolean; i: number }) => {
-  const count = useCountUp(s.value, active);
-  const [show, setShow] = useState(false);
-  useEffect(() => {
-    if (active) {
-      const t = setTimeout(() => setShow(true), i * 200);
-      return () => clearTimeout(t);
-    }
-  }, [active, i]);
-  return (
-    <div
-      className="relative p-3 md:p-5 backdrop-blur-sm transition-all duration-700"
-      style={{
-        opacity: show ? 1 : 0,
-        transform: show ? 'translateY(0)' : 'translateY(20px)',
-        background: 'linear-gradient(135deg, rgba(203,170,96,0.08), rgba(255,255,255,0.02))',
-        border: '1px solid',
-        borderImage: 'linear-gradient(135deg, rgba(203,170,96,0.4), rgba(203,170,96,0.1)) 1',
-      }}
-    >
-      <p className="text-[10px] font-sans uppercase tracking-[0.2em] gold-gradient-text mb-3 font-semibold">{s.label}</p>
-      <p className="font-serif text-2xl sm:text-3xl md:text-5xl font-semibold gold-gradient-text leading-none mb-2">
-        {s.prefix}{count}{s.suffix}
-      </p>
-      <p className="text-white/45 text-[10px] md:text-xs font-sans leading-relaxed">{s.description}</p>
-    </div>
-  );
-};
-
 const EnCifrasSection = () => {
-  const [active, setActive] = useState(false);
-  const ref = useRef<HTMLElement | null>(null);
-  useEffect(() => {
-    if (!ref.current) return;
-    const io = new IntersectionObserver(
-      (entries) => entries.forEach((e) => e.isIntersecting && setActive(true)),
-      { threshold: 0.1 }
-    );
-    io.observe(ref.current);
-    return () => io.disconnect();
-  }, []);
-
   return (
     <section
-      ref={ref}
       className="relative overflow-hidden"
     >
       <div
@@ -472,13 +393,7 @@ const EnCifrasSection = () => {
 
         <div className="container mx-auto px-6 lg:px-8 relative z-10">
           <div className="max-w-2xl mx-auto">
-            <div className="pt-8 border-t border-white/10">
-            <div className="grid grid-cols-3 gap-2 sm:gap-3 md:gap-6">
-              {stats.map((stat, i) => (
-                <StatCard key={stat.label} s={stat} active={active} i={i} />
-              ))}
-            </div>
-            </div>
+            <CredibilityStats />
           </div>
         </div>
       </div>
