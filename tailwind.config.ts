@@ -68,6 +68,9 @@ export default {
           DEFAULT: "hsl(var(--mint))",
           light: "hsl(var(--mint-light))",
         },
+        "brand-pink": "hsl(var(--brand-pink))",
+        "brand-teal": "hsl(var(--brand-teal))",
+        "brand-yellow": "hsl(var(--brand-yellow))",
         cream: "hsl(var(--cream))",
         "warm-grey": "hsl(var(--warm-grey))",
         sidebar: {
