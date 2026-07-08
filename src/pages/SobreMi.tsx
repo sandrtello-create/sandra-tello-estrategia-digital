@@ -70,7 +70,7 @@ const TypographicPhoto = ({
       className={`relative w-full aspect-[4/5] overflow-hidden border ${
         isNavy
           ? "bg-primary text-primary-foreground border-primary"
-          : "bg-[#ECE9E3] text-foreground border-border"
+          : "bg-cream text-foreground border-border"
       }`}
     >
       <div
@@ -277,7 +277,7 @@ const chapters: {
 ];
 
 const TimelineSection = () => (
-  <section className="relative py-22 lg:py-28 bg-cream border-y border-border/60 overflow-hidden">
+  <section className="relative py-20 lg:py-28 bg-cream border-y border-border/60 overflow-hidden">
     <div
       className="absolute inset-0 opacity-[0.04] pointer-events-none"
       style={{
@@ -483,23 +483,8 @@ const EnCifrasSection = () => {
           backgroundRepeat: "repeat",
         }}
       />
-      {/* Arco decorativo dorado */}
-      <div
-        aria-hidden
-        className="absolute -right-40 -top-40 w-[520px] h-[520px] rounded-full opacity-20 blur-2xl"
-        style={{
-          background:
-            "radial-gradient(circle, rgba(203,170,96,0.5) 0%, transparent 65%)",
-        }}
-      />
-      <div
-        aria-hidden
-        className="absolute -left-32 bottom-0 w-[360px] h-[360px] rounded-full opacity-15 blur-2xl"
-        style={{
-          background:
-            "radial-gradient(circle, rgba(203,170,96,0.5) 0%, transparent 65%)",
-        }}
-      />
+      <div className="absolute left-0 right-0 top-24 h-px bg-accent/25" aria-hidden />
+      <div className="absolute left-0 right-0 bottom-24 h-px bg-accent/15" aria-hidden />
 
       <div className="container mx-auto px-6 lg:px-8 max-w-6xl relative z-10">
         {/* Header en dos columnas */}
@@ -560,7 +545,7 @@ const QuotesCarousel = () => {
   }, []);
 
   return (
-    <section className="py-24 lg:py-32 bg-[#DDE3EC] relative overflow-hidden">
+    <section className="py-24 lg:py-32 bg-secondary relative overflow-hidden">
       <div className="container mx-auto px-6 lg:px-8 max-w-4xl text-center">
         <p className="font-sans text-[11px] uppercase tracking-[0.28em] text-accent mb-8">
           Frases que hoy dirijo también a mí misma
@@ -610,7 +595,7 @@ const funFacts: { icon: typeof Music; title: string; text: string }[] = [
 ];
 
 const FunFactsSection = () => (
-  <section className="py-24 lg:py-32 bg-[#ECE9E3] border-y border-border/60 relative overflow-hidden">
+  <section className="py-24 lg:py-32 bg-cream border-y border-border/60 relative overflow-hidden">
     <div
       className="absolute inset-0 opacity-[0.05] pointer-events-none"
       style={{
@@ -757,8 +742,14 @@ const SobreMi = () => {
         {/* Franja diagonal · carrusel visual estilo Vilma */}
         <DiagonalPhotoMarquee />
 
+        <BookInterlude>
+          «Esta página no es una biografía para impresionar. Es el prólogo de una forma de trabajar.»
+        </BookInterlude>
+
         {/* MÓDULO A · Línea de vida profesional */}
         <TimelineSection />
+
+        <BookChapterDivider number="I" title="La caída: cuando el valor queda en manos de otros." />
 
         {/* ESCENA 1 — El despido */}
         <Scene
@@ -784,6 +775,12 @@ const SobreMi = () => {
           </p>
         </Scene>
 
+        <BookManuscript>
+          <p>
+            Hay capítulos que no empiezan con una decisión valiente, sino con una puerta cerrándose antes de tiempo. Este fue uno de ellos.
+          </p>
+        </BookManuscript>
+
         {/* ESCENA 2 — El fondo · bloque tipográfico en lugar de placeholder */}
         <Scene
           eyebrow="Capítulo 02 · Lo que vino después"
@@ -803,6 +800,8 @@ const SobreMi = () => {
             Y como si el cuerpo hubiera querido subrayar el mensaje por si no había quedado claro, la rodilla se me volvió a salir: un menisco que tuvieron que reconstruir otra vez, un ligamento cruzado que tuvieron que volver a «bordar», y muchos meses más de reposo forzado en el peor momento posible, justo cuando mi cabeza todavía quería seguir corriendo a la velocidad de siempre.
           </p>
         </Scene>
+
+        <BookChapterDivider number="II" title="El origen: antes de tener método, ya había mirada." />
 
         {/* ESCENA 3 — Infancia */}
         <Scene
@@ -847,6 +846,8 @@ const SobreMi = () => {
           «Cuando pones toda tu vida en manos de un tercero, llega el día en que ese tercero puede quitártelo todo menos la <span className="italic text-accent">responsabilidad de seguir adelante</span>.»
         </PullQuote>
 
+        <BookChapterDivider number="III" title="El oficio: títulos, empresa y una voz que aún no tenía cargo." />
+
         {/* ESCENA 5 — Trayectoria */}
         <Scene
           eyebrow="Capítulo 05 · Los títulos y el mérito"
@@ -876,6 +877,8 @@ const SobreMi = () => {
 
         {/* MÓDULO C · En cifras */}
         <EnCifrasSection />
+
+        <BookChapterDivider number="IV" title="La reconstrucción: volver sin pedir permiso." />
 
         {/* ESCENA 6 — Reconstrucción · bloque tipográfico navy */}
         <Scene
