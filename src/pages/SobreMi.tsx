@@ -3,7 +3,9 @@ import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import SEO from "@/components/SEO";
 import DiagonalPhotoMarquee from "@/components/DiagonalPhotoMarquee";
+import CredibilityStats from "@/components/CredibilityStats";
 import logoWatermark from "@/assets/sandra-logo-watermark.png";
+import heroLogoWatermark from "@/assets/sandra-tello-logo.png";
 import sandraAbout from "@/assets/sandra-tello-about.jpg";
 import sandraHero from "@/assets/sandra-tello-hero.jpg";
 import sandraIA from "@/assets/sandra-tello-ia.jpg";
@@ -359,136 +361,40 @@ const TimelineSection = () => (
 
 /* ---------------------- MÓDULO C · En cifras -------------------------- */
 
-type Stat = {
-  label: string;
-  value: number;
-  suffix?: string;
-  prefix?: string;
-  description: string;
-};
-
-const stats: Stat[] = [
-  { label: "Experiencia", value: 20, prefix: "+", suffix: "", description: "años en negocio y marketing" },
-  { label: "Formación", value: 500, prefix: "+", suffix: "", description: "profesionales formados en IA y marca personal" },
-  { label: "Uno a uno", value: 30, prefix: "+", suffix: "", description: "profesionales acompañados 1:1" },
-];
-
-const useCountUp = (target: number, active: boolean, duration = 2000) => {
-  const [n, setN] = useState(0);
-  const done = useRef(false);
-  useEffect(() => {
-    if (!active || done.current) return;
-    done.current = true;
-    const steps = 60;
-    const increment = target / steps;
-    let current = 0;
-    const stepDuration = duration / steps;
-    const timer = setInterval(() => {
-      current += increment;
-      if (current >= target) {
-        setN(target);
-        clearInterval(timer);
-      } else {
-        setN(Math.floor(current));
-      }
-    }, stepDuration);
-    return () => clearInterval(timer);
-  }, [active, target, duration]);
-  return n;
-};
-
-const StatCard = ({ s, active, i }: { s: Stat; active: boolean; i: number }) => {
-  const count = useCountUp(s.value, active);
-  const [show, setShow] = useState(false);
-  useEffect(() => {
-    if (active) {
-      const t = setTimeout(() => setShow(true), i * 200);
-      return () => clearTimeout(t);
-    }
-  }, [active, i]);
-  return (
-    <div
-      className="relative p-3 md:p-5 backdrop-blur-sm transition-all duration-700"
-      style={{
-        opacity: show ? 1 : 0,
-        transform: show ? 'translateY(0)' : 'translateY(20px)',
-        background: 'linear-gradient(135deg, rgba(203,170,96,0.08), rgba(255,255,255,0.02))',
-        border: '1px solid',
-        borderImage: 'linear-gradient(135deg, rgba(203,170,96,0.4), rgba(203,170,96,0.1)) 1',
-      }}
-    >
-      <p className="text-[10px] font-sans uppercase tracking-[0.2em] gold-gradient-text mb-3 font-semibold">{s.label}</p>
-      <p className="font-serif text-2xl sm:text-3xl md:text-5xl font-semibold gold-gradient-text leading-none mb-2">
-        {s.prefix}{count}{s.suffix}
-      </p>
-      <p className="text-white/45 text-[10px] md:text-xs font-sans leading-relaxed">{s.description}</p>
-    </div>
-  );
-};
-
 const EnCifrasSection = () => {
-  const [active, setActive] = useState(false);
-  const ref = useRef<HTMLElement | null>(null);
-  useEffect(() => {
-    if (!ref.current) return;
-    const io = new IntersectionObserver(
-      (entries) => entries.forEach((e) => e.isIntersecting && setActive(true)),
-      { threshold: 0.25 }
-    );
-    io.observe(ref.current);
-    return () => io.disconnect();
-  }, []);
-
   return (
     <section
-      ref={ref}
-      className="py-24 lg:py-32 bg-primary text-primary-foreground relative overflow-hidden"
+      className="relative overflow-hidden"
     >
       <div
-        className="absolute inset-0 opacity-[0.05] pointer-events-none"
+        className="relative py-16 lg:py-20"
         style={{
-          backgroundImage: `url(${logoWatermark})`,
-          backgroundSize: "110px auto",
-          backgroundRepeat: "repeat",
+          background: "linear-gradient(135deg, #212334 0%, #252844 30%, #303f69 70%, #252844 100%)",
         }}
-      />
-      <div className="absolute left-0 right-0 top-24 h-px bg-accent/25" aria-hidden />
-      <div className="absolute left-0 right-0 bottom-24 h-px bg-accent/15" aria-hidden />
-
-      <div className="container mx-auto px-6 lg:px-8 max-w-6xl relative z-10">
-        {/* Header en dos columnas */}
-        <div className="grid lg:grid-cols-12 gap-8 lg:gap-16 items-end mb-16 md:mb-20">
-          <div className="lg:col-span-7">
-            <div className="flex items-center gap-3 mb-5">
-              <span className="h-px w-10 bg-accent" />
-              <p className="font-sans text-[11px] uppercase tracking-[0.28em] text-accent">
-                Este recorrido en cifras
-              </p>
-            </div>
-            <h2 className="font-serif text-3xl md:text-5xl font-light leading-[1.1]">
-              Los papeles no fueron trofeos.
-              <br />
-              Fueron <span className="italic text-accent">piezas de un mapa</span>.
-            </h2>
-          </div>
-          <div className="lg:col-span-5">
-            <p className="font-serif italic text-lg md:text-xl text-primary-foreground/70 leading-relaxed border-l-2 border-accent pl-5">
-              «Los números no son mi carta de presentación. Son la prueba silenciosa de que llevo mucho tiempo aquí.»
-            </p>
-          </div>
+      >
+        <div className="absolute inset-0 overflow-hidden">
+          <div className="absolute -top-40 -right-40 w-[700px] h-[700px] rounded-full blur-3xl" style={{ background: "radial-gradient(circle, rgba(203,170,96,0.08) 0%, transparent 70%)" }} />
+          <div className="absolute bottom-0 left-1/4 w-[500px] h-[500px] rounded-full blur-3xl" style={{ background: "radial-gradient(circle, rgba(164,118,51,0.06) 0%, transparent 70%)" }} />
+          <div className="absolute top-1/4 right-1/4 w-[300px] h-[300px] rounded-full blur-2xl" style={{ background: "radial-gradient(circle, rgba(255,255,255,0.03) 0%, transparent 70%)" }} />
+          <div
+            className="absolute inset-0 opacity-[0.025]"
+            style={{
+              backgroundImage: "linear-gradient(rgba(255,255,255,0.5) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,0.5) 1px, transparent 1px)",
+              backgroundSize: "80px 80px",
+            }}
+          />
+          <img
+            src={heroLogoWatermark}
+            alt=""
+            aria-hidden="true"
+            className="absolute right-[-5%] top-1/2 -translate-y-1/2 w-[900px] h-auto opacity-[0.05] pointer-events-none select-none"
+          />
         </div>
 
-        <div className="grid sm:grid-cols-3 gap-4 md:gap-6 max-w-5xl">
-          {stats.map((stat, i) => (
-            <StatCard key={stat.label} s={stat} active={active} i={i} />
-          ))}
-        </div>
-
-        <div className="mt-14 pt-10 border-t border-primary-foreground/15 max-w-3xl">
-          <p className="font-serif text-xl md:text-2xl text-primary-foreground/84 leading-relaxed">
-            Derecho, ADE, Marketing, Mediación, IA. Un mapa que solo se lee
-            entero <span className="italic text-accent">cuando ya lo has recorrido</span>.
-          </p>
+        <div className="container mx-auto px-6 lg:px-8 relative z-10">
+          <div className="max-w-2xl mx-auto">
+            <CredibilityStats />
+          </div>
         </div>
       </div>
     </section>
