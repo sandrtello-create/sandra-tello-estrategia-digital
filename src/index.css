@@ -170,12 +170,23 @@
   100% { transform: translateX(-50%); }
 }
 
+@keyframes scroll-photos-reverse {
+  0% { transform: translateX(-50%); }
+  100% { transform: translateX(0); }
+}
+
 .animate-scroll-photos {
-  animation: scroll-photos 35s linear infinite;
+  animation: scroll-photos 45s linear infinite;
   will-change: transform;
 }
 
-.animate-scroll-photos:hover {
+.animate-scroll-photos-reverse {
+  animation: scroll-photos-reverse 55s linear infinite;
+  will-change: transform;
+}
+
+.animate-scroll-photos:hover,
+.animate-scroll-photos-reverse:hover {
   animation-play-state: paused;
 }
 
@@ -183,7 +194,8 @@
   .animate-scroll-brands {
     animation-duration: 10s;
   }
-  .animate-scroll-photos {
-    animation-duration: 20s;
+  .animate-scroll-photos,
+  .animate-scroll-photos-reverse {
+    animation-duration: 25s;
   }
 }
