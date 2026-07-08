@@ -2,6 +2,7 @@ import { useEffect, useState } from "react";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import SEO from "@/components/SEO";
+import DiagonalPhotoMarquee from "@/components/DiagonalPhotoMarquee";
 import logoWatermark from "@/assets/sandra-logo-watermark.png";
 import sandraAbout from "@/assets/sandra-tello-about.jpg";
 import sandraHero from "@/assets/sandra-tello-hero.jpg";
