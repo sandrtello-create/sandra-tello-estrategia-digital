@@ -315,53 +315,213 @@ const TimelineSection = () => (
 
 /* ---------------------- MÓDULO C · En cifras -------------------------- */
 
-const stats: { value: string; label: string }[] = [
-  { value: "18", label: "años en el mundo corporate" },
-  { value: "6", label: "titulaciones oficiales" },
-  { value: "2", label: "másters (Marketing e IA)" },
-  { value: "1", label: "rescate propio, sin plan B" },
+type Stat = {
+  prefix?: string;
+  value: number;
+  suffix?: string;
+  label: string;
+  note: string;
+  size: "xl" | "lg" | "md";
+};
+
+const stats: Stat[] = [
+  {
+    prefix: "+",
+    value: 20,
+    label: "años",
+    note: "En negocio, marketing y corporate. Aprendiendo el oficio antes de que nadie me lo llamara así.",
+    size: "xl",
+  },
+  {
+    prefix: "+",
+    value: 500,
+    label: "profesionales formados",
+    note: "En IA aplicada y marca personal. En aulas, escuelas de negocio y equipos.",
+    size: "lg",
+  },
+  {
+    prefix: "+",
+    value: 30,
+    label: "acompañados 1 a 1",
+    note: "Consultoría individual. Cada caso, un traje a medida.",
+    size: "lg",
+  },
+  {
+    value: 2,
+    label: "másters",
+    note: "Marketing e Inteligencia Artificial. Los papeles como piezas de un mapa.",
+    size: "md",
+  },
 ];
 
-const EnCifrasSection = () => (
-  <section className="py-24 lg:py-32 bg-primary text-primary-foreground relative overflow-hidden">
-    <div
-      className="absolute inset-0 opacity-[0.05] pointer-events-none"
-      style={{
-        backgroundImage: `url(${logoWatermark})`,
-        backgroundSize: "110px auto",
-        backgroundRepeat: "repeat",
-      }}
-    />
-    <div className="container mx-auto px-6 lg:px-8 max-w-6xl relative z-10">
-      <div className="mb-14 max-w-2xl">
-        <p className="font-sans text-[11px] uppercase tracking-[0.28em] text-accent mb-4">
-          Este recorrido en cifras
-        </p>
-        <h2 className="font-serif text-3xl md:text-4xl font-light leading-tight">
-          Los papeles no fueron trofeos.
-          <br />
-          Fueron <span className="italic text-accent">piezas de un mapa</span>.
-        </h2>
-      </div>
+const useCountUp = (target: number, active: boolean, duration = 1600) => {
+  const [n, setN] = useState(0);
+  const done = useRef(false);
+  useEffect(() => {
+    if (!active || done.current) return;
+    done.current = true;
+    const t0 = performance.now();
+    let raf = 0;
+    const tick = (t: number) => {
+      const p = Math.min(1, (t - t0) / duration);
+      const eased = 1 - Math.pow(1 - p, 3);
+      setN(Math.round(target * eased));
+      if (p < 1) raf = requestAnimationFrame(tick);
+    };
+    raf = requestAnimationFrame(tick);
+    return () => cancelAnimationFrame(raf);
+  }, [active, target, duration]);
+  return n;
+};
 
-      <dl className="grid grid-cols-2 lg:grid-cols-4 gap-y-12 gap-x-10">
-        {stats.map((s) => (
-          <div key={s.label} className="border-t border-primary-foreground/20 pt-6">
-            <dt
-              className="font-serif italic leading-none gold-gradient-text mb-4"
-              style={{ fontSize: "clamp(4.5rem, 9vw, 8rem)" }}
-            >
-              {s.value}
-            </dt>
-            <dd className="font-sans text-[13px] uppercase tracking-[0.16em] text-primary-foreground/75 leading-relaxed max-w-[22ch]">
-              {s.label}
-            </dd>
-          </div>
-        ))}
-      </dl>
+const sizeMap = {
+  xl: "clamp(7rem, 18vw, 16rem)",
+  lg: "clamp(5.5rem, 13vw, 11rem)",
+  md: "clamp(4.5rem, 10vw, 8.5rem)",
+};
+
+const StatCard = ({ s, active, i }: { s: Stat; active: boolean; i: number }) => {
+  const n = useCountUp(s.value, active);
+  return (
+    <div
+      className="relative group"
+      style={{ transitionDelay: `${i * 90}ms` }}
+    >
+      {/* index tick */}
+      <div className="flex items-center gap-3 mb-3">
+        <span className="h-px w-8 bg-accent" />
+        <span className="font-sans text-[10px] uppercase tracking-[0.32em] text-accent/80">
+          0{i + 1} · Cifra
+        </span>
+      </div>
+      <div className="flex items-baseline gap-2">
+        {s.prefix && (
+          <span
+            className="font-serif italic gold-gradient-text leading-none"
+            style={{ fontSize: `calc(${sizeMap[s.size]} * 0.45)` }}
+          >
+            {s.prefix}
+          </span>
+        )}
+        <span
+          className="font-serif italic gold-gradient-text leading-[0.85] tracking-tight tabular-nums"
+          style={{ fontSize: sizeMap[s.size] }}
+        >
+          {n}
+        </span>
+        {s.suffix && (
+          <span
+            className="font-serif italic gold-gradient-text leading-none"
+            style={{ fontSize: `calc(${sizeMap[s.size]} * 0.45)` }}
+          >
+            {s.suffix}
+          </span>
+        )}
+      </div>
+      <p className="font-serif text-xl md:text-2xl text-primary-foreground mt-2 leading-tight">
+        {s.label}
+      </p>
+      <p className="font-sans text-[13px] text-primary-foreground/60 leading-relaxed mt-3 max-w-[28ch]">
+        {s.note}
+      </p>
     </div>
-  </section>
-);
+  );
+};
+
+const EnCifrasSection = () => {
+  const [active, setActive] = useState(false);
+  const ref = useRef<HTMLElement | null>(null);
+  useEffect(() => {
+    if (!ref.current) return;
+    const io = new IntersectionObserver(
+      (entries) => entries.forEach((e) => e.isIntersecting && setActive(true)),
+      { threshold: 0.25 }
+    );
+    io.observe(ref.current);
+    return () => io.disconnect();
+  }, []);
+
+  return (
+    <section
+      ref={ref}
+      className="py-24 lg:py-32 bg-primary text-primary-foreground relative overflow-hidden"
+    >
+      <div
+        className="absolute inset-0 opacity-[0.05] pointer-events-none"
+        style={{
+          backgroundImage: `url(${logoWatermark})`,
+          backgroundSize: "110px auto",
+          backgroundRepeat: "repeat",
+        }}
+      />
+      {/* Arco decorativo dorado */}
+      <div
+        aria-hidden
+        className="absolute -right-40 -top-40 w-[520px] h-[520px] rounded-full opacity-20 blur-2xl"
+        style={{
+          background:
+            "radial-gradient(circle, rgba(203,170,96,0.5) 0%, transparent 65%)",
+        }}
+      />
+      <div
+        aria-hidden
+        className="absolute -left-32 bottom-0 w-[360px] h-[360px] rounded-full opacity-15 blur-2xl"
+        style={{
+          background:
+            "radial-gradient(circle, rgba(203,170,96,0.5) 0%, transparent 65%)",
+        }}
+      />
+
+      <div className="container mx-auto px-6 lg:px-8 max-w-6xl relative z-10">
+        {/* Header en dos columnas */}
+        <div className="grid lg:grid-cols-12 gap-8 lg:gap-16 items-end mb-16 md:mb-20">
+          <div className="lg:col-span-7">
+            <div className="flex items-center gap-3 mb-5">
+              <span className="h-px w-10 bg-accent" />
+              <p className="font-sans text-[11px] uppercase tracking-[0.28em] text-accent">
+                Este recorrido en cifras
+              </p>
+            </div>
+            <h2 className="font-serif text-3xl md:text-5xl font-light leading-[1.1]">
+              Los papeles no fueron trofeos.
+              <br />
+              Fueron <span className="italic text-accent">piezas de un mapa</span>.
+            </h2>
+          </div>
+          <div className="lg:col-span-5">
+            <p className="font-serif italic text-lg md:text-xl text-primary-foreground/70 leading-relaxed border-l-2 border-accent pl-5">
+              «Los números no son mi carta de presentación. Son la prueba silenciosa de que llevo mucho tiempo aquí.»
+            </p>
+          </div>
+        </div>
+
+        {/* Grid asimétrico: 1 gigante + 3 medianos */}
+        <div className="grid lg:grid-cols-12 gap-y-14 gap-x-10 lg:gap-x-14">
+          <div className="lg:col-span-7 lg:border-r lg:border-primary-foreground/15 lg:pr-14">
+            <StatCard s={stats[0]} active={active} i={0} />
+          </div>
+          <div className="lg:col-span-5 grid gap-14">
+            <StatCard s={stats[1]} active={active} i={1} />
+            <StatCard s={stats[2]} active={active} i={2} />
+          </div>
+          <div className="lg:col-span-12 border-t border-primary-foreground/15 pt-14">
+            <div className="grid lg:grid-cols-12 gap-8 items-center">
+              <div className="lg:col-span-5">
+                <StatCard s={stats[3]} active={active} i={3} />
+              </div>
+              <div className="lg:col-span-7 lg:pl-10">
+                <p className="font-serif text-xl md:text-2xl text-primary-foreground/85 leading-relaxed">
+                  Derecho, ADE, Marketing, Mediación, IA. Un mapa que solo se lee
+                  entero <span className="italic text-accent">cuando ya lo has recorrido</span>.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  );
+};
 
 /* ---------------------- MÓDULO D · Carrusel de citas ------------------ */
 
