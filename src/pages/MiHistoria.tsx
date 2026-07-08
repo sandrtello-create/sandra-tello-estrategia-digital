@@ -105,13 +105,9 @@ const Reveal = ({
 const paperStyle: React.CSSProperties = {
   backgroundColor: "hsl(var(--cream))",
   backgroundImage: `
-    radial-gradient(1200px 600px at 10% 0%, hsl(var(--gold) / 0.05), transparent 60%),
-    radial-gradient(1000px 500px at 100% 100%, hsl(var(--navy) / 0.05), transparent 60%),
-    url(${logoWatermark})
+    radial-gradient(1200px 600px at 10% 0%, hsl(var(--gold) / 0.06), transparent 60%),
+    radial-gradient(1000px 500px at 100% 100%, hsl(var(--navy) / 0.05), transparent 60%)
   `,
-  backgroundSize: "auto, auto, 180px auto",
-  backgroundRepeat: "no-repeat, no-repeat, repeat",
-  backgroundBlendMode: "normal, normal, luminosity",
 };
 
 /** Página de diario con marginalia a la izquierda y prosa a la derecha */
