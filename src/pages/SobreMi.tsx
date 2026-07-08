@@ -3,97 +3,437 @@ import Footer from "@/components/Footer";
 import SEO from "@/components/SEO";
 import logoWatermark from "@/assets/sandra-logo-watermark.png";
 import sandraAbout from "@/assets/sandra-tello-about.jpg";
-import { ArrowLeft } from "lucide-react";
+import sandraHero from "@/assets/sandra-tello-hero.jpg";
+import sandraIA from "@/assets/sandra-tello-ia.jpg";
+import sandraMarcopolo from "@/assets/sandra-tello-marcopolo.jpg";
+import { ArrowRight, Camera } from "lucide-react";
+
+/**
+ * Editorial long-form "Mi Historia" page.
+ * Estilo Vilma Núñez adaptado: retratos grandes, texto largo con ritmo,
+ * pull-quotes, en la paleta navy + oro de Sandra.
+ */
+
+const PhotoPlaceholder = ({
+  label,
+  hint,
+  aspect = "aspect-[4/5]",
+}: {
+  label: string;
+  hint: string;
+  aspect?: string;
+}) => (
+  <figure className={`relative w-full ${aspect} bg-[hsl(var(--section-alt))] border border-border overflow-hidden group`}>
+    <div className="absolute inset-0 flex flex-col items-center justify-center text-center px-6">
+      <Camera className="h-8 w-8 text-accent/70 mb-3" strokeWidth={1.2} />
+      <p className="font-serif text-lg text-foreground/70 italic mb-2">{label}</p>
+      <p className="font-sans text-xs uppercase tracking-[0.18em] text-muted-foreground max-w-[24ch] leading-relaxed">
+        {hint}
+      </p>
+    </div>
+    <div className="absolute inset-3 border border-accent/20 pointer-events-none" />
+  </figure>
+);
+
+const Scene = ({
+  eyebrow,
+  children,
+  photo,
+  reverse = false,
+}: {
+  eyebrow?: string;
+  children: React.ReactNode;
+  photo: React.ReactNode;
+  reverse?: boolean;
+}) => (
+  <section className="py-16 lg:py-24 border-t border-border/60">
+    <div className="container mx-auto px-6 lg:px-8 max-w-6xl">
+      <div className={`grid lg:grid-cols-12 gap-10 lg:gap-16 items-start ${reverse ? "lg:[&>*:first-child]:order-2" : ""}`}>
+        <div className="lg:col-span-5">
+          <div className="lg:sticky lg:top-32">{photo}</div>
+        </div>
+        <div className="lg:col-span-7">
+          {eyebrow && (
+            <p className="font-sans text-[11px] uppercase tracking-[0.28em] text-accent mb-5">
+              {eyebrow}
+            </p>
+          )}
+          <div className="space-y-6 font-serif text-[19px] md:text-[20px] leading-[1.75] text-foreground/85">
+            {children}
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+);
+
+const PullQuote = ({ children }: { children: React.ReactNode }) => (
+  <section className="py-20 lg:py-28 bg-primary text-primary-foreground relative overflow-hidden">
+    <div
+      className="absolute inset-0 opacity-[0.06] pointer-events-none"
+      style={{
+        backgroundImage: `url(${logoWatermark})`,
+        backgroundSize: "90px auto",
+        backgroundRepeat: "repeat",
+      }}
+    />
+    <div className="container mx-auto px-6 lg:px-8 max-w-4xl text-center relative z-10">
+      <p className="font-serif text-3xl md:text-5xl lg:text-6xl font-light leading-[1.15] tracking-tight">
+        {children}
+      </p>
+    </div>
+  </section>
+);
 
 const SobreMi = () => {
   return (
     <div className="min-h-screen bg-background relative overflow-hidden">
       <SEO
-        title="Sobre Sandra Tello — Consultora estratégica en IA y marca personal"
-        description="Conoce a Sandra Tello: método, trayectoria y convicción para ayudarte a posicionar tu marca personal y aplicar IA a tu negocio."
+        title="Mi historia — Sandra Tello"
+        description="La historia real detrás de mi trabajo: del despido a reconstruir un valor propio con marca personal, estrategia e inteligencia artificial."
         path="/sobre-mi"
         type="profile"
       />
 
-      {/* Watermark pattern */}
+      {/* Watermark de fondo global */}
       <div
-        className="fixed inset-0 opacity-[0.05] pointer-events-none z-0"
+        className="fixed inset-0 opacity-[0.04] pointer-events-none z-0"
         style={{
           backgroundImage: `url(${logoWatermark})`,
-          backgroundSize: '80px 80px',
-          backgroundRepeat: 'repeat',
+          backgroundSize: "100px auto",
+          backgroundRepeat: "repeat",
         }}
       />
 
       <Navbar />
 
-      <main className="relative z-10 pt-36 pb-20">
-        <div className="container mx-auto px-6 lg:px-8 max-w-4xl">
-          <h1 className="font-serif text-5xl md:text-6xl lg:text-7xl font-light text-foreground leading-[1.05] tracking-tight mb-6">
-            Sobre Sandra
-          </h1>
+      <main className="relative z-10">
+        {/* HERO editorial */}
+        <section className="pt-36 pb-16 lg:pb-24">
+          <div className="container mx-auto px-6 lg:px-8 max-w-6xl">
+            <div className="grid lg:grid-cols-12 gap-10 lg:gap-16 items-end">
+              <div className="lg:col-span-7">
+                <p className="font-sans text-[11px] uppercase tracking-[0.3em] text-accent mb-8">
+                  Mi historia · Sin filtros
+                </p>
+                <h1 className="font-serif text-4xl md:text-6xl lg:text-7xl font-light text-foreground leading-[1.02] tracking-tight mb-8">
+                  Durante mucho tiempo
+                  <br />
+                  me dio vergüenza decir
+                  <br />
+                  <span className="italic text-accent">que me habían despedido.</span>
+                </h1>
+                <p className="font-serif text-xl md:text-2xl text-muted-foreground leading-relaxed max-w-2xl">
+                  Esta es la historia real que hay detrás de mi trabajo. La que explica por qué acompaño a otras personas a decidir su propio valor.
+                </p>
+              </div>
+              <div className="lg:col-span-5">
+                <div className="aspect-[4/5] overflow-hidden">
+                  <img
+                    src={sandraAbout}
+                    alt="Sandra Tello, retrato editorial"
+                    className="w-full h-full object-cover object-top grayscale contrast-110"
+                  />
+                </div>
+                <p className="font-sans text-[11px] uppercase tracking-[0.22em] text-muted-foreground mt-4">
+                  Sandra Tello — 45 años, chicharrera, eterna aprendiz
+                </p>
+              </div>
+            </div>
+          </div>
+        </section>
 
-          <p className="font-serif text-xl md:text-2xl text-muted-foreground leading-relaxed mb-12 max-w-2xl">
-            Estrategia, marketing, inteligencia artificial y una convicción: tu valor no se improvisa, se decide.
-          </p>
-
-          <div className="aspect-[16/7] overflow-hidden mb-12">
-            <img
-              src={sandraAbout}
-              alt="Sandra Tello"
-              className="w-full h-full object-cover object-top"
+        {/* ESCENA 1 — El despido */}
+        <Scene
+          eyebrow="Capítulo 01 · El día en que todo se detuvo"
+          photo={
+            <PhotoPlaceholder
+              label="Retrato en blanco y negro"
+              hint="Mirada directa, expresión serena pero seria. Ancla que esto es real."
             />
-          </div>
-
-          <div className="prose prose-lg max-w-none text-muted-foreground space-y-6">
-            <p>
-              Durante muchos años trabajé en el mundo corporativo observando cómo funcionan realmente las empresas: la estrategia, el marketing, la toma de decisiones… y también cómo muchas veces el talento y el conocimiento de las personas quedan invisibles cuando falta dirección.
-            </p>
-            <p>
-              Tendemos a seguir una lógica que pocas veces cuestionamos: trabajar, cumplir, avanzar… y esperar que el valor acabe reconociéndose. Día tras día. Año tras año.
-            </p>
-            <p>
-              Con el tiempo entendí algo importante: <strong className="text-foreground">cuando no decides tu posicionamiento, otros acaban decidiendo tu valor.</strong>
-            </p>
-            <p>
-              Hoy me siento honrada de acompañar a profesionales y empresas que quieren integrar estrategia, marketing, marca personal e inteligencia artificial para generar mejores oportunidades en su negocio, tomar decisiones con criterio y convertir su experiencia en proyectos con dirección.
-            </p>
-            <p>
-              También soy docente en inteligencia artificial aplicada a negocio y marketing, porque creo profundamente en algo que forma parte de mi forma de trabajar: <em className="text-foreground">seguir aprendiendo siempre.</em>
-            </p>
-          </div>
-
-          {/* Eterna aprendiz band */}
-          <div className="mt-16 bg-primary/5 border-t border-border py-10 px-6 lg:px-10">
-            <p className="font-serif text-xl md:text-2xl lg:text-3xl text-foreground leading-snug font-medium max-w-3xl">
-              Me considero una <span className="italic">eterna aprendiz</span>. La tecnología cambia, los negocios evolucionan y la estrategia exige algo fundamental:{" "}
-              <span className="text-accent">curiosidad, criterio y humanidad</span>.
-            </p>
-          </div>
-
-          <div className="mt-12 text-center">
-            <a
-              href="/#servicios"
-              className="inline-block bg-primary text-primary-foreground px-10 py-4 font-serif text-lg font-medium hover:bg-primary/90 transition-colors"
-            >
-              Descubre cómo puedo ayudarte →
-            </a>
-          </div>
-        </div>
-      </main>
-
-      {/* Volver */}
-      <section className="relative z-10 py-14 bg-primary text-primary-foreground text-center">
-        <p className="text-primary-foreground/50 text-[11px] uppercase tracking-[0.2em] mb-3">¿Lista para dar el siguiente paso?</p>
-        <h2 className="font-serif text-2xl md:text-3xl font-medium mb-6">Volver al inicio</h2>
-        <a
-          href="/#sobre"
-          className="inline-flex items-center gap-2 btn-gold-gradient rounded-full px-8 py-3 font-semibold text-[12px] uppercase tracking-[0.15em]"
+          }
         >
-          <ArrowLeft className="h-4 w-4" />
-          Ir a inicio
-        </a>
-      </section>
+          <p className="first-letter:font-serif first-letter:text-6xl first-letter:font-medium first-letter:text-accent first-letter:float-left first-letter:mr-3 first-letter:leading-[0.9] first-letter:mt-1">
+            Me sentía culpable, como si de repente no valiera nada, como si dejar atrás el estatus de trabajar en una empresa grande y reconocida fuera a borrarme de golpe. Pensaba que ya nadie más se fijaría en mí. Y encima estaba la edad. Todo eso lo guardé dentro durante mucho tiempo, aparentando que estaba bien mientras por dentro me sentía completamente perdida.
+          </p>
+          <p>
+            Fue una reunión breve, en una sala fría, con gente que me había felicitado y abrazado al otro lado de la pantalla apenas unas semanas antes, diciéndome ahora que mi perfil «no era de marketing» y que por eso iban a reestructurar el departamento. ¿Os lo imagináis? Si mi perfil no era de marketing, y una empresa así de grande y así de poderosa me lo decía con esa seguridad, ¿cómo iba yo a seguir viviendo de lo que tanto amaba?
+          </p>
+          <p>
+            En realidad fue el castigo a una baja, a una rotura que no aceptaron bien y a una forma muy habitual de quitarme de en medio sin tener que dar explicaciones. Firmé con un <span className="text-accent font-medium">No Conforme</span> escrito de mi puño y letra. Me acompañaron hasta mi mesa como si fuera una delincuente, y apenas pude despedirme de nadie. Después de casi dieciocho años aguantando mil historias, ya no me quedaba fuerza para nada más.
+          </p>
+          <p>
+            Salí del edificio con una caja de cartón que ni siquiera necesitaba, porque en realidad no había nada mío que llevarme de ahí dentro. Lo mío, lo de verdad, llevaba tiempo estando en otra parte, aunque todavía tardaría un tiempo en descubrir dónde.
+          </p>
+        </Scene>
+
+        {/* ESCENA 2 — El fondo */}
+        <Scene
+          eyebrow="Capítulo 02 · Lo que vino después"
+          reverse
+          photo={
+            <PhotoPlaceholder
+              label="Paisaje de mar en invierno"
+              hint="Cielo cubierto, tonos fríos. El punto emocional más bajo del relato."
+              aspect="aspect-[4/5]"
+            />
+          }
+        >
+          <p>
+            Lo que vino después no tuvo ninguna gracia. Una depresión muy silenciosa que me fue alejando de todo el mundo sin que apenas me diera cuenta, y una situación económica que me llevó a acogerme a la <span className="italic">Ley de Segunda Oportunidad</span> para empezar de cero: sin colchón, sin plan B, sin energía siquiera para fingir delante de mi familia que todo iba bien.
+          </p>
+          <p>
+            Y como si el cuerpo hubiera querido subrayar el mensaje por si no había quedado claro, la rodilla se me volvió a salir: un menisco que tuvieron que reconstruir otra vez, un ligamento cruzado que tuvieron que volver a «bordar», y muchos meses más de reposo forzado en el peor momento posible, justo cuando mi cabeza todavía quería seguir corriendo a la velocidad de siempre.
+          </p>
+        </Scene>
+
+        {/* ESCENA 3 — Infancia */}
+        <Scene
+          eyebrow="Capítulo 03 · Antes de todo esto"
+          photo={
+            <PhotoPlaceholder
+              label="Archivo personal, Tenerife"
+              hint="Foto escaneada con textura de época. Lo imperfecto ayuda aquí."
+            />
+          }
+        >
+          <p>
+            Para entender cómo llegué a un día así hay que retroceder bastante más atrás, hasta una chicharrera un poco peculiar, hija de madre ecuatoriana y padre peninsular, que aprendió muy pronto a ser la de las notas altas, la que los profesores describían como madura para su edad, la que nunca daba problemas a nadie.
+          </p>
+          <p>
+            Crecí repartida entre el Atlántico y el Mediterráneo sin saber todavía que ese ir y venir sería mi primer entrenamiento serio: moverme entre mundos distintos sin dejar pedazos de mí misma por el camino. Lo que nadie veía, debajo de esa fachada tan bien resuelta, era el precio: una exigencia interior que jamás se apagaba del todo, y la sensación difusa de no encajar por completo en ningún sitio.
+          </p>
+        </Scene>
+
+        {/* ESCENA 4 — El piano */}
+        <Scene
+          eyebrow="Capítulo 04 · El piano y la exigencia"
+          reverse
+          photo={
+            <PhotoPlaceholder
+              label="Manos sobre las teclas"
+              hint="Blanco y negro, luz lateral suave. Intimidad y disciplina."
+              aspect="aspect-[4/5]"
+            />
+          }
+        >
+          <p>
+            Esa misma niña eligió, muy pequeñita, que quería aprender a tocar el piano. Y ahí, entre escalas que al principio me parecían un idioma inventado, encontré algo parecido a un refugio. El conservatorio me dio oído fino, disciplina, una manera de escuchar tan profunda que me acompañaría el resto de mi vida.
+          </p>
+          <p>
+            Pero también me dejó, sin proponérselo, una idea con veneno lento: que solo merecía estar ahí si tocaba perfecto. Esa idea se me quedó agazapada dentro, y años más tarde la reconocería asomando detrás de cada examen, de cada informe de trabajo, de cada relación en la que me exigí más de lo razonable por miedo a no ser suficiente.
+          </p>
+        </Scene>
+
+        {/* PULL QUOTE */}
+        <PullQuote>
+          «Cuando pones toda tu vida en manos de un tercero, llega el día en que ese tercero puede quitártelo todo menos la <span className="italic text-accent">responsabilidad de seguir adelante</span>.»
+        </PullQuote>
+
+        {/* ESCENA 5 — Trayectoria */}
+        <Scene
+          eyebrow="Capítulo 05 · Los títulos y el mérito"
+          photo={
+            <div className="aspect-[4/5] overflow-hidden">
+              <img
+                src={sandraHero}
+                alt="Sandra Tello en su trayectoria profesional"
+                className="w-full h-full object-cover"
+              />
+            </div>
+          }
+        >
+          <p>
+            Llegados a este punto, pienso que quizá debería plantearme escribir mis memorias algún día. Con el tiempo llegaron los títulos, uno detrás de otro, casi con la voracidad de quien no puede dejar a medias un libro que le interesa de verdad: Técnico Superior en Asistencia a Dirección, en Marketing y Comercio, en Finanzas. Después Derecho. Después Administración y Dirección de Empresas. Un máster en Marketing. La formación en Mediación y Arbitraje que me convirtió en mediadora registrada.
+          </p>
+          <p>
+            Ninguno de esos papeles fue nunca un trofeo para la pared; eran, sin que yo lo supiera aún, las piezas sueltas de un mapa que solo mucho después conseguiría leer entero.
+          </p>
+          <p>
+            Me contrataron como asistente de dirección, con una preparación que me sobraba con creces para el puesto, y desde ahí fui asumiendo, casi sin pedirlo, tareas de atención al cliente, comercial, marketing, comunicación, hasta convertirme en esa persona a la que todo el mundo acudía cuando algo se torcía. Estuve cerca del poder durante casi veinte años sin que a nadie se le ocurriera nunca ponerme el cargo que ese trabajo merecía.
+          </p>
+          <p>
+            Creo, todavía hoy, en el mérito, en que el esfuerzo debería pesar más que la casualidad de a quién conoces. Pero también aprendí, mirándome a mí misma como quien mira un caso de estudio, que <span className="text-foreground font-medium">el mérito sin una oportunidad real detrás es solo una frase bonita que repiten quienes ya están dentro.</span>
+          </p>
+        </Scene>
+
+        {/* ESCENA 6 — Reconstrucción */}
+        <Scene
+          eyebrow="Capítulo 06 · El silencio que enseña"
+          reverse
+          photo={
+            <PhotoPlaceholder
+              label="Silueta caminando por la orilla"
+              hint="Soledad buscada, no impuesta. Deja que el paisaje hable."
+            />
+          }
+        >
+          <p>
+            Ya sabes lo que vino después. Sabes que, tras la caja de cartón vacía y la rodilla rota, me marché de Tenerife en busca de un lugar casi vacío en pleno invierno, uno de esos sitios donde el silencio de fuera obliga a escuchar lo de dentro.
+          </p>
+          <p>
+            Y ahí, con el mar frío y ese silencio como única compañía, empecé a oírme a mí misma por primera vez en mucho tiempo. Entendí entonces, muy despacio, algo que llevaba media vida esquivando: que cuando pones toda tu vida en manos de un tercero, sea una empresa, un banco o un sistema entero, llega el día en que ese tercero puede quitártelo todo menos la responsabilidad de seguir adelante.
+          </p>
+          <p>
+            Nadie vino a rescatarme. Me rescaté yo, sin prisa de heroína de película, decidiendo poco a poco que la siguiente etapa la construiría con mis propias normas. Y una de las primeras fue, y sigue siendo hoy: <span className="text-accent font-medium">pide ayuda cuando la necesites.</span>
+          </p>
+        </Scene>
+
+        {/* ESCENA 7 — Ponerle nombre */}
+        <Scene
+          eyebrow="Capítulo 07 · Ponerle nombre a lo que era"
+          photo={
+            <div className="aspect-[4/5] overflow-hidden">
+              <img
+                src={sandraMarcopolo}
+                alt="Sandra Tello con Marcopolo"
+                className="w-full h-full object-cover"
+              />
+            </div>
+          }
+        >
+          <p>
+            Hubo otra pieza que tardó bastante más en encajar. Durante años conviví con una sensación difícil de nombrar: me interesaban demasiadas cosas a la vez, conectaba ideas que a nadie más se le ocurría relacionar, me aburría enseguida de cualquier rutina fija, sentía el mundo con un volumen que a los demás les resultaba excesivo.
+          </p>
+          <p>
+            Pasados ya los cuarenta, pude por fin ponerle nombre a esa manera distinta de funcionar, y en lugar de seguir viviéndola como un defecto que corregir, empecé a entenderla como la razón exacta por la que soy capaz de ver matices que otros pasan por alto, y de cruzar disciplinas tan dispares — leyes, negocio, marketing, tecnología, música — como si en el fondo hubieran sido siempre la misma cosa.
+          </p>
+          <p>
+            Durante un tiempo cargué también con otra creencia que ni siquiera era mía: que existe una edad correcta para reinventarse, y que yo ya la había dejado atrás. Tardé en darme cuenta de que esa idea pertenecía a un sistema que premia ir en línea recta y castiga cualquier desvío del camino esperado.
+          </p>
+          <p className="font-medium text-foreground">
+            Hoy sé que no existe fecha de caducidad para decidir el propio valor. Existe, solamente, el momento en que dejas de esperar que alguien te dé permiso para hacerlo.
+          </p>
+        </Scene>
+
+        {/* ESCENA 8 — La vocación construida */}
+        <Scene
+          eyebrow="Capítulo 08 · Marca, estrategia e IA"
+          reverse
+          photo={
+            <div className="aspect-[4/5] overflow-hidden">
+              <img
+                src={sandraIA}
+                alt="Sandra Tello enseñando IA aplicada a negocio"
+                className="w-full h-full object-cover"
+              />
+            </div>
+          }
+        >
+          <p>
+            De todo ese recorrido, sin que yo lo planeara así, nace la manera en que hoy entiendo la marca personal, la estrategia digital y la inteligencia artificial: tres cosas que, bien miradas, resultan ser en el fondo la misma cosa.
+          </p>
+          <p>
+            Una marca personal honesta no es un personaje de cartón piedra: es contar quién eres, qué sabes y qué aportas, para dejar de depender de que un tercero decida tu valor en tu lugar, como me ocurrió a mí durante casi toda una vida.
+          </p>
+          <p>
+            La estrategia digital es lo que evita que esa marca dependa de la suerte o de publicar sin rumbo. Y la inteligencia artificial es, sencillamente, la herramienta más potente que hemos tenido nunca para ordenar todo eso con criterio propio.
+          </p>
+        </Scene>
+
+        {/* ESCENA 9 — Pelu2Go */}
+        <Scene
+          eyebrow="Capítulo 09 · Un proyecto que espera su momento"
+          photo={
+            <PhotoPlaceholder
+              label="Pelu2Go"
+              hint="Mockup o estética de marca. Opcional."
+            />
+          }
+        >
+          <p>
+            Queda también, en algún cajón que durante años no tuve tiempo de abrir, un proyecto llamado <span className="text-accent font-medium">Pelu2Go</span>, pensado para digitalizar el sector belleza y para que marcas y salones dejen de tratarse como proveedor y cliente y empiecen a comportarse, por fin, como socios de verdad.
+          </p>
+          <p>
+            No lo abandoné porque la idea no valiera; lo aparqué porque no se puede reconstruir una vida entera y un negocio nuevo al mismo tiempo. Ahora lo he retomado, con mucho más criterio del que tenía la primera vez, y paso a paso. Sin prisa.
+          </p>
+          <p className="italic text-muted-foreground">
+            Al fin y al cabo, ¿cuánto tiempo tenemos? ¿Alguien lo sabe, en realidad?
+          </p>
+        </Scene>
+
+        {/* CIERRE — Método y llamada */}
+        <section className="py-20 lg:py-28 bg-[hsl(var(--section-alt))] border-t border-border/60">
+          <div className="container mx-auto px-6 lg:px-8 max-w-3xl">
+            <p className="font-sans text-[11px] uppercase tracking-[0.28em] text-accent mb-8 text-center">
+              Y por eso hago lo que hago
+            </p>
+            <div className="space-y-7 font-serif text-[20px] md:text-[22px] leading-[1.75] text-foreground/85">
+              <p>
+                El Derecho, el piano, el despido, la Ley de Segunda Oportunidad, ponerle nombre por fin a mi propia forma de funcionar, Pelu2Go, la inteligencia artificial: nada de esto son anécdotas sueltas para rellenar una biografía.
+              </p>
+              <p className="text-foreground font-medium">
+                Juntas son la razón exacta por la que entiendo, desde dentro y no desde la teoría, lo que cuesta de verdad construir un valor propio cuando nadie está dispuesto a regalártelo.
+              </p>
+              <p>
+                Por eso acompaño hoy a quien está en ese mismo punto del camino. No desde un manual ni desde una teoría aprendida en un máster, sino desde haber estado ahí: desde el despido, desde el fondo, desde la vuelta a empezar sin plan B. Guío, oriento y ayudo desde mi propia experiencia, no desde la distancia de quien nunca ha tenido que reconstruirse.
+              </p>
+              <p className="italic text-foreground">
+                Ese es, en el fondo, todo mi método.
+              </p>
+            </div>
+
+            <div className="mt-16 border-t border-accent/40 pt-12 text-center">
+              <p className="font-serif text-2xl md:text-3xl text-foreground leading-snug mb-8 max-w-2xl mx-auto">
+                Si estás en un punto de tu carrera o de tu negocio en el que sientes que otros llevan demasiado tiempo decidiendo tu valor por ti, es muy probable que esta historia te suene más de lo que esperabas al empezar a leerla.
+              </p>
+              <p className="font-serif text-4xl md:text-5xl font-medium text-foreground leading-tight mb-3">
+                Tu valor no se improvisa.
+              </p>
+              <p className="font-serif text-4xl md:text-5xl italic text-accent leading-tight mb-10">
+                Se decide.
+              </p>
+              <p className="font-serif text-lg text-muted-foreground mb-2">
+                Y si has llegado hasta aquí, puede que ya sepas con quién quieres hablar.
+              </p>
+              <p className="font-serif text-lg text-foreground">
+                Soy Sandra. Cada <span className="text-accent">28 de junio</span> cumplo un año más, y ahora mismo, mientras publico esta página, tengo <span className="text-accent">45</span>.
+              </p>
+            </div>
+          </div>
+        </section>
+
+        {/* CTA final */}
+        <section className="py-20 bg-primary text-primary-foreground relative overflow-hidden">
+          <div
+            className="absolute inset-0 opacity-[0.05] pointer-events-none"
+            style={{
+              backgroundImage: `url(${logoWatermark})`,
+              backgroundSize: "80px auto",
+              backgroundRepeat: "repeat",
+            }}
+          />
+          <div className="container mx-auto px-6 lg:px-8 max-w-4xl relative z-10">
+            <div className="grid md:grid-cols-2 gap-10 items-center">
+              <div>
+                <PhotoPlaceholder
+                  label="Retrato de cierre"
+                  hint="Sonrisa natural, luz cálida. Contraste con la apertura seria."
+                  aspect="aspect-[4/5]"
+                />
+              </div>
+              <div>
+                <p className="font-sans text-[11px] uppercase tracking-[0.28em] text-accent mb-5">
+                  Hablemos
+                </p>
+                <h2 className="font-serif text-4xl md:text-5xl font-light leading-tight mb-6">
+                  Si mi historia te ha resonado, la tuya también me interesa.
+                </h2>
+                <p className="text-primary-foreground/75 text-lg leading-relaxed mb-8">
+                  Cuéntame en qué punto estás. Miramos juntas si tiene sentido trabajar contigo desde marca personal, estrategia o inteligencia artificial aplicada a tu negocio.
+                </p>
+                <a
+                  href="/#servicios"
+                  className="inline-flex items-center gap-3 btn-gold-gradient px-8 py-4 font-semibold text-[12px] uppercase tracking-[0.18em]"
+                >
+                  Ver cómo trabajamos
+                  <ArrowRight className="h-4 w-4" />
+                </a>
+              </div>
+            </div>
+          </div>
+        </section>
+      </main>
 
       <Footer />
     </div>
