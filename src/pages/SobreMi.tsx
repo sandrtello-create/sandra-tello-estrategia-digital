@@ -187,7 +187,7 @@ const BookManuscript = ({ children }: { children: React.ReactNode }) => (
             {children}
           </div>
         </div>
-      </div>
+      </article>
     </div>
   </section>
 );
