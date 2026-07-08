@@ -478,8 +478,7 @@ const EnCifrasSection = () => {
           </div>
         </div>
 
-        {/* Misma lógica visual que en inicio: cifras contenidas, no titulares gigantes */}
-        <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-4 md:gap-5">
+        <div className="grid sm:grid-cols-3 gap-4 md:gap-6 max-w-5xl">
           {stats.map((stat, i) => (
             <StatCard key={stat.label} s={stat} active={active} i={i} />
           ))}
