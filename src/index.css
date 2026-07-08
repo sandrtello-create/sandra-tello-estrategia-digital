@@ -145,6 +145,26 @@
   box-shadow: 0 8px 24px -4px rgba(164, 118, 51, 0.35);
 }
 
+/* Outline text (números de capítulo estilo Vilma) */
+.text-outline {
+  -webkit-text-fill-color: transparent;
+  -webkit-text-stroke: 1.5px currentColor;
+  text-stroke: 1.5px currentColor;
+}
+.text-outline-thin {
+  -webkit-text-fill-color: transparent;
+  -webkit-text-stroke: 1px currentColor;
+  text-stroke: 1px currentColor;
+}
+
+@keyframes bubble-float {
+  0%, 100% { transform: translateY(0) rotate(-4deg); }
+  50% { transform: translateY(-6px) rotate(-2deg); }
+}
+.animate-bubble-float {
+  animation: bubble-float 5s ease-in-out infinite;
+}
+
 @keyframes shimmer {
   0% { background-position: 0% center; }
   50% { background-position: 200% center; }

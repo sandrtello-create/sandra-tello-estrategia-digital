@@ -148,64 +148,197 @@ const PullQuote = ({ children }: { children: React.ReactNode }) => (
 
 /* ---------------------- MÓDULO A · Línea de vida ---------------------- */
 
-const timeline: { year: string; title: string; note: string }[] = [
-  { year: "2005", title: "Primer paso corporate", note: "Entro en el mundo de la empresa desde la asistencia de dirección." },
-  { year: "2008", title: "Derecho y ADE", note: "Estudio en paralelo mientras trabajo. Empieza la doble vida." },
-  { year: "2012", title: "Marketing y comunicación", note: "Sin cargo oficial, asumo la voz de la marca." },
-  { year: "2015", title: "Máster en Marketing", note: "Formalizo lo que ya venía haciendo desde hacía años." },
-  { year: "2018", title: "Mediadora registrada", note: "Formación en Mediación y Arbitraje. El criterio se afila." },
-  { year: "2021", title: "La rotura", note: "Rodilla, baja, despido. Ley de Segunda Oportunidad." },
-  { year: "2022", title: "El silencio del norte", note: "Me marcho a un lugar casi vacío. Empiezo a oírme." },
-  { year: "2023", title: "Máster en Inteligencia Artificial", note: "Vuelvo con criterio y con una herramienta nueva." },
-  { year: "2024", title: "Consultora estratégica", note: "Marca personal, estrategia e IA aplicada a negocio." },
-  { year: "Hoy", title: "Inteligencia Humana Estratégica™", note: "Acompaño a otras personas a decidir su propio valor." },
+type Bubble = { label: string; color: "teal" | "pink" | "yellow" };
+
+const chapters: {
+  year: string;
+  title: string;
+  body: string;
+  bubbles: Bubble[];
+  align: "left" | "right";
+}[] = [
+  {
+    year: "2005",
+    title: "El comienzo corporate",
+    body: "Entro en el mundo de la empresa desde la asistencia de dirección. En paralelo estudio Derecho y ADE. Nadie me conoce todavía, pero yo ya estoy tomando notas.",
+    bubbles: [
+      { label: "EL COMIENZO", color: "teal" },
+      { label: "DERECHO + ADE", color: "yellow" },
+    ],
+    align: "left",
+  },
+  {
+    year: "2012",
+    title: "Sin cargo, con voz",
+    body: "Sin cargo oficial, asumo la voz de la marca. Marketing, comunicación, atención al cliente. La persona a la que llaman cuando algo se tuerce.",
+    bubbles: [
+      { label: "MI APUESTA", color: "pink" },
+      { label: "MARCA VIVA", color: "teal" },
+    ],
+    align: "right",
+  },
+  {
+    year: "2015",
+    title: "Máster en Marketing",
+    body: "Formalizo lo que llevaba años haciendo. Un papel que confirma un oficio, no que lo inventa. Empiezo a pedir que me llamen por lo que soy.",
+    bubbles: [{ label: "FORMACIÓN", color: "yellow" }],
+    align: "left",
+  },
+  {
+    year: "2018",
+    title: "Mediadora registrada",
+    body: "Formación en Mediación y Arbitraje. El criterio se afila. Aprendo a escuchar antes de hablar, y a no confundir un conflicto con un problema.",
+    bubbles: [{ label: "MEDIADORA", color: "teal" }],
+    align: "right",
+  },
+  {
+    year: "2021",
+    title: "La rotura",
+    body: "Rodilla, baja, despido. Ley de Segunda Oportunidad. Todo lo que había construido dentro de una empresa se apaga en una reunión de veinte minutos.",
+    bubbles: [
+      { label: "FONDO", color: "pink" },
+      { label: "RESET", color: "yellow" },
+    ],
+    align: "left",
+  },
+  {
+    year: "2022",
+    title: "El silencio del norte",
+    body: "Me marcho a un lugar casi vacío en pleno invierno. Sin plan B, sin colchón, sin prisa de heroína. Empiezo a oírme por primera vez en años.",
+    bubbles: [{ label: "MI HISTORIA", color: "teal" }],
+    align: "right",
+  },
+  {
+    year: "2023",
+    title: "Máster en IA",
+    body: "Vuelvo con criterio y con una herramienta nueva. La IA deja de ser magia y se convierte en lo que siempre fue: una decisión estratégica.",
+    bubbles: [
+      { label: "IA CON CRITERIO", color: "yellow" },
+      { label: "DOCENTE", color: "pink" },
+    ],
+    align: "left",
+  },
+  {
+    year: "2024",
+    title: "Consultora estratégica",
+    body: "Marca personal, estrategia e IA aplicada a negocio. Empiezo a acompañar a otras personas a integrar las tres cosas sin ruido, sin postureo.",
+    bubbles: [{ label: "CONSULTORA", color: "teal" }],
+    align: "right",
+  },
+  {
+    year: "Hoy",
+    title: "Inteligencia Humana Estratégica™",
+    body: "Un método propio para que profesionales y empresas dejen de esperar que un tercero decida su valor. Lo relacional prevalece a lo transaccional.",
+    bubbles: [
+      { label: "IHE™", color: "pink" },
+      { label: "TU VALOR", color: "yellow" },
+    ],
+    align: "left",
+  },
 ];
 
+const bubbleClass: Record<Bubble["color"], string> = {
+  teal: "bg-brand-teal text-primary",
+  pink: "bg-brand-pink text-primary",
+  yellow: "bg-brand-yellow text-primary",
+};
+
 const TimelineSection = () => (
-  <section className="py-20 lg:py-28 bg-[#ECE9E3] border-y border-border/60 relative overflow-hidden">
+  <section className="relative py-24 lg:py-32 bg-primary text-primary-foreground overflow-hidden">
     <div
-      className="absolute inset-0 opacity-[0.05] pointer-events-none"
+      className="absolute inset-0 opacity-[0.04] pointer-events-none"
       style={{
         backgroundImage: `url(${logoWatermark})`,
-        backgroundSize: "90px auto",
+        backgroundSize: "120px auto",
         backgroundRepeat: "repeat",
       }}
     />
-    <div className="container mx-auto px-6 lg:px-8 max-w-6xl relative z-10">
-      <div className="text-center mb-14">
-        <p className="font-sans text-[11px] uppercase tracking-[0.28em] text-accent mb-4">
-          Línea de vida profesional
-        </p>
-        <h2 className="font-serif text-4xl md:text-5xl font-light text-foreground leading-tight max-w-3xl mx-auto">
-          Todo lo que pasó <span className="italic text-accent">antes</span> de que esta página existiera.
-        </h2>
-      </div>
 
-      <div className="relative overflow-x-auto pb-6 -mx-6 px-6 lg:mx-0 lg:px-0">
-        <div className="absolute left-0 right-0 top-[86px] h-px bg-accent/30 hidden md:block" />
-        <ol className="flex gap-6 md:gap-8 min-w-max md:min-w-0 md:grid md:grid-cols-5 lg:grid-cols-10">
-          {timeline.map((item) => (
-            <li key={item.year} className="w-[220px] md:w-auto flex flex-col items-start">
-              <span className="font-serif text-2xl md:text-[26px] font-medium text-primary leading-none mb-4">
-                {item.year}
-              </span>
-              <span className="relative flex items-center justify-center w-4 h-4 mb-4">
-                <span className="w-3 h-3 rounded-full gold-gradient" />
-                <span className="absolute inset-0 rounded-full border border-accent/40" />
-              </span>
-              <p className="font-serif text-base font-medium text-foreground leading-snug mb-2">
-                {item.title}
-              </p>
-              <p className="font-sans text-[13px] text-muted-foreground leading-relaxed">
-                {item.note}
-              </p>
-            </li>
-          ))}
-        </ol>
+    {/* Header */}
+    <div className="container mx-auto px-6 lg:px-8 max-w-6xl relative z-10 mb-20 md:mb-28">
+      <p className="font-sans text-[11px] uppercase tracking-[0.3em] text-brand-teal mb-6">
+        Línea de vida profesional
+      </p>
+      <h2 className="font-serif text-4xl md:text-6xl lg:text-7xl font-light leading-[1.02] max-w-4xl">
+        Ven, te cuento
+        <br />
+        <span className="italic">cómo lo hice.</span>
+      </h2>
+      <p className="font-serif text-lg md:text-xl text-primary-foreground/70 mt-8 max-w-2xl leading-relaxed">
+        Y por qué hoy acompaño a otras personas a construir su propio valor sin esperar permiso de nadie.
+      </p>
+    </div>
+
+    {/* Chapters */}
+    <div className="relative">
+      {/* Línea vertical central en desktop */}
+      <div className="hidden lg:block absolute left-1/2 top-0 bottom-0 w-px bg-primary-foreground/10" />
+
+      <div className="container mx-auto px-6 lg:px-8 max-w-6xl relative z-10 space-y-24 md:space-y-32">
+        {chapters.map((ch, i) => {
+          const isLeft = ch.align === "left";
+          return (
+            <div
+              key={ch.year}
+              className={`relative grid lg:grid-cols-2 gap-8 lg:gap-16 items-center ${
+                isLeft ? "" : "lg:[&>*:first-child]:order-2"
+              }`}
+            >
+              {/* AÑO gigante outline */}
+              <div className={`relative ${isLeft ? "lg:text-right lg:pr-8" : "lg:text-left lg:pl-8"}`}>
+                <span
+                  className="block font-serif italic text-brand-teal text-outline leading-[0.85] tracking-tight select-none"
+                  style={{ fontSize: "clamp(6rem, 16vw, 15rem)" }}
+                >
+                  {ch.year}
+                </span>
+                {/* Burbujas flotantes sobre el año */}
+                <div
+                  className={`absolute -bottom-4 flex flex-wrap gap-2 ${
+                    isLeft ? "right-0 lg:right-4 justify-end" : "left-0 lg:left-4"
+                  }`}
+                >
+                  {ch.bubbles.map((b, bi) => (
+                    <span
+                      key={bi}
+                      className={`inline-block font-sans text-[10px] md:text-xs font-bold uppercase tracking-[0.14em] px-4 py-2 rounded-full shadow-lg animate-bubble-float ${bubbleClass[b.color]}`}
+                      style={{ animationDelay: `${bi * 0.6}s` }}
+                    >
+                      {b.label}
+                    </span>
+                  ))}
+                </div>
+              </div>
+
+              {/* Contenido */}
+              <div className={`relative ${isLeft ? "lg:pl-8" : "lg:pr-8"}`}>
+                <p className="font-sans text-[11px] uppercase tracking-[0.28em] text-brand-teal mb-3">
+                  Capítulo {String(i + 1).padStart(2, "0")}
+                </p>
+                <h3 className="font-serif text-3xl md:text-4xl lg:text-5xl font-light leading-[1.1] mb-5">
+                  {ch.title}
+                </h3>
+                <p className="font-serif text-lg md:text-xl text-primary-foreground/75 leading-relaxed max-w-xl">
+                  {ch.body}
+                </p>
+              </div>
+            </div>
+          );
+        })}
       </div>
+    </div>
+
+    {/* Cierre */}
+    <div className="container mx-auto px-6 lg:px-8 max-w-4xl relative z-10 mt-24 md:mt-32 text-center">
+      <p className="font-serif italic text-2xl md:text-4xl font-light leading-tight text-brand-yellow">
+        «No existe fecha de caducidad
+        <br />
+        para decidir el propio valor.»
+      </p>
     </div>
   </section>
 );
+
 
 /* ---------------------- MÓDULO C · En cifras -------------------------- */
 
