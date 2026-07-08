@@ -9,37 +9,37 @@ import sandraMarcopolo from "@/assets/sandra-tello-marcopolo.jpg";
  * (teal, pink, yellow) como acento puntual.
  */
 
+type CardColor = "cream" | "gold" | "navy-light";
 type Item =
   | { kind: "photo"; src: string; alt: string }
-  | { kind: "card"; label: string; sub?: string; color: "teal" | "pink" | "yellow" | "navy" };
+  | { kind: "card"; label: string; sub?: string; color: CardColor };
 
 const row1: Item[] = [
   { kind: "photo", src: sandraHero, alt: "Sandra Tello · escena editorial" },
-  { kind: "card", label: "IA con criterio", sub: "Formación", color: "teal" },
+  { kind: "card", label: "IA con criterio", sub: "Formación", color: "cream" },
   { kind: "photo", src: sandraIA, alt: "Sandra enseñando IA" },
-  { kind: "card", label: "Marca personal", sub: "Estrategia", color: "pink" },
+  { kind: "card", label: "Marca personal", sub: "Estrategia", color: "gold" },
   { kind: "photo", src: sandraAbout, alt: "Retrato Sandra Tello" },
-  { kind: "card", label: "Consultora", sub: "Negocio + IA", color: "yellow" },
+  { kind: "card", label: "Consultora", sub: "Negocio + IA", color: "navy-light" },
   { kind: "photo", src: sandraMarcopolo, alt: "Sandra con Marcopolo" },
-  { kind: "card", label: "Chicharrera", sub: "Tenerife", color: "navy" },
+  { kind: "card", label: "Chicharrera", sub: "Tenerife", color: "cream" },
 ];
 
 const row2: Item[] = [
-  { kind: "card", label: "Docente IA", sub: "Escuelas de negocio", color: "pink" },
+  { kind: "card", label: "Docente IA", sub: "Escuelas de negocio", color: "gold" },
   { kind: "photo", src: sandraIA, alt: "Sandra impartiendo formación" },
-  { kind: "card", label: "18 años", sub: "en corporate", color: "navy" },
+  { kind: "card", label: "18 años", sub: "en corporate", color: "navy-light" },
   { kind: "photo", src: sandraAbout, alt: "Sandra Tello retrato" },
-  { kind: "card", label: "Piano", sub: "Conservatorio", color: "teal" },
+  { kind: "card", label: "Piano", sub: "Conservatorio", color: "cream" },
   { kind: "photo", src: sandraHero, alt: "Sandra Tello escena" },
-  { kind: "card", label: "Mediadora", sub: "Registrada", color: "yellow" },
+  { kind: "card", label: "Mediadora", sub: "Registrada", color: "gold" },
   { kind: "photo", src: sandraMarcopolo, alt: "Sandra con Marcopolo" },
 ];
 
-const colorMap: Record<"teal" | "pink" | "yellow" | "navy", string> = {
-  teal: "bg-brand-teal text-primary",
-  pink: "bg-brand-pink text-primary",
-  yellow: "bg-brand-yellow text-primary",
-  navy: "bg-primary text-primary-foreground",
+const colorMap: Record<CardColor, string> = {
+  cream: "bg-cream text-primary border border-border",
+  gold: "gold-gradient text-white",
+  "navy-light": "bg-[hsl(var(--navy-mid))] text-primary-foreground",
 };
 
 const Tile = ({ item }: { item: Item }) => {
