@@ -66,22 +66,22 @@ const DolorCard = ({
   return (
     <div
       ref={ref}
-      className="relative border border-primary/15 bg-background p-8 md:p-10 transition-all duration-700 ease-out hover:border-accent hover:shadow-[0_20px_60px_-30px_rgba(27,42,74,0.35)] group"
+      className="relative border border-primary/15 bg-background px-8 md:px-10 py-7 md:py-8 grid grid-cols-[auto_1fr] gap-6 md:gap-10 items-center transition-all duration-700 ease-out hover:border-accent hover:shadow-[0_20px_60px_-30px_rgba(27,42,74,0.35)] group"
       style={{
         opacity: visible ? 1 : 0,
         transform: visible ? "translateY(0)" : "translateY(40px)",
         transitionDelay: `${index * 180}ms`,
       }}
     >
-      {/* Barra dorada superior */}
+      {/* Barra dorada lateral */}
       <span
         aria-hidden="true"
-        className="absolute top-0 left-0 h-[3px] bg-accent transition-all duration-500 ease-out"
-        style={{ width: visible ? "56px" : "0px" }}
+        className="absolute top-0 left-0 w-[3px] bg-accent transition-all duration-500 ease-out"
+        style={{ height: visible ? "100%" : "0%" }}
       />
 
       {/* Número */}
-      <span className="block font-serif italic text-accent text-4xl md:text-5xl leading-none mb-6">
+      <span className="font-serif italic text-accent text-5xl md:text-6xl leading-none">
         {num}
       </span>
 
@@ -112,8 +112,26 @@ const PersonalBrandSection = () => {
 
           {/* H2 */}
           <h2 className="font-serif text-3xl md:text-4xl lg:text-[52px] font-medium text-primary leading-[1.1] mb-10">
-            Crea una marca personal imposible de ignorar.{" "}
-            <span className="italic text-accent">Y de borrar.</span>
+            Crea una marca personal imposible de ignorar.
+            <br />
+            <span className="relative inline-block italic text-accent mt-2">
+              Y de borrar.
+              <svg
+                aria-hidden="true"
+                className="absolute -bottom-2 left-0 w-full"
+                height="10"
+                viewBox="0 0 300 10"
+                preserveAspectRatio="none"
+              >
+                <path
+                  d="M2 6 Q 75 2, 150 5 T 298 4"
+                  stroke="currentColor"
+                  strokeWidth="2"
+                  fill="none"
+                  strokeLinecap="round"
+                />
+              </svg>
+            </span>
           </h2>
 
           {/* Cuerpo */}
@@ -136,16 +154,16 @@ const PersonalBrandSection = () => {
           </div>
         </div>
 
-        {/* Dolores — rectángulos que aparecen al hacer scroll */}
-        <div className="max-w-6xl mx-auto mt-16">
-          <div className="mb-8 flex items-center gap-4 max-w-3xl mx-auto">
+        {/* Dolores — rectángulos apilados que aparecen al hacer scroll */}
+        <div className="max-w-3xl mx-auto mt-16">
+          <div className="mb-8 flex items-center gap-4">
             <span className="font-sans text-[10px] font-semibold uppercase tracking-[0.3em] text-primary/60">
               Reconócete
             </span>
             <span className="h-px flex-1 bg-primary/15" />
           </div>
 
-          <div className="grid gap-6 md:grid-cols-3">
+          <div className="flex flex-col gap-5">
             {dolores.map((d, i) => (
               <DolorCard key={i} num={d.num} body={d.body} index={i} />
             ))}
