@@ -49,7 +49,7 @@ const navItems: NavItem[] = [
     ],
   },
   { label: "Blog", href: "#blog" },
-  { label: "Contacto", href: "#contacto" },
+  { label: "Contacto", href: "/contacto" },
 ];
 
 const Navbar = () => {
