@@ -87,11 +87,11 @@ const InteligenciaArtificial = () => (
         <div className="flex items-center gap-4 mb-8">
           <div className="h-px w-16 bg-[hsl(var(--brand-teal))]" />
           <p className="text-[hsl(var(--brand-teal))] font-semibold text-[11px] uppercase tracking-[0.34em]">
-            Pilar · Inteligencia Artificial
+            Consultoría inteligencia artificial · Formación IA para empresas
           </p>
         </div>
         <h1 className="font-serif text-5xl md:text-6xl lg:text-[84px] font-medium text-white leading-[1.02] max-w-6xl tracking-tight">
-          Inteligencia artificial<br />
+          Inteligencia artificial para empresas<br />
           <span className="italic text-[#C5A55A]">con criterio</span>.
         </h1>
         <div className="mt-12 grid lg:grid-cols-12 gap-8">
