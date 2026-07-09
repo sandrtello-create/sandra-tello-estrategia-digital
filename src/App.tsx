@@ -16,6 +16,7 @@ import Formacion from "./pages/Formacion";
 import MarketingConFactorHumano from "./pages/MarketingConFactorHumano";
 import InteligenciaArtificial from "./pages/InteligenciaArtificial";
 import MarcaPersonal from "./pages/MarcaPersonal";
+import Contacto from "./pages/Contacto";
 import NotFound from "./pages/NotFound";
 import ScrollToTop from "./components/ScrollToTop";
 
@@ -42,6 +43,7 @@ const App = () => (
           <Route path="/marketing-con-factor-humano" element={<MarketingConFactorHumano />} />
           <Route path="/inteligencia-artificial-para-profesionales" element={<InteligenciaArtificial />} />
           <Route path="/marca-personal-estrategica" element={<MarcaPersonal />} />
+          <Route path="/contacto" element={<Contacto />} />
           {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
           <Route path="*" element={<NotFound />} />
         </Routes>

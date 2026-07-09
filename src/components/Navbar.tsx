@@ -49,7 +49,7 @@ const navItems: NavItem[] = [
     ],
   },
   { label: "Blog", href: "#blog" },
-  { label: "Contacto", href: "#contacto" },
+  { label: "Contacto", href: "/contacto" },
 ];
 
 const Navbar = () => {
@@ -112,13 +112,13 @@ const Navbar = () => {
                 </div>
               );
             })}
-            <a
-              href={resolve("#contacto")}
-              className="btn-gold-gradient rounded-full w-10 h-10 flex items-center justify-center"
-              aria-label="Trabaja conmigo"
+            <Link
+              to="/contacto"
+              className="inline-flex items-center gap-2 bg-[#1B2A4A] text-white hover:bg-[#C5A55A] hover:text-[#1B2A4A] px-6 py-3 text-[11px] font-semibold uppercase tracking-[0.18em] transition-colors"
             >
-              <Mail size={18} />
-            </a>
+              <Mail size={14} />
+              Reserva sesión
+            </Link>
           </div>
 
           {/* Mobile toggle */}
@@ -175,14 +175,14 @@ const Navbar = () => {
                   </div>
                 );
               })}
-              <a
-                href={resolve("#contacto")}
+              <Link
+                to="/contacto"
                 onClick={() => setIsOpen(false)}
-                className="btn-gold-gradient rounded-full w-10 h-10 flex items-center justify-center mt-3"
-                aria-label="Trabaja conmigo"
+                className="inline-flex items-center justify-center gap-2 bg-[#1B2A4A] text-white hover:bg-[#C5A55A] px-6 py-3 text-[11px] font-semibold uppercase tracking-[0.18em] mt-4"
               >
-                <Mail size={18} />
-              </a>
+                <Mail size={14} />
+                Reserva sesión
+              </Link>
             </div>
           </div>
         )}
