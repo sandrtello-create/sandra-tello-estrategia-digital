@@ -112,8 +112,26 @@ const PersonalBrandSection = () => {
 
           {/* H2 */}
           <h2 className="font-serif text-3xl md:text-4xl lg:text-[52px] font-medium text-primary leading-[1.1] mb-10">
-            Crea una marca personal imposible de ignorar.{" "}
-            <span className="italic text-accent">Y de borrar.</span>
+            Crea una marca personal imposible de ignorar.
+            <br />
+            <span className="relative inline-block italic text-accent mt-2">
+              Y de borrar.
+              <svg
+                aria-hidden="true"
+                className="absolute -bottom-2 left-0 w-full"
+                height="10"
+                viewBox="0 0 300 10"
+                preserveAspectRatio="none"
+              >
+                <path
+                  d="M2 6 Q 75 2, 150 5 T 298 4"
+                  stroke="currentColor"
+                  strokeWidth="2"
+                  fill="none"
+                  strokeLinecap="round"
+                />
+              </svg>
+            </span>
           </h2>
 
           {/* Cuerpo */}
