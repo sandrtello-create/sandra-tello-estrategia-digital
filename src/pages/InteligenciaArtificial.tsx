@@ -178,6 +178,16 @@ const InteligenciaArtificial = () => (
       </div>
     </section>
 
+    <InlineCTA
+      variant="navy"
+      kicker="Consultoría IA"
+      title="¿Integramos la IA en tu negocio con criterio?"
+      description="Una sesión estratégica para diagnosticar dónde tiene sentido aplicar inteligencia artificial en tus procesos —y dónde no todavía—."
+      primaryLabel="Reserva sesión"
+      secondaryLabel="Ver formación in-company"
+      secondaryHref="/formacion"
+    />
+
     {/* Método — banda navy con teal */}
     <section className="py-24 lg:py-32 bg-[#1B2A4A]">
       <div className="container mx-auto px-6 lg:px-12 max-w-6xl">
