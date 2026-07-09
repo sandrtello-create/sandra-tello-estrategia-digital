@@ -82,7 +82,7 @@ const MarcaPersonal = () => (
             <div className="flex items-center gap-4 mb-8">
               <div className="h-px w-16 bg-[#C5A55A]" />
               <p className="text-[#C5A55A] font-semibold text-[11px] uppercase tracking-[0.34em]">
-                Pilar · Marca personal
+                Consultora de marca personal · Mentoría LinkedIn
               </p>
             </div>
             <h1 className="font-serif text-5xl md:text-6xl lg:text-[92px] font-medium text-primary leading-[0.98] tracking-tight">
