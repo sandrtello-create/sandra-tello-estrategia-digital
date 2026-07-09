@@ -1,5 +1,6 @@
 import { useEffect, useRef, useState } from "react";
 import { ArrowRight } from "lucide-react";
+import sandraPortrait from "@/assets/sandra-portrait-half.png.asset.json";
 
 const dolores = [
   {
