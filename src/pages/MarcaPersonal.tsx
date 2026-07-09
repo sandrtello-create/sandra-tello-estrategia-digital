@@ -2,6 +2,7 @@ import { ArrowRight, UserRound, Compass, PenTool, Megaphone, Linkedin, Award } f
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import SEO from "@/components/SEO";
+import InlineCTA from "@/components/InlineCTA";
 
 const pillars = [
   { icon: Compass, title: "Posicionamiento", description: "Un ángulo defendible: qué mirada aportas al mercado y qué la hace tuya." },
