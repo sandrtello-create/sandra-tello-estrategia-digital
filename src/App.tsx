@@ -16,6 +16,7 @@ import Formacion from "./pages/Formacion";
 import MarketingConFactorHumano from "./pages/MarketingConFactorHumano";
 import InteligenciaArtificial from "./pages/InteligenciaArtificial";
 import MarcaPersonal from "./pages/MarcaPersonal";
+import Contacto from "./pages/Contacto";
 import NotFound from "./pages/NotFound";
 import ScrollToTop from "./components/ScrollToTop";
 
