@@ -3,6 +3,7 @@ import HeroSection from "@/components/HeroSection";
 import HeroClassic from "@/components/HeroClassic";
 import BrandsSection from "@/components/BrandsSection";
 import AboutSection from "@/components/AboutSection";
+import WhatIDoSection from "@/components/WhatIDoSection";
 import ServicesSection from "@/components/ServicesSection";
 
 import TrainingSection from "@/components/TrainingSection";
