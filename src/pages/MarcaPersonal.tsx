@@ -2,6 +2,7 @@ import { ArrowRight, UserRound, Compass, PenTool, Megaphone, Linkedin, Award } f
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import SEO from "@/components/SEO";
+import InlineCTA from "@/components/InlineCTA";
 
 const pillars = [
   { icon: Compass, title: "Posicionamiento", description: "Un ángulo defendible: qué mirada aportas al mercado y qué la hace tuya." },
@@ -81,7 +82,7 @@ const MarcaPersonal = () => (
             <div className="flex items-center gap-4 mb-8">
               <div className="h-px w-16 bg-[#C5A55A]" />
               <p className="text-[#C5A55A] font-semibold text-[11px] uppercase tracking-[0.34em]">
-                Pilar · Marca personal
+                Consultora de marca personal · Mentoría LinkedIn
               </p>
             </div>
             <h1 className="font-serif text-5xl md:text-6xl lg:text-[92px] font-medium text-primary leading-[0.98] tracking-tight">
@@ -212,6 +213,16 @@ const MarcaPersonal = () => (
         </ol>
       </div>
     </section>
+
+    <InlineCTA
+      variant="gold"
+      kicker="Mentoría LinkedIn"
+      title="¿Trabajamos tu marca personal en LinkedIn?"
+      description="Un programa 1 a 1 de 3 meses para pasar de perfil invisible a autoridad reconocida en tu sector — con estrategia, voz propia y contenido sostenible."
+      primaryLabel="Reserva sesión"
+      secondaryLabel="Ver formación in-company"
+      secondaryHref="/formacion"
+    />
 
     {/* Errores frecuentes — cream */}
     <section className="py-24 lg:py-32 bg-[hsl(var(--section-alt))]">

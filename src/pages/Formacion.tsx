@@ -2,6 +2,7 @@ import { ArrowRight, Building2, GraduationCap, Briefcase, UserRound, Linkedin, T
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import SEO from "@/components/SEO";
+import InlineCTA from "@/components/InlineCTA";
 
 const programs = [
   { icon: Building2, title: "Formación in-company en IA", description: "Programas a medida para equipos que integran IA con criterio. Presencial o remoto.", tag: "Empresas" },
@@ -58,17 +59,17 @@ const Formacion = () => (
         <div className="flex items-center gap-4 mb-8">
           <div className="h-px w-16 bg-[hsl(var(--mint))]" />
           <p className="text-[hsl(var(--mint))] font-semibold text-[11px] uppercase tracking-[0.34em]">
-            Formación
+            Formación in-company · Curso IA para empresas
           </p>
         </div>
         <h1 className="font-serif text-5xl md:text-6xl lg:text-[76px] font-medium text-primary leading-[1.05] max-w-5xl tracking-tight">
-          Aprender IA y marca personal<br />
-          <span className="italic text-[hsl(var(--navy-mid))]">con criterio real</span>.
+          Formación en inteligencia artificial<br />
+          y marca personal <span className="italic text-[hsl(var(--navy-mid))]">con criterio real</span>.
         </h1>
         <p className="mt-12 font-serif text-foreground/70 text-xl leading-[1.75] max-w-3xl">
-          Formaciones para personas y equipos que quieren aprender sin
-          plantillas exportadas. Cada programa se adapta a tu negocio, tu
-          sector y tu punto de partida.
+          Programas <strong className="font-medium text-primary">in-company de formación en IA</strong>,
+          workshops intensivos y mentorías 1 a 1 en marca personal, LinkedIn y estrategia de contenido.
+          Cada programa se adapta a tu equipo, tu sector y tu punto de partida.
         </p>
       </div>
     </header>
@@ -114,6 +115,16 @@ const Formacion = () => (
         </div>
       </div>
     </section>
+
+    <InlineCTA
+      variant="cream"
+      kicker="¿Formación a medida?"
+      title="Diseñemos un programa de IA para tu empresa"
+      description="Cuéntame el tamaño del equipo, el sector y qué quieres que sepan hacer con IA cuando terminemos. Te devuelvo una propuesta concreta."
+      primaryLabel="Solicita propuesta"
+      secondaryLabel="Ver mentoría LinkedIn"
+      secondaryHref="/marca-personal-estrategica"
+    />
 
     {/* Cómo trabajo la formación — banda navy con mint */}
     <section className="py-24 lg:py-32 bg-[#1B2A4A]">

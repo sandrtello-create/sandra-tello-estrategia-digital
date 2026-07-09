@@ -2,6 +2,7 @@ import { ArrowRight } from "lucide-react";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import SEO from "@/components/SEO";
+import InlineCTA from "@/components/InlineCTA";
 
 const testimonios = [
   {
@@ -144,6 +145,14 @@ const Testimonios = () => (
         </div>
       </div>
     </section>
+
+    <InlineCTA
+      variant="navy"
+      kicker="Trabaja conmigo"
+      title="¿Quieres ser el próximo caso?"
+      description="Reserva una sesión estratégica y hablemos de tu proyecto — sin compromiso ni plantilla previa."
+      primaryLabel="Reserva sesión"
+    />
 
     {/* Nota — banda cream */}
     <section className="py-24 lg:py-32 bg-[hsl(var(--cream))]">

@@ -2,6 +2,7 @@ import { ArrowRight, Eye, TrendingUp, Award, Compass, Zap, Heart } from "lucide-
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import SEO from "@/components/SEO";
+import InlineCTA from "@/components/InlineCTA";
 
 const results = [
   { icon: Eye, title: "Claridad", description: "Visión clara de tu posicionamiento, tu mensaje y tus próximos pasos estratégicos." },
@@ -146,6 +147,14 @@ const Resultados = () => (
         </div>
       </div>
     </section>
+
+    <InlineCTA
+      variant="gold"
+      kicker="Tu caso"
+      title="¿Cómo se vería este proceso en tu negocio?"
+      description="Reserva una sesión estratégica y salgamos con un mapa claro de por dónde empezar contigo."
+      primaryLabel="Reserva sesión"
+    />
 
     {/* Honestidad — banda navy con marca yellow */}
     <section className="py-24 lg:py-32 bg-[#1B2A4A]">

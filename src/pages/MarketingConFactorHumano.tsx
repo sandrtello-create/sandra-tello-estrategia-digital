@@ -2,6 +2,7 @@ import { ArrowRight, Compass, Users, Heart, TrendingUp, Sparkles, Target } from 
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import SEO from "@/components/SEO";
+import InlineCTA from "@/components/InlineCTA";
 
 const pillars = [
   { icon: Compass, title: "Criterio antes que canal", description: "Antes de elegir dónde publicar, decidimos qué tienes que decir y por qué a alguien debería importarle." },
@@ -165,6 +166,16 @@ const MarketingConFactorHumano = () => (
         </div>
       </div>
     </section>
+
+    <InlineCTA
+      variant="cream"
+      kicker="Consultoría 1 a 1"
+      title="¿Reordenamos tu estrategia de marketing?"
+      description="Una sesión para revisar tu posicionamiento, tu contenido y tu embudo con criterio humano — antes de meterle más herramientas."
+      primaryLabel="Reserva sesión"
+      secondaryLabel="Ver mentoría LinkedIn"
+      secondaryHref="/marca-personal-estrategica"
+    />
 
     {/* Metodología — timeline horizontal blanca */}
     <section className="py-24 lg:py-32 bg-white">

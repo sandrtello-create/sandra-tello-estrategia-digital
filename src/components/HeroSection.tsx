@@ -85,11 +85,11 @@ const HeroSection = () => {
       {/* ============ CONTENIDO ============ */}
       <div className="container mx-auto px-6 lg:px-8 relative z-10 py-24">
         <div className="max-w-4xl mx-auto text-center">
-          {/* Eyebrow / kicker */}
+          {/* Eyebrow / kicker — keywords SEO principales */}
           <div className="flex items-center justify-center gap-3 mb-8">
             <span className="h-px w-8 bg-[#e6c67a]/60" />
             <p className="font-sans text-[10px] md:text-[11px] font-semibold uppercase tracking-[0.32em] text-[#e6c67a]">
-              Consultora estratégica · IA · Marca personal · Marketing
+              Consultora de marca personal · Formación en IA para empresas
             </p>
             <span className="h-px w-8 bg-[#e6c67a]/60" />
           </div>
@@ -102,15 +102,15 @@ const HeroSection = () => {
             </span>
           </h1>
 
-          {/* Subtítulo fijo — promesa aspiracional */}
+          {/* Subtítulo — promesa + keywords SEO validadas */}
           <p
             className="font-serif text-white/90 text-[17px] md:text-[20px] lg:text-[22px] leading-relaxed max-w-2xl mx-auto mb-10"
             style={{ textShadow: "0 2px 20px rgba(0,0,0,0.5)" }}
           >
-            Te acompaño a construir un posicionamiento digital coherente.
-            Marca personal para visibilidad y autoridad, estrategia y marketing
-            para posicionamiento e Inteligencia Artificial porque ya no es una
-            ventaja competitiva: es tu nueva realidad.
+            Consultoría de <strong className="font-medium text-white">marca personal</strong>,
+            {" "}<strong className="font-medium text-white">formación en inteligencia artificial</strong> para
+            empresas y mentoría estratégica en LinkedIn. Acompaño a directivos y equipos
+            a construir un posicionamiento digital con criterio, sin plantillas ni recetas.
           </p>
 
           {/* CTA */}

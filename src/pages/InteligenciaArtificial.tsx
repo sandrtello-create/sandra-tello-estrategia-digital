@@ -2,6 +2,7 @@ import { ArrowRight, Brain, Cpu, Zap, ShieldCheck, Workflow, GraduationCap } fro
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import SEO from "@/components/SEO";
+import InlineCTA from "@/components/InlineCTA";
 
 const pillars = [
   { icon: Brain, title: "Criterio primero", description: "La IA amplifica decisiones. Sin criterio detrás, amplifica errores más rápido." },
@@ -86,11 +87,11 @@ const InteligenciaArtificial = () => (
         <div className="flex items-center gap-4 mb-8">
           <div className="h-px w-16 bg-[hsl(var(--brand-teal))]" />
           <p className="text-[hsl(var(--brand-teal))] font-semibold text-[11px] uppercase tracking-[0.34em]">
-            Pilar · Inteligencia Artificial
+            Consultoría inteligencia artificial · Formación IA para empresas
           </p>
         </div>
         <h1 className="font-serif text-5xl md:text-6xl lg:text-[84px] font-medium text-white leading-[1.02] max-w-6xl tracking-tight">
-          Inteligencia artificial<br />
+          Inteligencia artificial para empresas<br />
           <span className="italic text-[#C5A55A]">con criterio</span>.
         </h1>
         <div className="mt-12 grid lg:grid-cols-12 gap-8">
@@ -176,6 +177,16 @@ const InteligenciaArtificial = () => (
         </div>
       </div>
     </section>
+
+    <InlineCTA
+      variant="navy"
+      kicker="Consultoría IA"
+      title="¿Integramos la IA en tu negocio con criterio?"
+      description="Una sesión estratégica para diagnosticar dónde tiene sentido aplicar inteligencia artificial en tus procesos —y dónde no todavía—."
+      primaryLabel="Reserva sesión"
+      secondaryLabel="Ver formación in-company"
+      secondaryHref="/formacion"
+    />
 
     {/* Método — banda navy con teal */}
     <section className="py-24 lg:py-32 bg-[#1B2A4A]">
