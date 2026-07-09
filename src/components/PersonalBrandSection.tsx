@@ -1,4 +1,97 @@
+import { useEffect, useRef, useState } from "react";
 import { ArrowRight } from "lucide-react";
+
+const dolores = [
+  {
+    num: "01",
+    body: (
+      <>
+        Llevas años acumulando experiencia. Pero cuando alguien busca lo que
+        tú haces, <span className="italic">aparecen otros nombres</span>.
+      </>
+    ),
+  },
+  {
+    num: "02",
+    body: (
+      <>
+        Compañeros con menos recorrido crecen más rápido. Se les ve.{" "}
+        <span className="italic">A ti no.</span>
+      </>
+    ),
+  },
+  {
+    num: "03",
+    body: (
+      <>
+        Trabajas bien, pero tu carrera depende de decisiones que toma otra
+        gente. <span className="font-semibold">Un jefe.</span>{" "}
+        <span className="font-semibold">Un algoritmo.</span>{" "}
+        <span className="font-semibold">
+          Una empresa que puede cerrar mañana.
+        </span>
+      </>
+    ),
+  },
+];
+
+const DolorCard = ({
+  num,
+  body,
+  index,
+}: {
+  num: string;
+  body: React.ReactNode;
+  index: number;
+}) => {
+  const ref = useRef<HTMLDivElement>(null);
+  const [visible, setVisible] = useState(false);
+
+  useEffect(() => {
+    const el = ref.current;
+    if (!el) return;
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        if (entry.isIntersecting) {
+          setVisible(true);
+          observer.disconnect();
+        }
+      },
+      { threshold: 0.25 }
+    );
+    observer.observe(el);
+    return () => observer.disconnect();
+  }, []);
+
+  return (
+    <div
+      ref={ref}
+      className="relative border border-primary/15 bg-background p-8 md:p-10 transition-all duration-700 ease-out hover:border-accent hover:shadow-[0_20px_60px_-30px_rgba(27,42,74,0.35)] group"
+      style={{
+        opacity: visible ? 1 : 0,
+        transform: visible ? "translateY(0)" : "translateY(40px)",
+        transitionDelay: `${index * 180}ms`,
+      }}
+    >
+      {/* Barra dorada superior */}
+      <span
+        aria-hidden="true"
+        className="absolute top-0 left-0 h-[3px] bg-accent transition-all duration-500 ease-out"
+        style={{ width: visible ? "56px" : "0px" }}
+      />
+
+      {/* Número */}
+      <span className="block font-serif italic text-accent text-4xl md:text-5xl leading-none mb-6">
+        {num}
+      </span>
+
+      {/* Texto */}
+      <p className="font-serif text-primary text-[18px] md:text-[20px] leading-[1.4]">
+        {body}
+      </p>
+    </div>
+  );
+};
 
 const PersonalBrandSection = () => {
   return (
@@ -41,37 +134,33 @@ const PersonalBrandSection = () => {
               tus apellidos.
             </p>
           </div>
+        </div>
 
-          {/* Bloque de dolores */}
-          <div className="mt-14 border-l-2 border-accent pl-8 md:pl-10 space-y-8">
-            <p className="font-serif text-[19px] md:text-[22px] text-primary leading-snug">
-              Llevas años acumulando experiencia. Pero cuando alguien busca lo
-              que tú haces, <span className="italic">aparecen otros nombres</span>.
-            </p>
-            <p className="font-serif text-[19px] md:text-[22px] text-primary leading-snug">
-              Compañeros con menos recorrido crecen más rápido. Se les ve.{" "}
-              <span className="italic">A ti no.</span>
-            </p>
-            <p className="font-serif text-[19px] md:text-[22px] text-primary leading-snug">
-              Trabajas bien, pero tu carrera depende de decisiones que toma
-              otra gente. <span className="font-semibold">Un jefe.</span>{" "}
-              <span className="font-semibold">Un algoritmo.</span>{" "}
-              <span className="font-semibold">
-                Una empresa que puede cerrar mañana.
-              </span>
-            </p>
+        {/* Dolores — rectángulos que aparecen al hacer scroll */}
+        <div className="max-w-6xl mx-auto mt-16">
+          <div className="mb-8 flex items-center gap-4 max-w-3xl mx-auto">
+            <span className="font-sans text-[10px] font-semibold uppercase tracking-[0.3em] text-primary/60">
+              Reconócete
+            </span>
+            <span className="h-px flex-1 bg-primary/15" />
           </div>
 
-          {/* CTA */}
-          <div className="mt-14">
-            <a
-              href="/contacto"
-              className="inline-flex items-center gap-3 bg-primary text-accent px-9 py-4 rounded-full font-sans text-[12px] font-bold uppercase tracking-[0.18em] hover:shadow-xl hover:scale-[1.02] transition-all duration-300"
-            >
-              Quiero decidir mi posicionamiento
-              <ArrowRight className="h-4 w-4" />
-            </a>
+          <div className="grid gap-6 md:grid-cols-3">
+            {dolores.map((d, i) => (
+              <DolorCard key={i} num={d.num} body={d.body} index={i} />
+            ))}
           </div>
+        </div>
+
+        {/* CTA */}
+        <div className="max-w-3xl mx-auto mt-14">
+          <a
+            href="/contacto"
+            className="inline-flex items-center gap-3 bg-primary text-accent px-9 py-4 rounded-full font-sans text-[12px] font-bold uppercase tracking-[0.18em] hover:shadow-xl hover:scale-[1.02] transition-all duration-300"
+          >
+            Quiero decidir mi posicionamiento
+            <ArrowRight className="h-4 w-4" />
+          </a>
         </div>
       </div>
     </section>
