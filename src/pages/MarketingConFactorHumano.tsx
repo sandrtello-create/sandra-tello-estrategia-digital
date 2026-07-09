@@ -2,6 +2,7 @@ import { ArrowRight, Compass, Users, Heart, TrendingUp, Sparkles, Target } from 
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import SEO from "@/components/SEO";
+import InlineCTA from "@/components/InlineCTA";
 
 const pillars = [
   { icon: Compass, title: "Criterio antes que canal", description: "Antes de elegir dónde publicar, decidimos qué tienes que decir y por qué a alguien debería importarle." },
