@@ -214,6 +214,16 @@ const MarcaPersonal = () => (
       </div>
     </section>
 
+    <InlineCTA
+      variant="gold"
+      kicker="Mentoría LinkedIn"
+      title="¿Trabajamos tu marca personal en LinkedIn?"
+      description="Un programa 1 a 1 de 3 meses para pasar de perfil invisible a autoridad reconocida en tu sector — con estrategia, voz propia y contenido sostenible."
+      primaryLabel="Reserva sesión"
+      secondaryLabel="Ver formación in-company"
+      secondaryHref="/formacion"
+    />
+
     {/* Errores frecuentes — cream */}
     <section className="py-24 lg:py-32 bg-[hsl(var(--section-alt))]">
       <div className="container mx-auto px-6 lg:px-12 max-w-6xl">
