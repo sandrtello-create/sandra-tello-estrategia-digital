@@ -43,12 +43,12 @@ const Index = () => {
       />
       <Navbar />
       <HeroSection />
+      <PersonalBrandSection />
       <HeroClassic />
       
       <BrandsSection />
       <AboutSection />
       <WhatIDoSection />
-      <PersonalBrandSection />
       <ServicesSection />
       
       <TrainingSection />
