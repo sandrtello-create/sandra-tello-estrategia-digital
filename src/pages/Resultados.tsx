@@ -2,6 +2,7 @@ import { ArrowRight, Eye, TrendingUp, Award, Compass, Zap, Heart } from "lucide-
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import SEO from "@/components/SEO";
+import InlineCTA from "@/components/InlineCTA";
 
 const results = [
   { icon: Eye, title: "Claridad", description: "Visión clara de tu posicionamiento, tu mensaje y tus próximos pasos estratégicos." },
