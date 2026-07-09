@@ -2,6 +2,7 @@ import { ArrowRight, Building2, GraduationCap, Briefcase, UserRound, Linkedin, T
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import SEO from "@/components/SEO";
+import InlineCTA from "@/components/InlineCTA";
 
 const programs = [
   { icon: Building2, title: "Formación in-company en IA", description: "Programas a medida para equipos que integran IA con criterio. Presencial o remoto.", tag: "Empresas" },
