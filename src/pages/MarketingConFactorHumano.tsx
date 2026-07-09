@@ -167,6 +167,16 @@ const MarketingConFactorHumano = () => (
       </div>
     </section>
 
+    <InlineCTA
+      variant="cream"
+      kicker="Consultoría 1 a 1"
+      title="¿Reordenamos tu estrategia de marketing?"
+      description="Una sesión para revisar tu posicionamiento, tu contenido y tu embudo con criterio humano — antes de meterle más herramientas."
+      primaryLabel="Reserva sesión"
+      secondaryLabel="Ver mentoría LinkedIn"
+      secondaryHref="/marca-personal-estrategica"
+    />
+
     {/* Metodología — timeline horizontal blanca */}
     <section className="py-24 lg:py-32 bg-white">
       <div className="container mx-auto px-6 lg:px-12 max-w-6xl">
