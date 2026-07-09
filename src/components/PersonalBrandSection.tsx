@@ -154,16 +154,16 @@ const PersonalBrandSection = () => {
           </div>
         </div>
 
-        {/* Dolores — rectángulos que aparecen al hacer scroll */}
-        <div className="max-w-6xl mx-auto mt-16">
-          <div className="mb-8 flex items-center gap-4 max-w-3xl mx-auto">
+        {/* Dolores — rectángulos apilados que aparecen al hacer scroll */}
+        <div className="max-w-3xl mx-auto mt-16">
+          <div className="mb-8 flex items-center gap-4">
             <span className="font-sans text-[10px] font-semibold uppercase tracking-[0.3em] text-primary/60">
               Reconócete
             </span>
             <span className="h-px flex-1 bg-primary/15" />
           </div>
 
-          <div className="grid gap-6 md:grid-cols-3">
+          <div className="flex flex-col gap-5">
             {dolores.map((d, i) => (
               <DolorCard key={i} num={d.num} body={d.body} index={i} />
             ))}
