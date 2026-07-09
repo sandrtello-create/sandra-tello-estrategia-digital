@@ -119,7 +119,7 @@ const PersonalBrandSection = () => {
                 <img
                   src={sandraPortrait.url}
                   alt="Retrato editorial de Sandra Tello"
-                  className="w-full h-auto object-cover mix-blend-multiply grayscale-[0.15] scale-x-[-1]"
+                  className="w-full h-auto object-cover mix-blend-multiply grayscale-[0.15]"
                   loading="lazy"
                 />
                 <div
