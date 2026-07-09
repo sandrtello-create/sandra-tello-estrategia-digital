@@ -116,6 +116,16 @@ const Formacion = () => (
       </div>
     </section>
 
+    <InlineCTA
+      variant="cream"
+      kicker="¿Formación a medida?"
+      title="Diseñemos un programa de IA para tu empresa"
+      description="Cuéntame el tamaño del equipo, el sector y qué quieres que sepan hacer con IA cuando terminemos. Te devuelvo una propuesta concreta."
+      primaryLabel="Solicita propuesta"
+      secondaryLabel="Ver mentoría LinkedIn"
+      secondaryHref="/marca-personal-estrategica"
+    />
+
     {/* Cómo trabajo la formación — banda navy con mint */}
     <section className="py-24 lg:py-32 bg-[#1B2A4A]">
       <div className="container mx-auto px-6 lg:px-12 max-w-6xl">
