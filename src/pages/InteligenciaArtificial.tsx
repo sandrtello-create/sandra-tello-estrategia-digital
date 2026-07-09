@@ -2,6 +2,7 @@ import { ArrowRight, Brain, Cpu, Zap, ShieldCheck, Workflow, GraduationCap } fro
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import SEO from "@/components/SEO";
+import InlineCTA from "@/components/InlineCTA";
 
 const pillars = [
   { icon: Brain, title: "Criterio primero", description: "La IA amplifica decisiones. Sin criterio detrás, amplifica errores más rápido." },
