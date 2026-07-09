@@ -148,6 +148,14 @@ const Resultados = () => (
       </div>
     </section>
 
+    <InlineCTA
+      variant="gold"
+      kicker="Tu caso"
+      title="¿Cómo se vería este proceso en tu negocio?"
+      description="Reserva una sesión estratégica y salgamos con un mapa claro de por dónde empezar contigo."
+      primaryLabel="Reserva sesión"
+    />
+
     {/* Honestidad — banda navy con marca yellow */}
     <section className="py-24 lg:py-32 bg-[#1B2A4A]">
       <div className="container mx-auto px-6 lg:px-12 max-w-6xl">
