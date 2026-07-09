@@ -98,88 +98,119 @@ const PersonalBrandSection = () => {
   return (
     <section
       id="marca-personal-home"
-      className="py-24 lg:py-32 bg-background"
+      className="relative py-24 lg:py-32 bg-background overflow-hidden"
       aria-label="Marca personal y posicionamiento digital"
     >
-      <div className="container mx-auto px-6 lg:px-8">
-        <div className="max-w-3xl mx-auto">
-          {/* Eyebrow */}
-          <div className="flex items-center gap-3 mb-6">
-            <span className="h-px w-8 bg-accent/60" />
-            <p className="font-sans text-[10px] md:text-[11px] font-semibold uppercase tracking-[0.3em] text-accent">
-              Marca personal · Posicionamiento digital e IA
-            </p>
-          </div>
-
-          {/* H2 */}
-          <h2 className="font-serif text-3xl md:text-4xl lg:text-[52px] font-medium text-primary leading-[1.1] mb-10">
-            Crea una marca personal imposible de ignorar.
-            <br />
-            <span className="relative inline-block italic text-accent mt-2">
-              Y de borrar.
-              <svg
+      <div className="container mx-auto px-6 lg:px-8 relative">
+        <div className="grid lg:grid-cols-12 gap-12 lg:gap-16 items-start max-w-6xl mx-auto">
+          {/* Foto lateral */}
+          <div className="lg:col-span-5 lg:sticky lg:top-24 lg:self-start order-first">
+            <div className="relative">
+              {/* Marco dorado desplazado */}
+              <span
                 aria-hidden="true"
-                className="absolute -bottom-2 left-0 w-full"
-                height="10"
-                viewBox="0 0 300 10"
-                preserveAspectRatio="none"
-              >
-                <path
-                  d="M2 6 Q 75 2, 150 5 T 298 4"
-                  stroke="currentColor"
-                  strokeWidth="2"
-                  fill="none"
-                  strokeLinecap="round"
+                className="hidden md:block absolute -top-4 -left-4 w-24 h-24 border-t-2 border-l-2 border-accent"
+              />
+              <span
+                aria-hidden="true"
+                className="hidden md:block absolute -bottom-4 -right-4 w-24 h-24 border-b-2 border-r-2 border-accent/50"
+              />
+              <div className="relative bg-[#F5F0E8]">
+                <img
+                  src={sandraPortrait.url}
+                  alt="Retrato editorial de Sandra Tello"
+                  className="w-full h-auto object-cover mix-blend-multiply grayscale-[0.15]"
+                  loading="lazy"
                 />
-              </svg>
-            </span>
-          </h2>
-
-          {/* Cuerpo */}
-          <div className="space-y-6 text-primary/85 text-[17px] md:text-[18px] leading-relaxed font-serif">
-            <p>
-              Cuando construyes tu marca personal, también construyes un
-              posicionamiento digital coherente con quien eres.
-            </p>
-            <p>
-              Un trabajo interno. La unión de tus piezas personales y
-              profesionales, esas que te hacen única. Porque nadie hace lo
-              mismo que tú cuando parte de su propia experiencia y su propia
-              vivencia.
-            </p>
-            <p>
-              Así consigues que en tu sector te encuentren, te elijan y dejes
-              de ser un número en una larga lista para ser tú, con tu nombre y
-              tus apellidos.
-            </p>
-          </div>
-        </div>
-
-        {/* Dolores — rectángulos apilados que aparecen al hacer scroll */}
-        <div className="max-w-3xl mx-auto mt-16">
-          <div className="mb-8 flex items-center gap-4">
-            <span className="font-sans text-[10px] font-semibold uppercase tracking-[0.3em] text-primary/60">
-              Reconócete
-            </span>
-            <span className="h-px flex-1 bg-primary/15" />
+                {/* Tinte suave para integrar con la paleta */}
+                <div
+                  aria-hidden="true"
+                  className="absolute inset-0 bg-primary/5 pointer-events-none"
+                />
+              </div>
+            </div>
           </div>
 
-          <div className="flex flex-col gap-5">
-            {dolores.map((d, i) => (
-              <DolorCard key={i} num={d.num} body={d.body} index={i} />
-            ))}
-          </div>
-        </div>
+          {/* Contenido */}
+          <div className="lg:col-span-7">
+            {/* Eyebrow */}
+            <div className="flex items-center gap-3 mb-6">
+              <span className="h-px w-8 bg-accent/60" />
+              <p className="font-sans text-[10px] md:text-[11px] font-semibold uppercase tracking-[0.3em] text-accent">
+                Marca personal · Posicionamiento digital e IA
+              </p>
+            </div>
 
-        {/* CTA */}
-        <div className="max-w-3xl mx-auto mt-14">
-          <a
-            href="/contacto"
-            className="inline-flex items-center gap-3 bg-primary text-accent px-9 py-4 rounded-full font-sans text-[12px] font-bold uppercase tracking-[0.18em] hover:shadow-xl hover:scale-[1.02] transition-all duration-300"
-          >
-            Quiero decidir mi posicionamiento
-            <ArrowRight className="h-4 w-4" />
-          </a>
+            {/* H2 */}
+            <h2 className="font-serif text-3xl md:text-4xl lg:text-[48px] font-medium text-primary leading-[1.1] mb-10">
+              Crea una marca personal imposible de ignorar.
+              <br />
+              <span className="relative inline-block italic text-accent mt-2">
+                Y de borrar.
+                <svg
+                  aria-hidden="true"
+                  className="absolute -bottom-2 left-0 w-full"
+                  height="10"
+                  viewBox="0 0 300 10"
+                  preserveAspectRatio="none"
+                >
+                  <path
+                    d="M2 6 Q 75 2, 150 5 T 298 4"
+                    stroke="currentColor"
+                    strokeWidth="2"
+                    fill="none"
+                    strokeLinecap="round"
+                  />
+                </svg>
+              </span>
+            </h2>
+
+            {/* Cuerpo */}
+            <div className="space-y-6 text-primary/85 text-[17px] md:text-[18px] leading-relaxed font-serif">
+              <p>
+                Cuando construyes tu marca personal, también construyes un
+                posicionamiento digital coherente con quien eres.
+              </p>
+              <p>
+                Un trabajo interno. La unión de tus piezas personales y
+                profesionales, esas que te hacen única. Porque nadie hace lo
+                mismo que tú cuando parte de su propia experiencia y su propia
+                vivencia.
+              </p>
+              <p>
+                Así consigues que en tu sector te encuentren, te elijan y
+                dejes de ser un número en una larga lista para ser tú, con tu
+                nombre y tus apellidos.
+              </p>
+            </div>
+
+            {/* Dolores — rectángulos apilados */}
+            <div className="mt-14">
+              <div className="mb-8 flex items-center gap-4">
+                <span className="font-sans text-[10px] font-semibold uppercase tracking-[0.3em] text-primary/60">
+                  Reconócete
+                </span>
+                <span className="h-px flex-1 bg-primary/15" />
+              </div>
+
+              <div className="flex flex-col gap-5">
+                {dolores.map((d, i) => (
+                  <DolorCard key={i} num={d.num} body={d.body} index={i} />
+                ))}
+              </div>
+            </div>
+
+            {/* CTA */}
+            <div className="mt-14">
+              <a
+                href="/contacto"
+                className="inline-flex items-center gap-3 bg-primary text-accent px-9 py-4 rounded-full font-sans text-[12px] font-bold uppercase tracking-[0.18em] hover:shadow-xl hover:scale-[1.02] transition-all duration-300"
+              >
+                Quiero decidir mi posicionamiento
+                <ArrowRight className="h-4 w-4" />
+              </a>
+            </div>
+          </div>
         </div>
       </div>
     </section>
