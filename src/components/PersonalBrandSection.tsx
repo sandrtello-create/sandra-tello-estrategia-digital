@@ -66,22 +66,22 @@ const DolorCard = ({
   return (
     <div
       ref={ref}
-      className="relative border border-primary/15 bg-background p-8 md:p-10 transition-all duration-700 ease-out hover:border-accent hover:shadow-[0_20px_60px_-30px_rgba(27,42,74,0.35)] group"
+      className="relative border border-primary/15 bg-background px-8 md:px-10 py-7 md:py-8 grid grid-cols-[auto_1fr] gap-6 md:gap-10 items-center transition-all duration-700 ease-out hover:border-accent hover:shadow-[0_20px_60px_-30px_rgba(27,42,74,0.35)] group"
       style={{
         opacity: visible ? 1 : 0,
         transform: visible ? "translateY(0)" : "translateY(40px)",
         transitionDelay: `${index * 180}ms`,
       }}
     >
-      {/* Barra dorada superior */}
+      {/* Barra dorada lateral */}
       <span
         aria-hidden="true"
-        className="absolute top-0 left-0 h-[3px] bg-accent transition-all duration-500 ease-out"
-        style={{ width: visible ? "56px" : "0px" }}
+        className="absolute top-0 left-0 w-[3px] bg-accent transition-all duration-500 ease-out"
+        style={{ height: visible ? "100%" : "0%" }}
       />
 
       {/* Número */}
-      <span className="block font-serif italic text-accent text-4xl md:text-5xl leading-none mb-6">
+      <span className="font-serif italic text-accent text-5xl md:text-6xl leading-none">
         {num}
       </span>
 
