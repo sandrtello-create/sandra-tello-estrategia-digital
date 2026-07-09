@@ -103,26 +103,25 @@ const PersonalBrandSection = () => {
     >
       <div className="container mx-auto px-6 lg:px-8 relative">
         <div className="grid lg:grid-cols-12 gap-12 lg:gap-16 items-start max-w-6xl mx-auto">
-          {/* Foto lateral */}
-          <div className="lg:col-span-5 lg:sticky lg:top-24 lg:self-start order-first">
+          {/* Foto lateral — derecha, espejada */}
+          <div className="lg:col-span-5 lg:col-start-8 lg:sticky lg:top-24 lg:self-start order-first lg:order-last">
             <div className="relative">
               {/* Marco dorado desplazado */}
               <span
                 aria-hidden="true"
-                className="hidden md:block absolute -top-4 -left-4 w-24 h-24 border-t-2 border-l-2 border-accent"
+                className="hidden md:block absolute -top-4 -right-4 w-24 h-24 border-t-2 border-r-2 border-accent"
               />
               <span
                 aria-hidden="true"
-                className="hidden md:block absolute -bottom-4 -right-4 w-24 h-24 border-b-2 border-r-2 border-accent/50"
+                className="hidden md:block absolute -bottom-4 -left-4 w-24 h-24 border-b-2 border-l-2 border-accent/50"
               />
-              <div className="relative bg-[#F5F0E8]">
+              <div className="relative bg-[#F5F0E8] overflow-hidden">
                 <img
                   src={sandraPortrait.url}
                   alt="Retrato editorial de Sandra Tello"
-                  className="w-full h-auto object-cover mix-blend-multiply grayscale-[0.15]"
+                  className="w-full h-auto object-cover mix-blend-multiply grayscale-[0.15] scale-x-[-1]"
                   loading="lazy"
                 />
-                {/* Tinte suave para integrar con la paleta */}
                 <div
                   aria-hidden="true"
                   className="absolute inset-0 bg-primary/5 pointer-events-none"
@@ -131,8 +130,9 @@ const PersonalBrandSection = () => {
             </div>
           </div>
 
-          {/* Contenido */}
-          <div className="lg:col-span-7">
+          {/* Contenido — columna izquierda */}
+          <div className="lg:col-span-7 lg:row-start-1">
+
             {/* Eyebrow */}
             <div className="flex items-center gap-3 mb-6">
               <span className="h-px w-8 bg-accent/60" />
