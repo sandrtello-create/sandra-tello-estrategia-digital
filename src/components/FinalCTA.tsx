@@ -17,9 +17,11 @@ const FinalCTA = () => {
             Agenda una sesión estratégica conmigo y descubramos cómo la estrategia, la marca personal y la
             inteligencia artificial, aplicadas con criterio, pueden transformar tu negocio y tu estilo de vida.
           </p>
-          <Button className="bg-accent text-accent-foreground hover:bg-gold-light rounded-none px-12 py-7 text-[14px] font-semibold uppercase tracking-[0.18em] shadow-none border border-accent">
-            Agenda tu sesión estratégica
-            <ArrowRight className="ml-2 h-5 w-5" />
+          <Button asChild className="bg-accent text-accent-foreground hover:bg-gold-light rounded-none px-12 py-7 text-[14px] font-semibold uppercase tracking-[0.18em] shadow-none border border-accent">
+            <Link to="/contacto">
+              Agenda tu sesión estratégica
+              <ArrowRight className="ml-2 h-5 w-5" />
+            </Link>
           </Button>
         </div>
       </div>
